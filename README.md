@@ -10,3 +10,5 @@ Web app for ICS414
 * [UserInterviews](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/User-Interviews)
 
 * [RelatedTechnology](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Related-Technologies)
+
+* [Requirements Gleaned From Interviews](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Requirements-Gleaned-From-Interviews)
