@@ -3,12 +3,10 @@ OCKB
 
 Web app for ICS414
 
-* [Weekly Meetings with Philip](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Weekly-Meetings-with-Philip)
+* [Team Meetings](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Team-Meetings)
 
-* [TeamMeetings](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Team-Meetings)
+* [User Interviews](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/User-Interviews)
 
-* [UserInterviews](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/User-Interviews)
-
-* [RelatedTechnology](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Related-Technologies)
+* [Related Technology](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Related-Technologies)
 
 * [Requirements Gleaned From Interviews](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Requirements-Gleaned-From-Interviews)
