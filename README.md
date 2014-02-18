@@ -12,5 +12,9 @@ Web app for ICS414
 * [Requirements Gleaned From Interviews](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Requirements-Gleaned-From-Interviews)
 
 * [Rendered mockup view of application](http://openclassknowledgebase.github.io/UIMockup/)
+ 
+* [Stakeholder Requirements] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Stakeholder-Requirements)
 
-* [End-To-End Use Cases](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/End-To-End-Use-Cases)
+* [Mockup Evaluation] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Mockup-Evaluation)
+
+* [Use Cases] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Use-Cases)
