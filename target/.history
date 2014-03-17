@@ -71,3 +71,8 @@ run
 clean
 reload
 run
+reload
+clean
+run
+reload
+run

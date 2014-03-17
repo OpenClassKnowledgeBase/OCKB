@@ -5,36 +5,31 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.data.format.*;
-import play.data.validation.*;
-import play.db.jpa.*;
+import play.data.validation.Constraints.Required;
+import play.db.ebean.Model;
 
-/**
- * Computer entity managed by JPA
- */
 @Entity 
-@SequenceGenerator(name = "comment_seq", sequenceName = "comment_seq")
-public class Comment {
+public class Comment extends Model {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "comment_seq")
-    public Long id;
-    
-    @Constraints.Required
-    @ManyToOne(cascade = CascadeType.MERGE)
-    public Long post_id;
-    
-    @Constraints.Required
-    public String content;
-    
-    /**
-     * Find a category by id.
-     */
-    public static Comment findById(Long id) {
-        return JPA.em().find(Comment.class, id);
-    }
-    
-    
-    public static List<Comment> findAll() {
-    	return JPA.em().createQuery("Select * from Comment").getResultList();
-    }
+	@Required
+	public Long id;
+
+	@Required
+	public String content;
+	
+	//help initiate queries
+	public static Finder<Long,Comment> find = new Finder<Long,Comment>(Long.class, Comment.class);
+	
+	/*Implement the CRUD operations*/
+	public static List<Comment> all(){
+		return find.all();
+	}
+	
+	public static void create(Comment Post){
+		Post.save();
+	}
+	
+	public static void delete(Long id){
+		find.ref(id).delete();
+	}
 }

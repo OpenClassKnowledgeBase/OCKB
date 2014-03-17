@@ -32,7 +32,7 @@ Seq[Any](format.raw/*1.30*/("""
 
     <ul> 
 		"""),_display_(Seq[Any](/*6.4*/for(comment <- commentList) yield /*6.31*/ {_display_(Seq[Any](format.raw/*6.33*/("""
-		  <li>d</li>
+		  <li>"""),_display_(Seq[Any](/*7.10*/comment/*7.17*/.id)),format.raw/*7.20*/(""" - """),_display_(Seq[Any](/*7.24*/comment/*7.31*/.content)),format.raw/*7.39*/("""</li>
 		""")))})),format.raw/*8.4*/(""" 
 	</ul>
 
@@ -49,11 +49,11 @@ Seq[Any](format.raw/*1.30*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Mar 17 08:30:12 HST 2014
+                    DATE: Mon Mar 17 11:00:13 HST 2014
                     SOURCE: /Users/renzeereyes/School/ICS414/OCKB/app/views/comments.scala.html
-                    HASH: 4ed38b1160ec084b5377bfe7866ddd1c35448cea
-                    MATRIX: 784->1|906->29|943->32|967->48|1006->50|1055->65|1097->92|1136->94|1185->113|1227->124
-                    LINES: 26->1|29->1|31->3|31->3|31->3|34->6|34->6|34->6|36->8|39->11
+                    HASH: f548c3ccebbed106dd8dadb7c77e489d00bb0cb3
+                    MATRIX: 784->1|906->29|943->32|967->48|1006->50|1055->65|1097->92|1136->94|1181->104|1196->111|1220->114|1259->118|1274->125|1303->133|1342->142|1384->153
+                    LINES: 26->1|29->1|31->3|31->3|31->3|34->6|34->6|34->6|35->7|35->7|35->7|35->7|35->7|35->7|36->8|39->11
                     -- GENERATED --
                 */
             

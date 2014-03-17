@@ -21,9 +21,8 @@ public class Application extends Controller {
         return ok(views.html.explore.render("Welcome to the explore content page"));
     }
     
-    @play.db.jpa.Transactional
     public static Result comments() {
-    	List<Comment> cmntList = Comment.findAll();
+    	List<Comment> cmntList = Comment.all();
     	return ok(views.html.comments.render(cmntList));
     }
 

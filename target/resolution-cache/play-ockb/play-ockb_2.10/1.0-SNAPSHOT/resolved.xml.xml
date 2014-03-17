@@ -4,7 +4,7 @@
 		module="play-ockb_2.10"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20140317083004"
+		publication="20140317105802"
 	>
 		<description>
 		play-ockb
@@ -34,11 +34,9 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.2" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.10.2" conf="scala-tool->default,optional(default);compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-java-jpa_2.10" rev="2.2.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.10" rev="2.2.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ebean_2.10" rev="2.2.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.10" rev="2.2.1" conf="compile->default(compile)"/>
-		<dependency org="org.hibernate" name="hibernate-entitymanager" rev="3.6.9.Final" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play_2.10" rev="2.2.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-test_2.10" rev="2.2.1" conf="test->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-docs_2.10" rev="2.2.1" conf="docs->default(compile)"/>
