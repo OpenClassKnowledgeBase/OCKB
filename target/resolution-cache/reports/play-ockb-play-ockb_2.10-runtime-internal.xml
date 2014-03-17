@@ -7,10 +7,101 @@
 		revision="1.0-SNAPSHOT"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140316204503"/>
+		date="20140317083004"/>
 	<dependencies>
+		<module organisation="org.hibernate" name="hibernate-entitymanager">
+			<revision name="3.6.9.Final" status="release" pubdate="20111214202416" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="66">
+				<metadata-artifact status="no" details="" size="8423" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/org.hibernate/hibernate-entitymanager/ivy-3.6.9.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.6.9.Final/hibernate-entitymanager-3.6.9.Final.pom"/>
+				<caller organisation="play-ockb" name="play-ockb_2.10" conf="optional, compile, runtime, runtime-internal" rev="3.6.9.Final" rev-constraint-default="3.6.9.Final" rev-constraint-dynamic="3.6.9.Final" callerrev="1.0-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="hibernate-entitymanager" type="jar" ext="jar" status="no" details="" size="426314" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/org.hibernate/hibernate-entitymanager/jars/hibernate-entitymanager-3.6.9.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.6.9.Final/hibernate-entitymanager-3.6.9.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.hibernate" name="hibernate-core">
+			<revision name="3.6.9.Final" status="release" pubdate="20111214201749" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="67">
+				<metadata-artifact status="no" details="" size="9558" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/org.hibernate/hibernate-core/ivy-3.6.9.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/hibernate/hibernate-core/3.6.9.Final/hibernate-core-3.6.9.Final.pom"/>
+				<caller organisation="org.hibernate" name="hibernate-entitymanager" conf="default, compile, runtime, master" rev="3.6.9.Final" rev-constraint-default="3.6.9.Final" rev-constraint-dynamic="3.6.9.Final" callerrev="3.6.9.Final"/>
+				<artifacts>
+					<artifact name="hibernate-core" type="jar" ext="jar" status="no" details="" size="3119700" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/org.hibernate/hibernate-core/jars/hibernate-core-3.6.9.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/hibernate/hibernate-core/3.6.9.Final/hibernate-core-3.6.9.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="cglib" name="cglib">
+			<revision name="2.2" status="release" pubdate="20081027160139" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://cglib.sourceforge.net/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="72">
+				<license name="ASF 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2638" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/cglib/cglib/ivy-2.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/cglib/cglib/2.2/cglib-2.2.pom"/>
+				<caller organisation="org.hibernate" name="hibernate-entitymanager" conf="default, compile, runtime, master" rev="2.2" rev-constraint-default="2.2" rev-constraint-dynamic="2.2" callerrev="3.6.9.Final"/>
+				<artifacts>
+					<artifact name="cglib" type="jar" ext="jar" status="no" details="" size="278682" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/cglib/cglib/jars/cglib-2.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/cglib/cglib/2.2/cglib-2.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="asm" name="asm">
+			<revision name="3.1" status="release" pubdate="20080120003126" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="73">
+				<metadata-artifact status="no" details="" size="2800" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/asm/asm/ivy-3.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/asm/asm/3.1/asm-3.1.pom"/>
+				<caller organisation="cglib" name="cglib" conf="compile, runtime" rev="3.1" rev-constraint-default="3.1" rev-constraint-dynamic="3.1" callerrev="2.2"/>
+				<artifacts>
+					<artifact name="asm" type="jar" ext="jar" status="no" details="" size="43033" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/asm/asm/jars/asm-3.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/asm/asm/3.1/asm-3.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="javassist" name="javassist">
+			<revision name="3.12.0.GA" status="release" pubdate="20101122212131" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="74">
+				<license name="LGPL 2.1" url="http://www.gnu.org/licenses/lgpl-2.1.html"/>
+				<metadata-artifact status="no" details="" size="2757" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/javassist/javassist/ivy-3.12.0.GA.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/javassist/javassist/3.12.0.GA/javassist-3.12.0.GA.pom"/>
+				<caller organisation="org.hibernate" name="hibernate-entitymanager" conf="default, compile, runtime, master" rev="3.12.0.GA" rev-constraint-default="3.12.0.GA" rev-constraint-dynamic="3.12.0.GA" callerrev="3.6.9.Final"/>
+				<artifacts>
+					<artifact name="javassist" type="jar" ext="jar" status="no" details="" size="633312" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/javassist/javassist/jars/javassist-3.12.0.GA.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/javassist/javassist/3.12.0.GA/javassist-3.12.0.GA.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.hibernate" name="hibernate-commons-annotations">
+			<revision name="3.2.0.Final" status="release" pubdate="20100309064153" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hibernate.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="71">
+				<license name="GNU LESSER GENERAL PUBLIC LICENSE" url="http://www.gnu.org/licenses/lgpl.txt"/>
+				<metadata-artifact status="no" details="" size="3552" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/org.hibernate/hibernate-commons-annotations/ivy-3.2.0.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.pom"/>
+				<caller organisation="org.hibernate" name="hibernate-core" conf="compile, runtime" rev="3.2.0.Final" rev-constraint-default="3.2.0.Final" rev-constraint-dynamic="3.2.0.Final" callerrev="3.6.9.Final"/>
+				<artifacts>
+					<artifact name="hibernate-commons-annotations" type="jar" ext="jar" status="no" details="" size="71283" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/org.hibernate/hibernate-commons-annotations/jars/hibernate-commons-annotations-3.2.0.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-collections" name="commons-collections">
+			<revision name="3.1" status="release" pubdate="20051108123131" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="69">
+				<metadata-artifact status="no" details="" size="2499" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/commons-collections/commons-collections/ivy-3.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/commons-collections/commons-collections/3.1/commons-collections-3.1.pom"/>
+				<caller organisation="org.hibernate" name="hibernate-core" conf="compile, runtime" rev="3.1" rev-constraint-default="3.1" rev-constraint-dynamic="3.1" callerrev="3.6.9.Final"/>
+				<artifacts>
+					<artifact name="commons-collections" type="jar" ext="jar" status="no" details="" size="559366" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/commons-collections/commons-collections/jars/commons-collections-3.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/commons-collections/commons-collections/3.1/commons-collections-3.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="antlr" name="antlr">
+			<revision name="2.7.6" status="release" pubdate="20060130153534" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.antlr.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="68">
+				<metadata-artifact status="no" details="" size="2197" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/antlr/antlr/ivy-2.7.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/antlr/antlr/2.7.6/antlr-2.7.6.pom"/>
+				<caller organisation="org.hibernate" name="hibernate-core" conf="compile, runtime" rev="2.7.6" rev-constraint-default="2.7.6" rev-constraint-dynamic="2.7.6" callerrev="3.6.9.Final"/>
+				<artifacts>
+					<artifact name="antlr" type="jar" ext="jar" status="no" details="" size="443432" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/antlr/antlr/jars/antlr-2.7.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/antlr/antlr/2.7.6/antlr-2.7.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="com.typesafe.play" name="play-cache_2.10">
-			<revision name="2.2.1" status="release" pubdate="20131030164410" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="61">
+			<revision name="2.2.1" status="release" pubdate="20131030164410" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="64">
 				<metadata-artifact status="no" details="" size="2126" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/com.typesafe.play/play-cache_2.10/ivy-2.2.1.xml" searched="false" origin-is-local="true" origin-location="/Applications/play-2.2.1/repository/local/com.typesafe.play/play-cache_2.10/2.2.1/ivys/ivy.xml"/>
 				<caller organisation="play-ockb" name="play-ockb_2.10" conf="optional, compile, runtime, runtime-internal" rev="2.2.1" rev-constraint-default="2.2.1" rev-constraint-dynamic="2.2.1" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
@@ -21,13 +112,48 @@
 			</revision>
 		</module>
 		<module organisation="net.sf.ehcache" name="ehcache-core">
-			<revision name="2.6.6" status="release" pubdate="20130508043745" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://ehcache.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="62">
+			<revision name="2.6.6" status="release" pubdate="20130508043745" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://ehcache.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="65">
 				<license name="The Apache Software License, Version 2.0" url="src/assemble/EHCACHE-CORE-LICENSE.txt"/>
 				<metadata-artifact status="no" details="" size="16899" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/net.sf.ehcache/ehcache-core/ivy-2.6.6.xml" searched="false" origin-is-local="true" origin-location="/Applications/play-2.2.1/repository/local/net.sf.ehcache/ehcache-core/2.6.6/ivys/ivy.xml"/>
 				<caller organisation="com.typesafe.play" name="play-cache_2.10" conf="compile" rev="2.6.6" rev-constraint-default="2.6.6" rev-constraint-dynamic="2.6.6" callerrev="2.2.1"/>
 				<artifacts>
 					<artifact name="ehcache-core" type="jar" ext="jar" status="no" details="" size="1346296" time="0" location="/Applications/play-2.2.1/repository/local/net.sf.ehcache/ehcache-core/2.6.6/jars/ehcache-core.jar">
 						<origin-location is-local="true" location="/Applications/play-2.2.1/repository/local/net.sf.ehcache/ehcache-core/2.6.6/jars/ehcache-core.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.play" name="play-java-ebean_2.10">
+			<revision name="2.2.1" status="release" pubdate="20131030164410" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="61">
+				<metadata-artifact status="no" details="" size="2478" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/com.typesafe.play/play-java-ebean_2.10/ivy-2.2.1.xml" searched="false" origin-is-local="true" origin-location="/Applications/play-2.2.1/repository/local/com.typesafe.play/play-java-ebean_2.10/2.2.1/ivys/ivy.xml"/>
+				<caller organisation="play-ockb" name="play-ockb_2.10" conf="optional, compile, runtime, runtime-internal" rev="2.2.1" rev-constraint-default="2.2.1" rev-constraint-dynamic="2.2.1" callerrev="1.0-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="play-java-ebean_2.10" type="jar" ext="jar" status="no" details="" size="12641" time="0" location="/Applications/play-2.2.1/repository/local/com.typesafe.play/play-java-ebean_2.10/2.2.1/jars/play-java-ebean_2.10.jar">
+						<origin-location is-local="true" location="/Applications/play-2.2.1/repository/local/com.typesafe.play/play-java-ebean_2.10/2.2.1/jars/play-java-ebean_2.10.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.avaje.ebeanorm" name="avaje-ebeanorm">
+			<revision name="3.2.2" status="release" pubdate="20130712191342" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.avaje.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="62">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="6265" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/org.avaje.ebeanorm/avaje-ebeanorm/ivy-3.2.2.xml" searched="false" origin-is-local="true" origin-location="/Applications/play-2.2.1/repository/local/org.avaje.ebeanorm/avaje-ebeanorm/3.2.2/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.play" name="play-java-ebean_2.10" conf="compile" rev="3.2.2" rev-constraint-default="3.2.2" rev-constraint-dynamic="3.2.2" callerrev="2.2.1"/>
+				<artifacts>
+					<artifact name="avaje-ebeanorm" type="jar" ext="jar" status="no" details="" size="1582101" time="0" location="/Applications/play-2.2.1/repository/local/org.avaje.ebeanorm/avaje-ebeanorm/3.2.2/jars/avaje-ebeanorm.jar">
+						<origin-location is-local="true" location="/Applications/play-2.2.1/repository/local/org.avaje.ebeanorm/avaje-ebeanorm/3.2.2/jars/avaje-ebeanorm.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.avaje.ebeanorm" name="avaje-ebeanorm-agent">
+			<revision name="3.2.1" status="release" pubdate="20130418205719" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.avaje.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="63">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="4595" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/org.avaje.ebeanorm/avaje-ebeanorm-agent/ivy-3.2.1.xml" searched="false" origin-is-local="true" origin-location="/Applications/play-2.2.1/repository/local/org.avaje.ebeanorm/avaje-ebeanorm-agent/3.2.1/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.play" name="play-java-ebean_2.10" conf="compile" rev="3.2.1" rev-constraint-default="3.2.1" rev-constraint-dynamic="3.2.1" callerrev="2.2.1"/>
+				<artifacts>
+					<artifact name="avaje-ebeanorm-agent" type="jar" ext="jar" status="no" details="" size="182383" time="0" location="/Applications/play-2.2.1/repository/local/org.avaje.ebeanorm/avaje-ebeanorm-agent/3.2.1/jars/avaje-ebeanorm-agent.jar">
+						<origin-location is-local="true" location="/Applications/play-2.2.1/repository/local/org.avaje.ebeanorm/avaje-ebeanorm-agent/3.2.1/jars/avaje-ebeanorm-agent.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -44,10 +170,13 @@
 			</revision>
 		</module>
 		<module organisation="org.hibernate.javax.persistence" name="hibernate-jpa-2.0-api">
-			<revision name="1.0.1.Final" status="release" pubdate="20120905080915" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hibernate.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="60">
+			<revision name="1.0.1.Final" status="release" pubdate="20120905080915" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hibernate.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="60">
 				<license name="Unknown License" url="license.txt"/>
 				<metadata-artifact status="no" details="" size="2454" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/ivy-1.0.1.Final.xml" searched="false" origin-is-local="true" origin-location="/Applications/play-2.2.1/repository/local/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/1.0.1.Final/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.play" name="play-java-ebean_2.10" conf="compile" rev="1.0.1.Final" rev-constraint-default="1.0.1.Final" rev-constraint-dynamic="1.0.1.Final" callerrev="2.2.1"/>
 				<caller organisation="com.typesafe.play" name="play-java-jpa_2.10" conf="compile" rev="1.0.1.Final" rev-constraint-default="1.0.1.Final" rev-constraint-dynamic="1.0.1.Final" callerrev="2.2.1"/>
+				<caller organisation="org.hibernate" name="hibernate-entitymanager" conf="default, compile, runtime, master" rev="1.0.1.Final" rev-constraint-default="1.0.1.Final" rev-constraint-dynamic="1.0.1.Final" callerrev="3.6.9.Final"/>
+				<caller organisation="org.hibernate" name="hibernate-core" conf="compile, runtime" rev="1.0.1.Final" rev-constraint-default="1.0.1.Final" rev-constraint-dynamic="1.0.1.Final" callerrev="3.6.9.Final"/>
 				<artifacts>
 					<artifact name="hibernate-jpa-2.0-api" type="jar" ext="jar" status="no" details="" size="102661" time="0" location="/Applications/play-2.2.1/repository/local/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/1.0.1.Final/jars/hibernate-jpa-2.0-api.jar">
 						<origin-location is-local="true" location="/Applications/play-2.2.1/repository/local/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/1.0.1.Final/jars/hibernate-jpa-2.0-api.jar"/>
@@ -58,6 +187,7 @@
 		<module organisation="com.typesafe.play" name="play-java-jdbc_2.10">
 			<revision name="2.2.1" status="release" pubdate="20131030164410" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="2">
 				<metadata-artifact status="no" details="" size="2066" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/com.typesafe.play/play-java-jdbc_2.10/ivy-2.2.1.xml" searched="false" origin-is-local="true" origin-location="/Applications/play-2.2.1/repository/local/com.typesafe.play/play-java-jdbc_2.10/2.2.1/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.play" name="play-java-ebean_2.10" conf="compile" rev="2.2.1" rev-constraint-default="2.2.1" rev-constraint-dynamic="2.2.1" callerrev="2.2.1"/>
 				<caller organisation="play-ockb" name="play-ockb_2.10" conf="optional, compile, runtime, runtime-internal" rev="2.2.1" rev-constraint-default="2.2.1" rev-constraint-dynamic="2.2.1" callerrev="1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play-java-jpa_2.10" conf="compile" rev="2.2.1" rev-constraint-default="2.2.1" rev-constraint-dynamic="2.2.1" callerrev="2.2.1"/>
 				<artifacts>
@@ -428,6 +558,17 @@
 				</artifacts>
 			</revision>
 		</module>
+		<module organisation="dom4j" name="dom4j">
+			<revision name="1.6.1" status="release" pubdate="20060210023318" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://dom4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="70">
+				<metadata-artifact status="no" details="" size="3653" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/dom4j/dom4j/ivy-1.6.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom"/>
+				<caller organisation="org.hibernate" name="hibernate-core" conf="compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="3.6.9.Final"/>
+				<artifacts>
+					<artifact name="dom4j" type="jar" ext="jar" status="no" details="" size="313898" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/dom4j/dom4j/jars/dom4j-1.6.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="ch.qos.logback" name="logback-core">
 			<revision name="1.0.13" status="release" pubdate="20130510223314" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://logback.qos.ch" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="29">
 				<license name="Eclipse Public License - v 1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
@@ -474,6 +615,9 @@
 				<caller organisation="com.typesafe.play" name="play_2.10" conf="compile" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="2.2.1"/>
 				<caller organisation="com.typesafe.akka" name="akka-slf4j_2.10" conf="default, compile, runtime, master" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="2.2.0"/>
 				<caller organisation="net.sf.ehcache" name="ehcache-core" conf="default, compile, runtime, master" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="2.6.6"/>
+				<caller organisation="org.hibernate" name="hibernate-entitymanager" conf="default, compile, runtime, master" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="3.6.9.Final"/>
+				<caller organisation="org.hibernate" name="hibernate-commons-annotations" conf="compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.5.8" callerrev="3.2.0.Final"/>
+				<caller organisation="org.hibernate" name="hibernate-core" conf="compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="3.6.9.Final"/>
 				<artifacts>
 					<artifact name="slf4j-api" type="jar" ext="jar" status="no" details="" size="26084" time="0" location="/Applications/play-2.2.1/repository/local/org.slf4j/slf4j-api/1.7.5/jars/slf4j-api.jar">
 						<origin-location is-local="true" location="/Applications/play-2.2.1/repository/local/org.slf4j/slf4j-api/1.7.5/jars/slf4j-api.jar"/>
@@ -483,6 +627,9 @@
 			<revision name="1.6.1" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
 				<evicted-by rev="1.7.5"/>
 				<caller organisation="net.sf.ehcache" name="ehcache-core" conf="default, compile, runtime, master" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="2.6.6"/>
+				<caller organisation="org.hibernate" name="hibernate-entitymanager" conf="default, compile, runtime, master" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="3.6.9.Final"/>
+				<caller organisation="org.hibernate" name="hibernate-commons-annotations" conf="compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.5.8" callerrev="3.2.0.Final"/>
+				<caller organisation="org.hibernate" name="hibernate-core" conf="compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="3.6.9.Final"/>
 				<artifacts>
 				</artifacts>
 			</revision>
@@ -733,9 +880,10 @@
 			</revision>
 		</module>
 		<module organisation="javax.transaction" name="jta">
-			<revision name="1.1" status="release" pubdate="20120905080950" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://java.sun.com/products/jta" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="43">
+			<revision name="1.1" status="release" pubdate="20120905080950" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://java.sun.com/products/jta" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="43">
 				<metadata-artifact status="no" details="" size="2343" time="0" location="/Applications/play-2.2.1/framework/../repository/cache/javax.transaction/jta/ivy-1.1.xml" searched="false" origin-is-local="true" origin-location="/Applications/play-2.2.1/repository/local/javax.transaction/jta/1.1/ivys/ivy.xml"/>
 				<caller organisation="com.typesafe.play" name="play_2.10" conf="compile" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="2.2.1"/>
+				<caller organisation="org.hibernate" name="hibernate-core" conf="compile, runtime" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="3.6.9.Final"/>
 				<artifacts>
 					<artifact name="jta" type="jar" ext="jar" status="no" details="" size="15071" time="0" location="/Applications/play-2.2.1/repository/local/javax.transaction/jta/1.1/jars/jta.jar">
 						<origin-location is-local="true" location="/Applications/play-2.2.1/repository/local/javax.transaction/jta/1.1/jars/jta.jar"/>

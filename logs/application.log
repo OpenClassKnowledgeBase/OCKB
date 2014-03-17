@@ -1,223 +1,157 @@
-2014-03-16 20:47:44,044 - [INFO] - from play in pool-62-thread-4 
+2014-03-17 08:30:08,106 - [INFO] - from play in pool-74-thread-3 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2014-03-16 20:47:47,528 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-16 20:47:49,297 - [ERROR] - from play in play-internal-execution-context-1 
-Cannot invoke the action, eventually got an error: java.lang.RuntimeException: No EntityManager bound to this thread. Try to annotate your action method with @play.db.jpa.Transactional
-
-2014-03-16 20:47:49,312 - [ERROR] - from application in play-internal-execution-context-1 
+2014-03-17 08:30:17,754 - [ERROR] - from application in New I/O worker #1 
 
 
-! @6hhnnkab2 - Internal server error, for (GET) [/comments] ->
+! @6hi1c0c4l - Internal server error, for (GET) [/] ->
 
-play.api.Application$$anon$1: Execution exception[[RuntimeException: No EntityManager bound to this thread. Try to annotate your action method with @play.db.jpa.Transactional]]
-	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.1]
-	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+play.api.Configuration$$anon$1: Configuration error[Missing configuration [db.default.url]]
+	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:92) ~[play_2.10.jar:2.2.1]
+	at play.api.Configuration.reportError(Configuration.scala:570) ~[play_2.10.jar:2.2.1]
+	at play.api.db.BoneCPApi.play$api$db$BoneCPApi$$error(DB.scala:278) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.db.BoneCPApi$$anonfun$6$$anonfun$7.apply(DB.scala:401) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.db.BoneCPApi$$anonfun$6$$anonfun$7.apply(DB.scala:401) ~[play-jdbc_2.10.jar:2.2.1]
+	at scala.Option.getOrElse(Option.scala:120) ~[scala-library.jar:na]
+	at play.api.db.BoneCPApi$$anonfun$6.apply(DB.scala:401) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.db.BoneCPApi$$anonfun$6.apply(DB.scala:400) ~[play-jdbc_2.10.jar:2.2.1]
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
+	at scala.collection.immutable.Set$Set1.foreach(Set.scala:74) ~[scala-library.jar:na]
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244) ~[scala-library.jar:na]
+	at scala.collection.AbstractSet.scala$collection$SetLike$$super$map(Set.scala:47) ~[scala-library.jar:na]
+	at scala.collection.SetLike$class.map(SetLike.scala:93) ~[scala-library.jar:na]
+	at scala.collection.AbstractSet.map(Set.scala:47) ~[scala-library.jar:na]
+	at play.api.db.BoneCPApi.<init>(DB.scala:400) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.db.BoneCPPlugin.play$api$db$BoneCPPlugin$$dbApi$lzycompute(DB.scala:215) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.db.BoneCPPlugin.play$api$db$BoneCPPlugin$$dbApi(DB.scala:215) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.db.BoneCPPlugin.onStart(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
+	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
+	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.1]
+	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
+	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2014-03-17 08:31:14,246 - [WARN] - from play in play-internal-execution-context-1 
+Error stopping plugin
+play.api.Configuration$$anon$1: Configuration error[Missing configuration [db.default.url]]
+	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:92) ~[play_2.10.jar:2.2.1]
+	at play.api.Configuration.reportError(Configuration.scala:570) ~[play_2.10.jar:2.2.1]
+	at play.api.db.BoneCPApi.play$api$db$BoneCPApi$$error(DB.scala:278) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.db.BoneCPApi$$anonfun$6$$anonfun$7.apply(DB.scala:401) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.db.BoneCPApi$$anonfun$6$$anonfun$7.apply(DB.scala:401) ~[play-jdbc_2.10.jar:2.2.1]
+	at scala.Option.getOrElse(Option.scala:120) [scala-library.jar:na]
+	at play.api.db.BoneCPApi$$anonfun$6.apply(DB.scala:401) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.db.BoneCPApi$$anonfun$6.apply(DB.scala:400) ~[play-jdbc_2.10.jar:2.2.1]
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
+	at scala.collection.immutable.Set$Set1.foreach(Set.scala:74) ~[scala-library.jar:na]
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244) ~[scala-library.jar:na]
+	at scala.collection.AbstractSet.scala$collection$SetLike$$super$map(Set.scala:47) ~[scala-library.jar:na]
+	at scala.collection.SetLike$class.map(SetLike.scala:93) ~[scala-library.jar:na]
+	at scala.collection.AbstractSet.map(Set.scala:47) ~[scala-library.jar:na]
+	at play.api.db.BoneCPApi.<init>(DB.scala:400) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.db.BoneCPPlugin.play$api$db$BoneCPPlugin$$dbApi$lzycompute(DB.scala:215) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.db.BoneCPPlugin.play$api$db$BoneCPPlugin$$dbApi(DB.scala:215) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.db.BoneCPPlugin.onStop(DB.scala:262) ~[play-jdbc_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$stop$1$$anonfun$apply$1$$anonfun$apply$mcV$sp$2.apply(Play.scala:105) [play_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$stop$1$$anonfun$apply$1$$anonfun$apply$mcV$sp$2.apply(Play.scala:104) [play_2.10.jar:2.2.1]
+	at scala.collection.immutable.List.foreach(List.scala:318) [scala-library.jar:na]
+	at play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply$mcV$sp(Play.scala:104) [play_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply(Play.scala:104) [play_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply(Play.scala:104) [play_2.10.jar:2.2.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) [play_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$stop$1.apply(Play.scala:103) [play_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$stop$1.apply(Play.scala:102) [play_2.10.jar:2.2.1]
 	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.1]
-	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.1]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.api.Play$.stop(Play.scala:102) [play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:124) [play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) [play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) [play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) [play_2.10.jar:2.2.1]
+	at scala.util.Success.flatMap(Try.scala:200) [scala-library.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) [play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) [play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
-Caused by: java.lang.RuntimeException: No EntityManager bound to this thread. Try to annotate your action method with @play.db.jpa.Transactional
-	at play.db.jpa.JPA.em(JPA.java:48) ~[play-java-jpa_2.10.jar:2.2.1]
-	at models.Comment.findAll(Comment.java:39) ~[na:na]
-	at controllers.Application.comments(Application.java:25) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$4$$anonfun$apply$4.apply(routes_routing.scala:85) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$4$$anonfun$apply$4.apply(routes_routing.scala:85) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.1]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.1]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.1]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
-	... 4 common frames omitted
 
-2014-03-16 20:50:00,259 - [ERROR] - from play in play-internal-execution-context-1 
-Cannot invoke the action, eventually got an error: java.lang.RuntimeException: No EntityManager bound to this thread. Try to annotate your action method with @play.db.jpa.Transactional
+2014-03-17 08:31:14,896 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-03-16 20:50:00,266 - [ERROR] - from application in play-internal-execution-context-1 
+2014-03-17 08:31:15,120 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:h2:mem:play
+
+2014-03-17 08:31:15,862 - [ERROR] - from application in New I/O worker #1 
 
 
-! @6hhno1m41 - Internal server error, for (GET) [/comments] ->
+! @6hi1c3k3o - Internal server error, for (GET) [/] ->
 
-play.api.Application$$anon$1: Execution exception[[RuntimeException: No EntityManager bound to this thread. Try to annotate your action method with @play.db.jpa.Transactional]]
-	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.1]
-	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.1]
-	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.1]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
-Caused by: java.lang.RuntimeException: No EntityManager bound to this thread. Try to annotate your action method with @play.db.jpa.Transactional
-	at play.db.jpa.JPA.em(JPA.java:48) ~[play-java-jpa_2.10.jar:2.2.1]
-	at models.Comment.findAll(Comment.java:39) ~[na:na]
-	at controllers.Application.comments(Application.java:25) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$4$$anonfun$apply$4.apply(routes_routing.scala:85) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$4$$anonfun$apply$4.apply(routes_routing.scala:85) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.1]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.1]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.1]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
-	... 4 common frames omitted
-
-2014-03-16 20:55:50,737 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-16 20:56:02,772 - [ERROR] - from play in play-internal-execution-context-1 
-Cannot invoke the action, eventually got an error: java.lang.RuntimeException: No EntityManager bound to this thread. Try to annotate your action method with @play.db.jpa.Transactional
-
-2014-03-16 20:56:02,780 - [ERROR] - from application in play-internal-execution-context-1 
-
-
-! @6hhnomcan - Internal server error, for (GET) [/comments] ->
-
-play.api.Application$$anon$1: Execution exception[[RuntimeException: No EntityManager bound to this thread. Try to annotate your action method with @play.db.jpa.Transactional]]
-	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.1]
-	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.1]
-	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.1]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
-Caused by: java.lang.RuntimeException: No EntityManager bound to this thread. Try to annotate your action method with @play.db.jpa.Transactional
-	at play.db.jpa.JPA.em(JPA.java:48) ~[play-java-jpa_2.10.jar:2.2.1]
-	at models.Comment.findAll(Comment.java:39) ~[na:na]
-	at controllers.Application.comments(Application.java:25) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$4$$anonfun$apply$4.apply(routes_routing.scala:85) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$4$$anonfun$apply$4.apply(routes_routing.scala:85) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.1]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.1]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.1]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
-	... 4 common frames omitted
-
-2014-03-16 20:56:53,671 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-16 20:56:55,550 - [ERROR] - from play in play-internal-execution-context-1 
-Cannot invoke the action, eventually got an error: java.lang.RuntimeException: No JPA EntityManagerFactory configured for name [default]
-
-2014-03-16 20:56:55,555 - [ERROR] - from application in play-internal-execution-context-1 
-
-
-! @6hhnopcck - Internal server error, for (GET) [/comments] ->
-
-play.api.Application$$anon$1: Execution exception[[RuntimeException: No JPA EntityManagerFactory configured for name [default]]]
-	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.1]
-	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.1]
-	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.1]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
-Caused by: java.lang.RuntimeException: No JPA EntityManagerFactory configured for name [default]
-	at play.db.jpa.JPA.em(JPA.java:34) ~[play-java-jpa_2.10.jar:2.2.1]
-	at play.db.jpa.JPA.withTransactionAsync(JPA.java:169) ~[play-java-jpa_2.10.jar:2.2.1]
-	at play.db.jpa.TransactionalAction.call(TransactionalAction.java:15) ~[play-java-jpa_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.1]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.1]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
-	... 4 common frames omitted
+play.api.UnexpectedException: Unexpected exception[PersistenceException: [PersistenceUnit: defaultPersistenceUnit] Unable to configure EntityManagerFactory]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:148) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
+	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: defaultPersistenceUnit] Unable to configure EntityManagerFactory
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:378) ~[hibernate-entitymanager-3.6.9.Final.jar:3.6.9.Final]
+	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:56) ~[hibernate-entitymanager-3.6.9.Final.jar:3.6.9.Final]
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:63) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:47) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
+	at play.db.jpa.JPAPlugin.onStart(JPAPlugin.java:35) ~[play-java-jpa_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
+	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
+	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.1]
+	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.1]
+	... 14 common frames omitted
+Caused by: org.hibernate.AnnotationException: @OneToOne or @ManyToOne on models.Comment.post_id references an unknown entity: java.lang.Long
+	at org.hibernate.cfg.ToOneFkSecondPass.doSecondPass(ToOneFkSecondPass.java:107) ~[hibernate-core-3.6.9.Final.jar:3.6.9.Final]
+	at org.hibernate.cfg.Configuration.processEndOfQueue(Configuration.java:1580) ~[hibernate-core-3.6.9.Final.jar:3.6.9.Final]
+	at org.hibernate.cfg.Configuration.processFkSecondPassInOrder(Configuration.java:1503) ~[hibernate-core-3.6.9.Final.jar:3.6.9.Final]
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1419) ~[hibernate-core-3.6.9.Final.jar:3.6.9.Final]
+	at org.hibernate.cfg.Configuration.buildMappings(Configuration.java:1375) ~[hibernate-core-3.6.9.Final.jar:3.6.9.Final]
+	at org.hibernate.ejb.Ejb3Configuration.buildMappings(Ejb3Configuration.java:1519) ~[hibernate-entitymanager-3.6.9.Final.jar:3.6.9.Final]
+	at org.hibernate.ejb.EventListenerConfigurator.configure(EventListenerConfigurator.java:193) ~[hibernate-entitymanager-3.6.9.Final.jar:3.6.9.Final]
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1100) ~[hibernate-entitymanager-3.6.9.Final.jar:3.6.9.Final]
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:282) ~[hibernate-entitymanager-3.6.9.Final.jar:3.6.9.Final]
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:366) ~[hibernate-entitymanager-3.6.9.Final.jar:3.6.9.Final]
+	... 27 common frames omitted
 
