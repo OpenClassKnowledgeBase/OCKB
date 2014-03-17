@@ -1,0 +1,22 @@
+ @(posts: List[Post], postForm: Form[Post])
+
+ @import helper._
+
+ @main("Submit Post"){
+ 	<h1>@posts.size() post(s)</h1>
+ 	<ul>
+ 		@for(post <- posts){
+ 			<li>
+ 				@post.title
+ 				@form(routes.Application.deletePost(post.id)){
+ 					<input type="submit" value="Delete">
+ 				}
+ 			</li>
+ 		}
+ 	</ul>
+ 	<h2>Add a new Post</h2>
+ 	@form(routes.Application.submitPost()){
+ 		@inputText(postForm("Title"))
+ 		<input type="submit" value="Create">
+ 	}
+}

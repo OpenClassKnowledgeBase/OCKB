@@ -1,10 +1,10 @@
 [0m[[0mdebug[0m] [0mCopy play resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/public/images/content.png,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/public/images/content.png)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/public/images/coursecollab.png,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/public/images/coursecollab.png)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/public/images/designed.png,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/public/images/designed.png)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/public/images/favicon.png,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/public/images/favicon.png)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/public/images/logo-bluegray.gif,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/public/images/logo-bluegray.gif)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/public/images/mobile.png,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/public/images/mobile.png)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/public/images/past.png,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/public/images/past.png)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/public/javascripts/jquery-1.9.0.min.js,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/public/javascripts/jquery-1.9.0.min.js)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/public/stylesheets/main.css,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/public/stylesheets/main.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\public\images\content.png,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\public\images\content.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\public\images\coursecollab.png,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\public\images\coursecollab.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\public\images\designed.png,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\public\images\designed.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\public\images\favicon.png,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\public\images\favicon.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\public\images\logo-bluegray.gif,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\public\images\logo-bluegray.gif)[0m
+[0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\public\images\mobile.png,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\public\images\mobile.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\public\images\past.png,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\public\images\past.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\public\javascripts\jquery-1.9.0.min.js,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\public\javascripts\jquery-1.9.0.min.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\public\stylesheets\main.css,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\public\stylesheets\main.css)[0m
