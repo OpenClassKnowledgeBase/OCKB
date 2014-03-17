@@ -1,6 +1,6 @@
 // @SOURCE:C:/xampp/htdocs/ICS414/OCKB/conf/routes
-// @HASH:bde16905b55cdbecd197d5b66e3b630945e1a747
-// @DATE:Sun Mar 16 17:49:51 HST 2014
+// @HASH:bb622a8b3280f9baa3c0c24ae8cbe3e80b9dbfb9
+// @DATE:Sun Mar 16 18:59:54 HST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -44,7 +44,7 @@ def at(file:String): Call = {
 class ReverseApplication {
     
 
-// @LINE:9
+// @LINE:10
 def submitPost(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "posts")
 }
@@ -68,7 +68,7 @@ def explore(): Call = {
 }
                                                 
 
-// @LINE:10
+// @LINE:9
 def posts(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "posts")
 }
@@ -122,7 +122,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 class ReverseApplication {
     
 
-// @LINE:9
+// @LINE:10
 def submitPost : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.submitPost",
    """
@@ -166,7 +166,7 @@ def explore : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:10
+// @LINE:9
 def posts : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.posts",
    """
@@ -226,7 +226,7 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 class ReverseApplication {
     
 
-// @LINE:9
+// @LINE:10
 def submitPost(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.submitPost(), HandlerDef(this, "controllers.Application", "submitPost", Seq(), "POST", """""", _prefix + """posts""")
 )
@@ -250,7 +250,7 @@ def explore(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:10
+// @LINE:9
 def posts(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.posts(), HandlerDef(this, "controllers.Application", "posts", Seq(), "GET", """""", _prefix + """posts""")
 )

@@ -7,7 +7,7 @@ import models.*;
 import views.html.*;
 
 public class Application extends Controller {
-	static Form<Post> postForm = Form.form(Post.class);
+	static Form<PostSubmission> postForm = Form.form(PostSubmission.class);
 
     public static Result index() {
         return ok(index.render("Welcome to the home page."));
@@ -22,18 +22,19 @@ public class Application extends Controller {
     }
 
     public static Result submitPost(){
-    	Form<Post> filledForm = postForm.bindFromRequest();
+    	Form<PostSubmission> filledForm = postForm.bindFromRequest();
     	if (filledForm.hasErrors()){
-    		return badRequest(views.html.submitPost.render(Post.all(), filledForm));
+    		System.out.println(filledForm.errors());
+    		return badRequest(views.html.submitPost.render(PostSubmission.all(), filledForm));
     	}
     	else{
-    		Post.create(filledForm.get());
+    		PostSubmission.create(filledForm.get());
     		return redirect(routes.Application.posts());
     	}
     }
 
     public static Result posts(){
-    	return ok(views.html.submitPost.render(Post.all(), postForm));
+    	return ok(views.html.submitPost.render(PostSubmission.all(), postForm));
     }
 
     public static Result deletePost(Long id){

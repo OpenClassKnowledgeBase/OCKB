@@ -1,4 +1,4 @@
- @(posts: List[Post], postForm: Form[Post])
+ @(posts: List[PostSubmission], postForm: Form[PostSubmission])
 
  @import helper._
 
@@ -7,7 +7,9 @@
  	<ul>
  		@for(post <- posts){
  			<li>
- 				@post.title
+                Category: @post.category <br>
+ 				Title: @post.title <br>
+                Content: @post.content <br>
  				@form(routes.Application.deletePost(post.id)){
  					<input type="submit" value="Delete">
  				}
@@ -16,7 +18,9 @@
  	</ul>
  	<h2>Add a new Post</h2>
  	@form(routes.Application.submitPost()){
- 		@inputText(postForm("Title"))
+ 		@inputText(postForm("Category"))
+        @inputText(postForm("Title"))
+        @inputText(postForm("Content"))
  		<input type="submit" value="Create">
  	}
 }

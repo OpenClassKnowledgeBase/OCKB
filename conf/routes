@@ -6,8 +6,8 @@
 GET     /                           controllers.Application.index()
 GET     /submit                     controllers.Application.submit()
 GET     /explore                    controllers.Application.explore()
+GET     /posts                      controllers.Application.posts()
 POST	/posts						controllers.Application.submitPost()
-GET 	/posts						controllers.Application.posts()
 POST    /posts/:id/delete           controllers.Application.deletePost(id: Long)
 
 
