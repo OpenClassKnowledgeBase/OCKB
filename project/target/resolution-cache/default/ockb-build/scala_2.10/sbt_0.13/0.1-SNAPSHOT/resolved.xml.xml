@@ -4,7 +4,7 @@
 		module="ockb-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20140309221837"
+		publication="20140316195700"
 		e:scalaVersion="2.10" e:sbtVersion="0.13"
 	>
 		<description>

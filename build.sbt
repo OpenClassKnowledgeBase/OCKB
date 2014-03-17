@@ -3,8 +3,8 @@ name := "play-ockb"
 version := "1.0-SNAPSHOT"
 
 libraryDependencies ++= Seq(
+  javaJpa,
   javaJdbc,
-  javaEbean,
   cache
 )     
 

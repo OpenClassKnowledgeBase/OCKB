@@ -6,6 +6,7 @@
 GET     /                           controllers.Application.index()
 GET     /submit                     controllers.Application.submit()
 GET     /explore                    controllers.Application.explore()
+GET		/comments					controllers.Application.comments()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

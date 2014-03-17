@@ -7,14 +7,20 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for play-ockb#play-ockb_2.10;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@107aac4a[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7c2650ae[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.2 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.typesafe.play#play-java-jpa_2.10;2.2.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-java-jpa_2.10;2.2.1 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-java-jpa_2.10;2.2.1[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.typesafe.play#play-java-jpa_2.10;2.2.1[0m
+[0m[[0mdebug[0m] [0m	found com.typesafe.play#play-java-jpa_2.10;2.2.1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-java-jdbc_2.10;2.2.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-java-jdbc_2.10;2.2.1 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-java-jdbc_2.10;2.2.1[0m
@@ -694,42 +700,16 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-ebean_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving com.typesafe.play#play-java-ebean_2.10;2.2.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-java-ebean_2.10;2.2.1 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-java-ebean_2.10;2.2.1[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.typesafe.play#play-java-ebean_2.10;2.2.1[0m
-[0m[[0mdebug[0m] [0m	found com.typesafe.play#play-java-ebean_2.10;2.2.1 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.avaje.ebeanorm#avaje-ebeanorm;3.2.2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.avaje.ebeanorm#avaje-ebeanorm;3.2.2[0m
-[0m[[0mdebug[0m] [0m	found org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: javax.persistence#persistence-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mexcluding dependency: javax.persistence#persistence-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1[0m
-[0m[[0mdebug[0m] [0m	found org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final[0m
 [0m[[0mdebug[0m] [0m	found org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-cache_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-cache_2.10;2.2.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-cache_2.10;2.2.1 {compile=[default(compile)]}[0m
@@ -764,7 +744,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->com.typesafe.play#play-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.10;2.2.1->com.typesafe.play#play_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.10;2.2.1->com.typesafe.play#sbt-link;2.2.1 [compile->default(compile)][0m
@@ -1148,22 +1129,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-ebean_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: javax.persistence#persistence-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mexcluding dependency: javax.persistence#persistence-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-cache_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.1->com.typesafe.play#play_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.1->net.sf.ehcache#ehcache-core;2.6.6 [compile->default(compile)][0m
@@ -1189,7 +1159,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->com.typesafe.play#play-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.10;2.2.1->com.typesafe.play#play_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.10;2.2.1->com.typesafe.play#sbt-link;2.2.1 [compile->default(compile)][0m
@@ -1573,22 +1544,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-ebean_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: javax.persistence#persistence-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mexcluding dependency: javax.persistence#persistence-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-cache_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.1->com.typesafe.play#play_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.1->net.sf.ehcache#ehcache-core;2.6.6 [compile->default(compile)][0m
@@ -2537,7 +2497,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->com.typesafe.play#play-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.10;2.2.1->com.typesafe.play#play_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.10;2.2.1->com.typesafe.play#sbt-link;2.2.1 [compile->default(compile)][0m
@@ -2921,22 +2882,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-ebean_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: javax.persistence#persistence-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mexcluding dependency: javax.persistence#persistence-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-cache_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.1->com.typesafe.play#play_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.1->net.sf.ehcache#ehcache-core;2.6.6 [compile->default(compile)][0m
@@ -2964,7 +2914,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->com.typesafe.play#play-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.10;2.2.1->com.typesafe.play#play_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.10;2.2.1->com.typesafe.play#sbt-link;2.2.1 [compile->default(compile)][0m
@@ -3348,22 +3299,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-ebean_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: javax.persistence#persistence-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mexcluding dependency: javax.persistence#persistence-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-cache_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.1->com.typesafe.play#play_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.1->net.sf.ehcache#ehcache-core;2.6.6 [compile->default(compile)][0m
@@ -3391,7 +3331,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->com.typesafe.play#play-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.10;2.2.1->com.typesafe.play#play_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.10;2.2.1->com.typesafe.play#sbt-link;2.2.1 [compile->default(compile)][0m
@@ -3775,22 +3716,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.1->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-ebean_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: javax.persistence#persistence-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mexcluding dependency: javax.persistence#persistence-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.10;2.2.1->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java-jdbc_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies play-ockb#play-ockb_2.10;1.0-SNAPSHOT->com.typesafe.play#play-cache_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.1->com.typesafe.play#play_2.10;2.2.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.1->net.sf.ehcache#ehcache-core;2.6.6 [compile->default(compile)][0m
@@ -4976,11 +4906,12 @@
 [0m[[0mdebug[0m] [0m	resolved ivy file produced in /Users/renzeereyes/School/ICS414/OCKB/target/resolution-cache/play-ockb/play-ockb_2.10/1.0-SNAPSHOT/resolved.xml.xml[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.2!scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-jpa_2.10;2.2.1!play-java-jpa_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-jdbc_2.10;2.2.1!play-java-jdbc_2.10.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-ebean_2.10;2.2.1!play-java-ebean_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-cache_2.10;2.2.1!play-cache_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play_2.10;2.2.1!play_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java_2.10;2.2.1!play-java_2.10.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final!hibernate-jpa-2.0-api.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-jdbc_2.10;2.2.1!play-jdbc_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.jolbox#bonecp;0.8.0.RELEASE!bonecp.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.guava#guava;14.0.1!guava.jar(bundle)[0m
@@ -5036,9 +4967,6 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] javax.validation#validation-api;1.1.0.Final!validation-api.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.jboss.logging#jboss-logging;3.1.1.GA!jboss-logging.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.fasterxml#classmate;0.8.0!classmate.jar(bundle)[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.avaje.ebeanorm#avaje-ebeanorm;3.2.2!avaje-ebeanorm.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.avaje.ebeanorm#avaje-ebeanorm-agent;3.2.1!avaje-ebeanorm-agent.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final!hibernate-jpa-2.0-api.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.sf.ehcache#ehcache-core;2.6.6!ehcache-core.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-test_2.10;2.2.1!play-test_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] junit#junit;4.11!junit.jar[0m
@@ -5100,7 +5028,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.2!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2946ms :: artifacts dl 136ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1817ms :: artifacts dl 68ms[0m
 [0m[[0mdebug[0m] [0m	report for play-ockb#play-ockb_2.10;1.0-SNAPSHOT compile produced in /Users/renzeereyes/School/ICS414/OCKB/target/resolution-cache/reports/play-ockb-play-ockb_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for play-ockb#play-ockb_2.10;1.0-SNAPSHOT runtime produced in /Users/renzeereyes/School/ICS414/OCKB/target/resolution-cache/reports/play-ockb-play-ockb_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for play-ockb#play-ockb_2.10;1.0-SNAPSHOT test produced in /Users/renzeereyes/School/ICS414/OCKB/target/resolution-cache/reports/play-ockb-play-ockb_2.10-test.xml[0m
@@ -5114,5 +5042,5 @@
 [0m[[0mdebug[0m] [0m	report for play-ockb#play-ockb_2.10;1.0-SNAPSHOT docs produced in /Users/renzeereyes/School/ICS414/OCKB/target/resolution-cache/reports/play-ockb-play-ockb_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for play-ockb#play-ockb_2.10;1.0-SNAPSHOT pom produced in /Users/renzeereyes/School/ICS414/OCKB/target/resolution-cache/reports/play-ockb-play-ockb_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for play-ockb#play-ockb_2.10;1.0-SNAPSHOT scala-tool produced in /Users/renzeereyes/School/ICS414/OCKB/target/resolution-cache/reports/play-ockb-play-ockb_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2946ms resolve - 136ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (1817ms resolve - 68ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

@@ -50,7 +50,7 @@ Seq[Any](format.raw/*1.32*/("""
 	          <a class="navbar-brand" href="#">OCKB</a>
 	        </div>
 	        <div class="navbar-collapse collapse">
-	          <form class="navbar-form navbar-right" action="#">
+	          <form class="navbar-form navbar-right" action=""""),_display_(Seq[Any](/*25.60*/routes/*25.66*/.Application.comments())),format.raw/*25.89*/("""">
 	            <button type="submit" class="btn btn-default">Sign in</button>
 	          </form>
 	        </div>
@@ -71,11 +71,11 @@ Seq[Any](format.raw/*1.32*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Mar 09 22:21:51 HST 2014
+                    DATE: Sun Mar 16 20:45:04 HST 2014
                     SOURCE: /Users/renzeereyes/School/ICS414/OCKB/app/views/main.scala.html
-                    HASH: 874e1479ddf84478892f18b9fdfb575d460cffc4
-                    MATRIX: 778->1|902->31|990->84|1016->89|1333->370|1348->376|1404->410|1501->471|1516->477|1570->509|1754->657|1769->663|1836->708|2615->1451|2644->1458
-                    LINES: 26->1|29->1|35->7|35->7|38->10|38->10|38->10|39->11|39->11|39->11|41->13|41->13|41->13|59->31|59->31
+                    HASH: f4acc65630547a2f6ac3be9f6bafab9a73b03f7f
+                    MATRIX: 778->1|902->31|990->84|1016->89|1333->370|1348->376|1404->410|1501->471|1516->477|1570->509|1754->657|1769->663|1836->708|2466->1302|2481->1308|2526->1331|2711->1480|2740->1487
+                    LINES: 26->1|29->1|35->7|35->7|38->10|38->10|38->10|39->11|39->11|39->11|41->13|41->13|41->13|53->25|53->25|53->25|59->31|59->31
                     -- GENERATED --
                 */
             
