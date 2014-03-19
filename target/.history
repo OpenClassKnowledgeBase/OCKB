@@ -76,3 +76,4 @@ clean
 run
 reload
 run
+exit
