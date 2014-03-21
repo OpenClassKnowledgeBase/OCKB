@@ -5,27 +5,19 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.data.format.*;
-import play.data.validation.*;
-import play.db.jpa.*;
+import play.data.validation.Constraints.Required;
+import play.db.ebean.Model;
 
-/**
- * Category entity managed by JPA
- */
 @Entity
-public class Category {
+public class Category extends Model {
 
-	@Id
-	public Long id;
+	@Required
+	public String id;
 
-	@Constraints.Required
-	@ManyToOne(cascade = CascadeType.MERGE)
-	public Long post_id;
+	@Required
+	public String description;
 
-	/**
-	 * Find a Category by id.
-	 */
-	public static Category findById(Long id) {
-		return JPA.em().find(Category.class, id);
-	}
+	//help initiate queries
+	public static Finder<String,Category> find = new Finder<String,Category>(String.class, Category.class);
 
 }

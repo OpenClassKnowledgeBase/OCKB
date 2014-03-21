@@ -1,4 +1,4 @@
-name := "play-ockb"
+name := "categoryModel"
 
 version := "1.0-SNAPSHOT"
 
