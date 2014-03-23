@@ -1,0 +1,19 @@
+- !!models.Post
+    category:      CategoryOne
+    title:       TitleOne
+    content:   ContentOne
+    
+- !!models.Post
+    category:      CategoryTwo
+    title:       TitleTwo
+    content:   ContentTwo
+    
+- !!models.Post
+    category:      CategoryThree
+    title:       TitleThree
+    content:   ContentThree
+    
+- !!models.Post
+    category:      CategoryFour
+    title:       TitleFour
+    content:   ContentFour

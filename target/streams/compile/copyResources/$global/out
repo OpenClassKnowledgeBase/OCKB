@@ -1,8 +1,8 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
 [0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\conf\application.conf,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\application.conf)[0m
 [0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\conf\evolutions,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\evolutions)[0m
+[0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\conf\initial-data.yml,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\initial-data.yml)[0m
 [0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\conf\routes,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\routes)[0m
 [0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\conf\evolutions\default,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\evolutions\default)[0m
 [0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\conf\evolutions\posts,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\evolutions\posts)[0m
 [0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\conf\evolutions\default\1.sql,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\evolutions\default\1.sql)[0m
-[0m[[0mdebug[0m] [0m	(C:\xampp\htdocs\ICS414\OCKB\conf\evolutions\posts\1.sql,C:\xampp\htdocs\ICS414\OCKB\target\scala-2.10\classes\evolutions\posts\1.sql)[0m

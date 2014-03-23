@@ -9,3 +9,10 @@ run
 exit
 eclipse
 run
+play
+run
+cd ..
+play exit
+exit
+run
+exit
