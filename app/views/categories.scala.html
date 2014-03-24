@@ -1,0 +1,48 @@
+ @(categories: List[Category])
+
+ @import helper._
+
+ @main("Categories"){
+    <h1>count:  @categories.size()</h1>
+    <div class = "container">
+        <div class = "row">
+          <div class = "col-xs-12">
+            <h1>Pick a Category to Explore</h1>
+          </div>
+        </div>
+        <div class = "row">
+            <br>
+        </div>
+        
+        @for(index <- 0 until categories.size){
+            @if(index % 3 == 0){
+                <div class = "row">
+                    <div class="col-xs-6 col-sm-4">
+                        <a href = @categories(index).url>@categories(index).title</a>
+                        <p>@categories(index).description</p>
+                    </div> 
+            }
+            @if(index % 3 == 1){
+                <div class="col-xs-6 col-sm-4">
+                    <a href = @categories(index).url>@categories(index).title</a>
+                    <p>@categories(index).description</p>
+                </div>  
+            }      
+            @if(index % 3 == 2){
+                  <div class="clearfix visible-xs"></div>
+                  <div class="hidden-xs col-xs-6 col-sm-4 category">
+                      <a href = @categories(index).url>@categories(index).title</a>
+                      <p>@categories(index).description</p>
+                  </div>
+                </div>
+                <div class = "row">
+                    <br>
+                </div>
+            }
+        }
+        <div class="col-xs-6 col-sm-4">
+            <a href="RequestCategory.html" class="btn btn-primary btn-lg">Request new category</a>
+        </div>
+    </div>
+
+}

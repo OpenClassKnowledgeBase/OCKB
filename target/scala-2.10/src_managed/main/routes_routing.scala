@@ -1,6 +1,6 @@
 // @SOURCE:C:/xampp/htdocs/ICS414/OCKB/conf/routes
-// @HASH:bb622a8b3280f9baa3c0c24ae8cbe3e80b9dbfb9
-// @DATE:Sun Mar 16 18:59:54 HST 2014
+// @HASH:5bc8ea54bf0ee8a0edddbf808b3330bb301c15d7
+// @DATE:Sun Mar 23 11:41:43 HST 2014
 
 
 import play.core._
@@ -52,10 +52,14 @@ private[this] lazy val controllers_Application_submitPost4 = Route("POST", PathP
 private[this] lazy val controllers_Application_deletePost5 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("posts/"),DynamicPart("id", """[^/]+""",true),StaticPart("/delete"))))
         
 
-// @LINE:15
-private[this] lazy val controllers_Assets_at6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:12
+private[this] lazy val controllers_Application_categories6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("categories"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """submit""","""controllers.Application.submit()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """explore""","""controllers.Application.explore()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """posts""","""controllers.Application.posts()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """posts""","""controllers.Application.submitPost()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """posts/$id<[^/]+>/delete""","""controllers.Application.deletePost(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:15
+private[this] lazy val controllers_Assets_at7 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """submit""","""controllers.Application.submit()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """explore""","""controllers.Application.explore()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """posts""","""controllers.Application.posts()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """posts""","""controllers.Application.submitPost()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """posts/$id<[^/]+>/delete""","""controllers.Application.deletePost(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """categories""","""controllers.Application.categories()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -111,8 +115,16 @@ case controllers_Application_deletePost5(params) => {
 }
         
 
+// @LINE:12
+case controllers_Application_categories6(params) => {
+   call { 
+        invokeHandler(controllers.Application.categories(), HandlerDef(this, "controllers.Application", "categories", Nil,"GET", """""", Routes.prefix + """categories"""))
+   }
+}
+        
+
 // @LINE:15
-case controllers_Assets_at6(params) => {
+case controllers_Assets_at7(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }

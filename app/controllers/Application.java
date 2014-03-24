@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.avaje.ebean.Ebean;
 
+import models.Category;
 import models.Post;
 import models.PostSubmission;
 import play.data.Form;
@@ -49,5 +50,12 @@ public class Application extends Controller {
     public static Result deletePost(Long id){
     	Post.find.ref(id).delete();
     	return ok(views.html.seedPost.render(Post.all()));
+    }
+    
+    public static Result categories() {
+    	//figure out how to put this in global
+/*    	Ebean.save((List<Category>) Yaml.load("categories.yml"));*/
+    	List<Category> categoryList = Category.findAll();
+    	return ok(views.html.categories.render(categoryList));
     }
 }

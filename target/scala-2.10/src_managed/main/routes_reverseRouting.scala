@@ -1,6 +1,6 @@
 // @SOURCE:C:/xampp/htdocs/ICS414/OCKB/conf/routes
-// @HASH:bb622a8b3280f9baa3c0c24ae8cbe3e80b9dbfb9
-// @DATE:Sun Mar 16 18:59:54 HST 2014
+// @HASH:5bc8ea54bf0ee8a0edddbf808b3330bb301c15d7
+// @DATE:Sun Mar 23 11:41:43 HST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -14,6 +14,7 @@ import Router.queryString
 
 
 // @LINE:15
+// @LINE:12
 // @LINE:11
 // @LINE:10
 // @LINE:9
@@ -35,6 +36,7 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:12
 // @LINE:11
 // @LINE:10
 // @LINE:9
@@ -53,6 +55,12 @@ def submitPost(): Call = {
 // @LINE:7
 def submit(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "submit")
+}
+                                                
+
+// @LINE:12
+def categories(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "categories")
 }
                                                 
 
@@ -87,6 +95,7 @@ def index(): Call = {
 
 
 // @LINE:15
+// @LINE:12
 // @LINE:11
 // @LINE:10
 // @LINE:9
@@ -113,6 +122,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:12
 // @LINE:11
 // @LINE:10
 // @LINE:9
@@ -139,6 +149,17 @@ def submit : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function() {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "submit"})
+      }
+   """
+)
+                        
+
+// @LINE:12
+def categories : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.categories",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "categories"})
       }
    """
 )
@@ -195,6 +216,7 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 
 
 // @LINE:15
+// @LINE:12
 // @LINE:11
 // @LINE:10
 // @LINE:9
@@ -217,6 +239,7 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:12
 // @LINE:11
 // @LINE:10
 // @LINE:9
@@ -235,6 +258,12 @@ def submitPost(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 // @LINE:7
 def submit(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.submit(), HandlerDef(this, "controllers.Application", "submit", Seq(), "GET", """""", _prefix + """submit""")
+)
+                      
+
+// @LINE:12
+def categories(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.categories(), HandlerDef(this, "controllers.Application", "categories", Seq(), "GET", """""", _prefix + """categories""")
 )
                       
 
