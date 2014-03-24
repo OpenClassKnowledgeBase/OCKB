@@ -10,16 +10,19 @@ public class User extends Model {
     @Id
     public String email;
     public String name;
-    public String userType;
     public String password;
-
+    public String userType;
     public int posts;
     
     public User(String email, String name, String password) {
       this.email = email;
       this.name = name;
       this.password = password;
+      userType = "Student"; // for the purposes of testing
+      posts = 0;
     }
+    
+    public void addPost() { posts++; }
 
     public static Finder<String,User> find = new Finder<String,User>(
         String.class, User.class

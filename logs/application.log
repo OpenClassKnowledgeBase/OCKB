@@ -1,16 +1,16 @@
-2014-03-23 16:24:58,115 - [INFO] - from play in pool-6-thread-5 
+2014-03-23 20:35:13,337 - [INFO] - from play in pool-4-thread-5 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2014-03-23 16:25:03,388 - [INFO] - from play in play-internal-execution-context-1 
+2014-03-23 20:35:18,028 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-03-23 16:25:03,520 - [INFO] - from play in play-internal-execution-context-1 
+2014-03-23 20:35:18,150 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:mem:play
 
-2014-03-23 16:25:03,963 - [ERROR] - from application in New I/O worker #1 
+2014-03-23 20:35:18,609 - [ERROR] - from application in New I/O worker #1 
 
 
-! @6hjlcjpc0 - Internal server error, for (GET) [/] ->
+! @6hjmjg6cc - Internal server error, for (GET) [/] ->
 
 play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
 	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1$$anonfun$apply$1.apply$mcV$sp(Evolutions.scala:486) ~[play-jdbc_2.10-2.2.1.jar:2.2.1]
@@ -43,15 +43,12 @@ play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evoluti
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.2.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.2.jar:na]
 
-2014-03-23 16:25:13,388 - [INFO] - from play in play-internal-execution-context-1 
+2014-03-23 20:35:39,674 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-03-23 16:25:13,390 - [INFO] - from play in play-internal-execution-context-1 
+2014-03-23 20:35:39,677 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:mem:play
 
-2014-03-23 16:25:13,556 - [INFO] - from play in play-internal-execution-context-1 
+2014-03-23 20:35:39,849 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
-
-2014-03-23 16:27:22,820 - [INFO] - from play in main 
-datasource [jdbc:h2:mem:play-test-2031890210;] bound to JNDI as DefaultDS
 
