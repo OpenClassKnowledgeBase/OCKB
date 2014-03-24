@@ -8,7 +8,8 @@ create table users(
   password varchar(255) not null,
   userType varchar(255) not null,
   posts int not null,
-  );
+  constraint pk_comment primary key (id))
+;
 
 
 
