@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite hostname="Unluckyitis" name="ApplicationTest" tests="2" errors="0" failures="1" time="0.013">
+        <properties>
+      <property name="jline.esc.timeout" value="0"/><property name="sbt.ivy.home" value="C:\Users\Matt\Documents\play-2.2.2\framework\..\repository"/><property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/><property name="sun.boot.library.path" value="C:\Program Files\Java\jre7\bin"/><property name="java.vm.version" value="24.51-b03"/><property name="java.vm.vendor" value="Oracle Corporation"/><property name="java.vendor.url" value="http://java.oracle.com/"/><property name="path.separator" value=";"/><property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/><property name="file.encoding.pkg" value="sun.io"/><property name="user.country" value="US"/><property name="user.script" value=""/><property name="sun.java.launcher" value="SUN_STANDARD"/><property name="sun.os.patch.level" value="Service Pack 1"/><property name="java.vm.specification.name" value="Java Virtual Machine Specification"/><property name="user.dir" value="C:\Users\Matt\Documents\GitHub\OCKB"/><property name="java.runtime.version" value="1.7.0_51-b13"/><property name="sbt.boot.properties" value="file:///C:/Users/Matt/Documents/play-2.2.2/framework/sbt/sbt.boot.properties"/><property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/><property name="java.endorsed.dirs" value="C:\Program Files\Java\jre7\lib\endorsed"/><property name="os.arch" value="amd64"/><property name="java.io.tmpdir" value="C:\Users\Matt\AppData\Local\Temp\"/><property name="line.separator" value="
+"/><property name="java.vm.specification.vendor" value="Oracle Corporation"/><property name="user.variant" value=""/><property name="os.name" value="Windows 7"/><property name="sun.jnu.encoding" value="MS932"/><property name="java.library.path" value="C:\Windows\system32;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;%CommonProgramFiles%\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Java\jdk1.7.0_51\bin;C:\Users\Matt\Documents\play-2.2.2;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.;C:\Users\Matt\Documents\GitHub\OCKB\target\native_libraries\64bits"/><property name="sun.nio.ch.bugLevel" value=""/><property name="java.specification.name" value="Java Platform API Specification"/><property name="java.class.version" value="51.0"/><property name="play.home" value="C:\Users\Matt\Documents\play-2.2.2\framework\."/><property name="java.naming.provider.url" value="/"/><property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/><property name="os.version" value="6.1"/><property name="user.home" value="C:\Users\Matt"/><property name="user.timezone" value="Pacific/Honolulu"/><property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/><property name="file.encoding" value="UTF-8"/><property name="java.specification.version" value="1.7"/><property name="input.encoding" value="Cp1252"/><property name="java.class.path" value="C:\Users\Matt\Documents\play-2.2.2\framework\sbt\sbt-launch.jar"/><property name="user.name" value="Matt"/><property name="jline.shutdownhook" value="false"/><property name="java.naming.factory.initial" value="tyrex.naming.MemoryContextFactory"/><property name="play.version" value="2.2.2"/><property name="java.vm.specification.version" value="1.7"/><property name="sun.java.command" value="C:\Users\Matt\Documents\play-2.2.2\framework\sbt\sbt-launch.jar play"/><property name="java.home" value="C:\Program Files\Java\jre7"/><property name="sun.arch.data.model" value="64"/><property name="user.language" value="en"/><property name="java.specification.vendor" value="Oracle Corporation"/><property name="awt.toolkit" value="sun.awt.windows.WToolkit"/><property name="java.vm.info" value="mixed mode"/><property name="java.version" value="1.7.0_51"/><property name="java.ext.dirs" value="C:\Program Files\Java\jre7\lib\ext;C:\Windows\Sun\Java\lib\ext"/><property name="sun.boot.class.path" value="C:\Program Files\Java\jre7\lib\resources.jar;C:\Program Files\Java\jre7\lib\rt.jar;C:\Program Files\Java\jre7\lib\sunrsasign.jar;C:\Program Files\Java\jre7\lib\jsse.jar;C:\Program Files\Java\jre7\lib\jce.jar;C:\Program Files\Java\jre7\lib\charsets.jar;C:\Program Files\Java\jre7\lib\jfr.jar;C:\Program Files\Java\jre7\classes"/><property name="java.vendor" value="Oracle Corporation"/><property name="file.separator" value="\"/><property name="sbt.scala.version" value="2.10.3"/><property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/><property name="sun.io.unicode.encoding" value="UnicodeLittle"/><property name="sun.cpu.endian" value="little"/><property name="sun.desktop" value="windows"/><property name="sun.cpu.isalist" value="amd64"/>
+    </properties>
+        <testcase classname="ApplicationTest" name="simpleCheck" time="0.0">
+      
+    </testcase><testcase classname="ApplicationTest" name="renderTemplate" time="0.0">
+      <failure message="&lt;'
+
+
+
+&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Open Class Knowledge Base&lt;/title&gt;
+        &lt;link href=&quot;http://netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    	&lt;link href=&quot;http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;/assets/stylesheets/main.css&quot;&gt;
+        &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/png&quot; href=&quot;/assets/images/favicon.png&quot;&gt;
+        &lt;script src=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;/assets/javascripts/jquery-1.9.0.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    	&lt;div class=&quot;navbar-default navbar-fixed-top&quot;&gt;
+	      &lt;div class=&quot;container-fluid&quot;&gt;
+	        &lt;div class=&quot;navbar-header&quot;&gt;
+	          &lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.navbar-collapse&quot;&gt;
+	            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+	          &lt;/button&gt;
+	          &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;OCKB&lt;/a&gt;
+	        &lt;/div&gt;
+	        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+	          &lt;form class=&quot;navbar-form navbar-right&quot; action=&quot;/comments&quot;&gt;
+	            &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Sign in&lt;/button&gt;
+	          &lt;/form&gt;
+	        &lt;/div&gt;
+	      &lt;/div&gt;
+    	&lt;/div&gt;
+        
+
+    &lt;div class=&quot;container-fluid center-block&quot;&gt;
+
+      &lt;div class=&quot;row row-top-img&quot;&gt;
+        &lt;div class=&quot;col-lg-12&quot;&gt;
+          &lt;img src = &quot;/assets/images/logo-bluegray.gif&quot; class=&quot;img-responsive&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class = &quot;row row-top&quot;&gt;
+        &lt;div class = &quot;col-lg-12 txt-top&quot;&gt;
+          &lt;h1 class=&quot;text-center&quot;&gt; Open Class Knowledge Base &lt;/h1&gt;
+          &lt;p class = &quot;text-center&quot;&gt;Made by students, for students, the Open Class Knowledge Base features a collaborative environment that lets you interact with your classmates and professors like never before.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;!--&lt;div class=&quot;col-lg-6&quot;&gt;
+          &lt;img src = &quot;comm-based.png&quot; class = &quot;img-responsive&quot;&gt;
+        &lt;/div&gt; --&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+
+      &lt;div class = &quot;row row-fluid&quot;&gt;
+        &lt;div class = &quot;col-md-offset-1 col-md-4 col-width&quot;&gt;
+          &lt;img src = &quot;/assets/images/content.png&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class = &quot;col-md-offset-2 col-md-4 col-width col-txt&quot;&gt;
+          &lt;h1&gt; Content at your fingertips &lt;/h1&gt;
+          &lt;p class = &quot;pull-left&quot;&gt;
+          The Open Class Knowledge Base has content from all parts of ICS 211.  From simple review topics to in-depth analysis of sorting algorithms, the Open Class Knowledge Base will have what you're looking for.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+
+      &lt;div class = &quot;row row-fluid&quot;&gt;
+        &lt;div class = &quot;col-md-offset-1 col-md-4 col-width col-txt&quot;&gt;
+          &lt;h1&gt; Course collaboration &lt;/h1&gt;
+          &lt;p class=&quot;pull-right&quot;&gt;The Open Class Knowledge Base is driven by the peers you learn with and the instructors you learn from.  Connect, communicate, and collaborate with people you know and names you recognize.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-offset-2 col-md-4 col-width&quot;&gt;
+          &lt;img src = &quot;/assets/images/coursecollab.png&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+
+      &lt;div class = &quot;row row-fluid&quot;&gt;
+        &lt;div class = &quot;col-md-offset-1 col-md-4 col-width&quot;&gt;
+          &lt;img src = &quot;/assets/images/past.png&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-offset-2 col-md-4 col-width col-txt&quot;&gt;
+          &lt;h1&gt;Learn from the past, prepare for the future&lt;/h1&gt;
+          &lt;p class = &quot;pull-left&quot;&gt;
+          Got a question?  Chances are, someone may have already asked it. Utilize this feature and collaborate with the community to find new answers to old questions.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+
+      &lt;div class = &quot;row row-fluid&quot;&gt;
+          &lt;div class = &quot;col-md-offset-1 col-md-4 col-width col-txt&quot;&gt;
+            &lt;h1&gt;Beyond the classroom&lt;/h1&gt;
+            &lt;p class = &quot;pull-left&quot;&gt;
+              Open Class Knowledge Base expands on the same topics covered in class by offering different perspectives on the same problem. Go beyond the textbook and spend less time searching and more time learning.
+            &lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;col-md-offset-2 col-md-4 col-width&quot;&gt;
+            &lt;img src = &quot;/assets/images/designed.png&quot;&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+
+      &lt;div class = &quot;row row-fluid&quot;&gt;
+        &lt;div class = &quot;col-md-offset-1 col-md-4 col-width&quot;&gt;
+          &lt;img src = &quot;/assets/images/mobile.png&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-offset-2 col-md-4 col-width col-txt&quot;&gt;
+          &lt;h1&gt; Learn anywhere, anytime &lt;/h1&gt;
+          &lt;p class = &quot;pull-left&quot;&gt;Access the Open Class Knowledge Base from your tablet, mobile phone, or your laptop.  Contribute content and ask questions wherever you are, whenever you want.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+
+      &lt;div class = &quot;row-fluid bottom-text&quot;&gt;&lt;br&gt;
+        &lt;div class = &quot;text-center&quot;&gt; 
+          &lt;p&gt;Sign in with your UH info to get started &lt;/p&gt;
+          &lt;a href=&quot;#.html&quot; class=&quot;btn btn-primary btn-lg btn-bottom&quot;&gt;Sign in&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;/div&gt;
+        
+
+    &lt;footer&gt;
+      &lt;p&gt;&amp;copy; OCKB 2014&lt;/p&gt;
+    &lt;/footer&gt;
+
+
+    &lt;/body&gt;
+&lt;/html&gt;
+
+'&gt; should contain the String:&lt;'Your new application is ready.'&gt;" type="sbt.ForkMain$ForkError">
+              sbt.ForkMain$ForkError: &lt;'
+
+
+
+&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Open Class Knowledge Base&lt;/title&gt;
+        &lt;link href=&quot;http://netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    	&lt;link href=&quot;http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;/assets/stylesheets/main.css&quot;&gt;
+        &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/png&quot; href=&quot;/assets/images/favicon.png&quot;&gt;
+        &lt;script src=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;/assets/javascripts/jquery-1.9.0.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    	&lt;div class=&quot;navbar-default navbar-fixed-top&quot;&gt;
+	      &lt;div class=&quot;container-fluid&quot;&gt;
+	        &lt;div class=&quot;navbar-header&quot;&gt;
+	          &lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.navbar-collapse&quot;&gt;
+	            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+	          &lt;/button&gt;
+	          &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;OCKB&lt;/a&gt;
+	        &lt;/div&gt;
+	        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+	          &lt;form class=&quot;navbar-form navbar-right&quot; action=&quot;/comments&quot;&gt;
+	            &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Sign in&lt;/button&gt;
+	          &lt;/form&gt;
+	        &lt;/div&gt;
+	      &lt;/div&gt;
+    	&lt;/div&gt;
+        
+
+    &lt;div class=&quot;container-fluid center-block&quot;&gt;
+
+      &lt;div class=&quot;row row-top-img&quot;&gt;
+        &lt;div class=&quot;col-lg-12&quot;&gt;
+          &lt;img src = &quot;/assets/images/logo-bluegray.gif&quot; class=&quot;img-responsive&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class = &quot;row row-top&quot;&gt;
+        &lt;div class = &quot;col-lg-12 txt-top&quot;&gt;
+          &lt;h1 class=&quot;text-center&quot;&gt; Open Class Knowledge Base &lt;/h1&gt;
+          &lt;p class = &quot;text-center&quot;&gt;Made by students, for students, the Open Class Knowledge Base features a collaborative environment that lets you interact with your classmates and professors like never before.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;!--&lt;div class=&quot;col-lg-6&quot;&gt;
+          &lt;img src = &quot;comm-based.png&quot; class = &quot;img-responsive&quot;&gt;
+        &lt;/div&gt; --&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+
+      &lt;div class = &quot;row row-fluid&quot;&gt;
+        &lt;div class = &quot;col-md-offset-1 col-md-4 col-width&quot;&gt;
+          &lt;img src = &quot;/assets/images/content.png&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class = &quot;col-md-offset-2 col-md-4 col-width col-txt&quot;&gt;
+          &lt;h1&gt; Content at your fingertips &lt;/h1&gt;
+          &lt;p class = &quot;pull-left&quot;&gt;
+          The Open Class Knowledge Base has content from all parts of ICS 211.  From simple review topics to in-depth analysis of sorting algorithms, the Open Class Knowledge Base will have what you're looking for.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+
+      &lt;div class = &quot;row row-fluid&quot;&gt;
+        &lt;div class = &quot;col-md-offset-1 col-md-4 col-width col-txt&quot;&gt;
+          &lt;h1&gt; Course collaboration &lt;/h1&gt;
+          &lt;p class=&quot;pull-right&quot;&gt;The Open Class Knowledge Base is driven by the peers you learn with and the instructors you learn from.  Connect, communicate, and collaborate with people you know and names you recognize.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-offset-2 col-md-4 col-width&quot;&gt;
+          &lt;img src = &quot;/assets/images/coursecollab.png&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+
+      &lt;div class = &quot;row row-fluid&quot;&gt;
+        &lt;div class = &quot;col-md-offset-1 col-md-4 col-width&quot;&gt;
+          &lt;img src = &quot;/assets/images/past.png&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-offset-2 col-md-4 col-width col-txt&quot;&gt;
+          &lt;h1&gt;Learn from the past, prepare for the future&lt;/h1&gt;
+          &lt;p class = &quot;pull-left&quot;&gt;
+          Got a question?  Chances are, someone may have already asked it. Utilize this feature and collaborate with the community to find new answers to old questions.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+
+      &lt;div class = &quot;row row-fluid&quot;&gt;
+          &lt;div class = &quot;col-md-offset-1 col-md-4 col-width col-txt&quot;&gt;
+            &lt;h1&gt;Beyond the classroom&lt;/h1&gt;
+            &lt;p class = &quot;pull-left&quot;&gt;
+              Open Class Knowledge Base expands on the same topics covered in class by offering different perspectives on the same problem. Go beyond the textbook and spend less time searching and more time learning.
+            &lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;col-md-offset-2 col-md-4 col-width&quot;&gt;
+            &lt;img src = &quot;/assets/images/designed.png&quot;&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+
+      &lt;div class = &quot;row row-fluid&quot;&gt;
+        &lt;div class = &quot;col-md-offset-1 col-md-4 col-width&quot;&gt;
+          &lt;img src = &quot;/assets/images/mobile.png&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-offset-2 col-md-4 col-width col-txt&quot;&gt;
+          &lt;h1&gt; Learn anywhere, anytime &lt;/h1&gt;
+          &lt;p class = &quot;pull-left&quot;&gt;Access the Open Class Knowledge Base from your tablet, mobile phone, or your laptop.  Contribute content and ask questions wherever you are, whenever you want.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+
+      &lt;div class = &quot;row-fluid bottom-text&quot;&gt;&lt;br&gt;
+        &lt;div class = &quot;text-center&quot;&gt; 
+          &lt;p&gt;Sign in with your UH info to get started &lt;/p&gt;
+          &lt;a href=&quot;#.html&quot; class=&quot;btn btn-primary btn-lg btn-bottom&quot;&gt;Sign in&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;/div&gt;
+        
+
+    &lt;footer&gt;
+      &lt;p&gt;&amp;copy; OCKB 2014&lt;/p&gt;
+    &lt;/footer&gt;
+
+
+    &lt;/body&gt;
+&lt;/html&gt;
+
+'&gt; should contain the String:&lt;'Your new application is ready.'&gt;
+	at org.fest.assertions.Fail.failure(Fail.java:228)
+	at org.fest.assertions.Assert.failure(Assert.java:149)
+	at org.fest.assertions.StringAssert.contains(StringAssert.java:73)
+	at ApplicationTest.renderTemplate(ApplicationTest.java:40)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:138)
+	at com.novocode.junit.JUnitRunner.run(JUnitRunner.java:90)
+	at sbt.RunnerWrapper$1.runRunner2(FrameworkWrapper.java:220)
+	at sbt.RunnerWrapper$1.execute(FrameworkWrapper.java:233)
+	at sbt.ForkMain$Run.runTest(ForkMain.java:239)
+	at sbt.ForkMain$Run.runTestSafe(ForkMain.java:211)
+	at sbt.ForkMain$Run.runTests(ForkMain.java:187)
+	at sbt.ForkMain$Run.run(ForkMain.java:251)
+	at sbt.ForkMain.main(ForkMain.java:97)
+
+            </failure>
+    </testcase>
+        <system-out>
+          
+        </system-out>
+        <system-err>
+          
+        </system-err>
+      </testsuite>

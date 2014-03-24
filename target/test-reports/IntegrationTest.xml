@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite hostname="Unluckyitis" name="IntegrationTest" tests="1" errors="0" failures="1" time="0.001">
+        <properties>
+      <property name="jline.esc.timeout" value="0"/><property name="sbt.ivy.home" value="C:\Users\Matt\Documents\play-2.2.2\framework\..\repository"/><property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/><property name="sun.boot.library.path" value="C:\Program Files\Java\jre7\bin"/><property name="java.vm.version" value="24.51-b03"/><property name="java.vm.vendor" value="Oracle Corporation"/><property name="java.vendor.url" value="http://java.oracle.com/"/><property name="path.separator" value=";"/><property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/><property name="file.encoding.pkg" value="sun.io"/><property name="user.country" value="US"/><property name="user.script" value=""/><property name="sun.java.launcher" value="SUN_STANDARD"/><property name="sun.os.patch.level" value="Service Pack 1"/><property name="java.vm.specification.name" value="Java Virtual Machine Specification"/><property name="user.dir" value="C:\Users\Matt\Documents\GitHub\OCKB"/><property name="java.runtime.version" value="1.7.0_51-b13"/><property name="sbt.boot.properties" value="file:///C:/Users/Matt/Documents/play-2.2.2/framework/sbt/sbt.boot.properties"/><property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/><property name="java.endorsed.dirs" value="C:\Program Files\Java\jre7\lib\endorsed"/><property name="os.arch" value="amd64"/><property name="java.io.tmpdir" value="C:\Users\Matt\AppData\Local\Temp\"/><property name="line.separator" value="
+"/><property name="java.vm.specification.vendor" value="Oracle Corporation"/><property name="user.variant" value=""/><property name="os.name" value="Windows 7"/><property name="sun.jnu.encoding" value="MS932"/><property name="java.library.path" value="C:\Windows\system32;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;%CommonProgramFiles%\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Java\jdk1.7.0_51\bin;C:\Users\Matt\Documents\play-2.2.2;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;.;C:\Users\Matt\Documents\GitHub\OCKB\target\native_libraries\64bits"/><property name="sun.nio.ch.bugLevel" value=""/><property name="java.specification.name" value="Java Platform API Specification"/><property name="java.class.version" value="51.0"/><property name="play.home" value="C:\Users\Matt\Documents\play-2.2.2\framework\."/><property name="java.naming.provider.url" value="/"/><property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/><property name="os.version" value="6.1"/><property name="user.home" value="C:\Users\Matt"/><property name="user.timezone" value="Pacific/Honolulu"/><property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/><property name="file.encoding" value="UTF-8"/><property name="java.specification.version" value="1.7"/><property name="input.encoding" value="Cp1252"/><property name="java.class.path" value="C:\Users\Matt\Documents\play-2.2.2\framework\sbt\sbt-launch.jar"/><property name="user.name" value="Matt"/><property name="jline.shutdownhook" value="false"/><property name="java.naming.factory.initial" value="tyrex.naming.MemoryContextFactory"/><property name="play.version" value="2.2.2"/><property name="java.vm.specification.version" value="1.7"/><property name="sun.java.command" value="C:\Users\Matt\Documents\play-2.2.2\framework\sbt\sbt-launch.jar play"/><property name="java.home" value="C:\Program Files\Java\jre7"/><property name="sun.arch.data.model" value="64"/><property name="user.language" value="en"/><property name="java.specification.vendor" value="Oracle Corporation"/><property name="awt.toolkit" value="sun.awt.windows.WToolkit"/><property name="java.vm.info" value="mixed mode"/><property name="java.version" value="1.7.0_51"/><property name="java.ext.dirs" value="C:\Program Files\Java\jre7\lib\ext;C:\Windows\Sun\Java\lib\ext"/><property name="sun.boot.class.path" value="C:\Program Files\Java\jre7\lib\resources.jar;C:\Program Files\Java\jre7\lib\rt.jar;C:\Program Files\Java\jre7\lib\sunrsasign.jar;C:\Program Files\Java\jre7\lib\jsse.jar;C:\Program Files\Java\jre7\lib\jce.jar;C:\Program Files\Java\jre7\lib\charsets.jar;C:\Program Files\Java\jre7\lib\jfr.jar;C:\Program Files\Java\jre7\classes"/><property name="java.vendor" value="Oracle Corporation"/><property name="file.separator" value="\"/><property name="sbt.scala.version" value="2.10.3"/><property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/><property name="sun.io.unicode.encoding" value="UnicodeLittle"/><property name="sun.cpu.endian" value="little"/><property name="sun.desktop" value="windows"/><property name="sun.cpu.isalist" value="amd64"/>
+    </properties>
+        <testcase classname="IntegrationTest" name="test" time="0.0">
+      <failure message="com.gargoylesoftware.htmlunit.ScriptException: ReferenceError: &quot;jQuery&quot; is not defined. (https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js#6)
+Build info: version: '2.32.0', revision: '6c40c187d01409a5dc3b7f8251859150c8af0bcb', time: '2013-04-09 10:39:28'
+System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: HtmlUnitDriver" type="sbt.ForkMain$ForkError">
+              sbt.ForkMain$ForkError: com.gargoylesoftware.htmlunit.ScriptException: ReferenceError: &quot;jQuery&quot; is not defined. (https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js#6)
+Build info: version: '2.32.0', revision: '6c40c187d01409a5dc3b7f8251859150c8af0bcb', time: '2013-04-09 10:39:28'
+System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: HtmlUnitDriver
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.get(HtmlUnitDriver.java:367)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.get(HtmlUnitDriver.java:346)
+	at org.fluentlenium.core.Fluent.goTo(Fluent.java:228)
+	at IntegrationTest$1.invoke(IntegrationTest.java:22)
+	at IntegrationTest$1.invoke(IntegrationTest.java:20)
+	at play.test.Helpers.running(Helpers.java:433)
+	at IntegrationTest.test(IntegrationTest.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:138)
+	at com.novocode.junit.JUnitRunner.run(JUnitRunner.java:90)
+	at sbt.RunnerWrapper$1.runRunner2(FrameworkWrapper.java:220)
+	at sbt.RunnerWrapper$1.execute(FrameworkWrapper.java:233)
+	at sbt.ForkMain$Run.runTest(ForkMain.java:239)
+	at sbt.ForkMain$Run.runTestSafe(ForkMain.java:211)
+	at sbt.ForkMain$Run.runTests(ForkMain.java:187)
+	at sbt.ForkMain$Run.run(ForkMain.java:251)
+	at sbt.ForkMain.main(ForkMain.java:97)
+Caused by: sbt.ForkMain$ForkError: ReferenceError: &quot;jQuery&quot; is not defined. (https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js#6)
+	at com.gargoylesoftware.htmlunit.javascript.JavaScriptEngine$HtmlUnitContextAction.run(JavaScriptEngine.java:669)
+	at net.sourceforge.htmlunit.corejs.javascript.Context.call(Context.java:601)
+	at net.sourceforge.htmlunit.corejs.javascript.ContextFactory.call(ContextFactory.java:507)
+	at com.gargoylesoftware.htmlunit.javascript.JavaScriptEngine.execute(JavaScriptEngine.java:555)
+	at com.gargoylesoftware.htmlunit.html.HtmlPage.loadExternalJavaScriptFile(HtmlPage.java:1082)
+	at com.gargoylesoftware.htmlunit.html.HtmlScript.executeScriptIfNeeded(HtmlScript.java:399)
+	at com.gargoylesoftware.htmlunit.html.HtmlScript$3.execute(HtmlScript.java:260)
+	at com.gargoylesoftware.htmlunit.html.HtmlScript.onAllChildrenAddedToPage(HtmlScript.java:276)
+	at com.gargoylesoftware.htmlunit.html.HTMLParser$HtmlUnitDOMBuilder.endElement(HTMLParser.java:676)
+	at org.apache.xerces.parsers.AbstractSAXParser.endElement(Unknown Source)
+	at com.gargoylesoftware.htmlunit.html.HTMLParser$HtmlUnitDOMBuilder.endElement(HTMLParser.java:635)
+	at org.cyberneko.html.HTMLTagBalancer.callEndElement(HTMLTagBalancer.java:1170)
+	at org.cyberneko.html.HTMLTagBalancer.endElement(HTMLTagBalancer.java:1072)
+	at org.cyberneko.html.filters.DefaultFilter.endElement(DefaultFilter.java:206)
+	at org.cyberneko.html.filters.NamespaceBinder.endElement(NamespaceBinder.java:330)
+	at org.cyberneko.html.HTMLScanner$ContentScanner.scanEndElement(HTMLScanner.java:3074)
+	at org.cyberneko.html.HTMLScanner$ContentScanner.scan(HTMLScanner.java:2041)
+	at org.cyberneko.html.HTMLScanner.scanDocument(HTMLScanner.java:918)
+	at org.cyberneko.html.HTMLConfiguration.parse(HTMLConfiguration.java:499)
+	at org.cyberneko.html.HTMLConfiguration.parse(HTMLConfiguration.java:452)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at com.gargoylesoftware.htmlunit.html.HTMLParser$HtmlUnitDOMBuilder.parse(HTMLParser.java:892)
+	at com.gargoylesoftware.htmlunit.html.HTMLParser.parse(HTMLParser.java:241)
+	at com.gargoylesoftware.htmlunit.html.HTMLParser.parseHtml(HTMLParser.java:187)
+	at com.gargoylesoftware.htmlunit.DefaultPageCreator.createHtmlPage(DefaultPageCreator.java:268)
+	at com.gargoylesoftware.htmlunit.DefaultPageCreator.createPage(DefaultPageCreator.java:156)
+	at com.gargoylesoftware.htmlunit.WebClient.loadWebResponseInto(WebClient.java:434)
+	at com.gargoylesoftware.htmlunit.WebClient.getPage(WebClient.java:309)
+	at com.gargoylesoftware.htmlunit.WebClient.getPage(WebClient.java:374)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.get(HtmlUnitDriver.java:359)
+	... 41 more
+Caused by: sbt.ForkMain$ForkError: ReferenceError: &quot;jQuery&quot; is not defined. (https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js#6)
+	at net.sourceforge.htmlunit.corejs.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3603)
+	at net.sourceforge.htmlunit.corejs.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3587)
+	at net.sourceforge.htmlunit.corejs.javascript.ScriptRuntime.notFoundError(ScriptRuntime.java:3657)
+	at net.sourceforge.htmlunit.corejs.javascript.ScriptRuntime.name(ScriptRuntime.java:1685)
+	at net.sourceforge.htmlunit.corejs.javascript.Interpreter.interpretLoop(Interpreter.java:1622)
+	at net.sourceforge.htmlunit.corejs.javascript.Interpreter.interpret(Interpreter.java:798)
+	at net.sourceforge.htmlunit.corejs.javascript.InterpretedFunction.call(InterpretedFunction.java:105)
+	at net.sourceforge.htmlunit.corejs.javascript.ContextFactory.doTopCall(ContextFactory.java:405)
+	at com.gargoylesoftware.htmlunit.javascript.HtmlUnitContextFactory.doTopCall(HtmlUnitContextFactory.java:275)
+	at net.sourceforge.htmlunit.corejs.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3031)
+	at net.sourceforge.htmlunit.corejs.javascript.InterpretedFunction.exec(InterpretedFunction.java:115)
+	at com.gargoylesoftware.htmlunit.javascript.JavaScriptEngine$3.doRun(JavaScriptEngine.java:546)
+	at com.gargoylesoftware.htmlunit.javascript.JavaScriptEngine$HtmlUnitContextAction.run(JavaScriptEngine.java:654)
+	... 70 more
+
+            </failure>
+    </testcase>
+        <system-out>
+          
+        </system-out>
+        <system-err>
+          
+        </system-err>
+      </testsuite>

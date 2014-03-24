@@ -1,7 +1,7 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/conf/application.conf,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/conf/evolutions,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/evolutions)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/conf/routes,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/routes)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/conf/evolutions/default,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/evolutions/default)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/conf/evolutions/default/1.sql,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/evolutions/default/1.sql)[0m
-[0m[[0mdebug[0m] [0m	(/Users/renzeereyes/School/ICS414/OCKB/conf/evolutions/default/2.sql,/Users/renzeereyes/School/ICS414/OCKB/target/scala-2.10/classes/evolutions/default/2.sql)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Matt\Documents\GitHub\OCKB\conf\application.conf,C:\Users\Matt\Documents\GitHub\OCKB\target\scala-2.10\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Matt\Documents\GitHub\OCKB\conf\evolutions,C:\Users\Matt\Documents\GitHub\OCKB\target\scala-2.10\classes\evolutions)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Matt\Documents\GitHub\OCKB\conf\routes,C:\Users\Matt\Documents\GitHub\OCKB\target\scala-2.10\classes\routes)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Matt\Documents\GitHub\OCKB\conf\evolutions\default,C:\Users\Matt\Documents\GitHub\OCKB\target\scala-2.10\classes\evolutions\default)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Matt\Documents\GitHub\OCKB\conf\evolutions\default\1.sql,C:\Users\Matt\Documents\GitHub\OCKB\target\scala-2.10\classes\evolutions\default\1.sql)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Matt\Documents\GitHub\OCKB\conf\evolutions\default\2.sql,C:\Users\Matt\Documents\GitHub\OCKB\target\scala-2.10\classes\evolutions\default\2.sql)[0m

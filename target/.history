@@ -76,3 +76,10 @@ clean
 run
 reload
 run
+eclipse
+last
+eclipse with-source=true
+play
+run
+test
+exit
