@@ -3,12 +3,13 @@
 # --- !Ups
 
 create table user(
+  id bigint not null,
   email longtext not null,
   name longtext not null,
   password longtext not null,
   usertype longtext not null,
   posts bigint not null,
-  constraint pk_user primary key (email)
+  PRIMARY KEY (id)
   );
 
 create sequence user_seq;
