@@ -3,6 +3,7 @@ package controllers;
 import java.util.List;
 
 import models.Comment;
+import models.User;
 import play.*;
 import play.mvc.*;
 import views.html.*;
@@ -24,6 +25,11 @@ public class Application extends Controller {
     public static Result comments() {
     	List<Comment> cmntList = Comment.all();
     	return ok(views.html.comments.render(cmntList));
+    }
+    
+    public static Result users() {
+    	List<User> userList = User.all();
+    	return ok(views.html.users.render(userList));
     }
 
 }

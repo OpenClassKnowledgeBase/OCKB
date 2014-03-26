@@ -12,6 +12,7 @@ create table comment (
 create sequence comment_seq start with 1000;
 
 
+
 # --- !Downs
 
 SET REFERENTIAL_INTEGRITY FALSE;

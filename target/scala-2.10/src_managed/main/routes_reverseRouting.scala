@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/Matt/Documents/GitHub/OCKB/conf/routes
-// @HASH:15e787d875cf6ef1f9b89e6b769033d7ca010ba9
-// @DATE:Sun Mar 23 16:21:57 HST 2014
+// @HASH:719ad1a144ed32c1ad008bf77f20208c5780fa26
+// @DATE:Sun Mar 23 23:34:30 HST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,18 +13,19 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:12
+// @LINE:13
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
 // @LINE:6
 package controllers {
 
-// @LINE:12
+// @LINE:13
 class ReverseAssets {
     
 
-// @LINE:12
+// @LINE:13
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -33,6 +34,7 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -40,15 +42,15 @@ def at(file:String): Call = {
 class ReverseApplication {
     
 
-// @LINE:9
-def comments(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "comments")
+// @LINE:7
+def submit(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "submit")
 }
                                                 
 
-// @LINE:6
-def index(): Call = {
-   Call("GET", _prefix)
+// @LINE:10
+def users(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "users")
 }
                                                 
 
@@ -58,9 +60,15 @@ def explore(): Call = {
 }
                                                 
 
-// @LINE:7
-def submit(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "submit")
+// @LINE:6
+def index(): Call = {
+   Call("GET", _prefix)
+}
+                                                
+
+// @LINE:9
+def comments(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "comments")
 }
                                                 
     
@@ -70,18 +78,19 @@ def submit(): Call = {
                   
 
 
-// @LINE:12
+// @LINE:13
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:12
+// @LINE:13
 class ReverseAssets {
     
 
-// @LINE:12
+// @LINE:13
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -95,6 +104,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -102,23 +112,23 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 class ReverseApplication {
     
 
-// @LINE:9
-def comments : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.comments",
+// @LINE:7
+def submit : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.submit",
    """
       function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "comments"})
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "submit"})
       }
    """
 )
                         
 
-// @LINE:6
-def index : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.index",
+// @LINE:10
+def users : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.users",
    """
       function() {
-      return _wA({method:"GET", url:"""" + _prefix + """"})
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "users"})
       }
    """
 )
@@ -135,12 +145,23 @@ def explore : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:7
-def submit : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.submit",
+// @LINE:6
+def index : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.index",
    """
       function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "submit"})
+      return _wA({method:"GET", url:"""" + _prefix + """"})
+      }
+   """
+)
+                        
+
+// @LINE:9
+def comments : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.comments",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "comments"})
       }
    """
 )
@@ -152,7 +173,8 @@ def submit : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:12
+// @LINE:13
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -160,11 +182,11 @@ def submit : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:12
+// @LINE:13
 class ReverseAssets {
     
 
-// @LINE:12
+// @LINE:13
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -173,6 +195,7 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -180,15 +203,15 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 class ReverseApplication {
     
 
-// @LINE:9
-def comments(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.comments(), HandlerDef(this, "controllers.Application", "comments", Seq(), "GET", """""", _prefix + """comments""")
+// @LINE:7
+def submit(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.submit(), HandlerDef(this, "controllers.Application", "submit", Seq(), "GET", """""", _prefix + """submit""")
 )
                       
 
-// @LINE:6
-def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """ Home page""", _prefix + """""")
+// @LINE:10
+def users(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.users(), HandlerDef(this, "controllers.Application", "users", Seq(), "GET", """""", _prefix + """users""")
 )
                       
 
@@ -198,9 +221,15 @@ def explore(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:7
-def submit(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.submit(), HandlerDef(this, "controllers.Application", "submit", Seq(), "GET", """""", _prefix + """submit""")
+// @LINE:6
+def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """ Home page""", _prefix + """""")
+)
+                      
+
+// @LINE:9
+def comments(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.comments(), HandlerDef(this, "controllers.Application", "comments", Seq(), "GET", """""", _prefix + """comments""")
 )
                       
     

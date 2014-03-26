@@ -1,0 +1,11 @@
+@(userList: List[User])
+
+@main("Users") {
+
+    <ul> 
+		@for(user <- userList) {
+		  <li>@user.email - @user.name - @user.password - @user.userType - @user.posts</li>
+		} 
+	</ul>
+
+}
