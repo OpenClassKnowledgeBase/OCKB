@@ -44,8 +44,8 @@ Seq[Any](format.raw/*1.19*/("""
           <p class = "text-center">Made by students, for students, the Open Class Knowledge Base features a collaborative environment that lets you interact with your classmates and professors like never before.</p>
         </div>
         <!--<div class="col-lg-6">
-<img src = "comm-based.png" class = "img-responsive">
-</div> -->
+          <img src = "comm-based.png" class = "img-responsive">
+        </div> -->
       </div>
       <hr>
 
@@ -56,7 +56,7 @@ Seq[Any](format.raw/*1.19*/("""
         <div class = "col-md-offset-2 col-md-4 col-width col-txt">
           <h1> Content at your fingertips </h1>
           <p class = "pull-left">
-          The Open Class Knowledge Base has content from all parts of ICS 211. From simple review topics to in-depth analysis of sorting algorithms, the Open Class Knowledge Base will have what you're looking for.
+          The Open Class Knowledge Base has content from all parts of ICS 211.  From simple review topics to in-depth analysis of sorting algorithms, the Open Class Knowledge Base will have what you're looking for.
           </p>
         </div>
       </div>
@@ -65,7 +65,7 @@ Seq[Any](format.raw/*1.19*/("""
       <div class = "row row-fluid">
         <div class = "col-md-offset-1 col-md-4 col-width col-txt">
           <h1> Course collaboration </h1>
-          <p class="pull-right">The Open Class Knowledge Base is driven by the peers you learn with and the instructors you learn from. Connect, communicate, and collaborate with people you know and names you recognize.</p>
+          <p class="pull-right">The Open Class Knowledge Base is driven by the peers you learn with and the instructors you learn from.  Connect, communicate, and collaborate with people you know and names you recognize.</p>
         </div>
         <div class="col-md-offset-2 col-md-4 col-width">
           <img src = """"),_display_(Seq[Any](/*43.24*/routes/*43.30*/.Assets.at("images/coursecollab.png"))),format.raw/*43.67*/("""">
@@ -80,7 +80,7 @@ Seq[Any](format.raw/*1.19*/("""
         <div class="col-md-offset-2 col-md-4 col-width col-txt">
           <h1>Learn from the past, prepare for the future</h1>
           <p class = "pull-left">
-          Got a question? Chances are, someone may have already asked it. Utilize this feature and collaborate with the community to find new answers to old questions.
+          Got a question?  Chances are, someone may have already asked it. Utilize this feature and collaborate with the community to find new answers to old questions.
           </p>
         </div>
       </div>
@@ -105,15 +105,15 @@ Seq[Any](format.raw/*1.19*/("""
         </div>
         <div class="col-md-offset-2 col-md-4 col-width col-txt">
           <h1> Learn anywhere, anytime </h1>
-          <p class = "pull-left">Access the Open Class Knowledge Base from your tablet, mobile phone, or your laptop. Contribute content and ask questions wherever you are, whenever you want.</p>
+          <p class = "pull-left">Access the Open Class Knowledge Base from your tablet, mobile phone, or your laptop.  Contribute content and ask questions wherever you are, whenever you want.</p>
         </div>
       </div>
       <hr>
 
       <div class = "row-fluid bottom-text"><br>
-        <div class = "text-center">
+        <div class = "text-center"> 
           <p>Sign in with your UH info to get started </p>
-          <a href="#.html" class="btn btn-primary btn-lg btn-bottom">Sign in</a>
+          <a href=""""),_display_(Seq[Any](/*88.21*/routes/*88.27*/.Application.login())),format.raw/*88.47*/("""" class="btn btn-primary btn-lg btn-bottom">Sign in</a>
       </div>
     </div>
 
@@ -124,7 +124,8 @@ Seq[Any](format.raw/*1.19*/("""
       <p>&copy; OCKB 2014</p>
     </footer>
 
-""")))})))}
+""")))})),format.raw/*99.2*/("""
+"""))}
     }
     
     def render(message:String): play.api.templates.HtmlFormat.Appendable = apply(message)
@@ -136,11 +137,11 @@ Seq[Any](format.raw/*1.19*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Mar 20 20:59:13 HST 2014
+                    DATE: Tue Mar 25 19:49:28 HST 2014
                     SOURCE: C:/Users/Alaan/Desktop/categoryModel/app/views/index.scala.html
-                    HASH: 59ac2a95711b0425bb88b6f0c52cb9d282c5979e
-                    MATRIX: 774->1|885->18|922->21|963->54|1002->56|1178->197|1192->203|1251->241|1959->913|1974->919|2028->951|2964->1851|2979->1857|3038->1894|3235->2055|3250->2061|3301->2090|4258->3011|4273->3017|4328->3050|4527->3213|4542->3219|4595->3250
-                    LINES: 26->1|29->1|31->3|31->3|31->3|37->9|37->9|37->9|54->26|54->26|54->26|71->43|71->43|71->43|78->50|78->50|78->50|97->69|97->69|97->69|104->76|104->76|104->76
+                    HASH: b7618b18755ee97c00e72be723044925c6cc8fed
+                    MATRIX: 774->1|885->18|924->23|965->56|1004->58|1186->205|1200->211|1259->249|2002->956|2017->962|2071->994|3026->1913|3041->1919|3100->1956|3304->2124|3319->2130|3370->2159|4347->3100|4362->3106|4417->3139|4623->3309|4638->3315|4691->3346|5268->3887|5283->3893|5325->3913|5528->4085
+                    LINES: 26->1|29->1|31->3|31->3|31->3|37->9|37->9|37->9|54->26|54->26|54->26|71->43|71->43|71->43|78->50|78->50|78->50|97->69|97->69|97->69|104->76|104->76|104->76|116->88|116->88|116->88|127->99
                     -- GENERATED --
                 */
             

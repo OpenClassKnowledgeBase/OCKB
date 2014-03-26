@@ -8,6 +8,11 @@ create table category (
   description               varchar(255))
 ;
 
+create table comment (
+  id                        bigint,
+  content                   varchar(255))
+;
+
 
 
 
@@ -16,6 +21,8 @@ create table category (
 SET REFERENTIAL_INTEGRITY FALSE;
 
 drop table if exists category;
+
+drop table if exists comment;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 

@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/Alaan/Desktop/categoryModel/conf/routes
-// @HASH:9c24f09449355737d0bfbe9ca53280febbd777c7
-// @DATE:Thu Mar 20 20:48:03 HST 2014
+// @HASH:123c2986d8889e3cd6b684ad15ea42d5a05b3f0e
+// @DATE:Tue Mar 25 19:49:28 HST 2014
 
 
 import play.core._
@@ -32,10 +32,30 @@ lazy val defaultPrefix = { if(Routes.prefix.endsWith("/")) "" else "/" }
 private[this] lazy val controllers_Application_index0 = Route("GET", PathPattern(List(StaticPart(Routes.prefix))))
         
 
-// @LINE:9
-private[this] lazy val controllers_Assets_at1 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:7
+private[this] lazy val controllers_Application_submit1 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("submit"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:8
+private[this] lazy val controllers_Application_explore2 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("explore"))))
+        
+
+// @LINE:9
+private[this] lazy val controllers_Application_comments3 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("comments"))))
+        
+
+// @LINE:10
+private[this] lazy val controllers_Application_login4 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("login"))))
+        
+
+// @LINE:11
+private[this] lazy val controllers_Application_logout5 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("logout"))))
+        
+
+// @LINE:14
+private[this] lazy val controllers_Assets_at6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """submit""","""controllers.Application.submit()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """explore""","""controllers.Application.explore()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """comments""","""controllers.Application.comments()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""controllers.Application.logout()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -51,8 +71,48 @@ case controllers_Application_index0(params) => {
 }
         
 
+// @LINE:7
+case controllers_Application_submit1(params) => {
+   call { 
+        invokeHandler(controllers.Application.submit(), HandlerDef(this, "controllers.Application", "submit", Nil,"GET", """""", Routes.prefix + """submit"""))
+   }
+}
+        
+
+// @LINE:8
+case controllers_Application_explore2(params) => {
+   call { 
+        invokeHandler(controllers.Application.explore(), HandlerDef(this, "controllers.Application", "explore", Nil,"GET", """""", Routes.prefix + """explore"""))
+   }
+}
+        
+
 // @LINE:9
-case controllers_Assets_at1(params) => {
+case controllers_Application_comments3(params) => {
+   call { 
+        invokeHandler(controllers.Application.comments(), HandlerDef(this, "controllers.Application", "comments", Nil,"GET", """""", Routes.prefix + """comments"""))
+   }
+}
+        
+
+// @LINE:10
+case controllers_Application_login4(params) => {
+   call { 
+        invokeHandler(controllers.Application.login(), HandlerDef(this, "controllers.Application", "login", Nil,"GET", """""", Routes.prefix + """login"""))
+   }
+}
+        
+
+// @LINE:11
+case controllers_Application_logout5(params) => {
+   call { 
+        invokeHandler(controllers.Application.logout(), HandlerDef(this, "controllers.Application", "logout", Nil,"GET", """""", Routes.prefix + """logout"""))
+   }
+}
+        
+
+// @LINE:14
+case controllers_Assets_at6(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }

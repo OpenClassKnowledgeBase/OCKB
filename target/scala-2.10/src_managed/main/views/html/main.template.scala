@@ -33,12 +33,30 @@ Seq[Any](format.raw/*1.32*/("""
 <html>
     <head>
         <title>"""),_display_(Seq[Any](/*7.17*/title)),format.raw/*7.22*/("""</title>
-        <link rel="stylesheet" media="screen" href=""""),_display_(Seq[Any](/*8.54*/routes/*8.60*/.Assets.at("stylesheets/main.css"))),format.raw/*8.94*/("""">
-        <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*9.59*/routes/*9.65*/.Assets.at("images/favicon.png"))),format.raw/*9.97*/("""">
-        <script src=""""),_display_(Seq[Any](/*10.23*/routes/*10.29*/.Assets.at("javascripts/jquery-1.9.0.min.js"))),format.raw/*10.74*/("""" type="text/javascript"></script>
+        <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css" rel="stylesheet">
+    	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" media="screen" href=""""),_display_(Seq[Any](/*10.54*/routes/*10.60*/.Assets.at("stylesheets/main.css"))),format.raw/*10.94*/("""">
+        <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*11.59*/routes/*11.65*/.Assets.at("images/favicon.png"))),format.raw/*11.97*/("""">
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src=""""),_display_(Seq[Any](/*13.23*/routes/*13.29*/.Assets.at("javascripts/jquery-1.9.0.min.js"))),format.raw/*13.74*/("""" type="text/javascript"></script>
     </head>
     <body>
-        """),_display_(Seq[Any](/*13.10*/content)),format.raw/*13.17*/("""
+    	<div class="navbar-default navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">OCKB</a>
+	        </div>
+	        <div class="navbar-collapse collapse">
+	          <form class="navbar-form navbar-right" action=""""),_display_(Seq[Any](/*25.60*/routes/*25.66*/.Application.login())),format.raw/*25.86*/("""">
+	            <button type="submit" class="btn btn-default">Sign in</button>
+	          </form>
+	        </div>
+	      </div>
+    	</div>
+        """),_display_(Seq[Any](/*31.10*/content)),format.raw/*31.17*/("""
     </body>
 </html>
 """))}
@@ -53,11 +71,11 @@ Seq[Any](format.raw/*1.32*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Mar 20 20:48:04 HST 2014
+                    DATE: Tue Mar 25 19:49:28 HST 2014
                     SOURCE: C:/Users/Alaan/Desktop/categoryModel/app/views/main.scala.html
-                    HASH: 269b46d0510c6906d1a4d27ca715f76cc91ac485
-                    MATRIX: 778->1|902->31|990->84|1016->89|1113->151|1127->157|1182->191|1278->252|1292->258|1345->290|1406->315|1421->321|1488->366|1591->433|1620->440
-                    LINES: 26->1|29->1|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|41->13|41->13
+                    HASH: cfe07245d97f01737673d09f36a89b3d5104a74f
+                    MATRIX: 778->1|902->31|996->90|1022->95|1342->379|1357->385|1413->419|1511->481|1526->487|1580->519|1766->669|1781->675|1848->720|2490->1326|2505->1332|2547->1352|2738->1507|2767->1514
+                    LINES: 26->1|29->1|35->7|35->7|38->10|38->10|38->10|39->11|39->11|39->11|41->13|41->13|41->13|53->25|53->25|53->25|59->31|59->31
                     -- GENERATED --
                 */
             

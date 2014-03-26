@@ -1,0 +1,11 @@
+@(commentList: List[Comment])
+
+@main("Comments") {
+
+    <ul> 
+		@for(comment <- commentList) {
+		  <li>@comment.id - @comment.content</li>
+		} 
+	</ul>
+
+}
