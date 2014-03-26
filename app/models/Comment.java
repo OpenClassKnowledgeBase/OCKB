@@ -4,6 +4,8 @@ import java.util.*;
 
 import javax.persistence.*;
 
+import com.avaje.ebean.Page;
+
 import play.data.format.*;
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
@@ -16,6 +18,13 @@ public class Comment extends Model {
 
 	@Required
 	public String content;
+	
+	@Required 
+	public String author;
+	
+	@Required
+	@Formats.DateTime(pattern="yyyy-MM-dd")
+	public Date submission_date;
 	
 	//help initiate queries
 	public static Finder<Long,Comment> find = new Finder<Long,Comment>(Long.class, Comment.class);
@@ -32,4 +41,5 @@ public class Comment extends Model {
 	public static void delete(Long id){
 		find.ref(id).delete();
 	}
+
 }

@@ -1,0 +1,145 @@
+@(commentList: List[Comment])
+
+@main("Post") {
+
+	<div class="container">
+      <ol class="breadcrumb">
+        <li>
+          <a href="../../index.html">Home</a>
+        </li>
+        <li>
+          <a href="../../Categories.html">Categories</a>
+        </li>
+        <li class="active">Generics</li>
+      </ol>
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input class="form-control" placeholder="Search for ..." type="text">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+      </form>
+      <h1>Generics</h1>
+      <section>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-info">#148</span><a href = "" class = "postLink">Does anyone know of a good explanation for Generics?</a>
+            </div>
+            <div class="panel-body">
+              <div class = "row">
+                <div class = "col-sm-11 content">
+                 I've been Googling around for ages and I still can't figure out how Generics work. Does anybody know of a good site or video that really helped them understand this topic? Maybe with examples?
+                </div>
+                <div class = "hidden-xs col-sm-1 votes">
+                  <div>
+                    <span class = "glyphicon glyphicon glyphicon-chevron-up"></span>
+                  </div>
+                  <div class = "votes">
+                    10
+                  </div>
+                  <div>
+                    <span class = "glyphicon glyphicon glyphicon-chevron-down"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer">
+              Submitted by <span class="badge">Paul</span>
+              <div class = "date">
+                Asked on 1/14/14 at 3:43 pm
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr>
+        <h3>3 Answers </h3>
+        <hr>
+        
+        <!-- Replies -->
+        @for(comment <- commentList) {
+          <div class="panel-body">
+            <div class = "row">
+              <div class = "col-sm-11 content">
+                 @comment.content
+              </div>
+              
+              <div class = "hidden-xs col-sm-1 votes">
+                <div>
+                  <span class = "glyphicon glyphicon glyphicon-chevron-up"></span>
+                </div>
+                <div class = "votes">
+                  1
+                </div>
+                <div>
+                  <span class = "glyphicon glyphicon glyphicon-chevron-down"></span>
+                </div>
+              </div>
+            </div>
+            <div class = "authorReply">
+              Submitted by <span class = "badge">@comment.author</span><br>
+              Answered @comment.submission_date
+            </div>
+          </div>
+          <hr>
+		  
+		}
+		<!-- End of Replies -->
+		
+        <!-- Post a Reply -->
+        <hr>
+        <h3>Post a Reply</h3>
+        <form id="editor-form">
+          <textarea class="editor" name="editor1" id="editor1" rows="10" cols="80"></textarea>
+          <script>CKEDITOR.replace( 'editor1' );</script>
+        </form>
+
+        </div>
+      <!-- End toolbar -->
+      <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10"></div>
+        <div class="col-lg-2">
+      <button type="submit" id="submit-btn" class="btn btn-success btn-lg">Submit</button>
+      <script>
+        $('#submit-btn').click(function () {
+          // get date
+          var d = new Date();
+          var month = d.getMonth()+1;
+          var day = d.getDate();
+          var year = d.getFullYear().toString().substr(2,2);
+          var outputDate = (month<10 ? '0' : '') + month + '/' +
+            (day<10 ? '0' : '') + day + '/' + year;
+          // get time
+          var hours = d.getHours();
+          var minutes = d.getMinutes();
+          var hours = hours%24; 
+          var mid='am';
+          if(hours==0){ //At 00 hours we need to show 12 am
+            hours=12;
+          }
+          else if(hours>12){
+            hours=hours%12;
+            mid='pm';
+          }
+          if (minutes < 10){
+            minutes = "0" + minutes;
+          }
+          outputTime = hours + ":" + minutes + " " + mid;
+          var input = CKEDITOR.instances.editor1.getData();
+          CKEDITOR.instances.editor1.setData("");
+          var newEntry = $('<hr><div class = "panel-body"><div class = "row"><div class = "col-sm-11 content">' + input + '</div><div class = "col-sm-1 votes"><div><span class = "glyphicon glyphicon-chevron-up"></div><div class = "votes">0</div><div><span class = "glyphicon glyphicon-chevron-down"></div></div></div><div class = "authorReply">Submitted by <span class = "badge">You</span><br>Answered ' + outputDate + ' at ' + outputTime + '</div></div>');
+          var lastReply = $(".panel-body").get(-1);
+          console.log(lastReply);
+          $(newEntry).insertAfter(lastReply);
+          });
+      </script>
+
+        </div>
+    </div>
+  </div>
+
+  </body>
+
+</html>
+
+
+}

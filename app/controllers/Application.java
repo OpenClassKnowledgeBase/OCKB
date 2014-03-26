@@ -23,7 +23,7 @@ public class Application extends Controller {
     
     public static Result comments() {
     	List<Comment> cmntList = Comment.all();
-    	return ok(views.html.comments.render(cmntList));
+    	return ok(views.html.post.render(cmntList));
     }
 
 }

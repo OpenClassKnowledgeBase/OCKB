@@ -1,15 +1,16 @@
-# --- First database schema
+# --- Created by Ebean DDL
+# To stop Ebean DDL generation, remove this comment and start using Evolutions
 
 # --- !Ups
 
 create table comment (
-  id bigint not null,
-  content longtext,
-  constraint pk_comment primary key (id))
+  id                        bigint,
+  content                   varchar(255),
+  author                    varchar(255),
+  submission_date           timestamp)
 ;
 
 
-create sequence comment_seq start with 1000;
 
 
 # --- !Downs
@@ -20,5 +21,3 @@ drop table if exists comment;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 
-
-drop sequence if exists comment_seq;

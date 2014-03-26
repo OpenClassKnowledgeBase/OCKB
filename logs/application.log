@@ -1,16 +1,16 @@
-2014-03-17 10:58:06,183 - [INFO] - from play in pool-44-thread-2 
+2014-03-25 17:54:58,887 - [INFO] - from play in pool-203-thread-1 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2014-03-17 10:58:10,904 - [INFO] - from play in play-internal-execution-context-1 
+2014-03-25 17:55:09,175 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-03-17 10:58:11,111 - [INFO] - from play in play-internal-execution-context-1 
+2014-03-25 17:55:09,490 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:mem:play
 
-2014-03-17 10:58:11,659 - [ERROR] - from application in New I/O worker #1 
+2014-03-25 17:55:10,011 - [ERROR] - from application in New I/O worker #1 
 
 
-! @6hi25b973 - Internal server error, for (GET) [/] ->
+! @6hkacj3mg - Internal server error, for (GET) [/] ->
 
 play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
 	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1$$anonfun$apply$1.apply$mcV$sp(Evolutions.scala:486) ~[play-jdbc_2.10.jar:2.2.1]
@@ -43,145 +43,12 @@ play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evoluti
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
 
-2014-03-17 10:58:13,848 - [INFO] - from play in play-internal-execution-context-1 
+2014-03-25 17:55:12,308 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-03-17 10:58:13,851 - [INFO] - from play in play-internal-execution-context-1 
+2014-03-25 17:55:12,311 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:mem:play
 
-2014-03-17 10:58:14,029 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-17 10:58:15,998 - [ERROR] - from play in play-internal-execution-context-1 
-Cannot invoke the action, eventually got an error: javax.persistence.PersistenceException: Query threw SQLException:Column "T0.POST_ID" not found; SQL statement:
-select t0.id c0, t0.post_id c1, t0.content c2 from comment t0 [42122-172] 
-Bind values:[null] 
-Query was:
-select t0.id c0, t0.post_id c1, t0.content c2 from comment t0 
-
-
-
-2014-03-17 10:58:16,013 - [ERROR] - from application in play-internal-execution-context-1 
-
-
-! @6hi25bfik - Internal server error, for (GET) [/comments] ->
-
-play.api.Application$$anon$1: Execution exception[[PersistenceException: Query threw SQLException:Column "T0.POST_ID" not found; SQL statement:
-select t0.id c0, t0.post_id c1, t0.content c2 from comment t0 [42122-172] 
-Bind values:[null] 
-Query was:
-select t0.id c0, t0.post_id c1, t0.content c2 from comment t0 
-
-]]
-	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.1]
-	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.1]
-	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.1]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
-Caused by: javax.persistence.PersistenceException: Query threw SQLException:Column "T0.POST_ID" not found; SQL statement:
-select t0.id c0, t0.post_id c1, t0.content c2 from comment t0 [42122-172] 
-Bind values:[null] 
-Query was:
-select t0.id c0, t0.post_id c1, t0.content c2 from comment t0 
-
-
-	at com.avaje.ebeaninternal.server.query.CQuery.createPersistenceException(CQuery.java:790) ~[avaje-ebeanorm.jar:na]
-	at com.avaje.ebeaninternal.server.query.CQuery.createPersistenceException(CQuery.java:767) ~[avaje-ebeanorm.jar:na]
-	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:202) ~[avaje-ebeanorm.jar:na]
-	at com.avaje.ebeaninternal.server.query.DefaultOrmQueryEngine.findMany(DefaultOrmQueryEngine.java:77) ~[avaje-ebeanorm.jar:na]
-	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.findList(OrmQueryRequest.java:265) ~[avaje-ebeanorm.jar:na]
-	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1460) ~[avaje-ebeanorm.jar:na]
-	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findList(DefaultOrmQuery.java:885) ~[avaje-ebeanorm.jar:na]
-	at play.db.ebean.Model$Finder.all(Model.java:254) ~[play-java-ebean_2.10.jar:2.2.1]
-	at models.Comment.all(Comment.java:28) ~[na:na]
-	at controllers.Application.comments(Application.java:25) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$4$$anonfun$apply$4.apply(routes_routing.scala:85) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$4$$anonfun$apply$4.apply(routes_routing.scala:85) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.1]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.1]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.1]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.1]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
-	... 4 common frames omitted
-Caused by: org.h2.jdbc.JdbcSQLException: Column "T0.POST_ID" not found; SQL statement:
-select t0.id c0, t0.post_id c1, t0.content c2 from comment t0 [42122-172]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329) ~[h2.jar:1.3.172]
-	at org.h2.message.DbException.get(DbException.java:169) ~[h2.jar:1.3.172]
-	at org.h2.message.DbException.get(DbException.java:146) ~[h2.jar:1.3.172]
-	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144) ~[h2.jar:1.3.172]
-	at org.h2.expression.Alias.optimize(Alias.java:52) ~[h2.jar:1.3.172]
-	at org.h2.command.dml.Select.prepare(Select.java:808) ~[h2.jar:1.3.172]
-	at org.h2.command.Parser.prepareCommand(Parser.java:219) ~[h2.jar:1.3.172]
-	at org.h2.engine.Session.prepareLocal(Session.java:425) ~[h2.jar:1.3.172]
-	at org.h2.engine.Session.prepareCommand(Session.java:374) ~[h2.jar:1.3.172]
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138) ~[h2.jar:1.3.172]
-	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70) ~[h2.jar:1.3.172]
-	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267) ~[h2.jar:1.3.172]
-	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:1024) ~[bonecp.jar:na]
-	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQuery(CQuery.java:360) ~[avaje-ebeanorm.jar:na]
-	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:162) ~[avaje-ebeanorm.jar:na]
-	... 26 common frames omitted
-
-2014-03-17 10:58:42,658 - [INFO] - from play in play-internal-execution-context-1 
-datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
-
-2014-03-17 10:58:42,661 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:play
-
-2014-03-17 10:58:42,737 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-17 10:59:38,390 - [INFO] - from play in play-internal-execution-context-1 
-datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
-
-2014-03-17 10:59:38,394 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:play
-
-2014-03-17 10:59:38,465 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-17 10:59:57,118 - [INFO] - from play in play-internal-execution-context-1 
-datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
-
-2014-03-17 10:59:57,122 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:play
-
-2014-03-17 10:59:57,192 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-17 11:00:14,997 - [INFO] - from play in play-internal-execution-context-1 
-datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
-
-2014-03-17 11:00:15,000 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:play
-
-2014-03-17 11:00:15,075 - [INFO] - from play in play-internal-execution-context-1 
+2014-03-25 17:55:12,603 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
