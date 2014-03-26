@@ -14,11 +14,16 @@ import com.avaje.ebean.*;
 @Entity
 public class User extends Model {
 
-    @Id
+    @Required
+    public Long id;
+    @Required
     public String email;
+    @Required
     public String name;
+    @Required
     public String password;
-    public String userType;
+    //@Required
+    //public String userType;
     public int posts;
     
     public User() {}
@@ -26,18 +31,18 @@ public class User extends Model {
       this.email = email;
       this.name = name;
       this.password = password;
-      this.userType = userType;
+      //this.userType = userType;
       this.posts = posts;
     }
     
     public void addPost() { posts++; }
     
-    public static Finder<String,User> find = new Finder<String,User>(
-    		   String.class, User.class
+    public static Finder<Long,User> find = new Finder<Long,User>(
+    		   Long.class, User.class
     );
     
     public static List<User> all(){
-		return User.find.all();
+		return find.all();
 	}
     
     

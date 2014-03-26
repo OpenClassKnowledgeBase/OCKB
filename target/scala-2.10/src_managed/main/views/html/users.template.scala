@@ -32,7 +32,7 @@ Seq[Any](format.raw/*1.24*/("""
 
     <ul> 
 		"""),_display_(Seq[Any](/*6.4*/for(user <- userList) yield /*6.25*/ {_display_(Seq[Any](format.raw/*6.27*/("""
-		  <li>"""),_display_(Seq[Any](/*7.10*/user/*7.14*/.email)),format.raw/*7.20*/(""" - """),_display_(Seq[Any](/*7.24*/user/*7.28*/.name)),format.raw/*7.33*/(""" - """),_display_(Seq[Any](/*7.37*/user/*7.41*/.password)),format.raw/*7.50*/(""" - """),_display_(Seq[Any](/*7.54*/user/*7.58*/.userType)),format.raw/*7.67*/(""" - """),_display_(Seq[Any](/*7.71*/user/*7.75*/.posts)),format.raw/*7.81*/("""</li>
+		  <li>"""),_display_(Seq[Any](/*7.10*/user/*7.14*/.email)),format.raw/*7.20*/(""" - """),_display_(Seq[Any](/*7.24*/user/*7.28*/.name)),format.raw/*7.33*/(""" - """),_display_(Seq[Any](/*7.37*/user/*7.41*/.password)),format.raw/*7.50*/(""" - """),_display_(Seq[Any](/*7.54*/user/*7.58*/.email)),format.raw/*7.64*/(""" - """),_display_(Seq[Any](/*7.68*/user/*7.72*/.posts)),format.raw/*7.78*/("""</li>
 		""")))})),format.raw/*8.4*/(""" 
 	</ul>
 
@@ -49,10 +49,10 @@ Seq[Any](format.raw/*1.24*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Mar 23 23:43:45 HST 2014
+                    DATE: Tue Mar 25 20:36:34 HST 2014
                     SOURCE: C:/Users/Matt/Documents/GitHub/OCKB/app/views/users.scala.html
-                    HASH: 70a85ddc88cf2899d7f8ba08259f353f04cb58a2
-                    MATRIX: 778->1|894->23|933->28|954->41|993->43|1045->61|1081->82|1120->84|1166->95|1178->99|1205->105|1244->109|1256->113|1282->118|1321->122|1333->126|1363->135|1402->139|1414->143|1444->152|1483->156|1495->160|1522->166|1562->176|1607->190
+                    HASH: a662206fdf4251176a4f88af4c1dc791644aff44
+                    MATRIX: 778->1|894->23|933->28|954->41|993->43|1045->61|1081->82|1120->84|1166->95|1178->99|1205->105|1244->109|1256->113|1282->118|1321->122|1333->126|1363->135|1402->139|1414->143|1441->149|1480->153|1492->157|1519->163|1559->173|1604->187
                     LINES: 26->1|29->1|31->3|31->3|31->3|34->6|34->6|34->6|35->7|35->7|35->7|35->7|35->7|35->7|35->7|35->7|35->7|35->7|35->7|35->7|35->7|35->7|35->7|36->8|39->11
                     -- GENERATED --
                 */
