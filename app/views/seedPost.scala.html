@@ -1,0 +1,19 @@
+ @(posts: List[Post])
+
+ @import helper._
+
+ @main("Submit Post"){
+    <h1>@posts.size() post(s)</h1>
+    <ul>
+        @for(post <- posts){
+            <li>
+                Category: @post.category <br>
+                Title: @post.title <br>
+                Content: @post.content <br>
+                @form(routes.Application.deletePost(post.id)){
+                    <input type="submit" value="Delete">
+                }
+            </li>
+        }
+    </ul>
+}

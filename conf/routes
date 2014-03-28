@@ -6,9 +6,14 @@
 GET     /                           controllers.Application.index()
 GET     /submit                     controllers.Application.submit()
 GET     /explore                    controllers.Application.explore()
+GET     /posts                      controllers.Application.posts()
+POST	/posts						controllers.Application.submitPost()
+POST    /posts/:id/delete           controllers.Application.deletePost(id: Long)
+GET     /categories                 controllers.Application.categories()
 GET		/comments					controllers.Application.comments()
 GET     /login        				controllers.Application.login()
 GET     /logout        				controllers.Application.logout()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
