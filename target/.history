@@ -37,3 +37,7 @@ run
 exit
 run
 exit
+run
+clean
+reload
+compile

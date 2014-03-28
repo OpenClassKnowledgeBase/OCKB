@@ -1,81 +1,45 @@
-2014-03-23 17:52:21,880 - [INFO] - from play in pool-4-thread-4 
+2014-03-27 23:14:23,243 - [INFO] - from play in pool-4-thread-2 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2014-03-23 17:52:45,617 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
-
-2014-03-23 17:52:47,067 - [ERROR] - from application in New I/O worker #1 
+2014-03-27 23:14:30,209 - [ERROR] - from application in New I/O worker #1 
 
 
-! @6hjlo7b2k - Internal server error, for (GET) [/categories] ->
+! @6hl0gkio8 - Internal server error, for (GET) [/] ->
 
-play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
-	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1$$anonfun$apply$1.apply$mcV$sp(Evolutions.scala:486) ~[play-jdbc_2.10.jar:2.2.1]
-	at play.api.db.evolutions.EvolutionsPlugin.withLock(Evolutions.scala:507) ~[play-jdbc_2.10.jar:2.2.1]
-	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1.apply(Evolutions.scala:461) ~[play-jdbc_2.10.jar:2.2.1]
-	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1.apply(Evolutions.scala:459) ~[play-jdbc_2.10.jar:2.2.1]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.db.evolutions.EvolutionsPlugin.onStart(Evolutions.scala:459) ~[play-jdbc_2.10.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.1]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+play.PlayExceptions$RoutesCompilationException: Compilation error[HTTP Verb (GET, POST, ...), include (->) or comment (#) expected]
+	at play.PlaySourceGenerators$$anonfun$2.apply(PlaySourceGenerators.scala:21) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$2.apply(PlaySourceGenerators.scala:9) ~[na:na]
+	at play.Settings$$anonfun$defaultSettings$18.apply(PlaySettings.scala:105) ~[na:na]
+	at play.Settings$$anonfun$defaultSettings$18.apply(PlaySettings.scala:104) ~[na:na]
+	at scala.Function6$$anonfun$tupled$1.apply(Function6.scala:35) ~[scala-library.jar:na]
+	at scala.Function6$$anonfun$tupled$1.apply(Function6.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_45]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471) ~[na:1.7.0_45]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_45]
+	at java.lang.Thread.run(Thread.java:744) [na:1.7.0_45]
 
-2014-03-23 17:52:50,979 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
+2014-03-27 23:14:30,317 - [WARN] - from play in New I/O worker #1 
+No application found at invoker init
 
-2014-03-23 17:52:51,827 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-23 17:53:45,367 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
-
-2014-03-23 17:53:45,778 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-23 17:54:57,350 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
-
-2014-03-23 17:54:57,869 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-23 17:55:50,154 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
-
-2014-03-23 17:55:50,528 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-23 18:01:32,379 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
-
-2014-03-23 18:01:32,755 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-23 18:48:58,663 - [ERROR] - from application in New I/O worker #10 
+2014-03-27 23:15:20,003 - [ERROR] - from application in New I/O worker #1 
 
 
-! @6hjm5h6hp - Internal server error, for (GET) [/categories] ->
+! @6hl0gni8h - Internal server error, for (GET) [/] ->
 
-play.PlayExceptions$CompilationException: Compilation error[not found: value description]
+play.PlayExceptions$CompilationException: Compilation error[error: cannot find symbol]
 	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
 	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
 	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
@@ -95,34 +59,4 @@ play.PlayExceptions$CompilationException: Compilation error[not found: value des
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-
-2014-03-23 18:49:14,369 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
-
-2014-03-23 18:49:14,886 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-23 18:50:33,098 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
-
-2014-03-23 18:50:33,423 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-23 18:51:14,802 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
-
-2014-03-23 18:51:15,186 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-23 18:52:08,433 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
-
-2014-03-23 18:52:08,924 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-03-23 18:52:59,119 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
-
-2014-03-23 18:52:59,495 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
 

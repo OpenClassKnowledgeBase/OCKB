@@ -1,6 +1,6 @@
-// @SOURCE:C:/xampp/htdocs/ICS414/OCKB/conf/routes
-// @HASH:5bc8ea54bf0ee8a0edddbf808b3330bb301c15d7
-// @DATE:Sun Mar 23 11:41:43 HST 2014
+// @SOURCE:/Users/renzeereyes/School/ICS414/OCKB/conf/routes
+// @HASH:27470eb90a2ef7c35ca9b531af7b6a66108830fe
+// @DATE:Thu Mar 27 23:19:29 HST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,7 +13,8 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:15
+// @LINE:16
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -23,11 +24,11 @@ import Router.queryString
 // @LINE:6
 package controllers {
 
-// @LINE:15
+// @LINE:16
 class ReverseAssets {
     
 
-// @LINE:15
+// @LINE:16
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -36,6 +37,7 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -87,6 +89,12 @@ def index(): Call = {
    Call("GET", _prefix)
 }
                                                 
+
+// @LINE:13
+def comments(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "comments")
+}
+                                                
     
 }
                           
@@ -94,7 +102,8 @@ def index(): Call = {
                   
 
 
-// @LINE:15
+// @LINE:16
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -104,11 +113,11 @@ def index(): Call = {
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:15
+// @LINE:16
 class ReverseAssets {
     
 
-// @LINE:15
+// @LINE:16
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -122,6 +131,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -208,6 +218,17 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
    """
 )
                         
+
+// @LINE:13
+def comments : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.comments",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "comments"})
+      }
+   """
+)
+                        
     
 }
               
@@ -215,7 +236,8 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:15
+// @LINE:16
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -226,11 +248,11 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:15
+// @LINE:16
 class ReverseAssets {
     
 
-// @LINE:15
+// @LINE:16
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -239,6 +261,7 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -288,6 +311,12 @@ def posts(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 // @LINE:6
 def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """ Home page""", _prefix + """""")
+)
+                      
+
+// @LINE:13
+def comments(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.comments(), HandlerDef(this, "controllers.Application", "comments", Seq(), "GET", """""", _prefix + """comments""")
 )
                       
     
