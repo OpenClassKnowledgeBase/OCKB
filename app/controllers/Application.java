@@ -32,6 +32,11 @@ public class Application extends Controller {
     	return ok(views.html.post.render(cmntList));
     }
 
+    public static Result users() {
+    	List<User> userList = User.all();
+    	return ok(views.html.users.render(userList));
+    }
+
     public static Result submitPost(){
     	Form<PostSubmission> filledForm = postForm.bindFromRequest();
     	if (filledForm.hasErrors()){

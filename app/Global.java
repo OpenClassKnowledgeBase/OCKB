@@ -25,5 +25,9 @@ public class Global extends GlobalSettings {
 		if (Comment.find.findRowCount() == 0) {
 			Ebean.save((List<Post>) Yaml.load("comment-data.yml"));
 		}
+
+		if (User.find.findRowCount() == 0) {
+            		Ebean.save((List) Yaml.load("user-data.yml"));
+        	}
 	}
 }
