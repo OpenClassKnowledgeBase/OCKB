@@ -1,8 +1,7 @@
 
 import java.util.List;
 
-import models.Category;
-import models.Post;
+import models.*;
 import play.Application;
 import play.GlobalSettings;
 import play.libs.Yaml;
@@ -21,6 +20,10 @@ public class Global extends GlobalSettings {
 		}
 		if (Category.find.findRowCount() == 0) {
 			Ebean.save((List<Post>) Yaml.load("categories.yml"));
+		}
+		
+		if (Comment.find.findRowCount() == 0) {
+			Ebean.save((List<Post>) Yaml.load("comment-data.yml"));
 		}
 	}
 }
