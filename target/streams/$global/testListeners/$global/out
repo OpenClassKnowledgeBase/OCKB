@@ -1,0 +1,15 @@
+[0m[[0minfo[0m] [0mApplicationTest[0m
+[0m[[0minfo[0m] [0m+ simpleCheck[0m
+[0m[[0minfo[0m] [0mx renderTemplate[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mTotal for test ApplicationTest[0m
+[0m[[0minfo[0m] [0mFinished in 0.013 seconds[0m
+[0m[[0minfo[0m] [0m2 tests, 1 failures, 0 errors[0m
+[0m[[0minfo[0m] [0mIntegrationTest[0m
+[0m[[0minfo[0m] [0mx test[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mTotal for test IntegrationTest[0m
+[0m[[0minfo[0m] [0mFinished in 0.001 seconds[0m
+[0m[[0minfo[0m] [0m1 tests, 1 failures, 0 errors[0m

@@ -1,0 +1,210 @@
+[0m[[0mdebug[0m] [0m[34mTest run started[0m[0m
+[0m[[0mdebug[0m] [0mTest [33mApplicationTest[0m.[36msimpleCheck[0m started[0m
+[0m[[0mdebug[0m] [0mTest [33mApplicationTest[0m.[36msimpleCheck[0m finished[0m
+[0m[[0mdebug[0m] [0mTest [33mApplicationTest[0m.[36mrenderTemplate[0m started[0m
+[0m[[31merror[0m] [0mTest [33mApplicationTest[0m.[31mrenderTemplate[0m failed: <'[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m<!DOCTYPE html>[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m<html>[0m
+[0m[[31merror[0m] [0m    <head>[0m
+[0m[[31merror[0m] [0m        <title>Open Class Knowledge Base</title>[0m
+[0m[[31merror[0m] [0m        <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css" rel="stylesheet">[0m
+[0m[[31merror[0m] [0m    	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">[0m
+[0m[[31merror[0m] [0m        <link rel="stylesheet" media="screen" href="/assets/stylesheets/main.css">[0m
+[0m[[31merror[0m] [0m        <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png">[0m
+[0m[[31merror[0m] [0m        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" type="text/javascript"></script>[0m
+[0m[[31merror[0m] [0m        <script src="/assets/javascripts/jquery-1.9.0.min.js" type="text/javascript"></script>[0m
+[0m[[31merror[0m] [0m    </head>[0m
+[0m[[31merror[0m] [0m    <body>[0m
+[0m[[31merror[0m] [0m    	<div class="navbar-default navbar-fixed-top">[0m
+[0m[[31merror[0m] [0m	      <div class="container-fluid">[0m
+[0m[[31merror[0m] [0m	        <div class="navbar-header">[0m
+[0m[[31merror[0m] [0m	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">[0m
+[0m[[31merror[0m] [0m	            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>[0m
+[0m[[31merror[0m] [0m	          </button>[0m
+[0m[[31merror[0m] [0m	          <a class="navbar-brand" href="#">OCKB</a>[0m
+[0m[[31merror[0m] [0m	        </div>[0m
+[0m[[31merror[0m] [0m	        <div class="navbar-collapse collapse">[0m
+[0m[[31merror[0m] [0m	          <form class="navbar-form navbar-right" action="/comments">[0m
+[0m[[31merror[0m] [0m	            <button type="submit" class="btn btn-default">Sign in</button>[0m
+[0m[[31merror[0m] [0m	          </form>[0m
+[0m[[31merror[0m] [0m	        </div>[0m
+[0m[[31merror[0m] [0m	      </div>[0m
+[0m[[31merror[0m] [0m    	</div>[0m
+[0m[[31merror[0m] [0m        [0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m    <div class="container-fluid center-block">[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m      <div class="row row-top-img">[0m
+[0m[[31merror[0m] [0m        <div class="col-lg-12">[0m
+[0m[[31merror[0m] [0m          <img src = "/assets/images/logo-bluegray.gif" class="img-responsive">[0m
+[0m[[31merror[0m] [0m        </div>[0m
+[0m[[31merror[0m] [0m      </div>[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m      <div class = "row row-top">[0m
+[0m[[31merror[0m] [0m        <div class = "col-lg-12 txt-top">[0m
+[0m[[31merror[0m] [0m          <h1 class="text-center"> Open Class Knowledge Base </h1>[0m
+[0m[[31merror[0m] [0m          <p class = "text-center">Made by students, for students, the Open Class Knowledge Base features a collaborative environment that lets you interact with your classmates and professors like never before.</p>[0m
+[0m[[31merror[0m] [0m        </div>[0m
+[0m[[31merror[0m] [0m        <!--<div class="col-lg-6">[0m
+[0m[[31merror[0m] [0m          <img src = "comm-based.png" class = "img-responsive">[0m
+[0m[[31merror[0m] [0m        </div> -->[0m
+[0m[[31merror[0m] [0m      </div>[0m
+[0m[[31merror[0m] [0m      <hr>[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m      <div class = "row row-fluid">[0m
+[0m[[31merror[0m] [0m        <div class = "col-md-offset-1 col-md-4 col-width">[0m
+[0m[[31merror[0m] [0m          <img src = "/assets/images/content.png">[0m
+[0m[[31merror[0m] [0m        </div>[0m
+[0m[[31merror[0m] [0m        <div class = "col-md-offset-2 col-md-4 col-width col-txt">[0m
+[0m[[31merror[0m] [0m          <h1> Content at your fingertips </h1>[0m
+[0m[[31merror[0m] [0m          <p class = "pull-left">[0m
+[0m[[31merror[0m] [0m          The Open Class Knowledge Base has content from all parts of ICS 211.  From simple review topics to in-depth analysis of sorting algorithms, the Open Class Knowledge Base will have what you're looking for.[0m
+[0m[[31merror[0m] [0m          </p>[0m
+[0m[[31merror[0m] [0m        </div>[0m
+[0m[[31merror[0m] [0m      </div>[0m
+[0m[[31merror[0m] [0m      <hr>[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m      <div class = "row row-fluid">[0m
+[0m[[31merror[0m] [0m        <div class = "col-md-offset-1 col-md-4 col-width col-txt">[0m
+[0m[[31merror[0m] [0m          <h1> Course collaboration </h1>[0m
+[0m[[31merror[0m] [0m          <p class="pull-right">The Open Class Knowledge Base is driven by the peers you learn with and the instructors you learn from.  Connect, communicate, and collaborate with people you know and names you recognize.</p>[0m
+[0m[[31merror[0m] [0m        </div>[0m
+[0m[[31merror[0m] [0m        <div class="col-md-offset-2 col-md-4 col-width">[0m
+[0m[[31merror[0m] [0m          <img src = "/assets/images/coursecollab.png">[0m
+[0m[[31merror[0m] [0m        </div>[0m
+[0m[[31merror[0m] [0m      </div>[0m
+[0m[[31merror[0m] [0m      <hr>[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m      <div class = "row row-fluid">[0m
+[0m[[31merror[0m] [0m        <div class = "col-md-offset-1 col-md-4 col-width">[0m
+[0m[[31merror[0m] [0m          <img src = "/assets/images/past.png">[0m
+[0m[[31merror[0m] [0m        </div>[0m
+[0m[[31merror[0m] [0m        <div class="col-md-offset-2 col-md-4 col-width col-txt">[0m
+[0m[[31merror[0m] [0m          <h1>Learn from the past, prepare for the future</h1>[0m
+[0m[[31merror[0m] [0m          <p class = "pull-left">[0m
+[0m[[31merror[0m] [0m          Got a question?  Chances are, someone may have already asked it. Utilize this feature and collaborate with the community to find new answers to old questions.[0m
+[0m[[31merror[0m] [0m          </p>[0m
+[0m[[31merror[0m] [0m        </div>[0m
+[0m[[31merror[0m] [0m      </div>[0m
+[0m[[31merror[0m] [0m      <hr>[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m      <div class = "row row-fluid">[0m
+[0m[[31merror[0m] [0m          <div class = "col-md-offset-1 col-md-4 col-width col-txt">[0m
+[0m[[31merror[0m] [0m            <h1>Beyond the classroom</h1>[0m
+[0m[[31merror[0m] [0m            <p class = "pull-left">[0m
+[0m[[31merror[0m] [0m              Open Class Knowledge Base expands on the same topics covered in class by offering different perspectives on the same problem. Go beyond the textbook and spend less time searching and more time learning.[0m
+[0m[[31merror[0m] [0m            </p>[0m
+[0m[[31merror[0m] [0m          </div>[0m
+[0m[[31merror[0m] [0m          <div class="col-md-offset-2 col-md-4 col-width">[0m
+[0m[[31merror[0m] [0m            <img src = "/assets/images/designed.png">[0m
+[0m[[31merror[0m] [0m          </div>[0m
+[0m[[31merror[0m] [0m      </div>[0m
+[0m[[31merror[0m] [0m      <hr>[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m      <div class = "row row-fluid">[0m
+[0m[[31merror[0m] [0m        <div class = "col-md-offset-1 col-md-4 col-width">[0m
+[0m[[31merror[0m] [0m          <img src = "/assets/images/mobile.png">[0m
+[0m[[31merror[0m] [0m        </div>[0m
+[0m[[31merror[0m] [0m        <div class="col-md-offset-2 col-md-4 col-width col-txt">[0m
+[0m[[31merror[0m] [0m          <h1> Learn anywhere, anytime </h1>[0m
+[0m[[31merror[0m] [0m          <p class = "pull-left">Access the Open Class Knowledge Base from your tablet, mobile phone, or your laptop.  Contribute content and ask questions wherever you are, whenever you want.</p>[0m
+[0m[[31merror[0m] [0m        </div>[0m
+[0m[[31merror[0m] [0m      </div>[0m
+[0m[[31merror[0m] [0m      <hr>[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m      <div class = "row-fluid bottom-text"><br>[0m
+[0m[[31merror[0m] [0m        <div class = "text-center"> [0m
+[0m[[31merror[0m] [0m          <p>Sign in with your UH info to get started </p>[0m
+[0m[[31merror[0m] [0m          <a href="#.html" class="btn btn-primary btn-lg btn-bottom">Sign in</a>[0m
+[0m[[31merror[0m] [0m      </div>[0m
+[0m[[31merror[0m] [0m    </div>[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m    </div>[0m
+[0m[[31merror[0m] [0m        [0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m    <footer>[0m
+[0m[[31merror[0m] [0m      <p>&copy; OCKB 2014</p>[0m
+[0m[[31merror[0m] [0m    </footer>[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m    </body>[0m
+[0m[[31merror[0m] [0m</html>[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m'> should contain the String:<'Your new application is ready.'>[0m
+[0m[[0mdebug[0m] [0mTest [33mApplicationTest[0m.[36mrenderTemplate[0m finished[0m
+[0m[[0mdebug[0m] [0m[34mTest run finished: [0m[31m1 failed[0m[34m, [0m[34m0 ignored[0m[34m, 2 total, 0.279s[0m[0m
+[0m[[0mdebug[0m] [0m[34mTest run started[0m[0m
+[0m[[0mdebug[0m] [0mTest [33mIntegrationTest[0m.[36mtest[0m started[0m
+[0m[[31merror[0m] [0mTest [33mIntegrationTest[0m.[31mtest[0m failed: org.openqa.selenium.[31mWebDriverException[0m: com.gargoylesoftware.htmlunit.ScriptException: ReferenceError: "jQuery" is not defined. (https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js#6)[0m
+[0m[[31merror[0m] [0mBuild info: version: '2.32.0', revision: '6c40c187d01409a5dc3b7f8251859150c8af0bcb', time: '2013-04-09 10:39:28'[0m
+[0m[[31merror[0m] [0mSystem info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'[0m
+[0m[[31merror[0m] [0mDriver info: driver.version: HtmlUnitDriver[0m
+[0m[[31merror[0m] [0m    at org.openqa.selenium.htmlunit.HtmlUnitDriver.get(HtmlUnitDriver.java:367)[0m
+[0m[[31merror[0m] [0m    at org.openqa.selenium.htmlunit.HtmlUnitDriver.get(HtmlUnitDriver.java:346)[0m
+[0m[[31merror[0m] [0m    at org.fluentlenium.core.Fluent.goTo(Fluent.java:228)[0m
+[0m[[31merror[0m] [0m    at IntegrationTest$1.invoke([35mIntegrationTest.java[0m:[33m22[0m)[0m
+[0m[[31merror[0m] [0m    at IntegrationTest$1.invoke([35mIntegrationTest.java[0m:[33m20[0m)[0m
+[0m[[31merror[0m] [0m    at play.test.Helpers.running(Helpers.java:433)[0m
+[0m[[31merror[0m] [0m    at IntegrationTest.test([35mIntegrationTest.java[0m:[33m20[0m)[0m
+[0m[[31merror[0m] [0m    ...[0m
+[0m[[31merror[0m] [0mCaused by: com.gargoylesoftware.htmlunit.ScriptException: ReferenceError: "jQuery" is not defined. (https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js#6)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.javascript.JavaScriptEngine$HtmlUnitContextAction.run(JavaScriptEngine.java:669)[0m
+[0m[[31merror[0m] [0m    at net.sourceforge.htmlunit.corejs.javascript.Context.call(Context.java:601)[0m
+[0m[[31merror[0m] [0m    at net.sourceforge.htmlunit.corejs.javascript.ContextFactory.call(ContextFactory.java:507)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.javascript.JavaScriptEngine.execute(JavaScriptEngine.java:555)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.html.HtmlPage.loadExternalJavaScriptFile(HtmlPage.java:1082)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.html.HtmlScript.executeScriptIfNeeded(HtmlScript.java:399)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.html.HtmlScript$3.execute(HtmlScript.java:260)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.html.HtmlScript.onAllChildrenAddedToPage(HtmlScript.java:276)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.html.HTMLParser$HtmlUnitDOMBuilder.endElement(HTMLParser.java:676)[0m
+[0m[[31merror[0m] [0m    at org.apache.xerces.parsers.AbstractSAXParser.endElement(Unknown Source)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.html.HTMLParser$HtmlUnitDOMBuilder.endElement(HTMLParser.java:635)[0m
+[0m[[31merror[0m] [0m    at org.cyberneko.html.HTMLTagBalancer.callEndElement(HTMLTagBalancer.java:1170)[0m
+[0m[[31merror[0m] [0m    at org.cyberneko.html.HTMLTagBalancer.endElement(HTMLTagBalancer.java:1072)[0m
+[0m[[31merror[0m] [0m    at org.cyberneko.html.filters.DefaultFilter.endElement(DefaultFilter.java:206)[0m
+[0m[[31merror[0m] [0m    at org.cyberneko.html.filters.NamespaceBinder.endElement(NamespaceBinder.java:330)[0m
+[0m[[31merror[0m] [0m    at org.cyberneko.html.HTMLScanner$ContentScanner.scanEndElement(HTMLScanner.java:3074)[0m
+[0m[[31merror[0m] [0m    at org.cyberneko.html.HTMLScanner$ContentScanner.scan(HTMLScanner.java:2041)[0m
+[0m[[31merror[0m] [0m    at org.cyberneko.html.HTMLScanner.scanDocument(HTMLScanner.java:918)[0m
+[0m[[31merror[0m] [0m    at org.cyberneko.html.HTMLConfiguration.parse(HTMLConfiguration.java:499)[0m
+[0m[[31merror[0m] [0m    at org.cyberneko.html.HTMLConfiguration.parse(HTMLConfiguration.java:452)[0m
+[0m[[31merror[0m] [0m    at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.html.HTMLParser$HtmlUnitDOMBuilder.parse(HTMLParser.java:892)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.html.HTMLParser.parse(HTMLParser.java:241)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.html.HTMLParser.parseHtml(HTMLParser.java:187)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.DefaultPageCreator.createHtmlPage(DefaultPageCreator.java:268)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.DefaultPageCreator.createPage(DefaultPageCreator.java:156)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.WebClient.loadWebResponseInto(WebClient.java:434)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.WebClient.getPage(WebClient.java:309)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.WebClient.getPage(WebClient.java:374)[0m
+[0m[[31merror[0m] [0m    at org.openqa.selenium.htmlunit.HtmlUnitDriver.get(HtmlUnitDriver.java:359)[0m
+[0m[[31merror[0m] [0m    ... 41 more[0m
+[0m[[31merror[0m] [0mCaused by: net.sourceforge.htmlunit.corejs.javascript.EcmaError: ReferenceError: "jQuery" is not defined. (https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js#6)[0m
+[0m[[31merror[0m] [0m    at net.sourceforge.htmlunit.corejs.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3603)[0m
+[0m[[31merror[0m] [0m    at net.sourceforge.htmlunit.corejs.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3587)[0m
+[0m[[31merror[0m] [0m    at net.sourceforge.htmlunit.corejs.javascript.ScriptRuntime.notFoundError(ScriptRuntime.java:3657)[0m
+[0m[[31merror[0m] [0m    at net.sourceforge.htmlunit.corejs.javascript.ScriptRuntime.name(ScriptRuntime.java:1685)[0m
+[0m[[31merror[0m] [0m    at net.sourceforge.htmlunit.corejs.javascript.Interpreter.interpretLoop(Interpreter.java:1622)[0m
+[0m[[31merror[0m] [0m    at net.sourceforge.htmlunit.corejs.javascript.Interpreter.interpret(Interpreter.java:798)[0m
+[0m[[31merror[0m] [0m    at net.sourceforge.htmlunit.corejs.javascript.InterpretedFunction.call(InterpretedFunction.java:105)[0m
+[0m[[31merror[0m] [0m    at net.sourceforge.htmlunit.corejs.javascript.ContextFactory.doTopCall(ContextFactory.java:405)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.javascript.HtmlUnitContextFactory.doTopCall(HtmlUnitContextFactory.java:275)[0m
+[0m[[31merror[0m] [0m    at net.sourceforge.htmlunit.corejs.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3031)[0m
+[0m[[31merror[0m] [0m    at net.sourceforge.htmlunit.corejs.javascript.InterpretedFunction.exec(InterpretedFunction.java:115)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.javascript.JavaScriptEngine$3.doRun(JavaScriptEngine.java:546)[0m
+[0m[[31merror[0m] [0m    at com.gargoylesoftware.htmlunit.javascript.JavaScriptEngine$HtmlUnitContextAction.run(JavaScriptEngine.java:654)[0m
+[0m[[31merror[0m] [0m    ... 70 more[0m
+[0m[[0mdebug[0m] [0mTest [33mIntegrationTest[0m.[36mtest[0m finished[0m
+[0m[[0mdebug[0m] [0m[34mTest run finished: [0m[31m1 failed[0m[34m, [0m[34m0 ignored[0m[34m, 1 total, 4.336s[0m[0m
+[0m[[0mdebug[0m] [0mFramework implementation 'org.specs2.runner.Specs2Framework' not present.[0m
+[0m[[0mdebug[0m] [0mSummary for JUnit not available.[0m
+[0m[[0mdebug[0m] [0mSummary for specs2 not available.[0m
+[0m[[31merror[0m] [0mFailed: Total 3, Failed 2, Errors 0, Passed 1[0m
+[0m[[31merror[0m] [0mFailed tests:[0m
+[0m[[31merror[0m] [0m	ApplicationTest[0m
+[0m[[31merror[0m] [0m	IntegrationTest[0m
+[0m[[31merror[0m] [0m(test:[31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m
