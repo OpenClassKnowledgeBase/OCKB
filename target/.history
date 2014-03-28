@@ -106,3 +106,7 @@ run
 reload
 run
 exit
+compile
+clean
+reload
+compile
