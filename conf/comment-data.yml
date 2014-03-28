@@ -1,8 +1,6 @@
 # Comments
 
-comments:
-
-    - !!models.Comment
+	- !!models.Comment
         content: 'I found theses notes from Anthony Christe, a prior TA for ICS211, to be very helpful for Generics. https://github.com/anthonyjchriste/ics211f13/wiki/ArrayLists-and-Generics#wiki-generics. Cheers'
         author: Bob
         submission_date: 2013-09-13
