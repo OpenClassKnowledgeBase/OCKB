@@ -23,15 +23,15 @@ public class User extends Model {
     @Required
     public String password;
     //@Required
-    //public String userType;
+    //public String type;
     public int posts;
     
     public User() {}
-    public User(String email, String name, String password, String userType, int posts) {
+    public User(String email, String name, String password, String type, int posts) {
       this.email = email;
       this.name = name;
       this.password = password;
-      //this.userType = userType;
+      //this.type = type;
       this.posts = posts;
     }
     
