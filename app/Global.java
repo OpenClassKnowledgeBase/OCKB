@@ -13,21 +13,22 @@ public class Global extends GlobalSettings {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void onStart(Application app) {
-		System.out.println(Post.find.findRowCount());
+
+		
 		//check if the database is empty
 		if (Post.find.findRowCount() == 0) {
-			Ebean.save((List<Post>) Yaml.load("initial-data.yml"));
+			Ebean.save((List<Post>) Yaml.load("post-data.yml"));
 		}
 		if (Category.find.findRowCount() == 0) {
-			Ebean.save((List<Post>) Yaml.load("categories.yml"));
+			Ebean.save((List<Category>) Yaml.load("category-data.yml"));
 		}
 		
 		if (Comment.find.findRowCount() == 0) {
-			Ebean.save((List<Post>) Yaml.load("comment-data.yml"));
+			Ebean.save((List<Comment>) Yaml.load("comment-data.yml"));
 		}
 
 		if (User.find.findRowCount() == 0) {
-            		Ebean.save((List) Yaml.load("user-data.yml"));
-        	}
+            Ebean.save((List<User>) Yaml.load("user-data.yml"));
+        }
 	}
 }
