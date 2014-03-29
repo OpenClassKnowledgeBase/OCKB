@@ -14,6 +14,12 @@ import org.w3c.dom.Document;
 
 public class Application extends Controller {
 	static Form<PostSubmission> postForm = Form.form(PostSubmission.class);
+	 
+	/* CAS Variables */
+	private static final String CAS_LOGIN = "https://cas-test.its.hawaii.edu/cas/login";
+	private static final String CAS_VALIDATE = "https://cas-test.its.hawaii.edu/cas/serviceValidate";
+	private static final String CAS_LOGOUT = "https://cas-test.its.hawaii.edu/cas/logout";
+	private static String user = "";
 
     public static Result index() {
         return ok(views.html.index.render("Welcome to the home page."));
@@ -29,7 +35,7 @@ public class Application extends Controller {
     
     public static Result comments() {
     	List<Comment> cmntList = Comment.all();
-    	return ok(views.html.post.render(cmntList));
+    	return ok(views.html.post.render(cmntList, Post.find.ref((long) 1)));
     }
 
     public static Result users() {
@@ -45,11 +51,11 @@ public class Application extends Controller {
     	}
     	else{
     		//PostSubmission.create(filledForm.get());
-    		return redirect(routes.Application.posts());
+    		return redirect(routes.Application.seedPosts());
     	}
     }
 
-    public static Result posts(){
+    public static Result seedPosts(){
     	//Ebean.save((List<Post>) Yaml.load("initial-data.yml"));
     	return ok(views.html.seedPost.render(Post.all()));
     }

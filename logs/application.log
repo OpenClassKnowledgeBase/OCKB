@@ -1,16 +1,16 @@
-2014-03-27 23:37:26,255 - [INFO] - from play in pool-71-thread-5 
+2014-03-28 18:07:28,813 - [INFO] - from play in pool-81-thread-1 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2014-03-27 23:38:08,533 - [INFO] - from play in play-internal-execution-context-1 
-datasource [jdbc:h2:mem:default] bound to JNDI as DefaultDS
+2014-03-28 18:07:43,035 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-03-27 23:38:08,679 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
+2014-03-28 18:07:43,218 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:h2:mem:play
 
-2014-03-27 23:38:09,158 - [ERROR] - from application in New I/O worker #1 
+2014-03-28 18:07:43,807 - [ERROR] - from application in New I/O worker #1 
 
 
-! @6hl0jnfi5 - Internal server error, for (GET) [/] ->
+! @6hl69fang - Internal server error, for (GET) [/] ->
 
 play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
 	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1$$anonfun$apply$1.apply$mcV$sp(Evolutions.scala:486) ~[play-jdbc_2.10.jar:2.2.1]
@@ -43,27 +43,32 @@ play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evoluti
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
 
-2014-03-27 23:38:11,742 - [INFO] - from play in play-internal-execution-context-1 
-datasource [jdbc:h2:mem:default] bound to JNDI as DefaultDS
+2014-03-28 18:07:46,116 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-03-27 23:38:11,746 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
+2014-03-28 18:07:46,122 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:h2:mem:play
 
-2014-03-27 23:38:12,235 - [ERROR] - from application in New I/O worker #1 
+2014-03-28 18:07:46,625 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-03-28 18:18:10,359 - [ERROR] - from application in New I/O worker #5 
 
 
-! @6hl0jnk6m - Internal server error, for (GET) [/] ->
+! @6hl6ap1k1 - Internal server error, for (GET) [/comments] ->
 
-play.api.UnexpectedException: Unexpected exception[ScannerException: while scanning for the next token; found character 	 '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation);  in 'reader', line 3, column 1:
-    	- !!models.Comment
-    ^]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:148) ~[play_2.10.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
+play.PlayExceptions$CompilationException: Compilation error[illegal start of simple expression]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
 	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.1]
 	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
@@ -72,40 +77,135 @@ play.api.UnexpectedException: Unexpected exception[ScannerException: while scann
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: org.yaml.snakeyaml.scanner.ScannerException: while scanning for the next token; found character 	 '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation);  in 'reader', line 3, column 1:
-    	- !!models.Comment
-    ^
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:420) ~[snakeyaml.jar:na]
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226) ~[snakeyaml.jar:na]
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart.produce(ParserImpl.java:195) ~[snakeyaml.jar:na]
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158) ~[snakeyaml.jar:na]
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143) ~[snakeyaml.jar:na]
-	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:104) ~[snakeyaml.jar:na]
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120) ~[snakeyaml.jar:na]
-	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481) ~[snakeyaml.jar:na]
-	at org.yaml.snakeyaml.Yaml.load(Yaml.java:412) ~[snakeyaml.jar:na]
-	at play.libs.Yaml.load(Yaml.java:31) ~[play-java_2.10.jar:2.2.1]
-	at play.libs.Yaml.load(Yaml.java:18) ~[play-java_2.10.jar:2.2.1]
-	at Global.onStart(Global.java:26) ~[na:na]
-	at play.core.j.JavaGlobalSettingsAdapter.onStart(JavaGlobalSettingsAdapter.scala:18) ~[play_2.10.jar:2.2.1]
-	at play.api.GlobalPlugin.onStart(GlobalSettings.scala:203) ~[play_2.10.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.1]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.1]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.1]
-	... 14 common frames omitted
 
-2014-03-27 23:40:05,012 - [INFO] - from play in play-internal-execution-context-1 
-datasource [jdbc:h2:mem:default] bound to JNDI as DefaultDS
+2014-03-28 18:18:22,539 - [ERROR] - from application in New I/O worker #5 
 
-2014-03-27 23:40:05,014 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:default
 
-2014-03-27 23:40:05,117 - [INFO] - from play in play-internal-execution-context-1 
+! @6hl6apjke - Internal server error, for (GET) [/comments] ->
+
+play.PlayExceptions$CompilationException: Compilation error[illegal start of simple expression]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2014-03-28 18:18:31,648 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-03-28 18:18:31,651 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:h2:mem:play
+
+2014-03-28 18:18:31,809 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-03-28 18:20:27,384 - [ERROR] - from application in New I/O worker #5 
+
+
+! @6hl6b6mc7 - Internal server error, for (GET) [/comments] ->
+
+play.PlayExceptions$CompilationException: Compilation error[value username is not a member of models.Post]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2014-03-28 18:20:43,646 - [ERROR] - from application in New I/O worker #5 
+
+
+! @6hl6b7kdj - Internal server error, for (GET) [/comments] ->
+
+play.PlayExceptions$CompilationException: Compilation error[value usernName is not a member of models.Post]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2014-03-28 18:20:52,062 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-03-28 18:20:52,069 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:h2:mem:play
+
+2014-03-28 18:20:52,231 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-03-28 18:24:24,006 - [ERROR] - from application in New I/O worker #2 
+
+
+! @6hl6bk8d0 - Internal server error, for (GET) [/comments] ->
+
+play.PlayExceptions$CompilationException: Compilation error[value Assests is not a member of object controllers.routes]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2014-03-28 18:24:33,544 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-03-28 18:24:33,551 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:h2:mem:play
+
+2014-03-28 18:24:33,798 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 

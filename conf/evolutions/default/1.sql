@@ -38,6 +38,14 @@ create table post_submission (
   constraint pk_post_submission primary key (id))
 ;
 
+create table user (
+  id                        bigint,
+  email                     varchar(255),
+  name                      varchar(255),
+  password                  varchar(255),
+  posts                     integer)
+;
+
 create sequence category_seq;
 
 create sequence post_seq;
@@ -58,6 +66,8 @@ drop table if exists comment;
 drop table if exists post;
 
 drop table if exists post_submission;
+
+drop table if exists user;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 
