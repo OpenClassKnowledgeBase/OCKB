@@ -1,10 +1,17 @@
 @(userList: List[User])
 
 @main("Users") {
-
+	<header>
+		<hgroup>
+			<h1> The user list. </h1>
+			<h1> Displays current users. </h1>
+		</hgroup>
+	</header>
+	
+	
     <ul> 
 		@for(user <- userList) {
-		  <li>@user.email - @user.name - @user.password - @user.posts</li>
+		  <li>@user.email - @user.name - @user.status - @user.posts</li>
 		} 
 	</ul>
 

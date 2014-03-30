@@ -1,37 +1,29 @@
 package models;
 
-import java.util.*;
-
 import javax.persistence.*;
-
 import play.db.ebean.*;
-import play.data.format.*;
-import play.data.validation.Constraints.Required;
-import play.db.ebean.Model;
-
 import com.avaje.ebean.*;
 
 @Entity
 public class User extends Model {
 
-    @Required
+    
     public Long id;
-    @Required
+    
     public String email;
-    @Required
+   
     public String name;
-    @Required
-    public String password;
+   
+    public String status;
     //@Required
     //public String type;
     public int posts;
     
     public User() {}
-    public User(String email, String name, String password, String type, int posts) {
-      this.email = email;
+    public User(String email, String name, String status, int posts) {
+      this.email = email + "@hawaii.edu";
       this.name = name;
-      this.password = password;
-      //this.type = type;
+      this.status = status;
       this.posts = posts;
     }
     
@@ -41,13 +33,13 @@ public class User extends Model {
     		   Long.class, User.class
     );
     
-    public static List<User> all(){
-		return find.all();
-	}
+//    public static List<User> all(){
+//		return find.all();
+//	  }
     
     
-    public static User authenticate(String email, String password) {
+  /*  public static User authenticate(String email, String password) {
         return find.where().eq("email", email)
             .eq("password", password).findUnique();
-    }
+    }*/
 }
