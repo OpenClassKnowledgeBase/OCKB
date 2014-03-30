@@ -111,7 +111,7 @@ public class Application extends Controller {
 		        session().clear();
 		        session("username", username);
 		        //User.add(-1, username, "");
-		        return redirect(routes.Application.submit());
+		        return redirect(routes.Application.categories());
 		      } else {
 		        // you could redirect to the CAS login here if you want to
 		      }
