@@ -93,10 +93,10 @@
                id: 1
     title:     Helpful videos and links for ArrayList
     content:   <a href="http://docs.oracle.com/javase/6/docs/api/java/util/ArrayList.html">Java 6 Documentation</a> <br>
-                  <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">Java 7 Documentation</a> <br>
-                  <a href="http://developer.android.com/reference/java/util/ArrayList.html">Android Documentation</a> <br>
-                  <a href="http://stackoverflow.com/questions/2697182/how-to-use-an-array-list">StackOverflow Discussion</a> <br>
-                  <a href="http://en.wikipedia.org/wiki/Dynamic_array">Wikipedia Page on Dynamic Arrays</a> <br>
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">Java 7 Documentation</a> <br>
+               <a href="http://developer.android.com/reference/java/util/ArrayList.html">Android Documentation</a> <br>
+               <a href="http://stackoverflow.com/questions/2697182/how-to-use-an-array-list">StackOverflow Discussion</a> <br>
+               <a href="http://en.wikipedia.org/wiki/Dynamic_array">Wikipedia Page on Dynamic Arrays</a> <br>
     userName:  Jerry
     isSticky:  true
     
@@ -129,6 +129,40 @@
 - !!models.Post
     category:  !!models.Category
                id: 2
+    title:     Basics of Binary Search Trees
+    content:   <p>General:<br>
+               To best understand a Binary Search Tree, it is important to start from a basic tree and distniguish the constraints that 'Binary' and 'Search' impose on a basic Tree data structure. Firstly, a Tree is a data structure of linked nodes with an initial starting node called the root. Binary Trees have the added constraint of having at most two children for each node. Lastly, the difference between a Binary Tree and a Binary Search Tree is that Binary Search Trees have the added constraint of having ordered nodes. For every parent node, its left child is orded less or before the parent while the right child is ordered greater or after the parent.</p>
+
+               <p>Pros:<br>
+               - Better performance than linear structures<br>
+               - Memory efficient<br>
+               - Utilized for search and sort algorithms</p>
+
+               <p>Implementation:<br>
+               A Binary Search Tree can be implemented using a simple node class with two child node pointers and a data field. Also, a Binary Search Tree can be implemented abstractly using simpler data structures such as lists or arrays.</p>
+
+               <p>Common Functions:<br>
+               insert(V Value) - Inserts a node with given value<br>
+               delete(V Value) - Deletes node with given value<br>
+               size() - Returns the size of the Binary Search Tree</p>
+    userName:  Fred
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     Helpful videos and links for Binary Search Trees
+    content:   <a href="http://algs4.cs.princeton.edu/32bst/BST.java.html">Implementation of Binary Search Tree by Robert Sedgewick and Kevin Wayne</a> with 
+               <a href="http://algs4.cs.princeton.edu/code/javadoc/BST.html">Java Documentation</a> and 
+               <a href="http://algs4.cs.princeton.edu/32bst/">Notes</a> <br>
+               <a href="http://en.wikipedia.org/wiki/Binary_search_tree">Wikipedia Page for Binary Search Tree</a> <br>
+               <a href="http://cslibrary.stanford.edu/110/BinaryTrees.html">Notes on Binary Search Tree by Nick Parlante</a> <br>
+    userName:  Fred
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 2
     title:     Missed lecture the other day, does anyone have a list of terminologies for BST?
     content:   Unfortunately couldn't make it to class and the slides are not posted online. I really appreciate the help guys!
     userName:  Fred
@@ -145,7 +179,45 @@
 # Comparator Posts
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 3
+    title:     Basics of Comparators
+    content:   "<p>General:<br>
+                The Comparator Interface in Java utilizes the method compare() to impose an ordering on the class implementing the Comparator Interface. This is extremely useful for ordering any type of collection such as lists, sets, maps, etc.</p>
+
+                <p>Pros:<br>
+                - Can be delcared in a separate class so you can leave the base code unchanged<br>
+                - Can declare rules for a non-natural or custom ordering</p>
+
+                <p>Core Methods:<br>
+                compare(T obj1, Tobj2) - Compares its two arguments for order. Returns a negative integer, zero, or a positive integer as the first argument is less than, equal to, or greater than the second.</p>
+
+                <p>Example Code:</p>
+
+                <pre><strong>public</strong> <strong>class</strong> PersonAgeComparator <strong>implements</strong> <strong>Comparator</strong>{
+
+				<strong>public</strong> <strong>int</strong> compare(Object o1, Object o2) {
+				    person p1 = (Person) o1;
+				    Person p2 = (Person) o2; 
+				<strong>return</strong> p1.getPersonAge() - p2.getPersonAge();
+				  }
+				}</pre>"
+    userName:  Jason
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 3
+    title:     Helpful videos and links for Comparators
+    content:   <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html">Java Documentation</a> <br>
+               <a href="http://developer.android.com/reference/java/util/Comparator.html">Android Documentation</a> <br>
+               <a href="http://www.mkyong.com/java/java-object-sorting-example-comparable-and-comparator/">Blog on Comparable and Comparator</a><br>
+               <a href="stackoverflow.com/questions/2839137/how-to-use-comparator-in-java-to-sort">StackOverflow Discussion</a> 
+    userName:  Cindy
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 3
     title:     How do you implement a Comparator compare method?
     content:   I am trying to order a list of colors by alphabetical order but I'm unsure how to implement the compare method inside my Comparator. Could I get a hint or some guidance? 
     userName:  Bryce
@@ -154,7 +226,85 @@
 # DCLL Posts
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 4
+    title:     Basics of Double Circular Linked Lists 
+    content:   "<p>General:<br>
+				A Double Circular Linked List may be a mouthful, but it is not as complex as it sounds. Firstly, a Linked List is just a collection of linked nodes. These nodes contain data and pointers to other nodes. Making a Linked List 'Circular' means that these nodes are linked in a circle. This means that the last node in the list has a pointer to the first node in the list. Taking a Circular Linked List and making it 'Double' or also called 'Doubly' means that all the nodes in the list have two pointers, one pointing to the node prior to itself and one pointing to the node after itself.</p>
+				
+				<p>Pros:<br>
+				- Provides more functionality compared to a simpler linked list<br>
+				- More efficient iteration, selection, and deletion</p>
+				
+				<p>Core Methods:<br>
+				offer(E element) - Adds given element at the end of the list<br>
+				poll() - Retrieves and removes the head (first element) of this list.<br>
+				size() - Returns the number of elements in the list</p>
+				
+				Example Code:<br>
+				<pre>
+				public class Node&lt;T&gt; {
+				  Node prev;
+				  Node next;
+				  T data;
+				
+				  public Node(T data) {
+				    this.data = data;
+				    prev = null;
+				    next = null;
+				  }
+				}
+				
+				public class LinkedList&lt;T&gt; {
+				  Node&lt;T&gt; head;
+				  int size;
+				
+				  public LinkedList() {
+				    head = null;
+				    size = 0;
+				  }
+				
+				  public void offer(T newData) {
+				    if (head == null) {
+				      head = new Node&lt;T&gt;(newData);
+				      size++;
+				      return;
+				    }
+				
+				    head.prev.next = new Node&lt;T&gt;(newData);
+				    head.prev = head.prev.next;
+				    size++;
+				    return;
+				  }
+				
+				  public void poll() {
+				    head.prev = head.next;
+				    head.next.prev = head.prev;
+				    head = head.next;
+				    return;
+				  }
+				
+				  public int size() {
+				    return size;
+				  }
+				}
+				</pre>" 
+    userName:  Jason
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 4
+    title:     Helpful videos and links for Double Circular Linked Lists
+    content:   <a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html">Java Documentation for Regular Linked List</a> <br>
+               <a href="http://developer.android.com/reference/java/util/LinkedList.html">Android Documentation for Regular Linked List</a> <br>
+               <a href="http://en.wikipedia.org/wiki/Doubly_linked_list">Wikipedia Page on DCLL</a> <br>
+               <a href="techyrajeev.blogspot.com/2012/03/java-tutorial-on-circular-doubly-linked.html">Blog on DCLL</a> <br> 
+    userName:  Cindy
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 4
     title:     What does the node class for a DCLL look like?
     content:   I have a node class for a regular singular linked list but I am having some trouble refactoring it for a DCLL. What should I change in my node class?
     userName:  Aaron
@@ -162,7 +312,7 @@
     
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 4
     title:     What are some of the advantages of having a DCLL?
     content:   Implementing a DCLL versus a regular Linked List is a huge pain. I just want to understand what are the benefits of a DCLL and if it is really worth the extra code.
     userName:  Julie
@@ -171,7 +321,164 @@
 # Generics Posts
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 5
+    title:     Basics of Generics
+    content:   "<h1>Generic Types</h1>
+				
+				<p>A <em>generic type</em> is a generic class or interface that is parameterized over types. The following <tt>Box</tt> class will be modified to demonstrate the concept.</p>
+				
+				<h2>A Simple Box Class</h2>
+				
+				<p>Begin by examining a non-generic <tt>Box</tt> class that operates on objects of any type. It needs only to provide two methods: <tt>set</tt>, which adds an object to the box, and <tt>get</tt>, which retrieves it:</p>
+				
+				<pre>public class Box {
+				    private Object object;
+				
+				    public void set(Object object) { this.object = object; }
+				    public Object get() { return object; }
+				}
+				</pre>
+				
+				<p>Since its methods accept or return an <tt>Object</tt>, you are free to pass in whatever you want, provided that it is not one of the primitive types. There is no way to verify, at compile time, how the class is used. One part of the code may place an <tt>Integer</tt> in the box and expect to get <tt>Integer</tt>s out of it, while another part of the code may mistakenly pass in a <tt>String</tt>, resulting in a runtime error.</p>
+				
+				<h2>A Generic Version of the Box Class</h2>
+				
+				<p>A <em>generic class</em> is defined with the following format:</p>
+				
+				<pre>class name&lt;T1, T2, ..., Tn&gt; { /* ... */ }
+				</pre>
+				
+				<p>The type parameter section, delimited by angle brackets (<tt>&lt;&gt;</tt>), follows the class name. It specifies the <em>type parameters</em> (also called <em>type variables</em>) <tt>T1</tt>, <tt>T2</tt>, ..., and <tt>Tn</tt>.</p>
+				
+				<p>To update the <tt>Box</tt> class to use generics, you create a <em>generic type declaration</em> by changing the code \"<tt>public class Box</tt>\" to \"<tt>public class Box&lt;T&gt;</tt>\". This introduces the type variable, <tt>T</tt>, that can be used anywhere inside the class.</p>
+				
+				<p>With this change, the <tt>Box</tt> class becomes:</p>
+				
+				<pre>/**
+				 * Generic version of the Box class.
+				 * @param &lt;T&gt; the type of the value being boxed
+				 */
+				public class Box&lt;T&gt; {
+				    // T stands for \"Type\"
+				    private T t;
+				
+				    public void set(T t) { this.t = t; }
+				    public T get() { return t; }
+				}
+				</pre>
+				
+				<p>As you can see, all occurrences of <tt>Object</tt> are replaced by <tt>T</tt>. A type variable can be any <strong>non-primitive</strong> type you specify: any class type, any interface type, any array type, or even another type variable.</p>
+				
+				<p>This same technique can be applied to create generic interfaces.</p>
+				
+				<h2>Type Parameter Naming Conventions</h2>
+				
+				<p>By convention, type parameter names are single, uppercase letters. This stands in sharp contrast to the variable <a href=\"http://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html#naming\" target=\"_top\">naming</a> conventions that you already know about, and with good reason: Without this convention, it would be difficult to tell the difference between a type variable and an ordinary class or interface name.</p>
+				
+				<p>The most commonly used type parameter names are:</p>
+				
+				<ul>
+				  <li>E - Element (used extensively by the Java Collections Framework)</li>
+				  <li>K - Key</li>
+				  <li>N - Number</li>
+				  <li>T - Type</li>
+				  <li>V - Value</li>
+				  <li>S,U,V etc. - 2nd, 3rd, 4th types</li>
+				</ul>
+				
+				<p>You'll see these names used throughout the Java SE API and the rest of this lesson.</p>
+				
+				<h2>Invoking and Instantiating a Generic Type</h2>
+				
+				<p>To reference the generic <tt>Box</tt> class from within your code, you must perform a <em>generic type invocation</em>, which replaces <tt>T</tt> with some concrete value, such as <tt>Integer</tt>:</p>
+				
+				<pre>Box&lt;Integer&gt; integerBox;
+				</pre>
+				
+				<p>You can think of a generic type invocation as being similar to an ordinary method invocation, but instead of passing an argument to a method, you are passing a <em>type argument</em> &mdash; <tt>Integer</tt> in this case &mdash; to the <tt>Box</tt> class itself.</p>
+				
+				<hr>
+				<p><strong>Type Parameter and Type Argument Terminology:</strong>&nbsp;Many developers use the terms \"type parameter\" and \"type argument\" interchangeably, but these terms are not the same. When coding, one provides type arguments in order to create a parameterized type. Therefore, the <tt>T</tt> in <tt>Foo&lt;T&gt;</tt> is a type parameter and the <tt>String</tt> in <tt>Foo&lt;String&gt; f</tt> is a type argument. This lesson observes this definition when using these terms.</p>
+				
+				<hr>
+				<p>Like any other variable declaration, this code does not actually create a new <tt>Box</tt> object. It simply declares that <tt>integerBox</tt> will hold a reference to a \"<tt>Box</tt> of <tt>Integer</tt>\", which is how <tt>Box&lt;Integer&gt;</tt> is read.</p>
+				
+				<p>An invocation of a generic type is generally known as a <em>parameterized type</em>.</p>
+				
+				<p>To instantiate this class, use the <tt>new</tt> keyword, as usual, but place <tt>&lt;Integer&gt;</tt> between the class name and the parenthesis:</p>
+				
+				<pre>Box&lt;Integer&gt; integerBox = new Box&lt;Integer&gt;();
+				</pre>
+				
+				<h2>The Diamond</h2>
+				
+				<p>In Java SE 7 and later, you can replace the type arguments required to invoke the constructor of a generic class with an empty set of type arguments (&lt;&gt;) as long as the compiler can determine, or infer, the type arguments from the context. This pair of angle brackets, &lt;&gt;, is informally called <em>the diamond</em>. For example, you can create an instance of <tt>Box&lt;Integer&gt;</tt> with the following statement:</p>
+				
+				<pre>Box&lt;Integer&gt; integerBox = new Box&lt;&gt;();
+				</pre>
+				
+				<h2>Multiple Type Parameters</h2>
+				
+				<p>As mentioned previously, a generic class can have multiple type parameters. For example, the generic <tt>OrderedPair</tt> class, which implements the generic <tt>Pair</tt> interface:</p>
+				
+				<pre>public interface Pair&lt;K, V&gt; {
+				    public K getKey();
+				    public V getValue();
+				}
+				
+				public class OrderedPair&lt;K, V&gt; implements Pair&lt;K, V&gt; {
+				
+				    private K key;
+				    private V value;
+				
+				    public OrderedPair(K key, V value) {
+				  this.key = key;
+				  this.value = value;
+				    }
+				
+				    public K getKey() { return key; }
+				    public V getValue() { return value; }
+				}
+				</pre>
+				
+				<p>The following statements create two instantiations of the <tt>OrderedPair</tt> class:</p>
+				
+				<pre>Pair&lt;String, Integer&gt; p1 = new OrderedPair&lt;String, Integer&gt;(\"Even\", 8);
+				Pair&lt;String, String&gt;  p2 = new OrderedPair&lt;String, String&gt;(\"hello\", \"world\");
+				</pre>
+				
+				<p>The code, <tt>new OrderedPair&lt;String, Integer&gt;</tt>, instantiates <tt>K</tt> as a <tt>String</tt> and <tt>V</tt> as an <tt>Integer</tt>. Therefore, the parameter types of <tt>OrderedPair</tt>'s constructor are <tt>String</tt> and <tt>Integer</tt>, respectively. Due to autoboxing, is it valid to pass a <tt>String</tt> and an <tt>int</tt> to the class.</p>
+				
+				<p>As mentioned in The Diamond, because a Java compiler can infer the <tt>K</tt> and <tt>V</tt> types from the declaration <tt>OrderedPair&lt;String, Integer&gt;</tt>, these statements can be shortened using diamond notation:</p>
+				
+				<pre>OrderedPair&lt;String, Integer&gt; p1 = new OrderedPair<strong>&lt;&gt;</strong>(\"Even\", 8);
+				OrderedPair&lt;String, String&gt;  p2 = new OrderedPair<strong>&lt;&gt;</strong>(\"hello\", \"world\");
+				</pre>
+				
+				<p>To create a generic interface, follow the same conventions as for creating a generic class.</p>
+				
+				<h2>Parameterized Types</h2>
+				
+				<p>You can also substitute a type parameter (i.e., <tt>K</tt> or <tt>V</tt>) with a parameterized type (i.e., <tt>List&lt;String&gt;</tt>). For example, using the <tt>OrderedPair&lt;K, V&gt;</tt> example:</p>
+				
+				<pre>OrderedPair&lt;String, <strong>Box&lt;Integer&gt;</strong>&gt; p = new OrderedPair&lt;&gt;(\"primes\", new Box&lt;Integer&gt;(...));
+				</pre>"
+    userName:  Jason
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 5
+    title:     Helpful videos and links for Generics
+    content:   <a href="http://www.angelikalanger.com/GenericsFAQ/FAQSections/ParameterizedTypes.html#FAQ001">FAQS on Java Generics</a> <br>
+               <a href="http://en.wikipedia.org/wiki/Generics_in_Java#Type_wildcards">Wikipedia Page on Generics in Java</a> <br>
+               <a href="http://www.javacodegeeks.com/2011/04/java-generics-quick-tutorial.html">Tutorial on Generics in Java</a> 
+    userName:  Cindy
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 5
     title:     Does anyone know of a good explanation for Generics?
     content:   I've been Googling around for ages and I still can't figure out how Generics work. Does anybody know of a good site or video that really helped them understand this topic? Maybe with examples?
     userName:  Ty
@@ -179,7 +486,7 @@
     
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 5
     title:     I don't get what Generics do
     content:   I need some help understanding what the purpose of Generics is. My program seems to work even if I don't use Generics.
     userName:  Kyle
@@ -187,16 +494,32 @@
     
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 5
     title:     Can I use Strings to represent Generics?
     content:   For all the examples of Generic Type Parameters, I mainly see T or E. I like to use descriptive parameter names so I was wondering if it is okay to use a String to represent Generic Type Parameters.
     userName:  Jerry
     isSticky:  false
 
-# JUnit Posts   
+# JUnit Posts 
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 6
+    title:     title
+    content:   content 
+    userName:  Jason
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 6
+    title:     title
+    content:   content 
+    userName:  Cindy
+    isSticky:  true
+      
+- !!models.Post
+    category:  !!models.Category
+               id: 6
     title:     How can I perform JUnit Tests using Eclipse?
     content:   I am having some trouble setting up JUnit inside of Eclipse. Could someone please help me?
     userName:  Howard
@@ -205,7 +528,23 @@
 # Recursion Posts
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 7
+    title:     title
+    content:   content 
+    userName:  Jason
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 7
+    title:     title
+    content:   content 
+    userName:  Cindy
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 7
     title:     How does recursion work in a Binary Search Tree?
     content:   I think I understand the basics of Recursion, but I'm not quite sure how to trace through a recursive method in a Binary Search Tree.  Anyone else have the same problem?
     userName:  Bob
@@ -213,7 +552,7 @@
     
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 7
     title:     Helpful links on Recursion on YouTube.
     content:   "I just replied to Paul's post regarding how recursion works in a Binary Search Tree.  I linked him to a helpful video I found on YouTube, and was wondering if it were possible to also 
                   put this up on the Helpful Links Sticky? Thanks in advance! Almost forgot, here's the link: <br>
@@ -224,7 +563,23 @@
 # Backtracking Posts
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 8
+    title:     title
+    content:   content 
+    userName:  Jason
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 8
+    title:     title
+    content:   content 
+    userName:  Cindy
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 8
     title:     Examples of Recursive Backtracking?
     content:   I think I understand the basics of Recursion, but Recursive Backtracking is another thing in of itself.  Are there any examples anyone found that can help me grasp this topic?
     userName:  Amy
@@ -233,7 +588,23 @@
 # Sorting Posts
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 9
+    title:     title
+    content:   content 
+    userName:  Jason
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 9
+    title:     title
+    content:   content 
+    userName:  Cindy
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 9
     title:     How many types of Sorting should we be familiar with?
     content:   I did a general search of Sorting and there are TONS of results.  How many and which do you recommend we be familiar with for this course?
     userName:  Frank
@@ -241,7 +612,7 @@
     
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 9
     title:     Helpful links on different Sorting methods on YouTube.
     content:   Hey guys! Exciting news! I found a few videos demonstrating some of the sorting methods we'll be discussing in class.  I know its a little cheesy but its so awesome and fun.  Hope it helps
                   you as much as it helped me! <br><br>
@@ -257,7 +628,23 @@
 # Stack Posts
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 10
+    title:     title
+    content:   content 
+    userName:  Jason
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 10
+    title:     title
+    content:   content 
+    userName:  Cindy
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 10
     title:     Why are Stacks useful?
     content:   Why use Stacks when we have other ADTs at our disposal like ArrayLists and such?
     userName:  Will
@@ -265,7 +652,7 @@
     
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 10
     title:     Big-O of Stack operations?
     content:   With the quiz coming up, I was wondering if anyone knew the bigO of some Stack operations? It wasn't listed in the lectures notes so thought I would ask here.
     userName:  May
@@ -274,7 +661,23 @@
 # Tree Trav Posts
 - !!models.Post
     category:  !!models.Category
-               id: 2
+               id: 11
+    title:     title
+    content:   content 
+    userName:  Jason
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 11
+    title:     title
+    content:   content 
+    userName:  Cindy
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 11
     title:     Algorithms for different traversals?
     content:   I understand the different types of traversals but I am having trouble with the actual implementation. Psuedocode would be really helpful.
     userName:  Lee
