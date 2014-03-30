@@ -1,16 +1,18 @@
 @(commentList: List[Comment], currentPost: Post)
 
-@main("Post page") {
+@main(currentPost.title) {
 
 	<div class="container">
       <ol class="breadcrumb">
         <li>
-          <a href="../../index.html">Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
           <a href="../../Categories.html">Categories</a>
         </li>
-        <li class="active">@currentPost.category</li>
+        <li>
+          <a href="#">@currentPost.category</a>
+        </li>
       </ol>
       <form class="navbar-form navbar-right">
         <div class="form-group">
@@ -51,7 +53,7 @@
           </div>
         </section>
         <hr>
-        <h3>3 Answers </h3>
+        <h3>@commentList.length Answers</h3>
         <hr>
         
         <!-- Replies -->

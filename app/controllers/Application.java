@@ -33,9 +33,16 @@ public class Application extends Controller {
         return ok(views.html.explore.render("Welcome to the explore content page"));
     }
     
-    public static Result comments() {
+    public static Result post(Long pid) {
     	List<Comment> cmntList = Comment.all();
-    	return ok(views.html.post.render(cmntList, Post.find.ref((long) 1)));
+    	return ok(views.html.post.render(cmntList, Post.find.ref(pid)));
+    }
+    
+    public static Result category(Long cid) {
+    	List<Post> postList = Post.all();
+    	//TODO create query that produced list of sticky posts. Pass as param to category render
+    	List<Post> stickyList;
+    	return ok(views.html.category.render(postList, Category.find.ref(cid)));
     }
 
     public static Result users() {
