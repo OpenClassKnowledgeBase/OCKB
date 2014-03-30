@@ -1,6 +1,6 @@
 @(commentList: List[Comment], currentPost: Post)
 
-@main(currentPost.title) {
+@main2(currentPost.title) {
 
 	<div class="container">
       <ol class="breadcrumb">
@@ -8,7 +8,7 @@
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="../../Categories.html">Categories</a>
+          <a href="@routes.Application.categories()">Categories</a>
         </li>
         <li>
           <a href="@routes.Application.category(currentPost.category.id)">@currentPost.category.title</a>

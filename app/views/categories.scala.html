@@ -2,7 +2,7 @@
 
  @import helper._
 
- @main("Categories"){
+ @main2("Categories"){
     <h1>count:  @categories.size()</h1>
     <div class = "container">
         <div class = "row">
@@ -18,20 +18,20 @@
             @if(index % 3 == 0){
                 <div class = "row">
                     <div class="col-xs-6 col-sm-4">
-                        <a href = @categories(index).url>@categories(index).title</a>
+                        <a href = @routes.Application.category(categories(index).id)>@categories(index).title</a>
                         <p>@categories(index).description</p>
                     </div> 
             }
             @if(index % 3 == 1){
                 <div class="col-xs-6 col-sm-4">
-                    <a href = @categories(index).url>@categories(index).title</a>
+                    <a href = @routes.Application.category(categories(index).id)>@categories(index).title</a>
                     <p>@categories(index).description</p>
                 </div>  
             }      
             @if(index % 3 == 2){
                   <div class="clearfix visible-xs"></div>
                   <div class="hidden-xs col-xs-6 col-sm-4 category">
-                      <a href = @categories(index).url>@categories(index).title</a>
+                      <a href = @routes.Application.category(categories(index).id)>@categories(index).title</a>
                       <p>@categories(index).description</p>
                   </div>
                 </div>
