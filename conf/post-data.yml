@@ -1,19 +1,159 @@
+# ArrayList Posts
 - !!models.Post
-    category:      CategoryOne
-    title:       TitleOne
-    content:   ContentOne
+    category:  !!models.Category
+               id: 1
+    title:     What are some differences between an Array and ArrayList?
+    content:   It seems that Arrays and ArrayLists perform many of the same operations, so I am wondering what exactly are the differences between the two? Should I be using one over the other?
+    userName:  Drew
     
 - !!models.Post
-    category:      CategoryTwo
-    title:       TitleTwo
-    content:   ContentTwo
+    category:  !!models.Category
+               id: 1
+    title:     What are some Big-O for ArrayList operations?
+    content:   I'm getting confused about Big-O, can someone explain with examples how to get the Big-O for ArrayList operations like sort?
+    userName:  Frank
     
 - !!models.Post
-    category:      CategoryThree
-    title:       TitleThree
-    content:   ContentThree
+    category:  !!models.Category
+               id: 1
+    title:     So why would an ArrayList be better than an Array?
+    content:   In which situations or programs would using an ArrayList be better? I am more comfortable with Arrays so would the benefits of using an ArrayList be worth it?
+    userName:  Eric
+
+# BST Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     Missed lecture the other day, does anyone have a list of terminologies for BST?
+    content:   Unfortunately couldn't make it to class and the slides are not posted online. I really appreciate the help guys!
+    userName:  Fred
     
 - !!models.Post
-    category:      CategoryFour
-    title:       TitleFour
-    content:   ContentFour
+    category:  !!models.Category
+               id: 2
+    title:     How do you search through a Binary Search Tree for a certain value?
+    content:   I have no idea how to find a certain value in a Binary Search Tree. Could someone explain how exactly to search through a BST?
+    userName:  Fred
+
+# Comparator Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     How do you implement a Comparator compare method?
+    content:   I am trying to order a list of colors by alphabetical order but I'm unsure how to implement the compare method inside my Comparator. Could I get a hint or some guidance? 
+    userName:  Fred
+
+# DCLL Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     What does the node class for a DCLL look like?
+    content:   I have a node class for a regular singular linked list but I am having some trouble refactoring it for a DCLL. What should I change in my node class?
+    userName:  Fred
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     What are some of the advantages of having a DCLL?
+    content:   Implementing a DCLL versus a regular Linked List is a huge pain. I just want to understand what are the benefits of a DCLL and if it is really worth the extra code.
+    userName:  Fred
+    
+# Generics Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     Does anyone know of a good explanation for Generics?
+    content:   I've been Googling around for ages and I still can't figure out how Generics work. Does anybody know of a good site or video that really helped them understand this topic? Maybe with examples?
+    userName:  Fred
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     I don't get what Generics do
+    content:   I need some help understanding what the purpose of Generics is. My program seems to work even if I don't use Generics.
+    userName:  Fred
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     Can I use Strings to represent Generics?
+    content:   For all the examples of Generic Type Parameters, I mainly see T or E. I like to use descriptive parameter names so I was wondering if it is okay to use a String to represent Generic Type Parameters.
+    userName:  Fred
+
+# JUnit Posts   
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     How can I perform JUnit Tests using Eclipse?
+    content:   I am having some trouble setting up JUnit inside of Eclipse. Could someone please help me?
+    userName:  Fred
+    
+# Recursion Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     How does recursion work in a Binary Search Tree?
+    content:   I think I understand the basics of Recursion, but I'm not quite sure how to trace through a recursive method in a Binary Search Tree.  Anyone else have the same problem?
+    userName:  Fred
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     Helpful links on Recursion on YouTube.
+    content:   "I just replied to Paul's post regarding how recursion works in a Binary Search Tree.  I linked him to a helpful video I found on YouTube, and was wondering if it were possible to also 
+                  put this up on the Helpful Links Sticky? Thanks in advance! Almost forgot, here's the link: <br>
+                  <a href = 'https://www.youtube.com/watch?v=ql2oLhDObwA'>Binary Search Tree Recursion</a>"
+    userName:  Fred
+    
+# Backtracking Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     Examples of Recursive Backtracking?
+    content:   I think I understand the basics of Recursion, but Recursive Backtracking is another thing in of itself.  Are there any examples anyone found that can help me grasp this topic?
+    userName:  Fred
+    
+# Sorting Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     How many types of Sorting should we be familiar with?
+    content:   I did a general search of Sorting and there are TONS of results.  How many and which do you recommend we be familiar with for this course?
+    userName:  Fred
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     Helpful links on different Sorting methods on YouTube.
+    content:   Hey guys! Exciting news! I found a few videos demonstrating some of the sorting methods we'll be discussing in class.  I know its a little cheesy but its so awesome and fun.  Hope it helps
+                  you as much as it helped me! <br><br>
+                  <a href = "https://www.youtube.com/watch?v=ywWBy6J5gz8">QuickSort</a> <br>
+                  <a href = "https://www.youtube.com/watch?v=XaqR3G_NVoo">MergeSort</a> <br>
+                  <a href = "https://www.youtube.com/watch?v=CmPA7zE8mx0">ShellSort</a> <br>
+                  <a href = "https://www.youtube.com/watch?v=Ns4TPTC8whw">SelectSort</a> <br>
+                  <a href = "https://www.youtube.com/watch?v=lyZQPjUT5B4">Bubblesort</a> <br>
+                  <a href = "https://www.youtube.com/watch?v=ROalU379l3U">InsertSort</a> <br>
+    userName:  Fred
+    
+# Stack Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     Why are Stacks useful?
+    content:   Why use Stacks when we have other ADTs at our disposal like ArrayLists and such?
+    userName:  Fred
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     Big-O of Stack operations?
+    content:   With the quiz coming up, I was wondering if anyone knew the bigO of some Stack operations? It wasn't listed in the lectures notes so thought I would ask here.
+    userName:  Fred
+    
+# Tree Trav Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 2
+    title:     Algorithms for different traversals?
+    content:   I understand the different types of traversals but I am having trouble with the actual implementation. Psuedocode would be really helpful.
+    userName:  Fred

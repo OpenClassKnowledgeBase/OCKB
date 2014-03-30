@@ -21,9 +21,9 @@ create table comment (
 create table post (
   id                        bigint not null,
   user_name                 varchar(255),
-  category                  varchar(255),
+  category_id               bigint,
   title                     varchar(255),
-  content                   varchar(255),
+  content                   TEXT,
   date_posted               timestamp,
   constraint pk_post primary key (id))
 ;
@@ -52,6 +52,8 @@ create sequence post_seq;
 
 create sequence post_submission_seq;
 
+alter table post add constraint fk_post_category_1 foreign key (category_id) references category (id) on delete restrict on update restrict;
+create index ix_post_category_1 on post (category_id);
 
 
 

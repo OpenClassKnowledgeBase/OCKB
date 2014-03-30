@@ -12,13 +12,15 @@ public class Post extends Model{
 
 	public String userName;
 
-	@Required
-	public String category;
+	@ManyToOne
+	@JoinColumn(name="category_id")
+	public Category category;
 
 	@Required
 	public String title;
 
 	@Required
+	@Column(columnDefinition = "TEXT")
 	public String content;
 
 	@Formats.DateTime(pattern="MM/dd/yyyy")
@@ -27,10 +29,11 @@ public class Post extends Model{
 	@Id 
 	public Long id;
 
+
 	//help initiate queries
 	public static Finder<Long,Post> find = new Finder<Long,Post>(Long.class, Post.class);
 	
-	public Post (String category, String title, String content) {
+	public Post (Category category, String title, String content) {
 		this.category = category;
 		this.title = title;
 		this.content = content;
@@ -40,7 +43,7 @@ public class Post extends Model{
 		return find.all();
 	}
 
-	public static void create(Post post, String category, String title, String content){
+	public static void create(Post post, Category category, String title, String content){
 		post.category = category;
 		post.title = title;
 		post.content = content;

@@ -14,13 +14,14 @@ public class Global extends GlobalSettings {
 	@Override
 	public void onStart(Application app) {
 
+		if (Category.find.findRowCount() == 0) {
+			Ebean.save((List<Category>) Yaml.load("category-data.yml"));
+		}
+		
 		
 		//check if the database is empty
 		if (Post.find.findRowCount() == 0) {
 			Ebean.save((List<Post>) Yaml.load("post-data.yml"));
-		}
-		if (Category.find.findRowCount() == 0) {
-			Ebean.save((List<Category>) Yaml.load("category-data.yml"));
 		}
 		
 		if (Comment.find.findRowCount() == 0) {
