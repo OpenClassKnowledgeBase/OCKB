@@ -209,3 +209,63 @@ database [default] connected at jdbc:h2:mem:play
 2014-03-28 18:24:33,798 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
+2014-03-29 13:46:25,721 - [ERROR] - from com.avaje.ebeaninternal.server.core.DefaultServer in Thread-61 
+Error unregistering Ebean Ebean:server=default2
+javax.management.InstanceNotFoundException: Ebean:server=default2,key=AutoFetch
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean(DefaultMBeanServerInterceptor.java:1095) ~[na:1.7.0_45]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.exclusiveUnregisterMBean(DefaultMBeanServerInterceptor.java:427) ~[na:1.7.0_45]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.unregisterMBean(DefaultMBeanServerInterceptor.java:415) ~[na:1.7.0_45]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.unregisterMBean(JmxMBeanServer.java:546) ~[na:1.7.0_45]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.shutdownInternal(DefaultServer.java:406) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.shutdownManaged(DefaultServer.java:379) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.lib.ShutdownManager.shutdown(ShutdownManager.java:153) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.lib.ShutdownHook.run(ShutdownHook.java:19) [avaje-ebeanorm.jar:na]
+
+2014-03-29 13:46:25,733 - [ERROR] - from com.avaje.ebeaninternal.server.core.DefaultServer in Thread-61 
+Error unregistering Ebean Ebean:server=default3
+javax.management.InstanceNotFoundException: Ebean:server=default3,key=AutoFetch
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean(DefaultMBeanServerInterceptor.java:1095) ~[na:1.7.0_45]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.exclusiveUnregisterMBean(DefaultMBeanServerInterceptor.java:427) ~[na:1.7.0_45]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.unregisterMBean(DefaultMBeanServerInterceptor.java:415) ~[na:1.7.0_45]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.unregisterMBean(JmxMBeanServer.java:546) ~[na:1.7.0_45]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.shutdownInternal(DefaultServer.java:406) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.shutdownManaged(DefaultServer.java:379) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.lib.ShutdownManager.shutdown(ShutdownManager.java:153) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.lib.ShutdownHook.run(ShutdownHook.java:19) [avaje-ebeanorm.jar:na]
+
+2014-03-29 13:46:25,735 - [ERROR] - from com.avaje.ebeaninternal.server.core.DefaultServer in Thread-61 
+Error unregistering Ebean Ebean:server=default4
+javax.management.InstanceNotFoundException: Ebean:server=default4,key=AutoFetch
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean(DefaultMBeanServerInterceptor.java:1095) ~[na:1.7.0_45]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.exclusiveUnregisterMBean(DefaultMBeanServerInterceptor.java:427) ~[na:1.7.0_45]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.unregisterMBean(DefaultMBeanServerInterceptor.java:415) ~[na:1.7.0_45]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.unregisterMBean(JmxMBeanServer.java:546) ~[na:1.7.0_45]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.shutdownInternal(DefaultServer.java:406) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.shutdownManaged(DefaultServer.java:379) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.lib.ShutdownManager.shutdown(ShutdownManager.java:153) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.lib.ShutdownHook.run(ShutdownHook.java:19) [avaje-ebeanorm.jar:na]
+
+2014-03-29 13:46:25,736 - [ERROR] - from com.avaje.ebeaninternal.server.core.DefaultServer in Thread-61 
+Error unregistering Ebean Ebean:server=default5
+javax.management.InstanceNotFoundException: Ebean:server=default5,key=AutoFetch
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean(DefaultMBeanServerInterceptor.java:1095) ~[na:1.7.0_45]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.exclusiveUnregisterMBean(DefaultMBeanServerInterceptor.java:427) ~[na:1.7.0_45]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.unregisterMBean(DefaultMBeanServerInterceptor.java:415) ~[na:1.7.0_45]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.unregisterMBean(JmxMBeanServer.java:546) ~[na:1.7.0_45]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.shutdownInternal(DefaultServer.java:406) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.shutdownManaged(DefaultServer.java:379) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.lib.ShutdownManager.shutdown(ShutdownManager.java:153) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.lib.ShutdownHook.run(ShutdownHook.java:19) [avaje-ebeanorm.jar:na]
+
+2014-03-29 13:46:25,737 - [ERROR] - from com.avaje.ebeaninternal.server.core.DefaultServer in Thread-61 
+Error unregistering Ebean Ebean:server=default6
+javax.management.InstanceNotFoundException: Ebean:server=default6,key=AutoFetch
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean(DefaultMBeanServerInterceptor.java:1095) ~[na:1.7.0_45]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.exclusiveUnregisterMBean(DefaultMBeanServerInterceptor.java:427) ~[na:1.7.0_45]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.unregisterMBean(DefaultMBeanServerInterceptor.java:415) ~[na:1.7.0_45]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.unregisterMBean(JmxMBeanServer.java:546) ~[na:1.7.0_45]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.shutdownInternal(DefaultServer.java:406) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.shutdownManaged(DefaultServer.java:379) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.lib.ShutdownManager.shutdown(ShutdownManager.java:153) [avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.lib.ShutdownHook.run(ShutdownHook.java:19) [avaje-ebeanorm.jar:na]
+
