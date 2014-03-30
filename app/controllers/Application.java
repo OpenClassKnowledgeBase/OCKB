@@ -39,10 +39,9 @@ public class Application extends Controller {
     }
     
     public static Result category(Long cid) {
-    	List<Post> postList = Post.all();
-    	//TODO create query that produced list of sticky posts. Pass as param to category render
-    	List<Post> stickyList;
-    	return ok(views.html.category.render(postList, Category.find.ref(cid)));
+    	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
+    	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
+    	return ok(views.html.category.render(stickyList, postList, Category.find.ref(cid)));
     }
 
     public static Result users() {

@@ -11,6 +11,8 @@ import play.data.validation.Constraints.*;
 public class Post extends Model{
 
 	public String userName;
+	
+	public Boolean isSticky;
 
 	@ManyToOne
 	@JoinColumn(name="category_id")

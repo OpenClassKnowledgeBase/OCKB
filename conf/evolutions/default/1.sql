@@ -21,6 +21,7 @@ create table comment (
 create table post (
   id                        bigint not null,
   user_name                 varchar(255),
+  is_sticky                 boolean,
   category_id               bigint,
   title                     varchar(255),
   content                   TEXT,

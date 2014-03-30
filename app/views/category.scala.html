@@ -1,4 +1,4 @@
-@(postList: List[Post], currentCategory: Category)
+@(stickyList: List[Post], postList: List[Post], currentCategory: Category)
 
 @main(currentCategory.title) {
 
@@ -53,21 +53,18 @@
         </div>
       </div>
       <!-- Stickies -->
-      <section>
-          <div class="panel panel-warning">
-            <div class="panel-heading">
-              <span class="label label-warning">STICKY</span><a href = "GenericsResponses/GenericsBasics.html" class = "postLink">The basics of Generics</a>
-              <span class = "pull-right">Submitted by theProf</span>
-            </div>
-      </section>
-      <section>
-          <div class="panel panel-warning">
-            <div class="panel-heading">
-              <span class="label label-warning">STICKY</span><a href = "GenericsResponses/GenericsLinks.html" class = "postLink">Helpful videos and links for Generics</a>
-              <span class = "pull-right">Submitted by theTA</span>
-            </div>
-        </section>
+      @for(sticky <- stickyList) {
+	      <section>
+	          <div class="panel panel-warning">
+	            <div class="panel-heading">
+	              <span class="label label-warning">STICKY</span><a href = "@routes.Application.post(sticky.id)" class = "postLink">@sticky.title</a>
+	              <span class = "pull-right">Submitted by @sticky.userName</span>
+	            </div>
+	      </section>
+      }
+
       <hr>
+      
       <!-- Content -->
       @for(post <- postList) {
       	<section>
