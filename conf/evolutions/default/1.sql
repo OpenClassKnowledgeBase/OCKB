@@ -40,11 +40,12 @@ create table post_submission (
 ;
 
 create table user (
-  id                        bigint,
+  id                        bigint not null,
   email                     varchar(255),
   name                      varchar(255),
-  password                  varchar(255),
-  posts                     integer)
+  status                    varchar(255),
+  posts                     integer,
+  constraint pk_user primary key (id))
 ;
 
 create sequence category_seq;
@@ -52,6 +53,8 @@ create sequence category_seq;
 create sequence post_seq;
 
 create sequence post_submission_seq;
+
+create sequence user_seq;
 
 alter table post add constraint fk_post_category_1 foreign key (category_id) references category (id) on delete restrict on update restrict;
 create index ix_post_category_1 on post (category_id);
@@ -79,4 +82,6 @@ drop sequence if exists category_seq;
 drop sequence if exists post_seq;
 
 drop sequence if exists post_submission_seq;
+
+drop sequence if exists user_seq;
 

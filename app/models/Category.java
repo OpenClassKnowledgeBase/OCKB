@@ -44,4 +44,8 @@ public class Category extends Model{
 	public static void delete(Long id){
 		find.ref(id).delete();
 	}
+	
+	public static Category getCategory (Long id) {
+		return Category.find.byId(id);
+	}
 }

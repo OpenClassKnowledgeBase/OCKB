@@ -36,12 +36,13 @@ public class Application extends Controller {
     public static Result category(Long cid) {
     	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
     	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
-    	return ok(views.html.category.render(stickyList, postList, Category.find.ref(cid)));
+    	Category currentCategory = Category.getCategory(cid);
+    	return ok(views.html.category.render(postList, stickyList, currentCategory));
     }
     
     public static Result categories() {
     	//figure out how to put this in global
-    	/* Ebean.save((List<Category>) Yaml.load("categories.yml")); */
+
     	List<Category> categoryList = Category.findAll();
     	return ok(views.html.categories.render(categoryList));
     }

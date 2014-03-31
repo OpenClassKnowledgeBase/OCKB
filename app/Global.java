@@ -18,7 +18,6 @@ public class Global extends GlobalSettings {
 			Ebean.save((List<Category>) Yaml.load("category-data.yml"));
 		}
 		
-		
 		//check if the database is empty
 		if (Post.find.findRowCount() == 0) {
 			Ebean.save((List<Post>) Yaml.load("post-data.yml"));
