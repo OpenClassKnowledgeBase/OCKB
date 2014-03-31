@@ -1,6 +1,6 @@
 - !!models.User
   email: Teferi's Puzzle Box
   name: Notion Thief
-  password: Font of Mythos
+  status: Font of Mythos
   posts: 4
 

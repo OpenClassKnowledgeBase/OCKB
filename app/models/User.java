@@ -14,23 +14,24 @@ import com.avaje.ebean.*;
 @Entity
 public class User extends Model {
 
-    @Required
+    @Id
     public Long id;
     @Required
     public String email;
     @Required
     public String name;
     @Required
-    public String password;
+    public String status;
     //@Required
     //public String type;
+    @Required
     public int posts;
     
     public User() {}
-    public User(String email, String name, String password, String type, int posts) {
-      this.email = email;
+    public User(String email, String name, String status, int posts) {
+      this.email = email + "@hawaii.edu";
       this.name = name;
-      this.password = password;
+      this.status = status;
       //this.type = type;
       this.posts = posts;
     }
