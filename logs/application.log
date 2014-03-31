@@ -412,3 +412,68 @@ database [default] connected at jdbc:h2:mem:play
 2014-03-30 23:24:55,721 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
+2014-03-30 23:29:24,925 - [ERROR] - from play in play-internal-execution-context-5 
+Cannot invoke the action, eventually got an error: java.lang.NullPointerException
+
+2014-03-30 23:29:24,957 - [ERROR] - from application in play-internal-execution-context-5 
+
+
+! @6hlmdp45g - Internal server error, for (GET) [/post/17] ->
+
+play.api.Application$$anon$1: Execution exception[[NullPointerException: null]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.1]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+Caused by: java.lang.NullPointerException: null
+	at views.html.post$.apply(post.template.scala:42) ~[na:na]
+	at views.html.post$.render(post.template.scala:179) ~[na:na]
+	at views.html.post.render(post.template.scala) ~[na:na]
+	at controllers.Application.post(Application.java:29) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.apply(routes_routing.scala:89) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.apply(routes_routing.scala:89) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.1]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.1]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.1]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.1]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
+	... 4 common frames omitted
+
+2014-03-30 23:31:45,983 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-03-30 23:31:45,991 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-03-30 23:31:46,774 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+

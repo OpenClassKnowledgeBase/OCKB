@@ -26,7 +26,7 @@ public class Application extends Controller {
     
     public static Result post(Long pid) {
     	List<Comment> cmntList = Comment.all();
-    	return ok(views.html.post.render(cmntList, Post.find.ref(pid)));
+    	return ok(views.html.post.render(cmntList, Post.find.byId(pid)));
     }
     
     public static Result dashboard() {
