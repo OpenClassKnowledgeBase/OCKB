@@ -20,7 +20,7 @@
 	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 	            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 	          </button>
-	          <a class="navbar-brand" href="#">OCKB</a>
+	          <a class="navbar-brand" href="/">OCKB</a>
 	        </div>
 	        <div class="navbar-collapse collapse">
 	          @if(session().get("username")==null) {
@@ -30,7 +30,7 @@
 	          } else {
 	          <ul class="nav navbar-nav">
 	            <li>
-	                <a href="#">Dashboard</a>
+	                <a href="@routes.Application.dashboard()">Dashboard</a>
 	            </li>            
 	            <li>
 	              <a href="@routes.Application.categories()">Categories</a>
@@ -40,7 +40,7 @@
 	          <div class=" navbar-right">
 	            <ul class="nav navbar-nav">
 	              <li>
-	                <a href="#">Welcome @session().get("username")@@hawaii.edu!</a>
+	                <a href="@routes.Application.dashboard()">Welcome @session().get("username")@@hawaii.edu!</a>
 	              </li>
 	            </ul>
 	            <form class="navbar-form navbar-right pull-right" action="@routes.Application.logout()">

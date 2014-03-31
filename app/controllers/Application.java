@@ -31,6 +31,10 @@ public class Application extends Controller {
     	return ok(views.html.post.render(cmntList, Post.find.ref(pid)));
     }
     
+    public static Result dashboard() {
+    	return ok(views.html.dashboard.render());
+    }
+    
     public static Result category(Long cid) {
     	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
     	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();

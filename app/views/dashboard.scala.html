@@ -1,0 +1,149 @@
+ @()
+
+ @main("Dashboard") {
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class = "row">
+        <h1>Dashboard</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>My Recent Activity</h2>
+          <h4>Replies</h4>
+          <section>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                <a href = "Categories/GenericsResponses/postOne.html" class = "postLink">Does anyone know of a good explanation for Generics?</a>
+                  <span class = "hidden-xs pull-right replies-author">Active 5 min ago</span>
+                </div>
+            </section>
+            <section>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                  <a href = "Categories/GenericsResponses/postTwo.html" class = "postLink">Can I use Strings to represent Generics?</a>
+                    <span class = "hidden-xs pull-right replies-author">Active 5 hours ago</span>
+                  </div>
+              </section>
+            <section>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                  <a href = "Categories/ComparatorResponses/postOne.html" class = "postLink">How do you implement a Comparator compare method?</a>
+                    <span class = "hidden-xs pull-right replies-author">Active 1 hour ago</span>
+                  </div>
+            </section>
+          <br>
+          <h4>Posts</h4>
+          <section>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                <a href = "Categories/GenericsResponses/postOne.html" class = "postLink">Does anyone know of a good explanation for Generics?</a>
+                  <span class = "hidden-xs pull-right replies-author">Posted 5 min ago</span>
+                </div>
+            </section>
+            <section>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                  <a href = "Categories/JUnitResponses/postOne.html" class = "postLink">How can I perform JUnitTests using Eclipse?</a>
+                    <span class = "hidden-xs pull-right replies-author">Posted 5 hours ago</span>
+                  </div>
+              </section>
+            <section>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                  <a href = "Categories/GenericsResponses/postThree.html" class = "postLink">I don't get what Generics do</a>
+                    <span class = "hidden-xs pull-right replies-author">Posted 1 hour ago</span>
+                  </div>
+            </section>
+            <br>
+            <div class="row button">
+              <div class="col-md-2 col-md-offset-5">
+                <a class="btn btn-default" href="#">See All Activity &raquo;</a>
+              </div><!-- /.col-lg-4 -->
+          </div><!-- /button -->
+        </div>
+        <div class="col-lg-6">
+          <h2>Top Questions</h2>
+          <h4>By Votes</h4>
+          <section>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a href = "Categories/GenericsResponses/postTwo.html" class = "postLink">Can I use Strings to represent Generics?</a>
+                <span class = "pull-right stats">11 Votes</span>
+            </div>
+        </section>
+        <section>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a href = "Categories/DCLLResponses/postOne.html" class = "postLink">What does the node class for DCLL look like?</a>
+              <span class = "pull-right stats">10 Votes</span>
+          </div>
+        </section>
+        <section>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a href = "Categories/ComparatorResponses/postOne.html" class = "postLink">How do you implement a Comparator compare method?</a>
+              <span class = "pull-right stats">10 Votes</span>
+          </div>
+        </section>
+        <br>
+          <h4>By Answers</h4>
+          <section>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a href = "Categories/GenericsResponses/postThree.html" class = "postLink">I don't get what Generics do</a>
+              <span class = "pull-right stats">5 Answers</span>
+          </div>
+        </section>
+        <section>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a href = "Categories/GenericsResponses/postOne.html" class = "postLink">Does anyone know of a good explanation for Generics?</a>
+              <span class = "pull-right stats">4 Answers</span>
+          </div>
+        </section>
+        <section>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a href = "Categories/JUnitResponses/postOne.html" class = "postLink">How can I perform JUnit Tests using Eclipse?</a>
+              <span class = "pull-right stats">4 Answers</span>
+          </div>
+        </section>
+        <br>
+        <div class="row button">
+          <div class="col-md-2 col-md-offset-5">
+            <a class="btn btn-default" href="#">See All Top Questions &raquo;</a>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /button -->
+      </div>
+      </div>
+      <div class = "row">
+        <div class="col-lg-6">
+          <h2>Trending Categories</h2>
+          <ul class="list-group">
+          	<li class="list-group-item"><a class = "postLink" href="Categories/Recursion.html">Recursion</a></li>
+            <li class="list-group-item"><a class = "postLink" href="Categories/ArrayList.html">ArrayLists</a></li></li>
+            <li class="list-group-item"><a class = "postLink" href="Categories/Generics.html">Generics</a></li>
+            <li class="list-group-item"><a class = "postLink" href="Categories/LinkedList.html">LinkedList</a></li>
+            <li class="list-group-item"><a class = "postLink" href="Categories/Nodes.html">Nodes</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <h2>Account Settings</h2>
+          <br>
+          <span class = "col-lg-4">
+            <span class="glyphicon glyphicon-user"></span>
+            <a class = "postLink" href = "#">Edit password</a>
+          </span>
+          <span class = "col-lg-4">
+            <span class="glyphicon glyphicon-envelope"></span>
+            <a class = "postLink" href = "#">Notification Settings</a>
+          </span>
+          <span class = "col-lg-4">
+            <span class="glyphicon glyphicon-cog"></span>
+            <a class = "postLink" href = "#">User Preferences</a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+}
