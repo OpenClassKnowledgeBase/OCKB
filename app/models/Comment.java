@@ -19,6 +19,8 @@ public class Comment extends Model {
 	@Required
 	public String content;
 	
+	@ManyToOne
+	@JoinColumn(name="user_name")
 	@Required 
 	public String author;
 	
