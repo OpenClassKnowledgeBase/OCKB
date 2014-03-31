@@ -12,9 +12,7 @@ import javax.xml.parsers.*;
 import org.w3c.dom.Document;
 
 
-public class Application extends Controller {
-	static Form<PostSubmission> postForm = Form.form(PostSubmission.class);
-	 
+public class Application extends Controller {	 
 	/* CAS Variables */
 	private static final String CAS_LOGIN = "https://cas-test.its.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://cas-test.its.hawaii.edu/cas/serviceValidate";
