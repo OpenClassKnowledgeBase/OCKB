@@ -25,7 +25,7 @@ public class Post extends Model{
 	@Column(columnDefinition = "TEXT")
 	public String content;
 
-	@Formats.DateTime(pattern="MM/dd/yyyy")
+	@Formats.DateTime(pattern="yyyy-MM-dd")
 	public Date datePosted = new Date();
 
 	@Id 

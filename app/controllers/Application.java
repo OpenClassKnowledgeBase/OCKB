@@ -37,7 +37,7 @@ public class Application extends Controller {
     	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
     	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
     	Category currentCategory = Category.getCategory(cid);
-    	return ok(views.html.category.render(postList, stickyList, currentCategory));
+    	return ok(views.html.category.render(stickyList, postList, currentCategory));
     }
     
     public static Result categories() {

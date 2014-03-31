@@ -107,6 +107,7 @@
     content:   It seems that Arrays and ArrayLists perform many of the same operations, so I am wondering what exactly are the differences between the two? Should I be using one over the other?
     userName:  Lisa
     isSticky:  false
+    datePosted: 2000-09-10
     
 - !!models.Post
     category:  !!models.Category
