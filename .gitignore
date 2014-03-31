@@ -3,5 +3,4 @@
 /project/project
 /project/target
 /bin
-
-logs/application.log
+/logs
