@@ -3,11 +3,12 @@
 # --- !Ups
 
 create table user(
-  id bigint not null PRIMARY KEY,
+  id int not null AUTO_INCREMENT,
   email varchar(255) not null UNIQUE,
   name varchar(255) not null,
-  type varchar(255) not null,
-  posts bigint not null
+  status varchar(255) not null,
+  posts bigint not null,
+  PRIMARY KEY (id)
   );
 
 create sequence user_seq;

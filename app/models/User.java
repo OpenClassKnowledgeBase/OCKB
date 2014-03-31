@@ -3,18 +3,19 @@ package models;
 import javax.persistence.*;
 import play.db.ebean.*;
 import com.avaje.ebean.*;
+import java.util.*;
 
 @Entity
 public class User extends Model {
 
     
-    public Long id;
+    public Long id; // the id field for the user base
     
-    public String email;
+    public String email; // the stuff before @hawaii.edu
    
-    public String name;
+    public String name; // the full name
    
-    public String status;
+    public String status; //student / professor / ta
     //@Required
     //public String type;
     public int posts;
@@ -33,13 +34,13 @@ public class User extends Model {
     		   Long.class, User.class
     );
     
-//    public static List<User> all(){
-//		return find.all();
-//	  }
+    public static List<User> all(){
+		return find.all();
+    }
     
     
-  /*  public static User authenticate(String email, String password) {
+    public static User authenticate(String email, String password) {
         return find.where().eq("email", email)
             .eq("password", password).findUnique();
-    }*/
+    }
 }

@@ -3,11 +3,10 @@
 # --- !Ups
 
 create table user(
-  id bigint not null,
-  email longtext not null,
-  name longtext not null,
-  password longtext not null,
-  usertype longtext not null,
+  id int not null AUTO_INCREMENT,
+  email varchar(255) not null UNIQUE,
+  name varchar(255) not null,
+  status varchar(255) not null,
   posts bigint not null,
   PRIMARY KEY (id)
   );

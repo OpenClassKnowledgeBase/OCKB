@@ -2,8 +2,8 @@
 
 # --- !Ups
 
-insert into user (id, email, name, password, usertype, posts) values (1, 'tpascua', 'Tyler Pascua', '12345', 'Student', 33);
-insert into user (id, email, name, password, usertype, posts) values (2, 'bleh', 'blah', '23456', 'Prof', 3);
+INSERT INTO user (email, name, status, posts) VALUES ('tpascua', 'Tyler Pascua', 'student', 123);
+INSERT INTO user (email, name, status, posts) VALUES ('the email field', 'the name field', 'status field', 321);
 
 # --- !Downs
 
