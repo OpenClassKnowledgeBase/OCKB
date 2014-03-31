@@ -1,6 +1,30 @@
 - !!models.User
-  email: Teferi's Puzzle Box
-  name: Notion Thief
-  status: Font of Mythos
+  email: frank@hawaii.edu
+  name: Frank
+  status: normal
   posts: 4
+  
+- !!models.User
+  email: lisa@hawaii.edu
+  name: Lisa
+  status: normal
+  posts: 2
+  
+- !!models.User
+  email: bob@hawaii.edu
+  name: Bob
+  status: normal
+  posts: 16
+  
+- !!models.User
+  email: joey@hawaii.edu
+  name: Joey
+  status: normal
+  posts: 30
+  
+- !!models.User
+  email: erin@hawaii.edu
+  name: erin
+  status: banned
+  posts: 0
 

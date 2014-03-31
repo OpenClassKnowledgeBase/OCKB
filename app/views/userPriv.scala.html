@@ -1,0 +1,36 @@
+ @(userList: List[User])
+
+
+ @main("User Privileges") {
+
+    <div class="container">
+    	<h1>User Table</h1>
+    	<div class="panel-group">
+    	  	@for(user <- userList) {
+    			<div class="panel panel-default">
+					<div class="panel-heading" data-toggle="collapse" data-target="#@user.id">
+			      		<h4 class="panel-title">
+			        		@user.name
+			      		</h4>
+			    	</div>
+			    	<div id="@user.id" class="panel-collapse collapse">
+				    	<div class="panel-body">
+				    	
+				        	<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-default">
+								    <input type="radio" name="options" id="option1" checked> ON
+								</label>
+								<label class="btn btn-default">
+								    <input type="radio" name="options" id="option2"> OFF
+								</label>
+						 	</div>
+
+							
+				      	</div>
+				    </div>
+				</div>
+    	  	}
+		</div>
+    </div>
+
+}

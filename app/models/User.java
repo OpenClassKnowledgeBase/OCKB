@@ -8,6 +8,7 @@ import play.db.ebean.*;
 import play.data.format.*;
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
+import play.db.ebean.Model.Finder;
 
 import com.avaje.ebean.*;
 
@@ -16,14 +17,19 @@ public class User extends Model {
 
     @Id
     public Long id;
+    
     @Required
     public String email;
+    
     @Required
     public String name;
+    
     @Required
     public String status;
+    
     //@Required
     //public String type;
+    
     @Required
     public int posts;
     
@@ -38,11 +44,9 @@ public class User extends Model {
     
     public void addPost() { posts++; }
     
-    public static Finder<Long,User> find = new Finder<Long,User>(
-    		   Long.class, User.class
-    );
+    public static Finder<Long,User> find = new Finder<Long,User>(Long.class, User.class);
     
-    public static List<User> all(){
+    public static List<User> findAll(){
 		return find.all();
 	}
     
