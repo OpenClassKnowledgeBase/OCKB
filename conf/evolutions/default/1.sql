@@ -29,16 +29,6 @@ create table post (
   constraint pk_post primary key (id))
 ;
 
-create table post_submission (
-  id                        bigint not null,
-  user_name                 varchar(255),
-  category                  varchar(255),
-  title                     varchar(255),
-  content                   varchar(255),
-  date_posted               timestamp,
-  constraint pk_post_submission primary key (id))
-;
-
 create table user (
   id                        bigint not null,
   email                     varchar(255),
@@ -52,8 +42,6 @@ create table user (
 create sequence category_seq;
 
 create sequence post_seq;
-
-create sequence post_submission_seq;
 
 create sequence user_seq;
 
@@ -72,8 +60,6 @@ drop table if exists comment;
 
 drop table if exists post;
 
-drop table if exists post_submission;
-
 drop table if exists user;
 
 SET REFERENTIAL_INTEGRITY TRUE;
@@ -81,8 +67,6 @@ SET REFERENTIAL_INTEGRITY TRUE;
 drop sequence if exists category_seq;
 
 drop sequence if exists post_seq;
-
-drop sequence if exists post_submission_seq;
 
 drop sequence if exists user_seq;
 
