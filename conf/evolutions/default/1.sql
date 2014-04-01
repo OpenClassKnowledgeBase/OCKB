@@ -44,6 +44,7 @@ create table user (
   email                     varchar(255),
   name                      varchar(255),
   status                    varchar(255),
+  role                      varchar(255),
   posts                     integer,
   constraint pk_user primary key (id))
 ;

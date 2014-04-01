@@ -2,29 +2,34 @@
   email: frank@hawaii.edu
   name: Frank
   status: normal
+  role: Student
   posts: 4
   
 - !!models.User
   email: lisa@hawaii.edu
   name: Lisa
-  status: normal
+  status: banned
+  role: Student
   posts: 2
   
 - !!models.User
   email: bob@hawaii.edu
   name: Bob
   status: normal
+  role: TA
   posts: 16
   
 - !!models.User
   email: joey@hawaii.edu
   name: Joey
   status: normal
+  role: TA
   posts: 30
   
 - !!models.User
   email: erin@hawaii.edu
-  name: erin
-  status: banned
+  name: Erin
+  status: inactive
+  role: Student
   posts: 0
 

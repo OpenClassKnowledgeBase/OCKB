@@ -27,18 +27,18 @@ public class User extends Model {
     @Required
     public String status;
     
-    //@Required
-    //public String type;
+    @Required
+    public String role;
     
     @Required
     public int posts;
     
     public User() {}
-    public User(String email, String name, String status, int posts) {
+    public User(String email, String name, String status, String role, int posts) {
       this.email = email + "@hawaii.edu";
       this.name = name;
       this.status = status;
-      //this.type = type;
+      this.role = role;
       this.posts = posts;
     }
     
