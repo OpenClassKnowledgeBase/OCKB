@@ -59,6 +59,11 @@ public class Application extends Controller {
     	return ok(views.html.userPriv.render(userList));
     }
     
+    public static Result submissionView() {
+    	
+    	return ok(views.html.submissionView.render());
+    }
+    
 	public static Result login() throws Exception {
 		  Map<String, String[]> query = request().queryString();
 		  // service url is where you will handle validation after login
