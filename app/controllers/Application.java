@@ -26,27 +26,48 @@ public class Application extends Controller {
     
     public static Result post(Long pid) {
     	String user = session("username");
-    	List<Comment> cmntList = Comment.all();
-    	return ok(views.html.post.render(cmntList, Post.find.byId(pid), user));
+    	if (user == null) {
+    		return redirect(routes.Application.index());
+    	}
+    	else {
+	    	List<Comment> cmntList = Comment.all();
+	    	return ok(views.html.post.render(cmntList, Post.find.byId(pid), user));
+    	}
     }
     
     public static Result dashboard() {
-    	return ok(views.html.dashboard.render());
+    	String user = session("username");
+    	if (user == null) {
+    		return redirect(routes.Application.index());
+    	}
+    	else {
+    		return ok(views.html.dashboard.render());
+    	}
     }
     
     public static Result category(Long cid) {
     	String user = session("username");
-    	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
-    	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
-    	Category currentCategory = Category.getCategory(cid);
-    	return ok(views.html.category.render(stickyList, postList, currentCategory, user));
+    	if (user == null) {
+    		return redirect(routes.Application.index());
+    	}
+    	else {
+	    	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
+	    	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
+	    	Category currentCategory = Category.getCategory(cid);
+	    	return ok(views.html.category.render(stickyList, postList, currentCategory, user));
+    	}
     }
     
     public static Result categories() {
     	//figure out how to put this in global
-
-    	List<Category> categoryList = Category.findAll();
-    	return ok(views.html.categories.render(categoryList));
+    	String user = session("username");
+    	if (user == null) {
+    		return redirect(routes.Application.index());
+    	}
+    	else {
+    		List<Category> categoryList = Category.findAll();
+        	return ok(views.html.categories.render(categoryList));
+    	}
     }
     
     public static Result userPriv() {
