@@ -47,27 +47,16 @@ public class Application extends Controller {
     
     public static Result category(Long cid) {
     	String user = session("username");
-    	if (user == null) {
-    		return redirect(routes.Application.index());
-    	}
-    	else {
-	    	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
-	    	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
-	    	Category currentCategory = Category.getCategory(cid);
-	    	return ok(views.html.category.render(stickyList, postList, currentCategory, user));
-    	}
+    	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
+    	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
+    	Category currentCategory = Category.getCategory(cid);
+    	return ok(views.html.category.render(stickyList, postList, currentCategory, user));
     }
     
     public static Result categories() {
     	//figure out how to put this in global
-    	String user = session("username");
-    	if (user == null) {
-    		return redirect(routes.Application.index());
-    	}
-    	else {
     		List<Category> categoryList = Category.findAll();
         	return ok(views.html.categories.render(categoryList));
-    	}
     }
     
     public static Result userPriv() {
