@@ -1,4 +1,4 @@
-@(stickyList: List[Post], postList: List[Post], currentCategory: Category)
+@(stickyList: List[Post], postList: List[Post], currentCategory: Category, user: String)
 
 @main(currentCategory.title) {
     <div class="container">
@@ -45,19 +45,24 @@
                 <a href="#">Answers</a>
               </li>
             </ul>
-            <form class="navbar-form navbar-right" role="search">
-              <a href="../submitquestion.html" class="btn btn-primary">Submit Question for @currentCategory.title</a>
-          </form>
+            @if(user != null){
+                <form class="navbar-form navbar-right" role="search">
+                    <a href="../submitquestion.html" class="btn btn-primary">Submit Question for @currentCategory.title</a>
+                </form>
+            }
           </div>
         </div>
       </div>
       <!-- Stickies -->
       @for(sticky <- stickyList) {
+          
 	      <section>
 	          <div class="panel panel-warning">
 	            <div class="panel-heading">
 	              <span class="label label-warning">STICKY</span><a href = "@routes.Application.post(sticky.id)" class = "postLink">@sticky.title</a>
-	              <span class = "pull-right">Submitted by @sticky.userName</span>
+                 @if(user != null){
+                    <span class = "pull-right">Submitted by @sticky.userName</span>
+                 } 
 	            </div>
 	      </section>
       }
@@ -72,9 +77,11 @@
               <span class="label label-info">#@post.id</span><a href = "@routes.Application.post(post.id)" class = "postLink">@post.title</a>
               <span class = "pull-right stats">10 Votes</span>
               <span class = "pull-right stats">4 Answers</span>
-              <div class = "author">
-                Submitted by <span class = "badge">@post.userName</span> on @post.datePosted
-              </div>
+              @if(user != null){
+                <div class = "author">
+                    Submitted by <span class = "badge">@post.userName</span> on @post.datePosted
+                </div>
+              }
             </div>
         </section>
       }
