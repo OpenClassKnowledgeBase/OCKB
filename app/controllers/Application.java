@@ -26,13 +26,8 @@ public class Application extends Controller {
     
     public static Result post(Long pid) {
     	String user = session("username");
-    	if (user == null) {
-    		return redirect(routes.Application.index());
-    	}
-    	else {
-	    	List<Comment> cmntList = Comment.all();
-	    	return ok(views.html.post.render(cmntList, Post.find.byId(pid), user));
-    	}
+    	List<Comment> cmntList = Comment.all();
+    	return ok(views.html.post.render(cmntList, Post.find.byId(pid), user));
     }
     
     public static Result dashboard() {
