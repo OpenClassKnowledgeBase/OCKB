@@ -101,7 +101,7 @@ public class Application extends Controller {
 		        session().clear();
 		        session("username", username);
 		        //User.add(-1, username, "");
-		        return redirect(routes.Application.categories());
+		        return redirect(routes.Application.dashboard());
 		      } else {
 		        return redirect(routes.Application.login());
 		      }
