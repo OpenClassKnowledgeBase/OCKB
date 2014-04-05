@@ -57,9 +57,9 @@
       @for(sticky <- stickyList) {
           
 	      <section>
-	          <div class="panel panel-warning">
+	          <div class="panel sticky">
 	            <div class="panel-heading">
-	              <span class="label label-warning">STICKY</span><a href = "@routes.Application.post(sticky.id)" class = "postLink">@sticky.title</a>
+	              <span class="label label-warning">STICKY</span><a href = "@routes.Application.post(sticky.id)" class = "postLink"> @sticky.title</a>
                  @if(user != null){
                     <span class = "pull-right">Submitted by @sticky.userName</span>
                  } 
@@ -74,7 +74,7 @@
       	<section>
           <div class="panel panel-default">
             <div class="panel-heading">
-              <span class="label label-info">#@post.id</span><a href = "@routes.Application.post(post.id)" class = "postLink">@post.title</a>
+              <span class="label label-info">#@post.id</span><a href = "@routes.Application.post(post.id)" class = "postLink"> @post.title</a>
               <span class = "pull-right stats">10 Votes</span>
               <span class = "pull-right stats">4 Answers</span>
               @if(user != null){
