@@ -26,6 +26,9 @@ create table post (
   title                     varchar(255),
   content                   TEXT,
   date_posted               timestamp,
+  latest_activity           timestamp,
+  comments                  bigint,
+  votes                     bigint,
   constraint pk_post primary key (id))
 ;
 

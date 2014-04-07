@@ -6,6 +6,14 @@
  }
 @main(currentCategory.title, scripts) {
     <div class="container">
+      <ol class="breadcrumb">
+        <li>
+          <a href="@routes.Application.categories()">Categories</a>
+        </li>
+        <li>
+          <a href="@routes.Application.category(currentCategory.id)">@currentCategory.title</a>
+        </li>
+      </ol>
       <form class="navbar-form navbar-right">
         <div class="form-group">
           <input class="form-control" placeholder="Search for ..." type="text">
@@ -13,6 +21,7 @@
         <button type="submit" class="btn btn-default">Search</button>
       </form>
       <h1>@currentCategory.title</h1>
+      <p>@currentCategory.description</p>
       <h3> <div class="dropdown">
          <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
           Spring 2014 <span class="caret"></span>
