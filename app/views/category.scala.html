@@ -1,6 +1,7 @@
 @(stickyList: List[Post], postList: List[Post], currentCategory: Category, user: String)
 
 @scripts = {
+    <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/posts.css")">
  }
 @main(currentCategory.title, scripts) {

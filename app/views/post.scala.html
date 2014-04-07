@@ -1,6 +1,10 @@
 @(commentList: List[Comment], currentPost: Post, user:String)
 
-@main(currentPost.title) {
+@scripts = {
+    <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+ }
+ 
+@main(currentPost.title, scripts) {
 
 	<div class="container">
       <ol class="breadcrumb">
