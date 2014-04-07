@@ -1,0 +1,95 @@
+.sticky{
+    background-color: green;
+    display:inline;
+}
+.menu{
+    float: left;
+/*  background-color: green;    */
+}
+
+.content{
+    float: left;
+/*  background-color: blue;*/
+}
+.postCount{
+    text-align: center;
+    font-size: 26px;
+    color:#5BC0DE;
+}
+.label{
+    margin-right: 10px;
+}
+a:hover{
+    text-decoration: none;
+}
+
+div > a:not(.navbar-brand):link {
+    /*font-size: 16px;*/
+}
+
+div > a:visited{
+    color:#397EBA;
+}
+div > a:hover{
+    color:#397EBA;
+}
+a.postLink:link{
+    text-decoration: none;
+    color:white;
+}
+a.postLink:visited{
+    text-decoration: none;
+    color: white;
+}
+a.postLink:hover{
+    text-decoration: none;
+    color: #2D6CA2;
+}
+.panel-footer{
+    text-align: right;
+    font-size:12px;
+}
+/*.date{
+    font-size: 12px;
+}*/
+span.badge{
+    font-size:10px;
+    background-color: #DF691A;
+}
+.votes{
+    text-align: center;
+    font-size:17px;
+}
+.content{
+    vertical-align: middle;
+}
+.stats{
+    padding-left: 5px;
+}
+.author{
+    font-size:10px;
+    text-align: right;
+}
+section{
+    margin-bottom: -15px;
+}
+.authorReply{
+    text-align: right;
+    font-size:12px;
+}
+
+body {
+    padding-bottom: 50px;
+}
+
+.label-warning, .label-info{
+    border-style:solid;
+    border-width:2px;
+    border-color: white;
+}
+
+/* change color for twitter blue panels*/
+/*.panel-info > div:nth-child(1) > div:nth-child(5) > span:nth-child(1){
+    background-color: #DF691A;
+/*  color: black;*/*/
+}

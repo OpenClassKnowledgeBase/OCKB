@@ -1,6 +1,9 @@
 @(stickyList: List[Post], postList: List[Post], currentCategory: Category, user: String)
 
-@main(currentCategory.title) {
+@scripts = {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/posts.css")">
+ }
+@main(currentCategory.title, scripts) {
     <div class="container">
       <form class="navbar-form navbar-right">
         <div class="form-group">
@@ -57,7 +60,7 @@
       @for(sticky <- stickyList) {
           
 	      <section>
-	          <div class="panel sticky">
+	          <div class="panel panel-warning">
 	            <div class="panel-heading">
 	              <span class="label label-warning">STICKY</span><a href = "@routes.Application.post(sticky.id)" class = "postLink"> @sticky.title</a>
                  @if(user != null){
@@ -70,9 +73,13 @@
       <hr>
       
       <!-- Content -->
-      @for(post <- postList) {
+      @for((post,index) <- postList.zipWithIndex) {
       	<section>
-          <div class="panel panel-default">
+          @if(index % 2 == 0){
+            <div class="panel panel-default">
+          }else{
+            <div class="panel panel-info">
+          }
             <div class="panel-heading">
               <span class="label label-info">#@post.id</span><a href = "@routes.Application.post(post.id)" class = "postLink"> @post.title</a>
               <span class = "pull-right stats">10 Votes</span>
