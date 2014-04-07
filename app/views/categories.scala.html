@@ -1,8 +1,12 @@
- @(categories: List[Category])
+@(categories: List[Category])
 
+ @scripts = {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/categoriesView.css")">
+ }
+ 
  @import helper._
 
- @main("Categories") {
+ @main("Categories", scripts) {
     <!-- <h1>count:  @categories.size()</h1> -->
     <div class = "container">
         <div class = "row">
