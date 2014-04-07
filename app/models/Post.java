@@ -27,6 +27,13 @@ public class Post extends Model{
 
 	@Formats.DateTime(pattern="yyyy-MM-dd")
 	public Date datePosted = new Date();
+	
+	@Formats.DateTime(pattern="yyyy-MM-dd")
+	public Date latestActivity;
+	
+	public Long comments;
+	
+	public Long votes;
 
 	@Id 
 	public Long id;
