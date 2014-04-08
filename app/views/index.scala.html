@@ -2,6 +2,9 @@
 
  @scripts = {
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/index.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/animate.min.css")">
+    <script src="@routes.Assets.at("javascripts/wow.min.js")"></script>
+    <script>new WOW().init();</script>
  }
 
 @main("Open Class Knowledge Base", scripts) {
@@ -34,7 +37,7 @@
 
       <div class = "row row-fluid row-even">
         <div class = "col-md-offset-1 col-md-4 col-width">
-          <img class = "center-block content-img" src = "@routes.Assets.at("images/content.png")" onload="this.width/=1.1;this.onload=null;">
+          <img class = "center-block content-img wow fadeInLeft" src = "@routes.Assets.at("images/content.png")" onload="this.width/=1.1;this.onload=null;">
         </div>
         <div class = "col-md-offset-1 col-md-5 col-width">
           <h1 class = "ind-title"> Content at your fingertips </h1><br>
@@ -51,14 +54,14 @@
           <p class="ind-paragraph">The Open Class Knowledge Base is driven by the peers you learn with and the instructors you learn from.  Connect, communicate, and collaborate with people you know and names you recognize.</p>
         </div>
         <div class="col-md-4 col-width">
-          <img class = "odd-pic center-block" src = "@routes.Assets.at("images/coursecollab.png")">
+          <img class = "odd-pic center-block wow fadeInRight" src = "@routes.Assets.at("images/coursecollab.png")">
         </div>
       </div>
       <!-- <hr> -->
 
       <div class = "row row-fluid row-even">
         <div class = "col-md-offset-1 col-md-4 col-width">
-          <img class = "center-block" src = "@routes.Assets.at("images/past.png")" onload="this.width/=1.1;this.onload=null;">
+          <img class = "center-block wow fadeInLeft" src = "@routes.Assets.at("images/past.png")" onload="this.width/=1.1;this.onload=null;">
         </div>
         <div class="col-md-offset-1 col-md-5 col-width col-txt">
           <h1 class = "ind-title">Learn from the past, prepare for the future</h1>
@@ -77,14 +80,14 @@
             </p>
           </div>
           <div class="col-md-4 col-width">
-            <img class = "center-block odd-pic" src = "@routes.Assets.at("images/designed.png")" onload="this.width/=1.1;this.onload=null;">
+            <img class = "center-block odd-pic wow fadeInRight" src = "@routes.Assets.at("images/designed.png")" onload="this.width/=1.1;this.onload=null;">
           </div>
       </div>
       <!-- <hr> -->
 
       <div class = "row row-fluid row-even">
         <div class = "col-md-offset-1 col-md-4 col-width">
-          <img class = "center-block" src = "@routes.Assets.at("images/mobile.png")" onload="this.width/=1.1;this.onload=null;">
+          <img class = "center-block wow fadeInLeft" src = "@routes.Assets.at("images/mobile.png")" onload="this.width/=1.1;this.onload=null;">
         </div>
         <div class="col-md-offset-1 col-md-5 col-width col-txt">
           <h1 class = "ind-title"> Learn anywhere, anytime </h1>
