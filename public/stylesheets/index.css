@@ -1,0 +1,26 @@
+.ind-title {
+	padding-top: 35px;
+	font-size: 46px;
+}
+
+.ind-paragraph {
+	font-size: 20px;
+	line-height: 1.8;
+}
+
+.content-img {
+	
+}
+
+.row-even {
+	padding: 15px;
+}
+.row-odd {
+	background-color: #F8F8F8;
+	padding: 15px;
+}
+
+.odd-pic {
+	width: 470px;
+	padding-left: 80px;
+}
