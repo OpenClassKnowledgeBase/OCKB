@@ -500,52 +500,284 @@
     content:   For all the examples of Generic Type Parameters, I mainly see T or E. I like to use descriptive parameter names so I was wondering if it is okay to use a String to represent Generic Type Parameters.
     userName:  Jerry
     isSticky:  false
-
-# JUnit Posts 
+    
+# Hashing Posts
 - !!models.Post
     category:  !!models.Category
                id: 6
-    title:     title
+    title:     Basics of Hashing
+    content:   content 
+    userName:  John
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 6
+    title:     Helpful videos and links for Hashing
+    content:   content 
+    userName:  Becky
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 6
+    title:     Hash conventions
+    content:   What are some good Hash conventions to use? 
+    userName:  Chad
+    isSticky:  false
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 6
+    title:     Typical Hash mappings?
+    content:   What kinds of things (elements?) can you Hash together?
+    userName:  Charlie
+    isSticky:  false
+    
+# Heaps Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 7
+    title:     Basics of Heaps
+    content:   content 
+    userName:  Bob
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 7
+    title:     Helpful videos and links for Heaps
+    content:   content 
+    userName:  Chaplin
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 7
+    title:     FIFO?
+    content:   I'm a little rusty on my Heap knowledge.. is it FIFO or LIFO?
+    userName:  David
+    isSticky:  false
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 7
+    title:     Big-O of Heaps
+    content:   Does anyone know the Big-O of Heap operations? Thanks!
+    userName:  Edgar
+    isSticky:  false
+    
+# Huffman Tree Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 8
+    title:     Basics of Huffman Trees
+    content:   content 
+    userName:  Frank
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 8
+    title:     Helpful videos and links for Huffman Trees
+    content:   content 
+    userName:  George
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 8
+    title:     Hawaiian language
+    content:   My friend told me that since the Hawaiian language has a lot of vowels, it would be good to use a Huffman tree for encoding on.  Is there an example anyone has?
+    userName:  Human
+    isSticky:  false
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 8
+    title:     Encoding
+    content:   I have a little difficulty trying to understand the binary numbers that we write to a file to show what was compressed.  How do we first figure out how many bytes or bits the file has compressed?
+    userName:  India
+    isSticky:  false
+    
+# Iterator Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 9
+    title:     Basics of Iterators
+    content:   content 
+    userName:  Julie
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 9
+    title:     Helpful videos and links for Iterators
+    content:   content 
+    userName:  Kilo
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 9
+    title:     Last week's assignment.
+    content:   Now that the assignment is over, did anyone else have a lot of trouble trying to wrap their head around Iterators?
+    userName:  Lima
+    isSticky:  false
+    
+# JUnit Posts 
+- !!models.Post
+    category:  !!models.Category
+               id: 10
+    title:     Basics of JUnit
     content:   content 
     userName:  Jason
     isSticky:  true
     
 - !!models.Post
     category:  !!models.Category
-               id: 6
-    title:     title
+               id: 10
+    title:     Helpful videos and links for JUnit
     content:   content 
     userName:  Cindy
     isSticky:  true
       
 - !!models.Post
     category:  !!models.Category
-               id: 6
+               id: 10
     title:     How can I perform JUnit Tests using Eclipse?
     content:   I am having some trouble setting up JUnit inside of Eclipse. Could someone please help me?
     userName:  Howard
     isSticky:  false
     
+# Linked List Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 11
+    title:     Basics of Linked Lists
+    content:   content 
+    userName:  November
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 11
+    title:     Helpful videos and links for Linked Lists
+    content:   content 
+    userName:  Oscar
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 11
+    title:     Insertion into a LL
+    content:   How many pointers should we need in order to insert an element into a LL?
+    userName:  Papa
+    isSticky:  false
+  
+# Nodes Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 12
+    title:     Basics of Nodes
+    content:   content 
+    userName:  Alex
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 12
+    title:     Helpful videos and links for Nodes
+    content:   content 
+    userName:  Qunynh
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 12
+    title:     Advantage of using Nodes 
+    content:   Why is it better than using an Array for example? Just seems like a lot more hassle trying to set Nodes up.
+    userName:  Robert
+    isSticky:  false
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 12
+    title:     Big-O of nodez
+    content:   What are the Big-O costs of using node operations???
+    userName:  Ryan
+    isSticky:  false
+    
+# Priority Queues Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 13
+    title:     Basics of Priority Queues
+    content:   content 
+    userName:  Nathan
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 13
+    title:     Helpful videos and links for Priority Queues
+    content:   content 
+    userName:  Taylor
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 13
+    title:     FIFO?
+    content:   I know what a Queue is.. But does it work the same as a PQ? Anyone?
+    userName:  Amy
+    isSticky:  false
+
+# Queues Posts
+- !!models.Post
+    category:  !!models.Category
+               id: 14
+    title:     Basics of Queues
+    content:   content 
+    userName:  Isabella
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 14
+    title:     Helpful videos and links for Queues
+    content:   content 
+    userName:  Micheal
+    isSticky:  true
+    
+- !!models.Post
+    category:  !!models.Category
+               id: 14
+    title:     Any way to go out of order?
+    content:   I know that a(n)? Queue is FIFO, but is there anyway to grab an element that is, for exmaple, in the middle?
+    userName:  Nicholas
+    isSticky:  false
+    
 # Recursion Posts
 - !!models.Post
     category:  !!models.Category
-               id: 7
-    title:     title
+               id: 15
+    title:     Basics of Recursion
     content:   content 
     userName:  Jason
     isSticky:  true
     
 - !!models.Post
     category:  !!models.Category
-               id: 7
-    title:     title
+               id: 15
+    title:     Helpful videos and links for Recursion
     content:   content 
     userName:  Cindy
     isSticky:  true
     
 - !!models.Post
     category:  !!models.Category
-               id: 7
+               id: 15
     title:     How does recursion work in a Binary Search Tree?
     content:   I think I understand the basics of Recursion, but I'm not quite sure how to trace through a recursive method in a Binary Search Tree.  Anyone else have the same problem?
     userName:  Bob
@@ -553,7 +785,7 @@
     
 - !!models.Post
     category:  !!models.Category
-               id: 7
+               id: 15
     title:     Helpful links on Recursion on YouTube.
     content:   "I just replied to Paul's post regarding how recursion works in a Binary Search Tree.  I linked him to a helpful video I found on YouTube, and was wondering if it were possible to also 
                   put this up on the Helpful Links Sticky? Thanks in advance! Almost forgot, here's the link: <br>
@@ -564,23 +796,23 @@
 # Backtracking Posts
 - !!models.Post
     category:  !!models.Category
-               id: 8
-    title:     title
+               id: 16
+    title:     Basics of Recursive Backtracking
     content:   content 
     userName:  Jason
     isSticky:  true
     
 - !!models.Post
     category:  !!models.Category
-               id: 8
-    title:     title
+               id: 16
+    title:     Helpful videos and links for Recursive Backtracking
     content:   content 
     userName:  Cindy
     isSticky:  true
     
 - !!models.Post
     category:  !!models.Category
-               id: 8
+               id: 16
     title:     Examples of Recursive Backtracking?
     content:   I think I understand the basics of Recursion, but Recursive Backtracking is another thing in of itself.  Are there any examples anyone found that can help me grasp this topic?
     userName:  Amy
@@ -589,23 +821,23 @@
 # Sorting Posts
 - !!models.Post
     category:  !!models.Category
-               id: 9
-    title:     title
+               id: 17
+    title:     Basics of Sorting
     content:   content 
     userName:  Jason
     isSticky:  true
     
 - !!models.Post
     category:  !!models.Category
-               id: 9
-    title:     title
+               id: 17
+    title:     Helpful videos and links for Sorting
     content:   content 
     userName:  Cindy
     isSticky:  true
     
 - !!models.Post
     category:  !!models.Category
-               id: 9
+               id: 17
     title:     How many types of Sorting should we be familiar with?
     content:   I did a general search of Sorting and there are TONS of results.  How many and which do you recommend we be familiar with for this course?
     userName:  Frank
@@ -613,7 +845,7 @@
     
 - !!models.Post
     category:  !!models.Category
-               id: 9
+               id: 17
     title:     Helpful links on different Sorting methods on YouTube.
     content:   Hey guys! Exciting news! I found a few videos demonstrating some of the sorting methods we'll be discussing in class.  I know its a little cheesy but its so awesome and fun.  Hope it helps
                   you as much as it helped me! <br><br>
@@ -629,23 +861,23 @@
 # Stack Posts
 - !!models.Post
     category:  !!models.Category
-               id: 10
-    title:     title
+               id: 18
+    title:     Basics of Stacks
     content:   content 
     userName:  Jason
     isSticky:  true
     
 - !!models.Post
     category:  !!models.Category
-               id: 10
-    title:     title
+               id: 18
+    title:     Helpful videos and links for Stacks
     content:   content 
     userName:  Cindy
     isSticky:  true
     
 - !!models.Post
     category:  !!models.Category
-               id: 10
+               id: 18
     title:     Why are Stacks useful?
     content:   Why use Stacks when we have other ADTs at our disposal like ArrayLists and such?
     userName:  Will
@@ -653,7 +885,7 @@
     
 - !!models.Post
     category:  !!models.Category
-               id: 10
+               id: 18
     title:     Big-O of Stack operations?
     content:   With the quiz coming up, I was wondering if anyone knew the bigO of some Stack operations? It wasn't listed in the lectures notes so thought I would ask here.
     userName:  May
@@ -662,23 +894,23 @@
 # Tree Trav Posts
 - !!models.Post
     category:  !!models.Category
-               id: 11
-    title:     title
+               id: 19
+    title:     Basics of Tree Traversals
     content:   content 
     userName:  Jason
     isSticky:  true
     
 - !!models.Post
     category:  !!models.Category
-               id: 11
-    title:     title
+               id: 19
+    title:     Helpful vidoes and links for Tree Traversals
     content:   content 
     userName:  Cindy
     isSticky:  true
     
 - !!models.Post
     category:  !!models.Category
-               id: 11
+               id: 19
     title:     Algorithms for different traversals?
     content:   I understand the different types of traversals but I am having trouble with the actual implementation. Psuedocode would be really helpful.
     userName:  Lee
