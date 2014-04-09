@@ -29,7 +29,7 @@ OCKB
 
 * [Use Cases 2.0] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Use-Cases-2.0)
 
-* [Mockup Evaluation 2.0] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Mockup-Evaluation-2.0)  
+* [Mockup 2.0] (http://two.ockb.cloudbees.net)   
 
 * [Installation Instructions 2.0] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Installation-Instructions-2.0)
 
