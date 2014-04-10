@@ -40,4 +40,11 @@ OCKB
 
 <h4> Milestone 3 deliverables </h4>
 
-* [User Evaluation] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/User-Evaluation)
+* [YouTube screencast for users] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/YouTube-screencast-for-users)
+
+* [YouTube screencast for developers] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/YouTube-screencast-for-developers)
+
+* [GitHub pages "home page" for project] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/GitHub-Pages-%E2%80%9Chome-page%E2%80%9D-for-project)
+
+* [User Evaluations] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/User-Evaluation)
+
