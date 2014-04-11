@@ -5,6 +5,7 @@
 # Home page
 GET     /                           controllers.Application.index()
 GET     /categories                 controllers.Application.categories()
+GET		/requestCategory			controllers.Application.requestCategory()
 GET		/post/:pid	                controllers.Application.post(pid: Long)
 GET     /category/:cid              controllers.Application.category(cid: Long)
 GET     /login        				controllers.Application.login()

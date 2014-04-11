@@ -104,23 +104,29 @@
           <a href="@routes.Application.categories()" class="btn btn-primary btn-lg btn-bottom">Explore</a>
          
       </div> -->
-      <div class = "row-fluid">
+
+    @if(session().get("username")==null) {
+      
+        <div class = "row-fluid">
           <div class = "col-md-6 text-center">
               <p style>Sign in with your UH info to get started!</p>
               <a href="@routes.Application.login()" class="btn btn-primary btn-lg btn-bottom">Sign in</a>
-          </div>
-          <div class = "col-md-5 text-center">
+            </div>
+            <div class = "col-md-5 text-center">
               <p>Not at UH? Not a problem!  Explore and see what OCKB is all about!</p>
               <a href="@routes.Application.categories()" class="btn btn-primary btn-lg btn-bottom">Explore</a>
-          </div>
+            </div>
+        </div>
       </div>
-    </div>
-
-    </div>
-        
-
-    <footer>
+    
       <p>&copy; OCKB 2014</p>
-    </footer>
+    
+    } else {    
+        <br>
+      <div class = text-center>
+          <p>&copy; OCKB 2014</p>
+        </div>
+        <br>
+    }
 
 }

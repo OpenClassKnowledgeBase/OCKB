@@ -1,0 +1,25 @@
+@scripts = {
+    <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+ }
+
+@main("Request Category", scripts) {
+
+    <div class="container">
+      <div class="form-group">
+        <p>Requested Category</p>
+        <div class="controls">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <p>Reason why you think this Category should be added</p>
+        <div class="controls">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+
+      <a href ="@routes.Application.dashboard()" class="btn btn-success btn-lg">Submit</a>
+      <a href ="@routes.Application.categories()" class="btn btn-danger btn-lg">Cancel</a>
+    </div>
+    
+}

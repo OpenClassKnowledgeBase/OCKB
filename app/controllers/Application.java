@@ -68,6 +68,10 @@ public class Application extends Controller {
     	return ok(views.html.notifications.render());
     }
     
+    public static Result requestCategory() {
+    	return ok(views.html.requestCategory.render());
+    }
+    
 	public static Result login() throws Exception {
 		  Map<String, String[]> query = request().queryString();
 		  // service url is where you will handle validation after login
