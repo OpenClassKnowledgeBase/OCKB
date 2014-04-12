@@ -28,6 +28,10 @@ public class Comment extends Model {
 	@Formats.DateTime(pattern="yyyy-MM-dd")
 	public Date submission_date;
 	
+	@ManyToOne
+	@JoinColumn(name = "id")
+	public Post parentPost;
+	
 	//help initiate queries
 	public static Finder<Long,Comment> find = new Finder<Long,Comment>(Long.class, Comment.class);
 	
