@@ -29,8 +29,8 @@ public class Comment extends Model {
 	public Date submission_date;
 	
 	@ManyToOne
-	@JoinColumn(name = "id")
-	public Post parentPost;
+	@JoinColumn(name = "parent_post_id")
+	public Post parent_post;
 	
 	//help initiate queries
 	public static Finder<Long,Comment> find = new Finder<Long,Comment>(Long.class, Comment.class);

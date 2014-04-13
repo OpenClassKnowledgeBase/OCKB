@@ -15,7 +15,8 @@ create table comment (
   id                        bigint,
   content                   varchar(255),
   author                    varchar(255),
-  submission_date           timestamp)
+  submission_date           timestamp,
+  parent_post_id            bigint)
 ;
 
 create table post (
@@ -48,8 +49,10 @@ create sequence post_seq;
 
 create sequence user_seq;
 
-alter table post add constraint fk_post_category_1 foreign key (category_id) references category (id) on delete restrict on update restrict;
-create index ix_post_category_1 on post (category_id);
+alter table comment add constraint fk_comment_parent_post_1 foreign key (parent_post_id) references post (id) on delete restrict on update restrict;
+create index ix_comment_parent_post_1 on comment (parent_post_id);
+alter table post add constraint fk_post_category_2 foreign key (category_id) references category (id) on delete restrict on update restrict;
+create index ix_post_category_2 on post (category_id);
 
 
 
