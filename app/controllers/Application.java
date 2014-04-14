@@ -48,6 +48,15 @@ public class Application extends Controller {
     	return ok(views.html.category.render(stickyList, postList, currentCategory, user));
     }
     
+    public static Result sortByNewest(Long cid) {
+    	String user = session("username");
+       	//sort by date
+    	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).orderBy("datePosted desc").findList();
+    	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
+    	Category currentCategory = Category.getCategory(cid);
+    	return ok(views.html.category.render(stickyList, postList, currentCategory, user));
+    }
+    
     public static Result categories() {
     	//figure out how to put this in global
     		List<Category> categoryList = Category.findAll();

@@ -108,7 +108,7 @@
     content:   It seems that Arrays and ArrayLists perform many of the same operations, so I am wondering what exactly are the differences between the two? Should I be using one over the other?
     userName:  Lisa
     isSticky:  false
-    datePosted: 2000-09-10
+    datePosted: 2000-08-10
     
 - !!models.Post
     category:  !!models.Category
@@ -118,7 +118,7 @@
     isSticky:  false
     userName:  Frank
     isSticky:  false
-    datePosted: 2000-09-10
+    datePosted: 2000-11-10
     
 - !!models.Post
     category:  !!models.Category
@@ -127,7 +127,7 @@
     content:   In which situations or programs would using an ArrayList be better? I am more comfortable with Arrays so would the benefits of using an ArrayList be worth it?
     userName:  Eric
     isSticky:  false
-    datePosted: 2000-09-10
+    datePosted: 2000-10-10
 
 # BST Posts
 - !!models.Post
