@@ -4,6 +4,10 @@
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/posts.css")">
  }
+@import java.lang.String; 
+@{val newest = "newest"}
+
+ 
 @main(currentCategory.title, scripts) {
     <div class="container">
       <ol class="breadcrumb">
@@ -48,14 +52,14 @@
           </div>
           <div class="collapse navbar-collapse pull-left">
             <ul class="nav navbar-nav">
-              <li class="active">
-                <a href="@routes.Application.sortByNewest(currentCategory.id)">Newest</a>
+               <li>
+                <a href="@routes.Application.sort(currentCategory.id, 1)">Newest</a>
               </li>
               <li>
-                <a href="#">Votes</a>
+                <a href="@routes.Application.sort(currentCategory.id, 2)">Votes</a>
               </li>
               <li>
-                <a href="#">Answers</a>
+                <a href="@routes.Application.sort(currentCategory.id, 3)">Answers</a>
               </li>
             </ul>
             @if(user != null){

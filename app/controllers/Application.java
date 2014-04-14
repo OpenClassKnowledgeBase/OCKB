@@ -1,14 +1,18 @@
 package controllers;
 
 import com.avaje.ebean.Ebean;
+
 import models.*;
 import play.data.*;
 import play.mvc.*;
 import views.html.*;
+
 //CAS imports
 import java.net.*;
 import java.util.*;
+
 import javax.xml.parsers.*;
+
 import org.w3c.dom.Document;
 
 
@@ -18,7 +22,9 @@ public class Application extends Controller {
 	private static final String CAS_VALIDATE = "https://authn.hawaii.edu/cas/serviceValidate";
 	private static final String CAS_LOGOUT = "https://authn.hawaii.edu/cas/logout";
 	private static String user = "";
-	
+	private static final int NEWEST = 1;
+	private static final int VOTES = 2;
+	private static final int COMMENTS = 3;
 
     public static Result index() {
         return ok(views.html.index.render("Welcome to the home page."));
@@ -48,10 +54,20 @@ public class Application extends Controller {
     	return ok(views.html.category.render(stickyList, postList, currentCategory, user));
     }
     
-    public static Result sortByNewest(Long cid) {
+    public static Result sort(Long cid, int sort) {
     	String user = session("username");
-       	//sort by date
-    	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).orderBy("datePosted desc").findList();
+    	List<Post> postList = new ArrayList<Post>();
+    	switch (sort) {
+    		case NEWEST:
+    			 postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).orderBy("datePosted desc").findList();
+    			break;
+    		case VOTES:
+    			postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).orderBy("votes desc").findList();
+    			break;
+    		case COMMENTS:
+    			postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).orderBy("comments desc").findList();
+    			break;
+    	}
     	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
     	Category currentCategory = Category.getCategory(cid);
     	return ok(views.html.category.render(stickyList, postList, currentCategory, user));

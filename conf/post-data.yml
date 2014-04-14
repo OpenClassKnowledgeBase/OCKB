@@ -110,7 +110,7 @@
     isSticky:  false
     datePosted: 2000-11-10 12:00:13
     comments: 8
-    votes: 8
+    votes: 5
     
 - !!models.Post
     category:  !!models.Category
@@ -120,7 +120,7 @@
     isSticky:  false
     userName:  Frank
     isSticky:  false
-    datePosted: 2000-11-10 11:58:10
+    datePosted: 2000-11-10 11:45:09
     comments: 10
     votes: 10
     
@@ -131,9 +131,9 @@
     content:   In which situations or programs would using an ArrayList be better? I am more comfortable with Arrays so would the benefits of using an ArrayList be worth it?
     userName:  Eric
     isSticky:  false
-    datePosted: 2000-11-10 11:45:09
+    datePosted: 2000-11-10 11:58:10
     comments: 5
-    votes: 5
+    votes: 8
 
 # BST Posts
 - !!models.Post
