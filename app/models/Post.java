@@ -25,10 +25,10 @@ public class Post extends Model{
 	@Column(columnDefinition = "TEXT")
 	public String content;
 
-	@Formats.DateTime(pattern="yyyy-MM-dd")
+	@Formats.DateTime(pattern="yyyy-MM-dd hh:mm:ss")
 	public Date datePosted = new Date();
 	
-	@Formats.DateTime(pattern="yyyy-MM-dd")
+	@Formats.DateTime(pattern="yyyy-MM-dd hh:mm:ss")
 	public Date latestActivity;
 	
 	public Long comments;
