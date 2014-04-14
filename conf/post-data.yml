@@ -109,6 +109,8 @@
     userName:  Lisa
     isSticky:  false
     datePosted: 2000-11-10 12:00:13
+    comments: 8
+    votes: 8
     
 - !!models.Post
     category:  !!models.Category
@@ -119,6 +121,8 @@
     userName:  Frank
     isSticky:  false
     datePosted: 2000-11-10 11:58:10
+    comments: 10
+    votes: 10
     
 - !!models.Post
     category:  !!models.Category
@@ -128,6 +132,8 @@
     userName:  Eric
     isSticky:  false
     datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
 
 # BST Posts
 - !!models.Post
@@ -171,6 +177,9 @@
     content:   Unfortunately couldn't make it to class and the slides are not posted online. I really appreciate the help guys!
     userName:  Fred
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 - !!models.Post
     category:  !!models.Category
@@ -179,6 +188,9 @@
     content:   I have no idea how to find a certain value in a Binary Search Tree. Could someone explain how exactly to search through a BST?
     userName:  Drew
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
 
 # Comparator Posts
 - !!models.Post
@@ -226,6 +238,9 @@
     content:   I am trying to order a list of colors by alphabetical order but I'm unsure how to implement the compare method inside my Comparator. Could I get a hint or some guidance? 
     userName:  Bryce
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
 
 # DCLL Posts
 - !!models.Post
@@ -313,6 +328,9 @@
     content:   I have a node class for a regular singular linked list but I am having some trouble refactoring it for a DCLL. What should I change in my node class?
     userName:  Aaron
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 - !!models.Post
     category:  !!models.Category
@@ -321,6 +339,9 @@
     content:   Implementing a DCLL versus a regular Linked List is a huge pain. I just want to understand what are the benefits of a DCLL and if it is really worth the extra code.
     userName:  Julie
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # Generics Posts
 - !!models.Post
@@ -487,6 +508,9 @@
     content:   I've been Googling around for ages and I still can't figure out how Generics work. Does anybody know of a good site or video that really helped them understand this topic? Maybe with examples?
     userName:  Ty
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 - !!models.Post
     category:  !!models.Category
@@ -495,6 +519,9 @@
     content:   I need some help understanding what the purpose of Generics is. My program seems to work even if I don't use Generics.
     userName:  Kyle
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 - !!models.Post
     category:  !!models.Category
@@ -503,6 +530,9 @@
     content:   For all the examples of Generic Type Parameters, I mainly see T or E. I like to use descriptive parameter names so I was wondering if it is okay to use a String to represent Generic Type Parameters.
     userName:  Jerry
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # Hashing Posts
 - !!models.Post
@@ -528,6 +558,9 @@
     content:   What are some good Hash conventions to use? 
     userName:  Chad
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 - !!models.Post
     category:  !!models.Category
@@ -536,6 +569,9 @@
     content:   What kinds of things (elements?) can you Hash together?
     userName:  Charlie
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # Heaps Posts
 - !!models.Post
@@ -561,6 +597,9 @@
     content:   I'm a little rusty on my Heap knowledge.. is it FIFO or LIFO?
     userName:  David
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 - !!models.Post
     category:  !!models.Category
@@ -569,6 +608,9 @@
     content:   Does anyone know the Big-O of Heap operations? Thanks!
     userName:  Edgar
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # Huffman Tree Posts
 - !!models.Post
@@ -594,6 +636,9 @@
     content:   My friend told me that since the Hawaiian language has a lot of vowels, it would be good to use a Huffman tree for encoding on.  Is there an example anyone has?
     userName:  Human
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 - !!models.Post
     category:  !!models.Category
@@ -602,6 +647,9 @@
     content:   I have a little difficulty trying to understand the binary numbers that we write to a file to show what was compressed.  How do we first figure out how many bytes or bits the file has compressed?
     userName:  India
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # Iterator Posts
 - !!models.Post
@@ -627,6 +675,9 @@
     content:   Now that the assignment is over, did anyone else have a lot of trouble trying to wrap their head around Iterators?
     userName:  Lima
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # JUnit Posts 
 - !!models.Post
@@ -652,6 +703,9 @@
     content:   I am having some trouble setting up JUnit inside of Eclipse. Could someone please help me?
     userName:  Howard
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # Linked List Posts
 - !!models.Post
@@ -677,6 +731,9 @@
     content:   How many pointers should we need in order to insert an element into a LL?
     userName:  Papa
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
   
 # Nodes Posts
 - !!models.Post
@@ -702,6 +759,9 @@
     content:   Why is it better than using an Array for example? Just seems like a lot more hassle trying to set Nodes up.
     userName:  Robert
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 - !!models.Post
     category:  !!models.Category
@@ -710,6 +770,9 @@
     content:   What are the Big-O costs of using node operations???
     userName:  Ryan
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # Priority Queues Posts
 - !!models.Post
@@ -735,6 +798,9 @@
     content:   I know what a Queue is.. But does it work the same as a PQ? Anyone?
     userName:  Amy
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
 
 # Queues Posts
 - !!models.Post
@@ -760,6 +826,9 @@
     content:   I know that a(n)? Queue is FIFO, but is there anyway to grab an element that is, for exmaple, in the middle?
     userName:  Nicholas
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # Recursion Posts
 - !!models.Post
@@ -785,6 +854,9 @@
     content:   I think I understand the basics of Recursion, but I'm not quite sure how to trace through a recursive method in a Binary Search Tree.  Anyone else have the same problem?
     userName:  Bob
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 - !!models.Post
     category:  !!models.Category
@@ -795,6 +867,9 @@
                   <a href = 'https://www.youtube.com/watch?v=ql2oLhDObwA'>Binary Search Tree Recursion</a>"
     userName:  Lucy
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # Backtracking Posts
 - !!models.Post
@@ -820,6 +895,9 @@
     content:   I think I understand the basics of Recursion, but Recursive Backtracking is another thing in of itself.  Are there any examples anyone found that can help me grasp this topic?
     userName:  Amy
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # Sorting Posts
 - !!models.Post
@@ -845,6 +923,9 @@
     content:   I did a general search of Sorting and there are TONS of results.  How many and which do you recommend we be familiar with for this course?
     userName:  Frank
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 - !!models.Post
     category:  !!models.Category
@@ -860,6 +941,9 @@
                   <a href = "https://www.youtube.com/watch?v=ROalU379l3U">InsertSort</a> <br>
     userName:  Carl
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # Stack Posts
 - !!models.Post
@@ -885,6 +969,9 @@
     content:   Why use Stacks when we have other ADTs at our disposal like ArrayLists and such?
     userName:  Will
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 - !!models.Post
     category:  !!models.Category
@@ -893,6 +980,9 @@
     content:   With the quiz coming up, I was wondering if anyone knew the bigO of some Stack operations? It wasn't listed in the lectures notes so thought I would ask here.
     userName:  May
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
     
 # Tree Trav Posts
 - !!models.Post
@@ -918,3 +1008,6 @@
     content:   I understand the different types of traversals but I am having trouble with the actual implementation. Psuedocode would be really helpful.
     userName:  Lee
     isSticky:  false
+    datePosted: 2000-11-10 11:45:09
+    comments: 5
+    votes: 5
