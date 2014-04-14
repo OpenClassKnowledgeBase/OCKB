@@ -99,6 +99,7 @@
                <a href="http://en.wikipedia.org/wiki/Dynamic_array">Wikipedia Page on Dynamic Arrays</a> <br>
     userName:  Jerry
     isSticky:  true
+    datePosted: 2000-09-10
     
 - !!models.Post
     category:  !!models.Category
@@ -117,6 +118,7 @@
     isSticky:  false
     userName:  Frank
     isSticky:  false
+    datePosted: 2000-09-10
     
 - !!models.Post
     category:  !!models.Category
@@ -125,6 +127,7 @@
     content:   In which situations or programs would using an ArrayList be better? I am more comfortable with Arrays so would the benefits of using an ArrayList be worth it?
     userName:  Eric
     isSticky:  false
+    datePosted: 2000-09-10
 
 # BST Posts
 - !!models.Post
