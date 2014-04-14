@@ -96,7 +96,7 @@
               <span class = "pull-right stats">4 Answers</span>
               @if(user != null){
                 <div class = "author">
-                    Submitted by <span class = "badge">@post.userName</span> on @post.datePosted
+                    Submitted by <span class = "badge">@post.userName</span> on @post.datePosted.format("MMMM dd, yyyy h:mm:ss a")
                 </div>
               }
             </div>
