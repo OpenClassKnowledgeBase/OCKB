@@ -1,100 +1,217 @@
 @(message: String)
 
- @scripts = {
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/index.css")">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/animate.min.css")">
-    <script src="@routes.Assets.at("javascripts/wow.min.js")"></script>
-    <script>new WOW().init();</script>
- }
+@scripts = {
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/index.css")">
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/animate.min.css")">
+<script src="@routes.Assets.at("javascripts/wow.min.js")"></script>
+<script>new WOW().init();</script>
+}
 
 @main("Open Class Knowledge Base", scripts) {
 
-    <div class="container-fluid">
+<div class="container-fluid">
 
-      <div class="row">
-        <div class = "col-md-4">
-        </div>
-        <div class = "col-md-4">
-            <img src = "@routes.Assets.at("images/croppedLogo.png")" class="img-responsive center-block header">
+	<div class="carousel slide" id="myCarousel">
+
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+			<li data-target="#myCarousel" data-slide-to="4"></li>
+			<li data-target="#myCarousel" data-slide-to="5"></li>
+		</ol>
+
+		<div class="carousel-inner">
+
+			<div class="item active" id="cabinet">
+				<div class="dimensions"></div>
+				<img src = "@routes.Assets.at("images/banner-cabinet.JPG")" class="img-responsive">
+				<div class="carousel-caption">
+					<h4>Hello, Cabinet!</h4>
+					<p>Wheeee</p>
+					<a class="button" href="#">A Button that links to stuff</a> 
+				</div>
+			</div>
+
+			<div class="item" id="gerald">
+				<div class="dimensions"></div>
+				<img src = "@routes.Assets.at("images/banner-gerald.JPG")" class="img-responsive">
+				<div class="carousel-caption">
+					<h4>Build and deploy in 2 clicks</h4>
+					<p><strong>ClickStarts let you build and deploy applications in just two mouse clicks, enabled by shareable templates that identify services used across the entire development to deployment lifecyle. <a href="https://grandcentral.cloudbees.com/authenticate/start?provider=github&amp;login_redirect=/">Sign up your with GitHub account </a> or <a href="https://grandcentral.cloudbees.com/authenticate/start?provider=google&amp;login_redirect=/">Sign up with your Google account</a></strong></p>
+					<a class="button" href="http://wiki.cloudbees.com/bin/view/RUN/ClickStart">Learn More</a> 
+				</div>
+			</div>
+
+			<div class="item" id="labback1">
+				<div class="dimensions"></div>
+				<img src = "@routes.Assets.at("images/banner-labback1.JPG")" class="img-responsive center-block header">
+				<div class="carousel-caption">
+					<h4>Build and deploy in 2 clicks</h4>
+					<p>ClickStarts let you build and deploy applications in just two mouse clicks, enabled by shareable templates that identify services used across the entire development to deployment lifecyle. <a href="https://grandcentral.cloudbees.com/authenticate/start?provider=github&amp;login_redirect=/">Sign up your with GitHub account </a> or <a href="https://grandcentral.cloudbees.com/authenticate/start?provider=google&amp;login_redirect=/">Sign up with your Google account</a></p>
+					<a class="button" href="http://wiki.cloudbees.com/bin/view/RUN/ClickStart">Learn More</a> 
+				</div>
+			</div>
+
+			<div class="item" id="labback2">
+				<div class="dimensions"></div>
+				<img src = "@routes.Assets.at("images/banner-labback2.JPG")" class="img-responsive center-block header">
+				<div class="carousel-caption">
+					<h4>Build and deploy in 2 clicks</h4>
+					<p>ClickStarts let you build and deploy applications in just two mouse clicks, enabled by shareable templates that identify services used across the entire development to deployment lifecyle. <a href="https://grandcentral.cloudbees.com/authenticate/start?provider=github&amp;login_redirect=/">Sign up your with GitHub account </a> or <a href="https://grandcentral.cloudbees.com/authenticate/start?provider=google&amp;login_redirect=/">Sign up with your Google account</a></p>
+					<a class="button" href="http://wiki.cloudbees.com/bin/view/RUN/ClickStart">Learn More</a> 
+				</div>
+			</div>
+
+			<div class="item" id="labfront1">
+				<div class="dimensions"></div>
+				<img src = "@routes.Assets.at("images/banner-labfront1.JPG")" class="img-responsive center-block header">
+				<div class="carousel-caption">
+					<h4>Build and deploy in 2 clicks</h4>
+					<p>ClickStarts let you build and deploy applications in just two mouse clicks, enabled by shareable templates that identify services used across the entire development to deployment lifecyle. <a href="https://grandcentral.cloudbees.com/authenticate/start?provider=github&amp;login_redirect=/">Sign up your with GitHub account </a> or <a href="https://grandcentral.cloudbees.com/authenticate/start?provider=google&amp;login_redirect=/">Sign up with your Google account</a></p>
+					<a class="button" href="http://wiki.cloudbees.com/bin/view/RUN/ClickStart">Learn More</a> 
+				</div>
+			</div>
+
+			<div class="item" id="labfron2">
+				<div class="dimensions"></div>
+				<img src = "@routes.Assets.at("images/banner-labfron2.JPG")" class="img-responsive center-block header">
+				<div class="carousel-caption">
+					<h4>Build and deploy in 2 clicks</h4>
+					<p>ClickStarts let you build and deploy applications in just two mouse clicks, enabled by shareable templates that identify services used across the entire development to deployment lifecyle. <a href="https://grandcentral.cloudbees.com/authenticate/start?provider=github&amp;login_redirect=/">Sign up your with GitHub account </a> or <a href="https://grandcentral.cloudbees.com/authenticate/start?provider=google&amp;login_redirect=/">Sign up with your Google account</a></p>
+					<a class="button" href="http://wiki.cloudbees.com/bin/view/RUN/ClickStart">Learn More</a> 
+				</div>
+			</div>
+
+
+
+<!--
+   <div class="item r" id="CB_banner_video_eclipses">
+      <div class="dimensions"></div>
+      <div class="img"><img alt=" " src="https://wiki.cloudbees.com/bin/download/CB_developer/WebHome/eclipseTour.png"></img></div>
+      <div class="carousel-caption">
+        <h4>Use tools you know</h4>
+        <p>Use <code>git push</code> based deployment, the <code>bees</code> command line (CloudBees SDK), Eclipse or <a href="http://blogs.jetbrains.com/idea/2012/12/deploy-web-apps-to-cloudbees-from-intellij-idea-12/">IntelliJ</a> with CloudBees plugins.</p>
+        <a class="button video" href="#CB_banner_video_eclipse" rel="https://www.youtube.com/embed/4nvj3IsvJ6Y"><span class="icn"></span>Watch Video</a> </div>
+    </div>
+
+   <div class="item r" id="CB_banner_mobile">
+      <div class="dimensions"></div>
+      <div class="img"><img alt=" " src="https://developer.cloudbees.com/bin/download/view/Mobile/mobilepaasmap.png"></img></div>
+      <div class="carousel-caption">
+        <h4>Mobile Apps</h4>
+        <p>CloudBees hosts many mobile apps - find out more about what we can do with  <a href="https://developer.cloudbees.com/bin/view/Mobile">mobile services</a>. There is also a <a href="https://mobilepaas.cloudbees.com">showcase app</a> you can learn from.
+<a class="button" href="https://developer.cloudbees.com/bin/view/Mobile">Learn More</a>
+        </p></div>
+    </div>
+
+    <div class="item" id="javaPaas">
+      <div class="dimensions"></div>
+      <div class="img"><img src="https://wiki.cloudbees.com/bin/download/CB_developer/WebHome/rockHeaven.png" alt=" " /></div>
+      <div class="carousel-caption">
+        <h4>Java and the cloud</h4><h5> A pair to rock the heavens</h5>
+        <p>Read about the technological foundation CloudBees has established to address the new challenges the cloud brings to lifecycle management, security, ecosystem and business continuity.</p>
+        <a href="http://pages.cloudbees.com/CloudBees-Platform-Java-PaaS-WP.html" class="button">Learn More</a> </div>
+    </div>
+
+-->
+</div>
+
+
+
+<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+	<span class="icon-prev"></span>
+</a>
+<a class="right carousel-control" href="#myCarousel" data-slide="next">
+	<span class="icon-next"></span>
+</a>  </div>
+</div>
+
+<div class="row">
+	<div class = "col-md-4">
+	</div>
+	<div class = "col-md-4">
+		<img src = "@routes.Assets.at("images/croppedLogo.png")" class="img-responsive center-block header">
 <!--         <div class="col-md-12">
           <img src = "@routes.Assets.at("images/logo-bluegray.gif")" class="img-responsive">
-        </div> -->
-        </div>
-        <div class = "col-md-4">
-        </div>
-      </div>
+      </div> -->
+  </div>
+  <div class = "col-md-4">
+  </div>
+</div>
 
-      <div class = "row row-top">
-        <div class = "col-lg-12 txt-top">
-          <h1 class="text-center ind-title">Open Class Knowledge Base </h1>
-          <p class = "text-center ind-paragraph">Made by students, for students, the Open Class Knowledge Base features a collaborative environment that lets you interact with your classmates and professors like never before.</p>
-        </div>
+<div class = "row row-top">
+	<div class = "col-lg-12 txt-top">
+		<h1 class="text-center ind-title">Open Class Knowledge Base </h1>
+		<p class = "text-center ind-paragraph">Made by students, for students, the Open Class Knowledge Base features a collaborative environment that lets you interact with your classmates and professors like never before.</p>
+	</div>
         <!--<div class="col-lg-6">
           <img src = "comm-based.png" class = "img-responsive" onload="this.width/=1.5;this.onload=null;">
-        </div> -->
-      </div>
-      <hr>
+      </div> -->
+  </div>
+  <hr>
 
-      <div class = "row row-fluid row-even">
-        <div class = "col-md-offset-1 col-md-4 col-width">
-          <img class = "center-block content-img wow fadeInLeft" data-wow-offset="370" src = "@routes.Assets.at("images/content.png")" onload="this.width/=1.1;this.onload=null;">
-        </div>
-        <div class = "col-md-offset-1 col-md-5 col-width">
-          <h1 class = "ind-title"> Content at your fingertips </h1><br>
-          <p class = "pull-left ind-paragraph">
-          The Open Class Knowledge Base has content from all parts of ICS 211.  From simple review topics to in-depth analysis of sorting algorithms, the Open Class Knowledge Base will have what you're looking for.
-          </p>
-        </div>
-      </div>
-      <!-- <hr> -->
+  <div class = "row row-fluid row-even">
+  	<div class = "col-md-offset-1 col-md-4 col-width">
+  		<img class = "center-block content-img wow fadeInLeft" data-wow-offset="370" src = "@routes.Assets.at("images/content.png")" onload="this.width/=1.1;this.onload=null;">
+  	</div>
+  	<div class = "col-md-offset-1 col-md-5 col-width">
+  		<h1 class = "ind-title"> Content at your fingertips </h1><br>
+  		<p class = "pull-left ind-paragraph">
+  			The Open Class Knowledge Base has content from all parts of ICS 211.  From simple review topics to in-depth analysis of sorting algorithms, the Open Class Knowledge Base will have what you're looking for.
+  		</p>
+  	</div>
+  </div>
+  <!-- <hr> -->
 
-      <div class = "row row-fluid row-odd">
-        <div class = "col-md-offset-1 col-md-5 col-width">
-          <h1 class = "ind-title"> Course collaboration </h1><br>
-          <p class="ind-paragraph">The Open Class Knowledge Base is driven by the peers you learn with and the instructors you learn from.  Connect, communicate, and collaborate with people you know and names you recognize.</p>
-        </div>
-        <div class="col-md-4 col-width">
-          <img class = "odd-pic center-block wow fadeInRight" data-wow-offset="440" src = "@routes.Assets.at("images/coursecollab.png")">
-        </div>
-      </div>
-      <!-- <hr> -->
+  <div class = "row row-fluid row-odd">
+  	<div class = "col-md-offset-1 col-md-5 col-width">
+  		<h1 class = "ind-title"> Course collaboration </h1><br>
+  		<p class="ind-paragraph">The Open Class Knowledge Base is driven by the peers you learn with and the instructors you learn from.  Connect, communicate, and collaborate with people you know and names you recognize.</p>
+  	</div>
+  	<div class="col-md-4 col-width">
+  		<img class = "odd-pic center-block wow fadeInRight" data-wow-offset="440" src = "@routes.Assets.at("images/coursecollab.png")">
+  	</div>
+  </div>
+  <!-- <hr> -->
 
-      <div class = "row row-fluid row-even">
-        <div class = "col-md-offset-1 col-md-4 col-width">
-          <img class = "center-block wow fadeInLeft" data-wow-offset="460" src = "@routes.Assets.at("images/past.png")" onload="this.width/=1.1;this.onload=null;">
-        </div>
-        <div class="col-md-offset-1 col-md-5 col-width col-txt">
-          <h1 class = "ind-title">Learn from the past, prepare for the future</h1>
-          <p class = "pull-left ind-paragraph">
-          Got a question?  Chances are, someone may have already asked it. Utilize this feature and collaborate with the community to find new answers to old questions.
-          </p>
-        </div>
-      </div>
-      <!-- <hr> -->
+  <div class = "row row-fluid row-even">
+  	<div class = "col-md-offset-1 col-md-4 col-width">
+  		<img class = "center-block wow fadeInLeft" data-wow-offset="460" src = "@routes.Assets.at("images/past.png")" onload="this.width/=1.1;this.onload=null;">
+  	</div>
+  	<div class="col-md-offset-1 col-md-5 col-width col-txt">
+  		<h1 class = "ind-title">Learn from the past, prepare for the future</h1>
+  		<p class = "pull-left ind-paragraph">
+  			Got a question?  Chances are, someone may have already asked it. Utilize this feature and collaborate with the community to find new answers to old questions.
+  		</p>
+  	</div>
+  </div>
+  <!-- <hr> -->
 
-      <div class = "row row-fluid row-odd">
-          <div class = "col-md-offset-1 col-md-5 col-width col-txt">
-            <h1 class = "ind-title">Beyond the classroom</h1>
-            <p class = "pull-left ind-paragraph">
-              Open Class Knowledge Base expands on the same topics covered in class by offering different perspectives on the same problem. Go beyond the textbook and spend less time searching and more time learning.
-            </p>
-          </div>
-          <div class="col-md-4 col-width">
-            <img class = "center-block odd-pic wow fadeInRight" data-wow-offset="490" src = "@routes.Assets.at("images/designed.png")" onload="this.width/=1.1;this.onload=null;">
-          </div>
-      </div>
-      <!-- <hr> -->
+  <div class = "row row-fluid row-odd">
+  	<div class = "col-md-offset-1 col-md-5 col-width col-txt">
+  		<h1 class = "ind-title">Beyond the classroom</h1>
+  		<p class = "pull-left ind-paragraph">
+  			Open Class Knowledge Base expands on the same topics covered in class by offering different perspectives on the same problem. Go beyond the textbook and spend less time searching and more time learning.
+  		</p>
+  	</div>
+  	<div class="col-md-4 col-width">
+  		<img class = "center-block odd-pic wow fadeInRight" data-wow-offset="490" src = "@routes.Assets.at("images/designed.png")" onload="this.width/=1.1;this.onload=null;">
+  	</div>
+  </div>
+  <!-- <hr> -->
 
-      <div class = "row row-fluid row-even">
-        <div class = "col-md-offset-1 col-md-4 col-width">
-          <img class = "center-block wow fadeInLeft" data-wow-offset="520" src = "@routes.Assets.at("images/mobile.png")" onload="this.width/=1.1;this.onload=null;">
-        </div>
-        <div class="col-md-offset-1 col-md-5 col-width col-txt">
-          <h1 class = "ind-title"> Learn anywhere, anytime </h1>
-          <p class = "pull-left ind-paragraph">Access the Open Class Knowledge Base from your tablet, mobile phone, or your laptop.  Contribute content and ask questions wherever you are, whenever you want.</p>
-        </div>
-      </div>
-      <hr>
+  <div class = "row row-fluid row-even">
+  	<div class = "col-md-offset-1 col-md-4 col-width">
+  		<img class = "center-block wow fadeInLeft" data-wow-offset="520" src = "@routes.Assets.at("images/mobile.png")" onload="this.width/=1.1;this.onload=null;">
+  	</div>
+  	<div class="col-md-offset-1 col-md-5 col-width col-txt">
+  		<h1 class = "ind-title"> Learn anywhere, anytime </h1>
+  		<p class = "pull-left ind-paragraph">Access the Open Class Knowledge Base from your tablet, mobile phone, or your laptop.  Contribute content and ask questions wherever you are, whenever you want.</p>
+  	</div>
+  </div>
+  <hr>
 
       <!-- <div class = "row-fluid bottom-text"><br>
         <div class = "text-center"> 
@@ -105,28 +222,28 @@
          
       </div> -->
 
-    @if(session().get("username")==null) {
+      @if(session().get("username")==null) {
       
-        <div class = "row-fluid">
-          <div class = "col-md-6 text-center">
-              <p style>Sign in with your UH info to get started!</p>
-              <a href="@routes.Application.login()" class="btn btn-primary btn-lg btn-bottom">Sign in</a>
-            </div>
-            <div class = "col-md-5 text-center">
-              <p>Not at UH? Not a problem!  Explore and see what OCKB is all about!</p>
-              <a href="@routes.Application.categories()" class="btn btn-primary btn-lg btn-bottom">Explore</a>
-            </div>
-        </div>
+      <div class = "row-fluid">
+      	<div class = "col-md-6 text-center">
+      		<p style>Sign in with your UH info to get started!</p>
+      		<a href="@routes.Application.login()" class="btn btn-primary btn-lg btn-bottom">Sign in</a>
+      	</div>
+      	<div class = "col-md-5 text-center">
+      		<p>Not at UH? Not a problem!  Explore and see what OCKB is all about!</p>
+      		<a href="@routes.Application.categories()" class="btn btn-primary btn-lg btn-bottom">Explore</a>
+      	</div>
       </div>
-    
-      <p>&copy; OCKB 2014</p>
-    
-    } else {    
-        <br>
-      <div class = text-center>
-          <p>&copy; OCKB 2014</p>
-        </div>
-        <br>
-    }
+  </div>
+
+  <p>&copy; OCKB 2014</p>
+
+} else {    
+<br>
+<div class = text-center>
+	<p>&copy; OCKB 2014</p>
+</div>
+<br>
+}
 
 }
