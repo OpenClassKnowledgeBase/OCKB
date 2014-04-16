@@ -12,6 +12,10 @@
 	
 }
 
+.row-top {
+	padding: 225px;
+}
+
 .row-even {
 	padding: 15px;
 }
@@ -26,22 +30,78 @@
 }
 
 .carousel {
-  height: 500px;
-  margin-bottom: 60px;
+	height: 500px;
+	margin-bottom: 60px;
 }
 
 .carousel-caption {
-  z-index: 10;
+	z-index: 10;
 }
 
 .carousel .item {
-  height: 500px;
-  background-color: #777;
+	height: 500px;
+	background-color: #777;
 }
 
 .carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+}
+
+#wrapper {
+	background-color: #fff;
+	width: 100%;
+	height: 500px;
+	margin-top: -450px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 0;
+}
+#carousel img {
+	display: block;
+	float: left;
+}
+#prev, #next {
+	background-color: rgba(255, 255, 255, 0.7);
+	display: block;
+	height: 500px;
+	width: 50%;
+	top: 0;
+	position: absolute;
+}
+#prev:hover, #next:hover {
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+#prev {
+	left: -495px;
+}
+#next {
+	right: -495px;
+}
+#pager {
+	margin-left: -470px;
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+}
+#pager a {
+	border: 2px solid #fff;
+	border-radius: 10px;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 0 5px 0 0;
+}
+#pager a:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+#pager a span {
+	display: none;
+}
+#pager a.selected {
+	background-color: #fff;
 }
