@@ -55,6 +55,19 @@ public class Application extends Controller {
     	}
     }
     
+    public static Result random() {
+    	String user = session("username");
+    	if (user == null) {
+    		return redirect(routes.Application.index());
+    	}
+    	else {
+    		List<Category> categoryList = Category.findAll();
+    		int random = randInt(1, categoryList.size());
+    		Long randomLong = new Long(random);
+    		return redirect(routes.Application.category(randomLong));
+    	}
+    }
+    
     public static Result category(Long cid) {
     	String user = session("username");
     	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
@@ -155,6 +168,14 @@ public class Application extends Controller {
 	  serviceURL = URLEncoder.encode(serviceURL, "UTF-8");
 	  // redirect to CAS logout
 	  return redirect(CAS_LOGOUT + "?service=" + serviceURL);
+	}
+	
+	public static int randInt(int min, int max) {
+	    Random rand = new Random();
+
+	    int randomNum = rand.nextInt((max - min) + 1) + min;
+
+	    return randomNum;
 	}
 	
 }

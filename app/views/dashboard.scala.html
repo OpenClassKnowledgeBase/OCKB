@@ -19,7 +19,7 @@
           @if(recentUserReplyList.isEmpty) {
           	<section class = "replyPlaceholder center">
               <h2>You have no recent activity.</h2>
-              <a href="@routes.Application.categories()" class="btn btn-primary btn-md btn-recent">Start posting today!</a>
+              <a href="@routes.Application.random()" class="btn btn-primary btn-md btn-recent">Try a random category</a>
             </section>
           } else {
            	@for(recentUserReply <- recentUserReplyList) {
