@@ -18,9 +18,15 @@ import org.w3c.dom.Document;
 
 public class Application extends Controller {	 
 	/* CAS Variables */
+	/*
 	private static final String CAS_LOGIN = "https://authn.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://authn.hawaii.edu/cas/serviceValidate";
-	private static final String CAS_LOGOUT = "https://authn.hawaii.edu/cas/logout";
+	private static final String CAS_LOGOUT = "https://authn.hawaii.edu/cas/logout"; */
+	
+	private static final String CAS_LOGIN = "https://cas-test.its.hawaii.edu/cas/login";
+	private static final String CAS_VALIDATE = "https://cas-test.its.hawaii.edu/cas/serviceValidate";
+	private static final String CAS_LOGOUT = "https://cas-test.its.hawaii.edu/cas/logout";
+
 	private static String user = "";
 	private static final int NEWEST = 1;
 	private static final int VOTES = 2;
@@ -42,7 +48,9 @@ public class Application extends Controller {
     		return redirect(routes.Application.index());
     	}
     	else {
-    		return ok(views.html.dashboard.render());
+    		List<Post> recentUserReplyList = Post.find.where().eq("userName", user).orderBy("latestActivity").findList();
+    		List<Post> recentUserPostList = Post.find.where().eq("userName", user).orderBy("latestActivity").findList();
+    		return ok(views.html.dashboard.render(recentUserReplyList, recentUserPostList));
     	}
     }
     

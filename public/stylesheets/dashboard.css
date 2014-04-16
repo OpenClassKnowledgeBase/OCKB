@@ -1,0 +1,17 @@
+.center {
+	text-align: center;
+}
+
+.replyPlaceholder {
+	padding-top: 21px;
+	padding-bottom: 61px;
+}
+
+.postPlaceholder {
+	padding-top: 21px;
+	padding-bottom: 58px;
+}
+
+.btn-recent {
+	font-size: 18px;
+}

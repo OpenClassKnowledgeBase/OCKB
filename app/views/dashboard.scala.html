@@ -1,8 +1,11 @@
+@(recentUserReplyList: List[Post], recentUserPostList: List[Post])
+
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
- }
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/dashboard.css")">
+}
  
- @main("Dashboard",scripts) {
+@main("Dashboard",scripts) {
     <div class="container">
       <!-- Example row of columns -->
       <div class = "row">
@@ -12,6 +15,24 @@
         <div class="col-lg-6">
           <h2>My Recent Activity</h2>
           <h4>Replies</h4>
+          
+          @if(recentUserReplyList.isEmpty) {
+          	<section class = "replyPlaceholder center">
+              <h2>You have no recent activity.</h2>
+              <a href="@routes.Application.categories()" class="btn btn-primary btn-md btn-recent">Start posting today!</a>
+            </section>
+          } else {
+           	@for(recentUserReply <- recentUserReplyList) {
+	          	<section>
+	              <div class="panel panel-default">
+	                <div class="panel-heading">
+	                <a href = "@routes.Application.post(recentUserReply.id)" class = "postLink">@recentUserReply.title</a>
+	                  <span class = "hidden-xs pull-right replies-author">Active 5 min ago</span>
+	                </div>
+	            </section>
+          	}
+          }
+		  <!--
           <section>
               <div class="panel panel-default">
                 <div class="panel-heading">
@@ -32,9 +53,29 @@
                   <a href = "@routes.Application.post(12)" class = "postLink">How do you implement a Comparator compare method?</a>
                     <span class = "hidden-xs pull-right replies-author">Active 1 hour ago</span>
                   </div>
-            </section>
+            </section> 
+            -->
           <br>
           <h4>Posts</h4>
+          
+          @if(recentUserPostList.isEmpty) {
+          	<section class = "postPlaceholder center">
+              <h2>You have no recent activity.</h2>
+              <a href="@routes.Application.categories()" class="btn btn-primary btn-md btn-recent">Start posting today!</a>
+            </section>
+          } else {
+           	@for(recentUserPost <- recentUserPostList) {
+	          	<section>
+	              <div class="panel panel-default">
+	                <div class="panel-heading">
+	                <a href = "@routes.Application.post(recentUserPost.id)" class = "postLink">@recentUserPost.title</a>
+	                  <span class = "hidden-xs pull-right replies-author">Active 5 min ago</span>
+	                </div>
+	            </section>
+          	}
+          }
+          
+          <!--
           <section>
               <div class="panel panel-default">
                 <div class="panel-heading">
@@ -56,12 +97,14 @@
                     <span class = "hidden-xs pull-right replies-author">Posted 1 hour ago</span>
                   </div>
             </section>
+            -->
+            
             <br>
-            <div class="row button">
-              <div class="col-md-2 col-md-offset-5">
-                <a class="btn btn-default" href="#">See All Activity &raquo;</a>
-              </div><!-- /.col-lg-4 -->
-          </div><!-- /button -->
+
+         	<section class="center">
+         	  <a class="btn btn-default" href="#">See All Activity &raquo;</a>
+         	</section>
+              
         </div>
         <div class="col-lg-6">
           <h2>Top Questions</h2>
@@ -111,11 +154,9 @@
           </div>
         </section>
         <br>
-        <div class="row button">
-          <div class="col-md-2 col-md-offset-5">
-            <a class="btn btn-default" href="#">See All Top Questions &raquo;</a>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /button -->
+        <section class="center">
+         	  <a class="btn btn-default" href="#">See All Top Questions &raquo;</a>
+        </section>
       </div>
       </div>
       <div class = "row">
