@@ -17,16 +17,17 @@ import org.w3c.dom.Document;
 
 
 public class Application extends Controller {	 
-	/* CAS Variables */
+	/* CAS Variables 
 	private static final String CAS_LOGIN = "https://authn.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://authn.hawaii.edu/cas/serviceValidate";
 	private static final String CAS_LOGOUT = "https://authn.hawaii.edu/cas/logout";
+	*/
 	
-	/* TEST CAS Variables for local testing
+	// TEST CAS Variables for local testing
 	private static final String CAS_LOGIN = "https://cas-test.its.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://cas-test.its.hawaii.edu/cas/serviceValidate";
 	private static final String CAS_LOGOUT = "https://cas-test.its.hawaii.edu/cas/logout";
-	*/
+	
 
 	private static String user = "";
 	private static final int NEWEST = 1;
@@ -99,6 +100,29 @@ public class Application extends Controller {
     	//figure out how to put this in global
     		List<Category> categoryList = Category.findAll();
         	return ok(views.html.categories.render(categoryList));
+    }
+    
+    public static Result submitPost(Long cid) {
+    	Category currentCategory = Category.getCategory(cid);
+
+    	return ok(views.html.submitPost.render(currentCategory));
+    }
+    
+    public static Result createPost(Long cid) {
+    	String user = session("username");
+    	Category currentCategory = Category.getCategory(cid);
+    	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
+    	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
+    	
+    	//To pull information from the two forms (temporary).
+    	final Map<String, String[]> values = request().body().asFormUrlEncoded();  	
+    	String postTitle = values.get("postTitle")[0];
+    	String postContent = values.get("postContent")[0];
+    	
+    	//Create post with gathered information.
+    	Post.create(currentCategory, postTitle, postContent, user);
+    	
+    	return ok(views.html.category.render(stickyList, postList, currentCategory, user));
     }
     
     public static Result userPriv() {

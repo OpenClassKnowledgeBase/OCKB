@@ -52,10 +52,14 @@ public class Post extends Model{
 		return find.all();
 	}
 
-	public static void create(Post post, Category category, String title, String content){
-		post.category = category;
-		post.title = title;
-		post.content = content;
+	public static void create(Category category, String title, String content, String username){
+		Post post = new Post(category, title, content);
+		post.userName = username;
+		
+		//This assumes that the user creating a post is not a teacher.  In order to show up in the Category view when the Submit button is clicked
+		//the isSticky boolean must be set to false.  So in order for a teacher to create a Sticky, a new method must be made or this must be modified 
+		//to check if the username is not included in the Professor String/Set when we create it.
+		post.isSticky = false;
 		post.save();
 	}
 	

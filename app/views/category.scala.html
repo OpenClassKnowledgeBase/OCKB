@@ -64,7 +64,7 @@
             </ul>
             @if(user != null){
                 <form class="navbar-form navbar-right" role="search">
-                    <a href="../submitquestion.html" class="btn btn-primary">Submit Question for @currentCategory.title</a>
+                    <a href="@routes.Application.submitPost(currentCategory.id)" class="btn btn-primary">Submit Question for @currentCategory.title</a>
                 </form>
             }
           </div>
