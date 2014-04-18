@@ -17,17 +17,18 @@ import org.w3c.dom.Document;
 
 
 public class Application extends Controller {	 
-	/* CAS Variables 
+	// CAS Variables 
 	private static final String CAS_LOGIN = "https://authn.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://authn.hawaii.edu/cas/serviceValidate";
 	private static final String CAS_LOGOUT = "https://authn.hawaii.edu/cas/logout";
-	*/
 	
+	
+	/*
 	// TEST CAS Variables for local testing
 	private static final String CAS_LOGIN = "https://cas-test.its.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://cas-test.its.hawaii.edu/cas/serviceValidate";
 	private static final String CAS_LOGOUT = "https://cas-test.its.hawaii.edu/cas/logout";
-	
+	*/
 
 	private static String user = "";
 	private static final int NEWEST = 1;
@@ -122,7 +123,7 @@ public class Application extends Controller {
     	//Create post with gathered information.
     	Post.create(currentCategory, postTitle, postContent, user);
     	
-    	return ok(views.html.category.render(stickyList, postList, currentCategory, user));
+		return redirect(routes.Application.category(currentCategory.id));
     }
     
     public static Result userPriv() {

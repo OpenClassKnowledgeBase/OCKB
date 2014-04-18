@@ -17,7 +17,7 @@ GET		/notifications				controllers.Application.notifications()
 GET     /category/:cid/:sort        controllers.Application.sort(cid: Long, sort: Int)
 GET     /randomPost                 controllers.Application.random()
 GET 	/submitPost/:cid			controllers.Application.submitPost(cid: Long)
-POST	/createPost/:cid			controllers.Application.createPost(cid: Long)
+POST	/category/:cid				controllers.Application.createPost(cid: Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
