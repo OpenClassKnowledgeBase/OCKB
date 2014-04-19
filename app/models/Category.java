@@ -1,8 +1,11 @@
 package models;
 
 import java.util.*;
+
 import play.db.ebean.*;
+
 import javax.persistence.*; /*For the database*/
+
 import play.data.validation.Constraints.*;
 
 @SuppressWarnings("serial")
@@ -48,4 +51,5 @@ public class Category extends Model{
 	public static Category getCategory (Long id) {
 		return Category.find.byId(id);
 	}
+	
 }

@@ -1,6 +1,7 @@
 package controllers;
 
 import com.avaje.ebean.Ebean;
+import com.avaje.ebean.Page;
 
 import models.*;
 import play.data.*;
@@ -18,6 +19,7 @@ import org.w3c.dom.Document;
 
 public class Application extends Controller {	 
 	// CAS Variables 
+	
 	private static final String CAS_LOGIN = "https://authn.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://authn.hawaii.edu/cas/serviceValidate";
 	private static final String CAS_LOGOUT = "https://authn.hawaii.edu/cas/logout";
@@ -66,41 +68,59 @@ public class Application extends Controller {
     		List<Category> categoryList = Category.findAll();
     		int random = randInt(1, categoryList.size());
     		Long randomLong = new Long(random);
-    		return redirect(routes.Application.category(randomLong));
+    		return redirect(routes.Application.category(randomLong, 0, "datePosted", "desc"));
     	}
     }
     
-    public static Result category(Long cid) {
+    public static Result category(Long cid, int page, String sortBy, String order) {
     	String user = session("username");
-    	List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
+    	
+    	//List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
     	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
+    	
     	Category currentCategory = Category.getCategory(cid);
-    	return ok(views.html.category.render(stickyList, postList, currentCategory, user));
+    	Page currentPage = Post.getPosts(cid, page, 10, sortBy, order);
+    	
+    	return ok(views.html.category.render(stickyList, currentPage, sortBy, order, currentCategory, user));
     }
     
+    /**
     public static Result sort(Long cid, int sort) {
     	String user = session("username");
     	List<Post> postList = new ArrayList<Post>();
-    	switch (sort) {
+    	Page<Post> postPage = Post.getPosts(cid, 1, 10, "datePosted", "desc");;
+    	String currentSort = "datePosted";
+    	String currentOrder = "desc";
+     	switch (sort) {
     		case NEWEST:
     			 postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).orderBy("datePosted desc").findList();
+    			 postPage = Post.getPosts(cid, 1, 10, "datePosted", "desc");
+    			 currentSort = "datePosted";
+    			 currentOrder = "desc";
     			break;
     		case VOTES:
     			postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).orderBy("votes desc").findList();
+    			postPage = Post.getPosts(cid, 1, 10, "votes", "desc");
+    			currentSort = "votes";
+    			currentOrder = "desc";
     			break;
     		case COMMENTS:
     			postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).orderBy("comments desc").findList();
+    			postPage = Post.getPosts(cid, 1, 10, "comments", "desc");
+    			currentSort = "comments";
+    			currentOrder = "desc";
     			break;
     	}
     	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
     	Category currentCategory = Category.getCategory(cid);
-    	return ok(views.html.category.render(stickyList, postList, currentCategory, user));
-    }
+    	
+    	return ok(views.html.category.render(stickyList, postPage, currentSort, currentOrder, currentCategory, user));
+    }**/
     
     public static Result categories() {
     	//figure out how to put this in global
-    		List<Category> categoryList = Category.findAll();
-        	return ok(views.html.categories.render(categoryList));
+    	List<Category> categoryList = Category.findAll();
+        return ok(views.html.categories.render(categoryList));
     }
     
     public static Result submitPost(Long cid) {
@@ -123,17 +143,12 @@ public class Application extends Controller {
     	//Create post with gathered information.
     	Post.create(currentCategory, postTitle, postContent, user);
     	
-		return redirect(routes.Application.category(currentCategory.id));
+		return redirect(routes.Application.category(currentCategory.id, 0, "datePosted", "desc"));
     }
     
     public static Result userPriv() {
     	List<User> userList = User.findAll();
     	return ok(views.html.userPriv.render(userList));
-    }
-    
-    public static Result submissionView() {
-    	
-    	return ok(views.html.submissionView.render());
     }
     
     public static Result notifications() {

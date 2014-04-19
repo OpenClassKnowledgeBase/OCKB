@@ -1,4 +1,25 @@
-@(stickyList: List[Post], postList: List[Post], currentCategory: Category, user: String)
+@(stickyList: List[Post], currentPage: com.avaje.ebean.Page[Post], currentSortBy: String, currentOrder: String, currentCategory: Category, user: String)
+
+@link(newPage:Int, newSortBy:String) = @{
+    var sortBy = currentSortBy
+    var order = currentOrder
+    
+    if(newSortBy != null) {
+        sortBy = newSortBy
+        if(currentSortBy == newSortBy) {
+            if(currentOrder == "asc") {
+                order = "desc"
+            } else {
+                order = "asc"
+            }
+        } else {
+            order = "asc"
+        }
+    }
+    
+    // Generate the link
+    routes.Application.category(currentCategory.id, newPage, sortBy, order) 
+}
 
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
@@ -6,7 +27,6 @@
  }
 @import java.lang.String; 
 @{val newest = "newest"}
-
  
 @main(currentCategory.title, scripts) {
     <div class="container">
@@ -53,13 +73,13 @@
           <div class="collapse navbar-collapse pull-left">
             <ul class="nav navbar-nav">
                <li>
-                <a href="@routes.Application.sort(currentCategory.id, 1)">Newest</a>
+                <a href="@link(0, "datePosted")">Newest</a>
               </li>
               <li>
-                <a href="@routes.Application.sort(currentCategory.id, 2)">Votes</a>
+                <a href="@link(0, "votes")">Votes</a>
               </li>
               <li>
-                <a href="@routes.Application.sort(currentCategory.id, 3)">Answers</a>
+                <a href="@link(0, "comments")">Answers</a>
               </li>
             </ul>
             @if(user != null){
@@ -87,7 +107,7 @@
       <hr>
       
       <!-- Content -->
-      @for((post,index) <- postList.zipWithIndex) {
+      @for((post,index) <- currentPage.getList.zipWithIndex) {
       	<section>
           @if(index % 2 == 0){
             <div class="panel panel-default">
@@ -106,28 +126,33 @@
             </div>
         </section>
       }
-
+		
         <!-- Pagination -->
-      <ul class="pagination">
-        <li>
-          <a href="#">Prev</a
-        </li>
-        <li>
-          <a href="#">1</a>
-        </li>
-        <li>
-          <a href="#">2</a>
-        </li>
-        <li>
-          <a href="#">3</a>
-        </li>
-        <li>
-          <a href="#">4</a>
-        </li>
-        <li>
-          <a href="#">Next</a>
-        </li>
-      </ul>
+      <div id="pagination">
+            <ul class="pagination">
+                @if(currentPage.hasPrev) {
+                    <li class="prev">
+                        <a href="@link(currentPage.getPageIndex - 1, null)">&larr; Previous</a>
+                    </li>
+                } else {
+                    <li class="prev disabled">
+                        <a>&larr; Previous</a>
+                    </li>
+                }
+                <li class="current">
+                    <a>Displaying @currentPage.getDisplayXtoYofZ(" to "," of ")</a>
+                </li>
+                @if(currentPage.hasNext) {
+                    <li class="next">
+                        <a href="@link(currentPage.getPageIndex + 1, null)">Next &rarr;</a>
+                    </li>
+                } else {
+                    <li class="next disabled">
+                        <a>Next &rarr;</a>
+                    </li>
+                }
+            </ul>
+        </div>
     </div>
 
 
