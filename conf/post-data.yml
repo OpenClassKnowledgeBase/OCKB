@@ -904,7 +904,100 @@
     category:  !!models.Category
                id: 17
     title:     Basics of Sorting
-    content:   content 
+    content:   "
+    <p>Sorting Algorithms
+       <ul>
+       <li>Selection sort</li>
+            <h4>Selection sort Algorithm</h4>
+            <ul>
+            <li>for fill = 0 to n - 2 do</li>
+                 <ul>
+                 <li>initialize posMin to fill</li>
+                 <li>for next = fill+1 to n-1 do</li>
+                     <ul>
+                     <li>if the item at next is less than the item at posMin</li>
+                     <li>reset posMin to next</li>
+                     </ul>
+                 <li>Exchange the item at posMin with the one at fill</li>
+                 </ul>
+            </ul>
+       <li>Bubble Sort</li>
+            <h4>Bubble Sort Algorithm</h4>
+            <ul>
+            <li>do</li>
+            <li>for each pair of adjacent array elements</li>
+            <li>if the values in a pair are out of order</li>
+            <li>exchange the values</li>
+            <li>while the array is not sorted</li>
+            </ul>
+       <li>Insertion Sort</li>
+            <ul>
+            <li>for each array element from the second (nextPos = 1) to the last</li>
+            <li>Insert the element at nextPos where it belonds in the array,</li>
+            <li>increasing the length of the sorted subarray be one element</li>
+            </ul>
+       <li>Shell Sort</li>
+            <ul>
+            <li>Set the initial value of gap to n/2</li>
+            <li>while gap > 0</li>
+                 <ul>
+                 <li>for each array element from position gap to the last element</li>
+                      <ul>
+                      <li>Insert this element to where it belongs in its subarray</li>
+                      </ul>
+                 </ul>
+                 <li>if gap is 2, set it it 1</li>
+                 <li>else gap = gap / 2.2</li>
+            </ul>
+       <li>Merge Sort</li>
+            <ul>
+            <li>Merge two sorted arrays</li>
+            <li>Merge sort Algorithm</li>
+                 <ul>
+                 <li>if the tableSize is > 1</li>
+                      <ul>
+                      <li>Set helfSize to tableSize divided by 2</li>
+                      <li>Allocate a table called leftTable of size halfSize</li>
+                      <li>Allocate a table called rightTable of size halfSize</li>
+                      <li>Copy the elements from table[0 ... helfSize-1] into leftTable</li>
+                      <li>Copy the elements from table [halfSize ... tableSize] into rightTable.</li>
+                      <li>Recursively apply the merge sort algorithm to leftTable.</li>
+                      <li>Recursively apply the merge sort algorithm to rightTable.</li>
+                      <li>Apply the merge method using leftTable and rightTable as the input and the original table as the output.</li>
+                      </ul>
+                 </ul>
+            </ul>
+       <li>Heapsort</li>
+            <ul>
+            <li>Uses a heap to store the array</li>
+            <li>Heap sort algorithm</li>
+                <ul>
+                <li>Insert each value from the array to be sorted into a priority queue</li>
+                <li>set i to 0</li>
+                <li>while the pripoity queue is not empty</li>
+                     <ul>
+                     <li>remove an item from the queue and insert it back into the array at position i</li>
+                     <li>increment i</li>
+                </ul>
+            </ul>
+       
+       <li>Quick Sort</li>
+            <ul>
+                 <li>Indexes first and last are the end points of the array being sorted</li>
+                 <li>The index of the picot after partitioning is pivIndex</li>
+                 <h4>Algorithm for Quick Sort</h4>
+                  <ul>
+                      <li>if first < last then</li>
+                      <li>choose a pivot(pivIndex) in the subarray and partition the aubarray</li>
+                      <li>Recursively apply quicksort to the subarray first . . . pivIndex-1</li>
+                      <li>Recursively apply quicksort to the subarray pivIndex+1 . . . last</li>
+                  </ul>
+            </ul>
+       </ul>
+    </p>
+    
+    
+    " 
     userName:  Jason
     isSticky:  true
     
@@ -950,12 +1043,36 @@
     category:  !!models.Category
                id: 18
     title:     Basics of Stacks
-    content:   "  
+    content:   "<p>  
     
     <h4>Stacks</h4>
-    <br>
-    Stacks are fun. 
-    "
+    <ul>
+       <li>Provides encapsulation</li>
+       <li>Internal details are protected from external misuse</li>
+       <li>Last-in, First-out (LIFO)</li>
+       <li>Add to, remove from, and peek at the top only</li>
+       <li>Required: push(item), pop, peek</li>
+       <li>Java's Stack: (size, empty, search)</li>
+       <li>EmptyStackException (peek, pop)</li>
+    </ul>
+    
+    <h4> Why are stacks useful?</h4>
+    <ul>
+       <li>Computer Programs - Bottom of stack fixed spot in memory, stack pointer stored in register</li>
+       <li>Call stack - Keep track of which methods are called, and lacations to return</li>
+       <li>Stack oriented programming language (JVM)</li>
+       <li>Many CPUs have special registers for stack pointers to conserve opcode space</li>
+       <li>Converting decimal to binary</li>
+       <li>Towers of Hanoi</li>
+       <li>Expression evaluation and syntax parsing (context-free languages)</li>
+       <li>Evaulation of an infix/prefix/postfix expressions</li>
+       <li>Conversion between different expression types</li>
+       <li>Backtracking</li>
+       <li>Tree Traversals</li>
+    </ul>
+    
+    
+    </p>"
     userName:  Jason
     isSticky:  true
     
@@ -1013,11 +1130,11 @@
              </ul>
              <pre>
                 <code> 
-                   def preOrderTraversal(node):
-                    if node is null: return
-                    process(node)
-                    preOrderTraversal(node.left)
-                    preOrderTraversal(node.right)
+                   def preOrderTraversal(node): <br>
+                    if node is null: return <br>
+                    process(node) <br>
+                    preOrderTraversal(node.left) <br>
+                    preOrderTraversal(node.right) <br>
                </code>
             </pre>
             <h5> in-order </h5>
@@ -1028,11 +1145,11 @@
              </ul>
              <pre>
                 <code> 
-                   def preOrderTraversal(node):
-                    if node is null: return
-                    preOrderTraversal(node.left)
-                    process(node)
-                    preOrderTraversal(node.right)
+                   def preOrderTraversal(node):<br>
+                    if node is null: return<br>
+                    preOrderTraversal(node.left)<br>
+                    process(node)<br>
+                    preOrderTraversal(node.right)<br>
                </code>
             </pre>
             <h5> post-order </h5>
@@ -1043,10 +1160,10 @@
              </ul>
              <pre>
                 <code> 
-                   def preOrderTraversal(node):
-                    if node is null: return
-                    preOrderTraversal(node.left)
-                    preOrderTraversal(node.right)
+                   def preOrderTraversal(node):<br>
+                    if node is null: return<br>
+                    preOrderTraversal(node.left)<br>
+                    preOrderTraversal(node.right) <br>
                     process(node)
                </code>
             </pre>
