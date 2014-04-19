@@ -1,9 +1,14 @@
 package models;
 
 import java.util.*;
+
 import play.db.ebean.*;
 import play.data.format.*;
+
 import javax.persistence.*; /*For the database*/
+
+import com.avaje.ebean.Page;
+
 import play.data.validation.Constraints.*;
 
 @SuppressWarnings("serial")
@@ -55,6 +60,8 @@ public class Post extends Model{
 	public static void create(Category category, String title, String content, String username){
 		Post post = new Post(category, title, content);
 		post.userName = username;
+		post.comments = (long) 0;
+		post.votes = (long) 0;
 		
 		//This assumes that the user creating a post is not a teacher.  In order to show up in the Category view when the Submit button is clicked
 		//the isSticky boolean must be set to false.  So in order for a teacher to create a Sticky, a new method must be made or this must be modified 
@@ -69,4 +76,23 @@ public class Post extends Model{
 	public static void delete(Long id){
 		find.ref(id).delete();
 	}
+	
+	/**
+	* Return a page of posts
+	*
+	* @param page Page to display
+	* @param pageSize Number of posts per page
+	* @param sortBy Posts property used for sorting
+	* @param order Sort order (either or asc or desc)
+	* @param filter Filter applied on the name column
+	*/
+    public static Page<Post> getPosts(Long cid, int page, int pageSize, String sortBy, String order) {
+        return
+            find.where()
+            	.eq("category_id", cid)
+            	.eq("isSticky", false)
+                .orderBy(sortBy + " " + order)
+                .findPagingList(pageSize)
+                .getPage(page);
+    }
 }
