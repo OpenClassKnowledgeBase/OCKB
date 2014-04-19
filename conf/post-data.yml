@@ -950,7 +950,12 @@
     category:  !!models.Category
                id: 18
     title:     Basics of Stacks
-    content:   content 
+    content:   "  
+    
+    <h4>Stacks</h4>
+    <br>
+    Stacks are fun. 
+    "
     userName:  Jason
     isSticky:  true
     
@@ -989,7 +994,83 @@
     category:  !!models.Category
                id: 19
     title:     Basics of Tree Traversals
-    content:   content 
+    content:      "<p>
+       <h3>Tree Traversals</h3>
+         <ul>
+            <li> Similar to iterating over a list. </li>
+            <li> Often want to visit/process every element in a tree. </li>
+            <li> But... what makes sense for a tree? </li>
+                <li> Trees are unidirectional (no links from child to parent) </li>
+                <li> Usually use recursion (run-time stack / backtracking) </li>
+            </ul>
+            
+            <h4> Depth-First Traversals </h4>
+             <h5> pre-order </h5>
+             <ul>
+                <li> root </li>
+                <li> left sub-tree </li>
+                <li> right sub-tree </li>
+             </ul>
+             <pre>
+                <code> 
+                   def preOrderTraversal(node):
+                    if node is null: return
+                    process(node)
+                    preOrderTraversal(node.left)
+                    preOrderTraversal(node.right)
+               </code>
+            </pre>
+            <h5> in-order </h5>
+             <ul>
+                <li> left sub-tree </li>
+                <li> root </li>
+                <li> right sub-tree </li>
+             </ul>
+             <pre>
+                <code> 
+                   def preOrderTraversal(node):
+                    if node is null: return
+                    preOrderTraversal(node.left)
+                    process(node)
+                    preOrderTraversal(node.right)
+               </code>
+            </pre>
+            <h5> post-order </h5>
+             <ul>
+                <li> left sub-tree </li>
+                <li> right sub-tree </li>
+                <li> root </li>
+             </ul>
+             <pre>
+                <code> 
+                   def preOrderTraversal(node):
+                    if node is null: return
+                    preOrderTraversal(node.left)
+                    preOrderTraversal(node.right)
+                    process(node)
+               </code>
+            </pre>
+            
+            <h5>Example</h5><br> 
+            <pre><code>            
+     5 <br>   
+    / \\ <br>
+   2   8 <br>
+  / \   \\ <br>
+ 1   3   15 <br>
+        /  \\ <br>
+       13  22 <br>
+      / <br>
+     12    <br>
+            </code></pre>   
+            
+            
+            <p> Pre-Order: 5, 2, 1, 3, 8, 15, 13, 12, 22 </p>
+            <p> In-Order: 1, 2, 3, 5, 8, 12, 13, 15, 22 </p>
+            <p> Post-Order: 1, 3, 2, 12, 13, 22, 15, 8, 5 </p>
+            <p> Breadt-First Search: 5, 2, 8, 1, 3, 15, 13, 22, 12</p>
+            
+             </p>"
     userName:  Jason
     isSticky:  true
     
