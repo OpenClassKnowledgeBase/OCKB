@@ -807,7 +807,49 @@
     category:  !!models.Category
                id: 14
     title:     Basics of Queues
-    content:   content 
+    content:   "<p>
+<h3>Description</h3>
+
+<ul>
+<li>FIFO</li>
+<li>Perfect line</li>
+<li>Useful in many data management situations </li>
+</ul><h3>
+<h3>Queue ADT</h3>
+
+<ul>
+<li>offer(E e) - Adds an item to the end queue</li>
+<li>E peek() - Returns, but does not remove an item from the front of the queue</li>
+<li>E poll() - Returns and removes an item from the front of the queue</li>
+</ul>
+<h3>Array Implementation</h3>
+
+<ul>
+<li>Keep track of two pointers, front and rear</li>
+<li>Set initial front to 0</li>
+<li>Set initial rear to array.length - 1</li>
+<li>On offer, increment rear (mod length), insert at array[rear]</li>
+<li>On poll, return array[front], and increment front</li>
+<li>On peek, return array[front]</li>
+<li>Allow both front and rear to wrap around array (use modulus) </li>
+<li>Size should be updated on each offer, poll</li>
+<li>If size is going to be &gt; array.length, reallocate()</li>
+<li>Peek and poll return null on empty queues (no exceptions)</li>
+</ul>
+<h3>List Implementation</h3>
+
+<ul>
+<li>Use double linked list (pointers to head and tail (front and rear))</li>
+<li>Empty queue should have head and tail pointing to null</li>
+<li>A queue with a single item will have head and tail pointing to that item</li>
+<li>On offer, add new item at end of list</li>
+<li>On poll, return data at head of list, update head =&gt; head.next</li>
+<li>On peek, return data at head of list</li>
+<li>Keep track of size on offers and polls</li>
+<li>Peek and poll should return null on empty queue</li>
+</ul>
+
+               </p>" 
     userName:  Isabella
     isSticky:  true
     
@@ -835,7 +877,86 @@
     category:  !!models.Category
                id: 15
     title:     Basics of Recursion
-    content:   content 
+    content:   "<p>
+<h5>In order to understand recursion, one must first understand recursion.<>
+<h5>Concept</h5>
+<ul>
+<li>Conceptually: Compute a solution to a problem by first computing solutions to smaller instances of the same problem (using the same technique)</li>
+<li>Practically: A method that calls itself (usually directly)</li>
+<li>Divide and Conquer </li>
+<li>Recursion works by modifying a set of data until a certain base condition(s) is met</li>
+<li>Recursive calls are placed on the runtime stack so that the results of each call are stored in the order they're called</li>
+<li>Use base cases to avoid infinite recursion</li>
+<li>The recursive step in general moves towards the base case</li>
+</ul>   
+<h4>Recurrance Relations</h4>
+<h6>Fibonacci numbers</h6>
+<p>F<sub>n</sub> = F<sub>n - 1</sub> + F<sub>n - 2</sub><br>
+which leads us to<br>
+F<sub>2</sub> = F<sub>1</sub>  + F<sub>0</sub><br>
+F<sub>3</sub> = F<sub>2</sub>  + F<sub>1</sub><br>
+F<sub>4</sub> = F<sub>3</sub>  + F<sub>2</sub><br>
+etc</p>
+
+<h3>Examples in Computer Science</h3>
+<h5>Handing Out Papers - Iterative</h5>
+<pre><code>handOutPapers(pile):
+  student = first student in line
+  while pile is not empty:
+    paper = pile.pop() 
+    give paper to student
+    student = next student in line
+</code></pre>
+<h5>Handing Out Papers - Recursive-A</h5>
+<pre><code>handOutPapers(pile):
+  if pile is not empty:
+    paper = pile.pop()
+    keep paper
+    next = next student in line
+    next.handOutPapers(pile)
+</code></pre>
+
+<ul>
+<li>Pile gets smaller each time (due to pop())</li>
+<li>Each student follows the same algorithm</li>
+<li>Algorithm stops when pile is empty?</li>
+</ul>
+<h5>Handing Out Papers - Recursive-B</h5>
+<pre><code>handOutPapers(pile):
+  paper = pile.removeTop()
+  keep paper
+  if pile is not empty:
+    next = next student in line
+    next.handOutPapers(pile)
+</code></pre>
+
+<ul>
+<li>More descriptive of real life</li>
+<li>But what happens when a student is handed an empty pile?</li>
+</ul>
+<h5>Handing Out Papers - Recursive-C</h5>
+<pre><code>handOutPapers(pile):
+  if pile is not empty:
+    paper = pile.removeTop()
+    keep paper
+    if pile is still not empty:
+      next = next student in line
+      next.handOutPapers(pile)
+</code></pre>
+
+<ul>
+<li>Original was simpler</li>
+<li>Often simpler to code if stop on empty or 0</li>
+</ul>
+<h3>Lessons Learned</h3>
+<ul>
+<li>Recursion -&gt; method calls itself</li>
+<li>Need to break problem down into smaller problems</li>
+<li>Each call creates a copy of that data on the runtime stack</li>
+<li>Need one or more base cases</li>
+<li>Can also do some work on the way back from recursive calls</li>
+</ul>
+               </p>"
     userName:  Jason
     isSticky:  true
     
@@ -876,7 +997,151 @@
     category:  !!models.Category
                id: 16
     title:     Basics of Recursive Backtracking
-    content:   content 
+    content:   "<p>
+    
+<h3>A Problem to Solve</h3>
+
+<ul>
+<li>Find all combinations of 3 integers between 1 and 4 that sum to 5.</li>
+</ul>
+<h5>Brute Force Approach</h5>
+
+<ul>
+<li>Enumerate all possible combinations</li>
+</ul><pre><code>111 112 113 114   121 122 123 124   131 132 133 134   141 142 143 144
+211 212 213 214   221 222 223 224   231 232 233 234   241 242 243 244
+311 312 313 314   321 322 323 324   331 332 333 334   341 342 343 344
+411 412 413 414   421 422 423 424   431 432 433 434   441 442 443 444
+</code></pre>
+
+<ul>
+<li>Problem size: # digits raised to combination length</li>
+<li>4 possible digits</li>
+<li>Combination length of 3</li>
+<li>Problem size = 4<sup>3</sup> = 64</li>
+<li>Could generate each combination by using three loops</li>
+</ul><pre><code>for i = 1 to 4:
+  for j = 1 to 4:
+    for k = 1 to 4:
+      if sum(i, j, k) == 5:
+        Found a combination
+      else:
+        Did not find a combination
+</code></pre>
+    
+<ul>
+<li>There is room for optimization, could stop if the first two values sum to 5. </li>
+<li>Provides for better real world performance, but doesn't change Big-O.</li>
+<li>Need a better approach</li>
+</ul>
+<h5>Backtracking Approach</h5>
+
+<ul>
+<li>Use recursion to explore possible solutions</li>
+<li>Backtrack when recursion hits a dead end</li>
+</ul>
+<p>In general:</p>
+<p>1) Is where I am a solution?<br>
+2) No? Where can I go from here?<br>
+3) Go to valid next location.<br>
+4) Was that a solution? If so return true.<br>
+5) If there are remaining places to go, go to step 3.<br>
+6) Out of places to go, return false.  </p>
+
+<pre><code>find(int[] array, int i):
+  if i == array.length:
+    return
+  sum = sum of array elements up to index i (exclusive)
+  for guess from 1 to 4:
+    array[i] = guess
+    if i == array.length - 1 &amp;&amp; sum + guess == 5:
+      print array             //found one
+      return                  //no more to be found at this i
+    else if guess + sum &gt;= 5:
+      return                  //dead end
+    else:
+      find(array, i + 1)      //recurse
+  return
+</code></pre>
+
+<p>Let's trace through the algorithm</p>
+
+<pre><code>Trace:
+find(array=[?,?,?], i=0)
+.sum = 0
+.guess = 1: 
+..find(array=[1,?,?], i=1)
+...sum = 1
+...guess = 1
+....find(array=[1,1,?], i=2)
+.....sum=2
+.....guess=1
+......find(array=[1,1,1], i=3) - return
+.....guess=2
+......find(array=[1,1,2], i=3) - return
+.....guess=3
+......find(array=[1,1,3], i=3) 
+......print: [1,1,3]
+......return
+...guess=2
+....find(array=[1,2,?], i=2)
+.....sum=3
+.....guess=1
+......find(array=[1,2,1], i=3) - return
+.....guess=2
+......find(array=[1,2,2], i=3) - return
+......print: [1,2,2]
+......return
+...guess=3
+....(and so on...)
+</code></pre>
+
+<h3>Backtracking</h3>
+<ul>
+<li>Can think of solutions as forming a tree</li>
+<li>Each path from root to leaf is a complete solution</li>
+<li>Each step along that path is part of the solution (usually use a loop to iterate of each possible next step from the current one)</li>
+<li>If the path doesn't work out, we can about early (prunes the tree/search space)</li>
+<li>Even if that path is successful, we backtrack and explore other paths (if we want all solutions)</li>
+<li>For some problems stop at first solution, in other, find all solutions.</li>
+</ul>
+<h5>Rewriting the above example to be more versatile</h5>
+<ul>
+<li>Solve for any size combination (array.length), and range of numbers (start, end), and any total</li>
+</ul><pre><code>find(int start, int end, int total, int[] array, int i):
+  if i == array.length:
+    return
+  sum = sum of array elements up to index i (exclusive)
+  for guess from start to end:
+    array[i] = guess
+    if i == array.length - 1 &amp;&amp; sum + guess == total:
+      print array
+      return
+    else if guess + sum &gt;= total:
+      return
+    else:
+      find(start, end, total, array, i + 1)
+  return
+</code></pre>
+<h5>Finding a list of soultions</h5>
+<pre><code>find(int start, int end, int total, int[] array, int i):
+  list = new empty list
+  if i == array.length:
+    return list  //still empty
+  sum = sum of array elements up to index i (exclusive)
+  for guess from start to end:
+    array[i] = guess
+    if i == array.length - 1 &amp;&amp; sum + guess == total:
+      list.add(copy of array)
+      return
+    else if guess + sum &gt;= total:
+      return list  //might be empty
+    else:
+      sublist = find(start, end, total, array, i + 1)  //recurse
+      list.addAll(sublist)
+  return list //might be empty
+</code></pre>
+               </p>" 
     userName:  Jason
     isSticky:  true
     
