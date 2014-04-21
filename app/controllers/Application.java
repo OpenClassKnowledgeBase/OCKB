@@ -43,7 +43,7 @@ public class Application extends Controller {
     
     public static Result post(Long pid) {
     	String user = session("username");
-    	List<Comment> cmntList = Comment.all();
+    	List<Comment> cmntList = Comment.find.where().eq("parent_post_id", pid).findList();
     	return ok(views.html.post.render(cmntList, Post.find.byId(pid), user));
     }
     
