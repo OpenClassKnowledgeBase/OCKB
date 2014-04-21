@@ -34,7 +34,7 @@ public class Post extends Model{
 	public Date datePosted = new Date();
 	
 	@Formats.DateTime(pattern="yyyy-MM-dd hh:mm:ss")
-	public Date latestActivity;
+	public Date latestActivity = new Date();
 	
 	public Long comments;
 	
