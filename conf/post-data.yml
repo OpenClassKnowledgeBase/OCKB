@@ -684,7 +684,53 @@
     category:  !!models.Category
                id: 10
     title:     Basics of JUnit
-    content:   content 
+    content:   "<p>
+<h3>JUnit</h3>
+<ul>
+<li>JUnit is the defacto testing framework for Java applications</li>
+<li>Provides unit testing (and to some extent integration testing)</li>
+<li>Comes standard with Eclipse/Netbeans</li>
+<li>Heavily used in industry </li>
+</ul>
+<h3>Obtaining JUnit</h3>
+<ul>
+<li>Recent versions of Eclipse and Netbeans should include JUnit by default</li>
+<li>Otherwise, it can be downloaded at http://junit.org/</li>
+<li>You will need to download the junit jar and the hamcrest jar as described at https://github.com/junit-team/junit/wiki/Download-and-Install</li>
+</ul>    
+<h3>Creating test cases</h3>
+<ul>
+<li>Each test method should be a void method annotated with the @Test annotation</li>
+<li>Each test should be specific and include only a few number of assertions (a single assertion is best, but not always possible)</li>
+<li>@Test(expected = ExceptionName.class) can test is an exception is expected to occur</li>
+<li>It's posibble to create a setup method that is called before each test using the @Before annotation</li>
+<li>JUnit tests should be documented</li>
+</ul>
+<h3>Using JUnit from the command line (assuming no packages)</h3>
+<ul>
+<li>It's much easier to use JUnit from an IDE</li>
+<li>Store the junit and hamcrest jar files in a known location on your computer (e.g. /home/anthony/dev/211/lib)</li>
+<li>Copy your test class to the same directory as your source</li>
+<li>Navigate your terminal window to the source root of your project</li>
+<li>Compile your test case (should compile your entire project)</li>
+<li>Compile anything that wasn't compiled from test case</li>
+<li>Run the JUnit test</li>
+<li>Note: that : are used when separating class paths in Linux/OS X, but I believe ; are used in Windows.</li>
+</ul><p>Compile the source files</p>
+
+<pre><code>javac -classpath [class paths] [source file(s)]
+
+javac -classpath .:/home/anthony/dev/211/lib/junit-4.11.jar:/home/anthony/dev/211/lib/hamcrest-core-1.3.jar /home/anthony/dev/211/src/a02/Assignment2Tests.java
+</code></pre>
+
+<p>Running the tests</p>
+
+<pre><code>java -classpath [classpaths] org.junit.runner.JUnitCore [Test Class]
+
+java -classpath .:/home/anthony/dev/211/lib/junit-4.11.jar:/home/anthony/dev/211/lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore Assignment02Tests
+</code></pre> 
+
+               <p>"
     userName:  Jason
     isSticky:  true
     
@@ -692,7 +738,14 @@
     category:  !!models.Category
                id: 10
     title:     Helpful videos and links for JUnit
-    content:   content 
+    content:  <a href="https://github.com/junit-team/junit/wiki/Getting-started">Getting Started Guide</a><br>
+              <a href="https://github.com/junit-team/junit/wiki">JUnit Wiki</a><br>
+              In Eclipse, right click on source directory and select "Add New JUnit Test case" (should be similar in Netbeans)<br>
+              <a href="https://github.com/junit-team/junit/wiki/Assertions">Assertions</a><br>
+              <a href="http://junit.sourceforge.net/javadoc/">Assertions API</a><br>
+              <a href="http://courses.cs.washington.edu/courses/cse143/11wi/eclipse-tutorial/junit.shtml">http://courses.cs.washington.edu/courses/cse143/11wi/eclipse-tutorial/junit.shtml</a><br>
+   
+     
     userName:  Cindy
     isSticky:  true
       
@@ -712,7 +765,95 @@
     category:  !!models.Category
                id: 11
     title:     Basics of Linked Lists
-    content:   content 
+    content:   "<p>
+<h3>Implementing Lists with Nodes</h3>
+
+<ul>
+<li>Need to keep track of head of list</li>
+<li>Need to keep track of size of list</li>
+<li>The list is built with with nodes pointing to each other</li>
+<li>In an empty list, head points to null and size = 0</li>
+<pre><code>
+public class List&lt;E&gt {
+   private Node&lt;E&gt head;
+   private int size;
+   
+   public List() {
+      this.head=null;
+      this.size=0;
+   }
+}
+</code></pre>
+<h6>Adding to an empty list</h6>
+<ul>
+<li>Update head to new node</li>
+<li>make sure new node points to null</li>
+</ul>
+<h6>Adding to the front of a list</h6>
+<ul>
+<li>Change head to point to new node</li>
+<li>Update new node to point to what head used to point to</li>
+</ul>
+<h6>Adding to the end of a list</h6>
+<ul>
+<li>Iterate through list until you read end (node points to null)</li>
+<li>Make end node point to new node</li>
+<li>Make new node point to null</li>
+</ul>
+<h6>Adding somewhere in between</h6>
+<ul>
+<li>Find node/index that comes before new node</li>
+<li>Set before node's point to new node</li>
+<li>Set new node's pointer to before node's next point</li>
+</ul>
+<pre><code>
+public void add(int index, E item) {
+   if (index == 0) {
+      this.head = new Node&lt;E&gt(iten, this.head);
+      this.size++;
+   } else {
+      Node&lt;E&gt before = this.getNode(index-1);
+      Node&lt;E&gt toAdd = newNode&lt;E&gt(item, before.getNext());
+      before.setNext(toAdd);
+      this.size++;
+   }
+}
+</code></pre>
+<h4>Getting From a List</h4>
+<h6>Returning the node at a particular index</h6>
+<pre><code>
+private Node&lt;E&gt getNode(int index) {
+   if (index &lt; 0 || index &gt;= this.size) {
+      throw new IndexOutOfBoundsException(\"index: \" + index + \"; size: \" + this.size);
+   }
+   
+   Node&lt;E&gt curr = this.head;
+   for (int i=0; i &lt; index; i++) {
+      curr = curr.getNext();
+   }
+   return curr;
+}
+</code></pre>
+What if we just wanted to return the data?
+<pre><code>
+public E get(int index) { return this.getNode(index).getData(); }
+</code></pre>
+<h3>Removing from Linked List</h3>
+<h6>Removing from front</h6>
+<ul>
+<li>Change head to point to \"node to be removed\" next</li>
+</ul>
+<h6>Removing from end of list</h6>
+<ul>
+<li>Determine next to last node in list</li>
+<li>Set next to last node's point to null</li>
+</ul>
+<h6>Removing Within List</h6>
+<ul>
+<li>Find node previous to node to be removed</li>
+<li>Set previous node's next to node to be removed next</li>
+</ul>
+               </p>" 
     userName:  November
     isSticky:  true
     
@@ -740,7 +881,33 @@
     category:  !!models.Category
                id: 12
     title:     Basics of Nodes
-    content:   content 
+    content:   "<p>
+<ul>
+<li>Nodes are Objects that store data and point to other nodes</li>
+<li>Nodes contain a single datum or multiple pieces of data</li>
+<li>Many data structures are implemented using nodes</li>
+
+<h4>Generic Nodes Class</h4>
+<p>
+public class Node&lt;E&gt;<br>
+   private E data;<br>
+   private Node&lt;E&gt next;<br>
+   <br>
+   public Node(E data, Node&lt;E&gt next) {<br>
+        this.data=data;<br>
+        this.next=next;<br>
+   }<br>
+   public Node(E data) {<br>
+        this(data, null);<br>
+   }<br>
+   public E getData() { return data; }<br>
+   public void setData(E data) { this.data = data; }<br>
+   <br>
+   public Node&lt;E&gt getNext() { return next; }<br>
+   public void setNext(Node&lt;E&gt next) { this.next=next; }<br>
+</p>
+</ul>               
+               </p>" 
     userName:  Alex
     isSticky:  true
     
@@ -779,7 +946,54 @@
     category:  !!models.Category
                id: 13
     title:     Basics of Priority Queues
-    content:   content 
+    content:   "<p>
+Queues</h3>
+
+<ul>
+<li>So far, we've only looked at strict FIFO (objects returned in order or insertion)</li>
+<li>Doesn't model real world too well</li>
+<li>Airport check-in (first class, gold card members, frequent flyers)</li>
+<li>Emergency room at hospital</li>
+</ul>
+<h3>Priority Queues</h3>
+<ul>
+<li>Give preference to higher priority</li>
+<li>Value with current highest priority is always removed first</li>
+<li>Same methods as Queue: offer, poll, peek, size</li>
+</ul>
+<h5>Try It Out</h5>
+<ul>
+<li>Assume you have an already functioning max-heap called maxHeap</li>
+<li>maxHeap contains the following methods (insert, removeMax, size)</li>
+<li>Create a PriorityQueue class which used a max heap</li>
+</ul>
+<h5>Linked List</h5>
+<ul>
+<li>Insert items into correct place in list (O(n))</li>
+<li>Remove items from front of list (O(1))</li>
+<li>Insertion of high priority items is fast (inserted closer to front, better real time performance, doesn't change big-o however)</li>
+</ul>
+<h5>Arrays</h5>
+<ul>
+<li>Objects inserted at proper location in array</li>
+<li>All other objects must be shifted to make room (O(n))</li>
+<li>Objects can be removed from the front and the entire array shifted down (O(n))</li>
+<li>A circular array can be used for polling (O(1))</li>
+</ul>
+<h5>Binary Search Tree</h5>
+<ul>
+<li>Items are inserted into tree using priority as key (O(n))</li>
+<li>Items are removed from leftmost or rightmost node of tree (O(n))</li>
+<li>Balanced trees would provide better performance</li>
+</ul>
+<h5>Heap</h5>
+<ul>
+<li>Objects are inserted into heap using priority as key (O(log n))</li>
+<li>Items are removed from heap in O(log n) time</li>
+<li>Peeking is constant time</li>
+<li>Simplest algorithm with guaranteed log time operations</li>
+</ul>   
+               </p>" 
     userName:  Nathan
     isSticky:  true
     
