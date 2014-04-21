@@ -539,7 +539,93 @@
     category:  !!models.Category
                id: 6
     title:     Basics of Hashing
-    content:   content 
+    content:   "<p>
+<h3>Hash Functions</h3>
+<ul>
+<li>Take a variable amount of data</li>
+<li>Run it through a mathematical transformation</li>
+<li>Produce a fixed size integer</li>
+<li>Mathematical operations are O(1)</li>
+</ul>
+<h3>Hash Tables</h3>
+<ul>
+<li>Collection class with O(1) access times</li>
+<li>Array + hash function</li>
+<li>Elements get stored in array at location of hash</li>
+<li>Only works if array is same size of elements (direct hashing)</li>
+<li>Or if the set of hashes is smaller than the set of items (can cause collisions)</li>
+<li>Allows values to be stored and looked up using a key (key, value)</li>
+</ul>
+<h5>Perfect Hashing</h5>
+<ul>
+<li>Each item has a unique hash value</li>
+<li>E.g. 52 playing cards and an array of size 52</li>
+<li>Does not work well in real life (unknown data, complex data)</li>
+<li>E.g. Strings, custom objects, etc</li>
+</ul>
+<h5>Fixed Sized Arrays</h5>
+<ul>
+<li>Generally, take the modulo of the result, worry about collisions later</li>
+</ul>
+<h3>Collisions</h3>
+<ul>
+<li>Occurs whenever not using direct hashing</li>
+<li>Range of keys &gt; array range</li>
+<li>Handle with either open addressing or chaining</li>
+</ul>
+<h4>Open Addressing</h4>
+<ul>
+<li>If slot indicated by hash function is full, insert into another slot</li>
+<li>Works until load factor is 100%</li>
+<li>
+<strong>Probe sequence</strong> determines where to look for next available slot</li>
+<li>Insertions and lookups must use same probe sequence</li>
+<li>Removed elements must be recorded</li>
+<li>Each slot must record whether it is empty, full, or deleted</li>
+<li>A slot can only be empty until the first time a value is inserted, after that it is either full or deleted</li>
+</ul>
+<h6>Open Addressing: Linear Probing</h6>
+<ul>
+<li>On collision, repeatedly scan adjacent cells until empty one is found</li>
+<li>Wrap around end of array (using modulus)</li>
+<li>If many keys hash to same location, may cause long searches</li>
+<li>Full? Track size separately or track index </li>
+</ul>
+<h6>Open Addressing: Quadratic Probing</h6>
+<ul>
+<li>Add square of probe number (modulo array size) to get next slot</li>
+<li>Avoids creating clusters</li>
+<li>Tends to spread data out more, reduce collisions</li>
+</ul>
+<h6>Open Addressing: Double Hashing</h6>
+<ul>
+<li>Define two hash functions h1 and h2</li>
+<li>h1(key) determines intitial slot</li>
+<li>h2(key) determines the step size for next probe</li>
+<li>h2(key) != 0</li>
+<li>Choose two hash functions that are generally much different from each other</li>
+</ul>
+<h6>Open Addressing: Table Size</h6>
+<ul>
+<li>Load factor can not exceed 100%</li>
+<li>If the table size ever changes, each element must be reinserted into the hash table (taking into account new size)</li>
+</ul>
+<h3>Chained Hashing</h3>
+<ul>
+<li>Each array slot refers to linked list of elements</li>
+<li>On insertions, hash function gives slot, then item is added to end of list</li>
+<li>Lookups must traverse list to find element</li>
+<li>Still want to expand table to keep lists short (if list under constant limit, considered O(1)</li>
+<li>Still need good hash function to spread of slots</li>
+</ul>
+<h3>Summary</h3>
+<ul>
+<li>Avoid collisions as much as possible (good hash function to spread out data)</li>
+<li>Manage collisions when they do happen (open addressing, chaining)</li>
+<li>Keep load factor down</li>
+<li>Next time: Coming up with good hash functions</li>
+</ul>
+               </p>" 
     userName:  John
     isSticky:  true
     
@@ -578,7 +664,81 @@
     category:  !!models.Category
                id: 7
     title:     Basics of Heaps
-    content:   content 
+    content:   "<p>
+<h3>Heaps</h3>
+<ul>
+<li>Tree based data structure which satisfies the heap property</li>
+<li>Provides good time complexity</li>
+<li>Partially sorted </li>
+<li>Not to be confused with where dynamically allocated memory is located</li>
+</ul>
+<h5>The heap property (invariants)</h5>
+<ul>
+<li>Complete tree</li>
+<li>Parent and children nodes must maintain same relative ordering</li>
+</ul>
+<h5>Min-Heap</h5>
+<ul>
+<li>Each child node must be larger than its parent</li>
+<li>Conversely, each parent node must be smaller than its child</li>
+<li>The root element always contains the minimum most element of the set</li>
+</ul>
+<h5>Max-Heap</h5>
+<ul>
+<li>Each child node must be smaller than its parent</li>
+<li>Conversely, each parent node must be larger than its child</li>
+<li>The root element always contains the maximum most element of the set</li>
+</ul>
+<h3>Heap Operations</h3>
+<h6> findMin/Max </h6>
+<ul><li> Simply look at the root node </li></ul>
+<h6>insert</h6>
+<ul>
+<li>Insert new element into next available position (so that the tree remains complete)</li>
+<li>To do this, insert node to the right of all nodes at depth d<sub>max</sub>
+</li>
+<li>Or if there are already 2<sup>d<sub>max</sub></sup> at this level, instead as first node at depth d<sub>max</sub> + 1 making the tree deeper by one level</li>
+<li>Heapify (bubble) the element up until the heap property is correct</li>
+</ul>
+<h6>removal</h6>
+<ul>
+<li>Largest/smallest value is the root of the heap</li>
+<li>Node is deleted and replaced with bottom most, right most node</li>
+<li>The remaining tree is complete but may not satisfy heap property</li>
+<li>Heapify down until the heap property is restored</li>
+</ul>
+<h6>heapify</h6>
+<ul>
+<li>Bubble the current node up or down in order to maintain heap property</li>
+<li>In insertions, continually swap with parent node until node is in correct position (possible the entire way to the root)</li>
+<li>In removals, continually swap with the child node until node is in correct position (possible the entire way to a leaf)</li>
+<li>In min heap, removals should swap with min child</li>
+<li>In max heap, removals should swap with max child</li>
+</ul>
+<h6>size</h6>
+<ul>
+<li>Size should be kept track of separately </li>
+</ul>
+<h5>Operation Time Complexity</h5>
+<ul>
+<li>Time complexity is related to the maximum height of the tree</li>
+<li>Since heaps are complete trees we get O(log n)</li>
+<li>Complete trees are balanced</li>
+</ul><table>
+<thead><tr>
+<th>findMin/Max</th>
+<th>removeMin/Max</th>
+<th>insert</th>
+<th>heapify</th>
+</tr></thead>
+<tbody><tr>
+<td>O(1)</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+</tr></tbody>
+</table>
+               </p>" 
     userName:  Bob
     isSticky:  true
     
@@ -617,7 +777,54 @@
     category:  !!models.Category
                id: 8
     title:     Basics of Huffman Trees
-    content:   content 
+    content:   "<p>
+<h3>Huffman Trees</h3>
+
+<ul>
+<li>Each node has 0 or 2 children</li>
+<li>Only leaf nodes contain data</li>
+<li>Data in each leaf node is unique</li>
+</ul>
+<h3>Huffman Coding</h3>
+<h5>Building a Huffman Tree</h5>
+<ol>
+<li>Create a table of values mapping characters to their frequencies (how often a chracter appears)</li>
+<li>Create a priority queue where the key is the frequency and the data is the character (minimum values have higher priority)</li>
+<li>Insert all of the values from the table into the priority queue</li>
+<li>If the priority queue has a single element, you're done, this is the root of the tree</li>
+<li>Poll the priority queue twice and create a binary tree with those nodes</li>
+<li>Add the frequencies of the newly created tree and offer back to the priority queue</li>
+<li>Return to step 4</li>
+</ol>
+<ul>
+<li>Basic compression</li>
+<li>Performs compression on characters (not entire words)</li>
+<li>Represent most frequent characters using shortest bit-length</li>
+</ul>
+<h5>Huffman Coding with Tree</h5>
+<ul>
+<li>Find the leaf with data for current character</li>
+<li>Starting from the root, traverse to the leaf node with data for current character</li>
+<li>If you take a left subtree, record a 0 bit</li>
+<li>If you take a right subtree, record a 1 bit</li>
+</ul>
+<h5>Compression: How much space did we save?</h5>
+<ul>
+<li>Depends on how strings are encoded</li>
+<li>If using ASCII, each character can be represented using two hex digits</li>
+<li>Each hex digit is represented by a nibble (4 bits)</li>
+<li>So two hex digits give us a byte (8 bits)</li>
+<li>Therefore, in ASCII, it takes 8 bits to store a single character</li>
+<li>However, this does not account for storing the Huffman tree</li>
+<li>Larger strings produce better compression</li>
+</ul>
+<h5>Decoding Huffman Coded Message</h5>
+<ul>
+<li>Given a Huffman tree, it's easy to decode a message</li>
+<li>Starting at the root node, go left on a 0 bit and right on a 1 bit</li>
+<li>If you hit a leaf node, record the data and start back over at the root for the next bit</li>
+</ul>
+               </p>" 
     userName:  Frank
     isSticky:  true
     
@@ -656,7 +863,65 @@
     category:  !!models.Category
                id: 9
     title:     Basics of Iterators
-    content:   content 
+    content:   "<p>
+<ul>
+<li>Iterators provide an abstract way of looping over an entire collection of items</li>
+<li>Basically an object that moves along a list (or other collection)</li>
+<li>Since collections of items differ in implementation, the details are left up to the implementing class</li>
+<li>The for-each loop can be used with any collection that implements the Iterable interface</li>
+</ul>
+<pre><code>
+List&lt;String&gt; list = new List&lt;String&gt;();
+add some values
+for (int i=0-;i&lt;list.size(); i++) {
+   System.out.println(luist.get(i)));
+}
+</code></pre>
+<h3> Iterator Interface</h3>
+<ul><li>An Object is an Iterator if it implements the Iterator Interface</li></ul>
+<pre><code>
+public boolean hasNext();
+public E next();
+public void remove();
+</code></pre>
+<ul>
+<li>hasNext() returns true while there are still more items in the collection</li>
+<li>next() returns the next element in the iteration</li>
+<li>remove() removes the last element returned by next. Can only be called once per next() call</li>
+</ul>
+<h3>Iterable Interface</h3>
+<ul>
+<li>Any class that we wish to provide an Iterator for needs to implement the Iterable Interface</li>
+<li>Iterable interface simply specifies that a class can return an Iterator</li>
+</ul>
+<pre><code> public Iterator&lt;T&gt; iterator(); </code></pre>
+<ul><li>iterator() returns an Iterator over a set of elements of type T.</li>
+</ul>
+<h3>List Iterators</h3>
+<ul>
+<li>Since lists are so important, Java provides a specialized Iterator for lists</li>
+<li>ListIterator simply extends Iterator and adds additional functionality</li>
+
+<ul>
+<li>public void add(E e);   Inserts the specified element into the list (optional)</li>
+<li>public boolean hasNext();  Returns true if this list iterator has more elements when traversion the list in the forward direction.</li>
+<li>public boolean hasPrevious();  Returns true if this list iterator has mor eleements when traversion the list in the reverse direction.</li>
+<li>public E next();  Returns the next element in the list and advances the cursor position.</li>
+<li>public int nextIndex();  Returns the index of the lemenet that would be returned by a subsequent call to next().</li>
+<li>public E previous();  Returns the previous element in the list and moves the cursor position backwards.</li>
+<li>public int previousIndex();  Returns the index of the element that would be returned by a subsequent call to previous();</li>
+<li>public void remove();  Return the index of the element that would be returned by a subsequent call to previous().</li>
+<li>public void set(E e);  Replaces the last element returned by next() or previous() with the specified element (optional).</li>
+</ui>
+</ul>
+<h3>For-each Loops</h3>
+<ul>
+<li>Can use for-each style loops over any collection of data that implements the Iterable interface</li>
+<li>This includes the entire Collections API!</li>
+<li>Can not access index</li>
+<li>Makes code more readable</li>
+</ul>
+               </p>"
     userName:  Julie
     isSticky:  true
     
