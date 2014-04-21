@@ -146,6 +146,18 @@ public class Application extends Controller {
 		return redirect(routes.Application.category(currentCategory.id, 0, "datePosted", "desc"));
     }
     
+    public static Result createComment(Long cid, Long pid) {
+    	//To pull information from the two forms (temporary).
+    	final Map<String, String[]> values = request().body().asFormUrlEncoded();  	
+    	String commentData = values.get("editor1")[0];
+    	String user = session("username");
+    	Post parentPost = Post.getPost(pid);
+    	
+    	//Create comment
+    	Comment.create(parentPost, user, commentData);
+    	
+    	return redirect(routes.Application.post(pid));
+    }
     public static Result userPriv() {
     	List<User> userList = User.findAll();
     	return ok(views.html.userPriv.render(userList));
