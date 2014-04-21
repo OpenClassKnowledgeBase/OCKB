@@ -73,7 +73,7 @@
           <div class="panel-body">
             <div class = "row">
               <div class = "col-sm-11 content">
-                 @comment.content
+                 @Html(comment.content)
               </div>
               
               <div class = "hidden-xs col-sm-1 votes">
@@ -108,9 +108,10 @@
         @if(user != null){
           <hr>
           <h3>Post a Reply</h3>
-          <form id="editor-form">
+          <form id = "editor-form" action = "@routes.Application.createComment(currentPost.category.id, currentPost.id)" method="POST">
             <textarea class="editor" name="editor1" id="editor1" rows="10" cols="80"></textarea>
             <script>CKEDITOR.replace( 'editor1' );</script>
+            <input type="submit" value="Submit Comment" class="btn btn-success btn-lg">
           </form>
   
           </div>
@@ -119,7 +120,7 @@
         <div class="row">
           <div class="col-lg-10"></div>
           <div class="col-lg-2">
-        <button type="submit" id="submit-btn" class="btn btn-success btn-lg">Submit</button>
+        <!-- <button type="submit" id="submit-btn" class="btn btn-success btn-lg">Submit</button>
         <script>
           $('#submit-btn').click(function () {
             // get date
@@ -152,8 +153,7 @@
             console.log(lastReply);
             $(newEntry).insertAfter(lastReply);
             });
-        </script>
-  
+        </script> -->
           </div>
       </div>
     }

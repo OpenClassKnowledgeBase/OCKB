@@ -77,6 +77,9 @@ public class Post extends Model{
 		find.ref(id).delete();
 	}
 	
+	public static Post getPost (Long id) {
+		return Post.find.byId(id);
+	}
 	/**
 	* Return a page of posts
 	*
