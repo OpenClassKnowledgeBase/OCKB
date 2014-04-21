@@ -3,7 +3,7 @@
 - !!models.Comment
   parent_post: !!models.Post
         id: 19
-  content: 'I found theses notes from Anthony Christe, a prior TA for ICS211, to be very helpful for Generics. https://github.com/anthonyjchriste/ics211f13/wiki/ArrayLists-and-Generics#wiki-generics. Cheers'
+  content: 'I found theses <a src="https://github.com/anthonyjchriste/ics211f13/wiki/ArrayLists-and-Generics#wiki-generics">notes from Anthony Christe,</a> a prior TA for ICS211, to be very helpful for Generics. Cheers'
   author: Bob
   submission_date: 2013-09-13
     
