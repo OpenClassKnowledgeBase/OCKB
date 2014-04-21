@@ -109,8 +109,10 @@
           <hr>
           <h3>Post a Reply</h3>
           <form id = "editor-form" action = "@routes.Application.createComment(currentPost.category.id, currentPost.id)" method="POST">
-            <textarea class="editor" name="editor1" id="editor1" rows="10" cols="80"></textarea>
-            <script>CKEDITOR.replace( 'editor1' );</script>
+            <div class="form-group">
+                <textarea class="editor" name="editor1" id="editor1" rows="10" cols="80"></textarea>
+                <script>CKEDITOR.replace( 'editor1' );</script>
+            </div>
             <input type="submit" value="Submit Comment" class="btn btn-success btn-lg">
           </form>
   
