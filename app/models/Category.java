@@ -21,35 +21,45 @@ public class Category extends Model{
 	@Required
 	public String url;
 	
+	@Required
+	public Boolean requested;
+	
 	@Id 
 	public Long id;
+	
+	public String user;
 
 	//help initiate queries
 	public static Finder<Long,Category> find = new Finder<Long,Category>(Long.class, Category.class);
 	
-	public Category (String title, String description, String url) {
+	public Category (String title, String description, String url, Boolean requested) {
 		this.title = title;
 		this.url = url;
 		this.description = description;
+		this.requested = requested;
 	}
 	/*Implement the CRUD operations*/
 
-	public static void create(Category category, String title, String description, String url){
-		category.title = title;
-		category.description = description;
-		category.url = url;
+	public static void create(String title, String description, String url, Boolean requested, String user){
+		Category category = new Category(title, description, url, requested);
+		category.user = user;
 		category.save();
 	}
 	
 	public static List<Category> findAll(){
 		return find.all();
 	}
+	
 	public static void delete(Long id){
 		find.ref(id).delete();
 	}
 	
 	public static Category getCategory (Long id) {
 		return Category.find.byId(id);
+	}
+	
+	public String getTitle() {
+		return title;
 	}
 	
 }

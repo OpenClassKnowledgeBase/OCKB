@@ -8,6 +8,8 @@ create table category (
   title                     varchar(255),
   description               varchar(255),
   url                       varchar(255),
+  requested                 boolean,
+  user                      varchar(255),
   constraint pk_category primary key (id))
 ;
 

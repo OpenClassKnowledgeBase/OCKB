@@ -1,0 +1,46 @@
+@(requestedCategory: Category)
+
+@scripts = {
+<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+<script src="@routes.Assets.at("javascripts/ckeditor/ckeditor.js")"></script>
+}
+
+@main("Approve a requested Category", scripts) {
+
+<div class="container">
+  <ol class="breadcrumb">
+    <li>
+      <a href="@routes.Application.categories()">Dashboard</a>
+    </li>
+    <li>
+      <a href="@routes.Application.viewRequestedCategories()">View Requested Categories</a>
+    </li>
+    <li>
+      <a href="@routes.Application.approveRequestedCategory(requestedCategory.id)">Approve Requested Category</a>
+    </li>
+  </ol>
+
+  <hr>
+
+  <h2>Approving @requestedCategory.title</h2>
+  <br>
+  
+  <form action = "@routes.Application.approveRequestedCategorySubmit(requestedCategory.id)" method="POST">
+    <div class="form-group">
+      <label for="categoryName"><h3>Adjust Category Name as needed</h3></label>      
+      <input name="categoryName" type="text" class="form-control" placeholder="Adjust Category Name as needed">
+    </div>
+
+    <div class="form-group">
+      <label for="categoryDescription"><h3>Enter Category Description</h3></label>      
+      <textarea class="editor" name="categoryDescription" id="categoryDescription" rows="10" cols="80"></textarea>
+      <script>CKEDITOR.replace( 'categoryDescription' );</script>
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-success btn-lg">
+    <a href ="@routes.Application.viewRequestedCategories()" class="btn btn-danger btn-lg">Cancel</a>
+
+  </form>
+</div>
+
+}

@@ -19,18 +19,18 @@ import org.w3c.dom.Document;
 
 public class Application extends Controller {	 
 	// CAS Variables 
-	
+	/*
 	private static final String CAS_LOGIN = "https://authn.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://authn.hawaii.edu/cas/serviceValidate";
 	private static final String CAS_LOGOUT = "https://authn.hawaii.edu/cas/logout";
+	*/
 	
 	
-	/*
 	// TEST CAS Variables for local testing
 	private static final String CAS_LOGIN = "https://cas-test.its.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://cas-test.its.hawaii.edu/cas/serviceValidate";
 	private static final String CAS_LOGOUT = "https://cas-test.its.hawaii.edu/cas/logout";
-	*/
+	
 
 	private static String user = "";
 	private static final int NEWEST = 1;
@@ -120,6 +120,20 @@ public class Application extends Controller {
     public static Result categories() {
     	//figure out how to put this in global
     	List<Category> categoryList = Category.findAll();
+
+    	for(int i = categoryList.size() - 1; i >= 0; i--) {
+    		if(categoryList.get(i).requested == true) {
+    			categoryList.remove(i);
+    		}
+    	}
+    	
+    	Collections.sort(categoryList, new Comparator<Category>() {
+            @Override
+            public int compare(final Category object1, final Category object2) {
+                return object1.getTitle().compareTo(object2.getTitle());
+            }
+           } );
+
         return ok(views.html.categories.render(categoryList));
     }
     
@@ -169,6 +183,54 @@ public class Application extends Controller {
     
     public static Result requestCategory() {
     	return ok(views.html.requestCategory.render());
+    }
+    
+    public static Result requestCategorySubmit() {
+    	final Map<String, String[]> values = request().body().asFormUrlEncoded();  	
+    	String requestedCategory = values.get("requestedCategory")[0];
+    	String requestedCategoryReason = values.get("requestCategoryReason")[0];
+    	String user = session("username");
+    	
+    	Category.create(requestedCategory, requestedCategoryReason, "", true, user);
+    	
+    	return redirect(routes.Application.categories());
+    }
+    
+    public static Result viewRequestedCategories() {
+    	List<Category> allCategories = Category.findAll();
+    	String user = session("username");
+
+    	for(int i = allCategories.size() - 1; i >= 0; i--) {
+    		if(allCategories.get(i).requested == false) {
+    			allCategories.remove(i);
+    		}
+    	}
+    	
+    	return ok(views.html.viewRequestedCategories.render(allCategories, user));    	
+    }
+    
+    public static Result denyRequestedCategory(Long cid) {
+    	Category.delete(cid);
+    	
+    	return redirect(routes.Application.viewRequestedCategories());
+    }
+    
+    public static Result approveRequestedCategory(Long cid) {   	
+    	Category requestedCategory = Category.getCategory(cid);
+
+    	return ok(views.html.approveRequestedCategory.render(requestedCategory));
+    }
+    
+    public static Result approveRequestedCategorySubmit(Long cid) {   	
+    	final Map<String, String[]> values = request().body().asFormUrlEncoded();  	
+    	String categoryName = values.get("categoryName")[0];
+    	String categoryDescription = values.get("categoryDescription")[0];
+    	String user = session("username");
+    	
+    	Category.delete(cid);
+    	Category.create(categoryName, categoryDescription, "", false, user);
+    	    	
+    	return redirect(routes.Application.categories());
     }
     
 	public static Result login() throws Exception {
