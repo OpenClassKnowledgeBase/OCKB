@@ -3,111 +3,130 @@
     description:   Array lists are variable-sized list data structure.
     url:   categories/ArrayList.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Binary Search Tree
     description:   A binary tree that has been sorted for the purpose of searching.
     url:   categories/ArrayList.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Comparators
     description:   Comparing one thing to another thing
     url:   categories/Comparator.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Double Circular Linked List
     description:   A linked list that has its head and tail connected to each other, and the elements are connected to each other both ways.
     url:   categories/DoubleCirularLinkedList.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Generics
     description:   Code that is written in terms of "to-be-specified-later" types that are then instantiated when needed for specific types.
     url:   categories/Generics.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Hashing
     description:   An algorithm that maps data of arbitrary length to data of a fixed length.
     url:   categories/Hashing.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Heaps
     description:   Data structure where larger things are always on top of smaller things, or vice versa.
     url:   categories/Heaps.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Huffman Tree
     description:   A tree made when using Huffman coding, an entropy encoding algorithm used for lossless data compression.
     url:   categories/HuffmanTree.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Iterator
     description:   An object that enables you to traverse a container, particularly lists.
     url:   categories/Iterator.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       JUnit Testing
     description:   Using JUnit to test your programs.
     url:   categories/JUnitTesting.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       LinkedList
     description:   A list of linked items
     url:   categories/LinkedList.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Nodes
     description:   Nodes are the basic unit used to build data structures.
     url:   categories/Nodes.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Priority Queues
     description:   Queues that lets elements with a higher priority go first.
     url:   categories/PriorityQueues.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Queues
     description:   Queues are data structures that follow the "first in, first out" idea.
     url:   categories/Queues.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Recursion
     description:   To understand recursion, one must first understand recursion.
     url:   categories/Recursion.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Recursive Backtracking
     description:   Using recursion to backtrack when it is determined that you can't go further.
     url:   categories/RecursiveBacktracking.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Sorting
     description:   Sorting is any process of arranging items according to a certain sequence.
     url:   categories/Sorting.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Stacks
     description:   Stacks are data structures that follow the "first in, last out" idea.
     url:   categories/Stacks.html
     requested:      false
+    user: admin
     
 - !!models.Category
     title:       Tree Traversals
     description:   The different ways one can go through a tree structure.
     url:   categories/TreeTraversals.html
     requested:      false
+    user: admin
