@@ -1939,7 +1939,8 @@ find(array=[?,?,?], i=0)
     category:  !!models.Category
                id: 19
     title:     Helpful vidoes and links for Tree Traversals
-    content:   content 
+    content:   <a href="http://www.geeksforgeeks.org/618/">GeeksforGeeks on Tree Traversals</a><br>
+<a href="http://en.wikibooks.org/wiki/A-level_Computing/AQA/Problem_Solving,_Programming,_Operating_Systems,_Databases_and_Networking/Programming_Concepts/Tree_traversal_algorithms_for_a_binary_tree">Tree traversal algorithms for a binary tree</a><br>
     userName:  Cindy
     isSticky:  true
     
