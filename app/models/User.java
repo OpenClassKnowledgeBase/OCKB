@@ -11,6 +11,7 @@ import play.db.ebean.Model;
 import play.db.ebean.Model.Finder;
 
 import com.avaje.ebean.*;
+import com.avaje.ebean.Query;
 
 @Entity
 public class User extends Model {
@@ -34,6 +35,7 @@ public class User extends Model {
     public int posts;
     
     public User() {}
+    
     public User(String email, String name, String status, String role, int posts) {
       this.email = email + "@hawaii.edu";
       this.name = name;
@@ -50,9 +52,17 @@ public class User extends Model {
 		return find.all();
 	}
     
-    
     public static User authenticate(String email, String password) {
         return find.where().eq("email", email)
             .eq("password", password).findUnique();
     }
+    
+    public static List<User> getAdminList() {
+    	return find.where().like("role", "admin").findList();
+    }
+    
+    public static User getUser(String username) {
+        return find.where().eq("name", username).findUnique();
+    }
+    
 }

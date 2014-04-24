@@ -1,4 +1,4 @@
-@(recentUserReplyList: List[Post], recentUserPostList: List[Post])
+@(recentUserReplyList: List[Post], recentUserPostList: List[Post], userRole: String)
 
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
@@ -186,10 +186,12 @@
             <a class = "postLink" href = "#">Account Settings</a>
           </span>
           <br><br>
+          @if(userRole=="admin") {
           <span class = "col-lg-4">
             <span class="glyphicon glyphicon-plus"></span>
             <a class = "postLink" href = "@routes.Application.viewRequestedCategories">View Requested Categories</a>
           </span>
+          } else {}
         </div>
       </div>
     </div>

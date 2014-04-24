@@ -1,4 +1,5 @@
 - !!models.User
+  id: 1
   email: frank@hawaii.edu
   name: Frank
   status: normal
@@ -6,6 +7,7 @@
   posts: 4
   
 - !!models.User
+  id: 2
   email: lisa@hawaii.edu
   name: Lisa
   status: banned
@@ -13,6 +15,7 @@
   posts: 2
   
 - !!models.User
+  id: 3
   email: bob@hawaii.edu
   name: Bob
   status: normal
@@ -20,6 +23,7 @@
   posts: 16
   
 - !!models.User
+  id: 4
   email: joey@hawaii.edu
   name: Joey
   status: normal
@@ -27,9 +31,49 @@
   posts: 30
   
 - !!models.User
+  id: 5
   email: erin@hawaii.edu
   name: Erin
   status: inactive
-  role: Student
+  role: admin
+  posts: 0
+  
+- !!models.User
+  id: 6
+  email: alanho@hawaii.edu
+  name: alanho
+  status: inactive
+  role: admin
   posts: 0
 
+- !!models.User
+  id: 7
+  email: renzeer@hawaii.edu
+  name: renzeer
+  status: inactive
+  role: admin
+  posts: 0
+
+- !!models.User
+  id: 8
+  email: enana@hawaii.edu
+  name: enana
+  status: inactive
+  role: admin
+  posts: 0
+  
+- !!models.User
+  id: 9
+  email: johnson@hawaii.edu
+  name: johnson
+  status: inactive
+  role: admin
+  posts: 0
+
+- !!models.User
+  id: 10
+  email: tpascua@hawaii.edu
+  name: tpascua
+  status: inactive
+  role: admin
+  posts: 0

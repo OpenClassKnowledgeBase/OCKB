@@ -2,6 +2,7 @@ package controllers;
 
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Page;
+import com.avaje.ebean.Query;
 
 import models.*;
 import play.data.*;
@@ -40,7 +41,7 @@ public class Application extends Controller {
     public static Result index() {
         return ok(views.html.index.render("Welcome to the home page."));
     }
-    
+   
     public static Result post(Long pid) {
     	String user = session("username");
     	List<Comment> cmntList = Comment.find.where().eq("parent_post_id", pid).findList();
@@ -49,13 +50,20 @@ public class Application extends Controller {
     
     public static Result dashboard() {
     	String user = session("username");
+    	String userRole = User.getUser(user).role;
+    	
+    	List<User> temp = User.getAdminList();
+    	for(User s : temp) {
+    		System.out.println(s.name + " = " + s.role);
+    	}
+    	
     	if (user == null) {
     		return redirect(routes.Application.index());
     	}
     	else {
     		List<Post> recentUserReplyList = Post.find.where().eq("userName", user).orderBy("latestActivity").findList();
     		List<Post> recentUserPostList = Post.find.where().eq("userName", user).orderBy("latestActivity").findList();
-    		return ok(views.html.dashboard.render(recentUserReplyList, recentUserPostList));
+    		return ok(views.html.dashboard.render(recentUserReplyList, recentUserPostList, userRole));
     	}
     }
     
