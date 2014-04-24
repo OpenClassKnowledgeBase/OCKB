@@ -1126,7 +1126,9 @@ public E get(int index) { return this.getNode(index).getData(); }
     category:  !!models.Category
                id: 11
     title:     Helpful videos and links for Linked Lists
-    content:   content 
+    content:   <a href="http://en.wikipedia.org/wiki/List_(abstract_data_type)">Wikipedia on Linked Lists</a><br>
+<a href="http://cslibrary.stanford.edu/103/">Linked List Basics</a><br>
+<a href="http://nptel.ac.in/courses/106102064/3">NPTEL on Linked Lists and Queues (video)</a><br>
     userName:  Oscar
     isSticky:  true
     
@@ -1180,7 +1182,7 @@ public class Node&lt;E&gt;<br>
     category:  !!models.Category
                id: 12
     title:     Helpful videos and links for Nodes
-    content:   content 
+    content:   <a href="http://en.wikipedia.org/wiki/Node_(computer_science)">Wikipedia on Nodes</a><br> 
     userName:  Qunynh
     isSticky:  true
     
@@ -1266,7 +1268,9 @@ Queues</h3>
     category:  !!models.Category
                id: 13
     title:     Helpful videos and links for Priority Queues
-    content:   content 
+    content:   <a href="http://pages.cs.wisc.edu/~vernon/cs367/notes/11.PRIORITY-Q.html">Priority Queues</a><br>
+<a href="http://www.cs.jhu.edu/~cohen/CS226/Lectures/PriorityQueue.pdf">John Hopkins Dept of Computer Science on Queues (PDF)</a><br>
+<a href="http://nptel.ac.in/courses/106102064/3">NPTEL on Linked Lists and Queues (video)</a><br>
     userName:  Taylor
     isSticky:  true
     
@@ -1336,7 +1340,10 @@ Queues</h3>
     category:  !!models.Category
                id: 14
     title:     Helpful videos and links for Queues
-    content:   content 
+    content:   <a href="http://en.wikipedia.org/wiki/Queue_(abstract_data_type)">Wikipedia on Queues</a><br>
+<a href="http://en.wikipedia.org/wiki/FIFO">Wikipedia on FIFO</a><br>
+<a href="http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Queue_(data_structure).html">Queue (Data structure)</a><br>
+<a href="http://interactivepython.org/runestone/static/pythonds/BasicDS/queues.html">Interactive Python on Queues</a><br>
     userName:  Micheal
     isSticky:  true
     
@@ -1443,7 +1450,9 @@ etc</p>
     category:  !!models.Category
                id: 15
     title:     Helpful videos and links for Recursion
-    content:   content 
+    content:   <a href=#>Recursion</a><br>
+<a href="http://introcs.cs.princeton.edu/java/23recursion/">Recursion - Introduction to Programming in Java</a><br>
+<a href="http://www.cprogramming.com/tutorial/lesson16.html">Recursion in C and C++</a><br>
     userName:  Cindy
     isSticky:  true
     
@@ -1628,7 +1637,9 @@ find(array=[?,?,?], i=0)
     category:  !!models.Category
                id: 16
     title:     Helpful videos and links for Recursive Backtracking
-    content:   content 
+    content:   <a href="https://www.cs.utexas.edu/~scottm/cs307/handouts/recursiveBacktrackingExplanation.htm">Recursive Backtracking Explanation</a><br>
+<a href="http://www.cis.upenn.edu/~matuszek/cit594-2012/Pages/backtracking.html">Backtracking</a><br>
+<a href="http://compsci.ca/v3/viewtopic.php?t=21497">Backtracking with Recursion</a><br>
     userName:  Cindy
     isSticky:  true
     
@@ -1749,7 +1760,11 @@ find(array=[?,?,?], i=0)
     category:  !!models.Category
                id: 17
     title:     Helpful videos and links for Sorting
-    content:   content 
+    content:   <a href="http://www.sorting-algorithms.com">Sorting Algorithms</a><br>
+<a href="http://bigocheatsheet.com">Big-O Cheat Sheet</a><br>
+<a href="http://www.cprogramming.com/tutorial/computersciencetheory/sortcomp.html">Sorting Algorithms Comparison</a><br>
+<a href="http://betterexplained.com/articles/sorting-algorithms/">Sorting Algorithms | Better Explained</a><br>
+
     userName:  Cindy
     isSticky:  true
     
@@ -1824,7 +1839,9 @@ find(array=[?,?,?], i=0)
     category:  !!models.Category
                id: 18
     title:     Helpful videos and links for Stacks
-    content:   content 
+    content:   <a href="http://en.wikipedia.org/wiki/Stack_(abstract_data_type)">Wikipedia on Stacks</a><br>
+<a href="http://www.cprogramming.com/tutorial/computersciencetheory/stack.html">The Stack Data Structure in C and C++</a><br>
+<a href="http://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Mips/stack.html">Understanding the Stack</a><br>
     userName:  Cindy
     isSticky:  true
     
