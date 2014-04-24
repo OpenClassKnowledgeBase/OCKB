@@ -76,20 +76,20 @@ public class Application extends Controller {
     		List<Category> categoryList = Category.findAll();
     		int random = randInt(1, categoryList.size());
     		Long randomLong = new Long(random);
-    		return redirect(routes.Application.category(randomLong, 0, "datePosted", "desc"));
+    		return redirect(routes.Application.category(randomLong, 0, "datePosted", "desc", ""));
     	}
     }
     
-    public static Result category(Long cid, int page, String sortBy, String order) {
+    public static Result category(Long cid, int page, String sortBy, String order, String filter) {
     	String user = session("username");
     	
     	//List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
     	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
     	
     	Category currentCategory = Category.getCategory(cid);
-    	Page currentPage = Post.getPosts(cid, page, 10, sortBy, order);
+    	Page currentPage = Post.getPosts(cid, page, 10, sortBy, order, filter);
     	
-    	return ok(views.html.category.render(stickyList, currentPage, sortBy, order, currentCategory, user));
+    	return ok(views.html.category.render(stickyList, currentPage, sortBy, order, filter, currentCategory, user));
     }
     
     /**
@@ -165,7 +165,7 @@ public class Application extends Controller {
     	//Create post with gathered information.
     	Post.create(currentCategory, postTitle, postContent, user);
     	
-		return redirect(routes.Application.category(currentCategory.id, 0, "datePosted", "desc"));
+		return redirect(routes.Application.category(currentCategory.id, 0, "datePosted", "desc", ""));
     }
     
     public static Result createComment(Long cid, Long pid) {

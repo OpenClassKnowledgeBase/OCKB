@@ -632,11 +632,11 @@
 - !!models.Post
     category:  !!models.Category
                id: 6
-    title:     <a href="http://www.sparknotes.com/cs/searching/hashtables/section1.html">SparkNotes on Hash Tables</a><br>
-<a href="http://stackoverflow.com/questions/730620/how-does-a-hash-table-work">How does a hash table work</a><br>
-<a href="https://www.cs.auckland.ac.nz/software/AlgAnim/hash_tables.html">Hash Tables</a><br>
+    title:     Helpful videos and links for Hashing
 
-    content:   content 
+    content:   '<a href="http://www.sparknotes.com/cs/searching/hashtables/section1.html">SparkNotes on Hash Tables</a><br>
+<a href="http://stackoverflow.com/questions/730620/how-does-a-hash-table-work">How does a hash table work</a><br>
+<a href="https://www.cs.auckland.ac.nz/software/AlgAnim/hash_tables.html">Hash Tables</a><br>' 
     userName:  Becky
     isSticky:  true
     
@@ -749,9 +749,9 @@
     category:  !!models.Category
                id: 7
     title:     Helpful videos and links for Heaps
-    content:   <a href="https://www.princeton.edu/~achaney/tmve/wiki100k/docs/Heap_(data_structure).html">Heap (Data Structure)</a><br>
+    content:   '<a href="https://www.princeton.edu/~achaney/tmve/wiki100k/docs/Heap_(data_structure).html">Heap (Data Structure)</a><br>
 <a href="http://www.csanimated.com/animation.php?t=Heap_(data_structure)">Video on Heaps via CSAnimated</a><br>
-<a href="http://www.cs.cmu.edu/~adamchik/15-121/lectures/Binary%20Heaps/heaps.html">Binary Heaps</a><br>
+<a href="http://www.cs.cmu.edu/~adamchik/15-121/lectures/Binary%20Heaps/heaps.html">Binary Heaps</a><br>'
 
     userName:  Chaplin
     isSticky:  true
@@ -838,9 +838,9 @@
     category:  !!models.Category
                id: 8
     title:     Helpful videos and links for Huffman Trees
-    content:   <a href="http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Huffman_coding.html">Huffman Coding</a><br>
+    content:   '<a href="http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Huffman_coding.html">Huffman Coding</a><br>
 <a href="https://www.cs.usfca.edu/~brooks/S04classes/cs245/lectures/lecture10.pdf">Data Structures and Algorithms, Huffman Trees</a><br>
-<a href="http://en.wikipedia.org/wiki/Huffman_coding">Wikipedia on Huffman Coding</a><br>
+<a href="http://en.wikipedia.org/wiki/Huffman_coding">Wikipedia on Huffman Coding</a><br>'
     userName:  George
     isSticky:  true
     
@@ -937,10 +937,10 @@ public void remove();
     category:  !!models.Category
                id: 9
     title:     Helpful videos and links for Iterators
-    content:   <a href="http://www.cs.duke.edu/csed/ap/subset/doc/ap/java/util/Iterator.html">Interface Iterator</a><br>
+    content:   '<a href="http://www.cs.duke.edu/csed/ap/subset/doc/ap/java/util/Iterator.html">Interface Iterator</a><br>
 <a href="http://en.wikibooks.org/wiki/Computer_Science_Design_Patterns/Iterator">Wikibooks on Iterators</a><br>
 <a href="http://ics211s14.wordpress.com/list-iterators/">List Iterators</a><br>
-<a href="http://www.wisegeek.com/what-is-an-iterator.htm">What is an iterator</a><br>
+<a href="http://www.wisegeek.com/what-is-an-iterator.htm">What is an iterator</a><br>'
     userName:  Kilo
     isSticky:  true
     
@@ -1137,9 +1137,9 @@ public E get(int index) { return this.getNode(index).getData(); }
     category:  !!models.Category
                id: 11
     title:     Helpful videos and links for Linked Lists
-    content:   <a href="http://en.wikipedia.org/wiki/List_(abstract_data_type)">Wikipedia on Linked Lists</a><br>
+    content:   '<a href="http://en.wikipedia.org/wiki/List_(abstract_data_type)">Wikipedia on Linked Lists</a><br>
 <a href="http://cslibrary.stanford.edu/103/">Linked List Basics</a><br>
-<a href="http://nptel.ac.in/courses/106102064/3">NPTEL on Linked Lists and Queues (video)</a><br>
+<a href="http://nptel.ac.in/courses/106102064/3">NPTEL on Linked Lists and Queues (video)</a><br>'
     userName:  Oscar
     isSticky:  true
     
@@ -1279,9 +1279,9 @@ Queues</h3>
     category:  !!models.Category
                id: 13
     title:     Helpful videos and links for Priority Queues
-    content:   <a href="http://pages.cs.wisc.edu/~vernon/cs367/notes/11.PRIORITY-Q.html">Priority Queues</a><br>
+    content:   '<a href="http://pages.cs.wisc.edu/~vernon/cs367/notes/11.PRIORITY-Q.html">Priority Queues</a><br>
 <a href="http://www.cs.jhu.edu/~cohen/CS226/Lectures/PriorityQueue.pdf">John Hopkins Dept of Computer Science on Queues (PDF)</a><br>
-<a href="http://nptel.ac.in/courses/106102064/3">NPTEL on Linked Lists and Queues (video)</a><br>
+<a href="http://nptel.ac.in/courses/106102064/3">NPTEL on Linked Lists and Queues (video)</a><br>'
     userName:  Taylor
     isSticky:  true
     
@@ -1351,10 +1351,10 @@ Queues</h3>
     category:  !!models.Category
                id: 14
     title:     Helpful videos and links for Queues
-    content:   <a href="http://en.wikipedia.org/wiki/Queue_(abstract_data_type)">Wikipedia on Queues</a><br>
+    content:   '<a href="http://en.wikipedia.org/wiki/Queue_(abstract_data_type)">Wikipedia on Queues</a><br>
 <a href="http://en.wikipedia.org/wiki/FIFO">Wikipedia on FIFO</a><br>
 <a href="http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Queue_(data_structure).html">Queue (Data structure)</a><br>
-<a href="http://interactivepython.org/runestone/static/pythonds/BasicDS/queues.html">Interactive Python on Queues</a><br>
+<a href="http://interactivepython.org/runestone/static/pythonds/BasicDS/queues.html">Interactive Python on Queues</a><br>'
     userName:  Micheal
     isSticky:  true
     
@@ -1461,9 +1461,9 @@ etc</p>
     category:  !!models.Category
                id: 15
     title:     Helpful videos and links for Recursion
-    content:   <a href=#>Recursion</a><br>
+    content:   '<a href=#>Recursion</a><br>
 <a href="http://introcs.cs.princeton.edu/java/23recursion/">Recursion - Introduction to Programming in Java</a><br>
-<a href="http://www.cprogramming.com/tutorial/lesson16.html">Recursion in C and C++</a><br>
+<a href="http://www.cprogramming.com/tutorial/lesson16.html">Recursion in C and C++</a><br>'
     userName:  Cindy
     isSticky:  true
     
@@ -1648,9 +1648,9 @@ find(array=[?,?,?], i=0)
     category:  !!models.Category
                id: 16
     title:     Helpful videos and links for Recursive Backtracking
-    content:   <a href="https://www.cs.utexas.edu/~scottm/cs307/handouts/recursiveBacktrackingExplanation.htm">Recursive Backtracking Explanation</a><br>
+    content:   '<a href="https://www.cs.utexas.edu/~scottm/cs307/handouts/recursiveBacktrackingExplanation.htm">Recursive Backtracking Explanation</a><br>
 <a href="http://www.cis.upenn.edu/~matuszek/cit594-2012/Pages/backtracking.html">Backtracking</a><br>
-<a href="http://compsci.ca/v3/viewtopic.php?t=21497">Backtracking with Recursion</a><br>
+<a href="http://compsci.ca/v3/viewtopic.php?t=21497">Backtracking with Recursion</a><br>'
     userName:  Cindy
     isSticky:  true
     
@@ -1771,10 +1771,10 @@ find(array=[?,?,?], i=0)
     category:  !!models.Category
                id: 17
     title:     Helpful videos and links for Sorting
-    content:   <a href="http://www.sorting-algorithms.com">Sorting Algorithms</a><br>
+    content:   '<a href="http://www.sorting-algorithms.com">Sorting Algorithms</a><br>
 <a href="http://bigocheatsheet.com">Big-O Cheat Sheet</a><br>
 <a href="http://www.cprogramming.com/tutorial/computersciencetheory/sortcomp.html">Sorting Algorithms Comparison</a><br>
-<a href="http://betterexplained.com/articles/sorting-algorithms/">Sorting Algorithms | Better Explained</a><br>
+<a href="http://betterexplained.com/articles/sorting-algorithms/">Sorting Algorithms | Better Explained</a><br>'
 
     userName:  Cindy
     isSticky:  true
@@ -1850,9 +1850,9 @@ find(array=[?,?,?], i=0)
     category:  !!models.Category
                id: 18
     title:     Helpful videos and links for Stacks
-    content:   <a href="http://en.wikipedia.org/wiki/Stack_(abstract_data_type)">Wikipedia on Stacks</a><br>
+    content:   '<a href="http://en.wikipedia.org/wiki/Stack_(abstract_data_type)">Wikipedia on Stacks</a><br>
 <a href="http://www.cprogramming.com/tutorial/computersciencetheory/stack.html">The Stack Data Structure in C and C++</a><br>
-<a href="http://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Mips/stack.html">Understanding the Stack</a><br>
+<a href="http://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Mips/stack.html">Understanding the Stack</a><br>'
     userName:  Cindy
     isSticky:  true
     
@@ -1967,8 +1967,8 @@ find(array=[?,?,?], i=0)
     category:  !!models.Category
                id: 19
     title:     Helpful vidoes and links for Tree Traversals
-    content:   <a href="http://www.geeksforgeeks.org/618/">GeeksforGeeks on Tree Traversals</a><br>
-<a href="http://en.wikibooks.org/wiki/A-level_Computing/AQA/Problem_Solving,_Programming,_Operating_Systems,_Databases_and_Networking/Programming_Concepts/Tree_traversal_algorithms_for_a_binary_tree">Tree traversal algorithms for a binary tree</a><br>
+    content:   '<a href="http://www.geeksforgeeks.org/618/">GeeksforGeeks on Tree Traversals</a><br>
+<a href="http://en.wikibooks.org/wiki/A-level_Computing/AQA/Problem_Solving,_Programming,_Operating_Systems,_Databases_and_Networking/Programming_Concepts/Tree_traversal_algorithms_for_a_binary_tree">Tree traversal algorithms for a binary tree</a><br>'
     userName:  Cindy
     isSticky:  true
     

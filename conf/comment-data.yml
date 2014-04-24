@@ -2,28 +2,28 @@
 
 - !!models.Comment
   parent_post: !!models.Post
-        id: 19
+        id: 59
   content: 'I found theses <a href="https://github.com/anthonyjchriste/ics211f13/wiki/ArrayLists-and-Generics#wiki-generics">notes from Anthony Christe,</a> a prior TA for ICS211, to be very helpful for Generics. Cheers'
   author: Bob
   submission_date: 2013-09-13
     
 - !!models.Comment
   parent_post: !!models.Post
-        id: 19
+        id: 59
   content: 'Thanks Bob! Quick question though. The notes mention that we use E or T out of convention, so does that mean we can technically use any letter to represent the Generic Type?.'
   author: Frank
   submission_date: 2013-09-13
     
 - !!models.Comment
   parent_post: !!models.Post
-        id: 19
+        id: 59
   content: 'While technically you may use any letter, following convention is highly recommended for portable code.'
   author: Bob
   submission_date: 2013-09-14
     
 - !!models.Comment
   parent_post: !!models.Post
-        id: 19
+        id: 59
   content: 'RTM!.'
   author: Eric
   submission_date: 2013-09-15

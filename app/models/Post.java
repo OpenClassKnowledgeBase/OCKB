@@ -89,11 +89,13 @@ public class Post extends Model{
 	* @param order Sort order (either or asc or desc)
 	* @param filter Filter applied on the name column
 	*/
-    public static Page<Post> getPosts(Long cid, int page, int pageSize, String sortBy, String order) {
+    public static Page<Post> getPosts(Long cid, int page, int pageSize, String sortBy, String order, String filter) {
         return
             find.where()
             	.eq("category_id", cid)
             	.eq("isSticky", false)
+            	.ilike("title", "%" + filter + "%")
+            	.ilike("content", "%" + filter + "%")
                 .orderBy(sortBy + " " + order)
                 .findPagingList(pageSize)
                 .getPage(page);

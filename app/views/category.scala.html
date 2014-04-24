@@ -1,4 +1,4 @@
-@(stickyList: List[Post], currentPage: com.avaje.ebean.Page[Post], currentSortBy: String, currentOrder: String, currentCategory: Category, user: String)
+@(stickyList: List[Post], currentPage: com.avaje.ebean.Page[Post], currentSortBy: String, currentOrder: String, currentFilter: String, currentCategory: Category, user: String)
 
 @link(newPage:Int, newSortBy:String) = @{
     var sortBy = currentSortBy
@@ -18,7 +18,7 @@
     }
     
     // Generate the link
-    routes.Application.category(currentCategory.id, newPage, sortBy, order) 
+    routes.Application.category(currentCategory.id, newPage, sortBy, order, currentFilter) 
 }
 
 @scripts = {
@@ -38,12 +38,13 @@
           <a href="@routes.Application.category(currentCategory.id)">@currentCategory.title</a>
         </li>
       </ol>
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input class="form-control" placeholder="Search for ..." type="text">
+      <form class="navbar-form navbar-right" action="@link(0, "name")" method="GET">
+      	<div class="form-group">
+            <input class="form-control" type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Search for...">
+            <input type="submit" id="searchsubmit" value="Submit" class="btn btn-default">
         </div>
-        <button type="submit" class="btn btn-default">Search</button>
       </form>
+      
       <h1>@currentCategory.title</h1>
       <p>@currentCategory.description</p>
       <h3> <div class="dropdown">
