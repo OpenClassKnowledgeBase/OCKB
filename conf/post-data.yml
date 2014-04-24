@@ -632,7 +632,10 @@
 - !!models.Post
     category:  !!models.Category
                id: 6
-    title:     Helpful videos and links for Hashing
+    title:     <a href="http://www.sparknotes.com/cs/searching/hashtables/section1.html">SparkNotes on Hash Tables</a><br>
+<a href="http://stackoverflow.com/questions/730620/how-does-a-hash-table-work">How does a hash table work</a><br>
+<a href="https://www.cs.auckland.ac.nz/software/AlgAnim/hash_tables.html">Hash Tables</a><br>
+
     content:   content 
     userName:  Becky
     isSticky:  true
@@ -746,7 +749,10 @@
     category:  !!models.Category
                id: 7
     title:     Helpful videos and links for Heaps
-    content:   content 
+    content:   <a href="https://www.princeton.edu/~achaney/tmve/wiki100k/docs/Heap_(data_structure).html">Heap (Data Structure)</a><br>
+<a href="http://www.csanimated.com/animation.php?t=Heap_(data_structure)">Video on Heaps via CSAnimated</a><br>
+<a href="http://www.cs.cmu.edu/~adamchik/15-121/lectures/Binary%20Heaps/heaps.html">Binary Heaps</a><br>
+
     userName:  Chaplin
     isSticky:  true
     
@@ -832,7 +838,9 @@
     category:  !!models.Category
                id: 8
     title:     Helpful videos and links for Huffman Trees
-    content:   content 
+    content:   <a href="http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Huffman_coding.html">Huffman Coding</a><br>
+<a href="https://www.cs.usfca.edu/~brooks/S04classes/cs245/lectures/lecture10.pdf">Data Structures and Algorithms, Huffman Trees</a><br>
+<a href="http://en.wikipedia.org/wiki/Huffman_coding">Wikipedia on Huffman Coding</a><br>
     userName:  George
     isSticky:  true
     
@@ -929,7 +937,10 @@ public void remove();
     category:  !!models.Category
                id: 9
     title:     Helpful videos and links for Iterators
-    content:   content 
+    content:   <a href="http://www.cs.duke.edu/csed/ap/subset/doc/ap/java/util/Iterator.html">Interface Iterator</a><br>
+<a href="http://en.wikibooks.org/wiki/Computer_Science_Design_Patterns/Iterator">Wikibooks on Iterators</a><br>
+<a href="http://ics211s14.wordpress.com/list-iterators/">List Iterators</a><br>
+<a href="http://www.wisegeek.com/what-is-an-iterator.htm">What is an iterator</a><br>
     userName:  Kilo
     isSticky:  true
     
