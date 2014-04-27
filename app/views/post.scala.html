@@ -13,7 +13,7 @@
           <a href="@routes.Application.categories()">Categories</a>
         </li>
         <li>
-          <a href="@routes.Application.category(currentPost.category.id)">@currentPost.category.title</a>
+          <a href="@routes.Application.category(currentPost.category.id)">@currentPost.category.getTitle()</a>
         </li>
         <li>
           <a href="@routes.Application.post(currentPost.id)">@currentPost.title</a>
@@ -25,9 +25,8 @@
         </div>
         <button type="submit" class="btn btn-default">Search</button>
       </form>
-      <h1>@currentPost.category.title</h1>
+      <h1>@currentPost.category.getTitle()</h1>
       <p>@currentPost.category.description</p>
-      <br>
       <section>
           <div class="panel panel-default">
             <div class="panel-heading">
