@@ -2,28 +2,127 @@
 
 - !!models.Comment
   parent_post: !!models.Post
-        id: 59
+        id: 19
   content: 'I found theses <a href="https://github.com/anthonyjchriste/ics211f13/wiki/ArrayLists-and-Generics#wiki-generics">notes from Anthony Christe,</a> a prior TA for ICS211, to be very helpful for Generics. Cheers'
   author: Bob
   submission_date: 2013-09-13
     
 - !!models.Comment
   parent_post: !!models.Post
-        id: 59
+        id: 19
   content: 'Thanks Bob! Quick question though. The notes mention that we use E or T out of convention, so does that mean we can technically use any letter to represent the Generic Type?.'
   author: Frank
   submission_date: 2013-09-13
     
 - !!models.Comment
   parent_post: !!models.Post
-        id: 59
+        id: 19
   content: 'While technically you may use any letter, following convention is highly recommended for portable code.'
   author: Bob
   submission_date: 2013-09-14
     
 - !!models.Comment
   parent_post: !!models.Post
-        id: 59
+        id: 19
   content: 'RTM!.'
+  author: Eric
+  submission_date: 2013-09-15
+
+- !!models.Comment
+  parent_post: !!models.Post
+        id: 55
+  content: <a href = "https://www.youtube.com/watch?v=ql2oLhDObwA">Binary Search Tree Recursion</a> <br>
+           Hey Bob! I had the same problem a few days ago when I wanted to get a start on the homework thats due soon.  I found this helpful video on YouTube, hope it helps! <br><br>
+  author: Eric
+  submission_date: 2013-09-15
+
+- !!models.Comment
+  parent_post: !!models.Post
+        id: 56
+  content: <a href = "https://www.youtube.com/watch?v=ql2oLhDObwA">Binary Search Tree Recursion</a> <br>
+            I just replied to Bob's post regarding how recursion works in a Binary Search Tree.  I linked him to a helpful video I found on YouTube, and was wondering if it were possible for the TA or Professor to also put this up on the Helpful Links Sticky? Thanks in advance! <br><br>
+  author: Eric
+  submission_date: 2013-09-15
+
+- !!models.Comment
+  parent_post: !!models.Post
+        id: 59
+  content:  <a href="http://www.math.utah.edu/~alfeld/queens/queens.html">N by N Queens problem</a> <br>
+            Basically this is an old problem that, given a chess board, place n queens, depending on your n by n board, on a square such that those n queens are unable to attack one another.<br>
+            <a href="http://www.cs.lafayette.edu/~collinsw/maze/MazeApplet.html">Maze Bactracking</a> <br>
+            Shows how a maze backtracks by looking at all the available paths from its current location until it finds a path to the exit. <br><br>
+  author: Eric
+  submission_date: 2013-09-15
+
+- !!models.Comment
+  parent_post: !!models.Post
+        id: 66
+  content: "Greetings Frank, <br>
+             While there are a lot of sorting methods in use today, we will mainly focus on the following sorting methods for this class: <br>
+             - selection sort <br>
+             - bubble sort <br>
+             - insertion sort <br>
+             - Shell sort <br>
+             - merge sort <br>
+             - heapsort <br>
+             - quicksort <br><br> Hope this helps!<br><br>"
+  author: Eric
+  submission_date: 2013-09-15
+
+- !!models.Comment
+  parent_post: !!models.Post
+        id: 67
+  content: 'Thanks Carl! Great stuff, will definitely be helpful for the Midterm coming up.'
+  author: Eric
+  submission_date: 2013-09-15
+
+- !!models.Comment
+  parent_post: !!models.Post
+        id: 70
+  content: "Hi Will, here are a few reasons- <br>
+          - Computer Programs - Bottom of stack fixed spot in memory, stack pointer stored in register <br
+          - Call stack - Keep track of which methods are called, and locations to return <br>
+          - Stack oriented programming language (JVM) <br>
+          - Many CPUs have special registers for stack pointers to conserve opcode space <br>
+          - Converting decimal to binary <br>
+          - Towers of Hanoi (will revisit when we get to recursion) <br>
+          - Expression evaluation and syntax parsing (context-free languages) <br>
+          - Matching of parenthesis/brackets <br>
+          - Evaluation of an infix expressions <br>
+          - Evaluation of prefix expressions <br>
+          - Evaluation of postfix expressions <br>
+          - Conversion between different expression types <br>
+          - Backtracking <br>
+          - Tree Traversals <br><br> "
+  author: Eric
+  submission_date: 2013-09-15
+
+- !!models.Comment
+  parent_post: !!models.Post
+        id: 71
+  content: "Hey May, after doing a quick Google search I found these- <br>
+            push - O(1) (unless we have to create a larger array and copy everything down, then O(n))<br>
+            pop - O(1)<br>
+            peek - O(1)<br> Hope that helps!<br><br> "
+  author: Eric
+  submission_date: 2013-09-15
+
+- !!models.Comment
+  parent_post: !!models.Post
+        id: 74
+  content: 
+            "Here are some of the algorithms discussed in class. You can also find these in the Basics of Tree Traversals Sticky post. <br><br>
+            Pre-order <br>
+            1. Visit the root. <br>
+            2. Traverse the left subtree. <br>
+            3. Traverse the right subtree <br><br>
+            In-order (symmetric) <br>
+            1. Traverse the left subtree. 
+            2. Visit root. <br>
+            3. Traverse the right subtree. <br><br>
+            Post-order <br>
+            1. Traverse the left subtree. <br>
+            2. Traverse the right subtree. <br>
+            3. Visit the root. <br><br>"
   author: Eric
   submission_date: 2013-09-15

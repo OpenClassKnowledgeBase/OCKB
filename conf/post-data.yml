@@ -1824,25 +1824,7 @@ find(array=[?,?,?], i=0)
        <li>Required: push(item), pop, peek</li>
        <li>Java's Stack: (size, empty, search)</li>
        <li>EmptyStackException (peek, pop)</li>
-    </ul>
-    
-    <h4> Why are stacks useful?</h4>
-    <ul>
-       <li>Computer Programs - Bottom of stack fixed spot in memory, stack pointer stored in register</li>
-       <li>Call stack - Keep track of which methods are called, and lacations to return</li>
-       <li>Stack oriented programming language (JVM)</li>
-       <li>Many CPUs have special registers for stack pointers to conserve opcode space</li>
-       <li>Converting decimal to binary</li>
-       <li>Towers of Hanoi</li>
-       <li>Expression evaluation and syntax parsing (context-free languages)</li>
-       <li>Evaulation of an infix/prefix/postfix expressions</li>
-       <li>Conversion between different expression types</li>
-       <li>Backtracking</li>
-       <li>Tree Traversals</li>
-    </ul>
-    
-    
-    </p>"
+    </ul></p>"
     userName:  Jason
     isSticky:  true
     
