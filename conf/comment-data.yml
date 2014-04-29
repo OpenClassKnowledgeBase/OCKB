@@ -2,6 +2,55 @@
 
 - !!models.Comment
   parent_post: !!models.Post
+        id: 3
+  content: "<p>1) First and Major difference between Array and ArrayList in Java is that Array is a fixed length data structure while ArrayList is a variable length Collection class. <br>
+            You can not change length of Array once created in Java but ArrayList re-size itself when gets full depending upon capacity and load factor. <br>
+            Since ArrayList is internally backed by Array in Java, any resize operation in ArrayList will slow down performance as it involves creating new Array and copying content from old array to new array.<br><br>
+            2) Another difference between Array and ArrayList in Java is that you can not use Generics along with Array, 
+            as Array instance knows about what kind of type it can hold and throws ArrayStoreException, if you try to store type 
+            which is not convertible into type of Array. ArrayList allows you to use Generics to ensure type-safety. <br><br>
+            3) You can also compare Array vs ArrayList on How to calculate length of Array or size of ArrayList. All kinds of Array 
+            provides length variable which denotes length of Array while ArrayList provides size() method to calculate size of ArrayList in Java. <br><br>
+            4) One more major difference between ArrayList and Array is that, you can not store primitives in ArrayList, it can only 
+            contain Objects. While Array can contain both primitives and Objects in Java. Though Autoboxing of Java 5 may give you an impression 
+            of storing primitives in ArrayList, it actually automatically converts primitives to Object. e.g. <br><br>
+            <pre>
+            ArrayList<Integer> integerList = new ArrayList<Integer>(); <br>
+            integerList.add(1); //here we are not storing primitive in ArrayList, instead autoboxing will convert int primitive to Integer object <br>
+            </pre>
+            5) Java provides add() method to insert element into ArrayList and you can simply use assignment operator to store element into Array e.g. In order to store Object to specified position use <br><br>
+            <pre>
+            Object[] objArray = new Object[10]; <br>
+            objArray[1] = new Object();
+            </pre> <br>
+            6) One more difference on Array vs ArrayList is that you can create instance of ArrayList without specifying size, 
+            Java will create Array List with default size but its mandatory to provide size of Array while creating either directly or 
+            indirectly by initializing Array while creating it. By the way you can also initialize ArrayList while creating it. <br><br>
+            That's all on difference between Array and ArrayList in Java. In terms of performance Array and ArrayList provides similar 
+            performance in terms of constant time for adding or getting element if you know index. Though automatic resize of ArrayList may 
+            slow down insertion a bit Both Array and ArrayList is core concept of Java and any serious Java programmer must be familiar with these differences between Array and ArrayList or in more general Array vs List.</p><br>"
+  author: Bob
+  submission_date: 2013-09-13
+
+- !!models.Comment
+  parent_post: !!models.Post
+        id: 4
+  content: I found this excellent <a href="www.http://bigocheatsheet.com/">website</a> that shows a lot of the Big-O for many other operations.  Hope this helps! <br>
+  author: Bob
+  submission_date: 2013-09-13
+
+- !!models.Comment
+  parent_post: !!models.Post
+        id: 5
+  content: "<p>1) An array can be of any data type and contain one data type while array list can contain any data type in the form of the object. <br><br>
+            2) With array you can not dynamically increase or decrease the size of array dynamically. You must the define the size of the array.  
+            You can change the size of the array with redim statement but still you have to define type. While with array list you can make list of any sizes.  
+            When a element or object is added to array list it size is automatically increase the capacity of the array list. <br></p>"
+  author: Bob
+  submission_date: 2013-09-13
+
+- !!models.Comment
+  parent_post: !!models.Post
         id: 19
   content: 'I found theses <a href="https://github.com/anthonyjchriste/ics211f13/wiki/ArrayLists-and-Generics#wiki-generics">notes from Anthony Christe,</a> a prior TA for ICS211, to be very helpful for Generics. Cheers'
   author: Bob

@@ -17,6 +17,7 @@ public class Comment extends Model {
 	public Long id;
 
 	@Required
+	@Column(columnDefinition = "TEXT")
 	public String content;
 	
 	@ManyToOne
