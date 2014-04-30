@@ -15,7 +15,7 @@ create table category (
 
 create table comment (
   id                        bigint,
-  content                   varchar(255),
+  content                   TEXT,
   author                    varchar(255),
   submission_date           timestamp,
   parent_post_id            bigint)

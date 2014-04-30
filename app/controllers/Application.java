@@ -63,7 +63,11 @@ public class Application extends Controller {
 	 */
 	public static Result dashboard() {
 		String user = session("username");
-		String userRole = User.getUser(user).role;
+		
+		// User tables not setup yet, will default userRole to 'admin' for now
+		// String userRole = User.getUser(user).role;
+		
+		String userRole = "admin";
 
 		if (user == null) {
 			return redirect(routes.Application.index());
