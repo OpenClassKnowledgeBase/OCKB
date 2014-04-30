@@ -111,7 +111,11 @@
       @for((post,index) <- currentPage.getList.zipWithIndex) {
       	<section>
             <div class = "row">
-                <div class = "col-xs-10 postEntry">
+                @if(user == post.userName){
+                    <div class = "col-xs-10 postEntry">
+                }else{
+                    <div class = "col-xs-12">
+                }
                   <div class = "panel panel-info">
                       <div class = "panel-heading">
                         <div class = "row">
@@ -147,12 +151,14 @@
                       </div>
                   </div>
                 </div>
-                    <div class = "col-xs-2 dangerButton">
+                @if(user == post.userName){
+                   <div class = "col-xs-2 dangerButton">
                       <button type = "button" class = "btn btn-danger center">
                           Delete
                       </button>
                     </div>
-            </div> 
+                }
+            </div> <!--row  -->
             <!-- @if(index % 2 == 0){
                 <div class="panel panel-default">
             }else{
