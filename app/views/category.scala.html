@@ -114,14 +114,43 @@
                 <div class = "col-xs-10 postEntry">
                   <div class = "panel panel-info">
                       <div class = "panel-heading">
-                        Rawr
+                        <div class = "row">
+                            <div class = "col-xs-1">
+                                <div class = "label label-info">
+                                    #@post.id
+                                </div>
+                            </div>
+                            <div class = "col-xs-9">
+                                <a href = "@routes.Application.post(post.id)" class = "postLink"> @post.title</a>
+                            </div>
+                            <div class = "col-xs-2">
+                                @post.comments Answers
+                            </div>
+                        
+                        </div>
+                        <div class = "row">
+                            <div class = "col-xs-12 pull-right">
+                                @if(user != null){
+                                  <div class = "author">
+                                      Submitted by <span class = "badge">@post.userName</span> on @post.datePosted.format("MMMM dd, yyyy h:mm:ss a")
+                                  </div>
+                                }
+                            </div>
+                        </div>
+<!--                         <span class="label label-info">#@post.id</span><a href = "@routes.Application.post(post.id)" class = "postLink"> @post.title</a>
+                          <span class = "pull-right stats">@post.comments Answers</span>
+                          @if(user != null){
+                            <div class = "author">
+                                Submitted by <span class = "badge">@post.userName</span> on @post.datePosted.format("MMMM dd, yyyy h:mm:ss a")
+                            </div>
+                          } -->
                       </div>
                   </div>
                 </div>
                     <div class = "col-xs-2 dangerButton">
-                    <button type = "button" class = "btn btn-danger center">
-                        Delete
-                    </button>
+                      <button type = "button" class = "btn btn-danger center">
+                          Delete
+                      </button>
                     </div>
             </div> 
             <!-- @if(index % 2 == 0){
