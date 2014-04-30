@@ -4,11 +4,11 @@
 # --- !Ups
 
 create table category (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   title                     varchar(255),
   description               varchar(255),
   url                       varchar(255),
-  requested                 boolean,
+  requested                 tinyint(1) default 0,
   user                      varchar(255),
   constraint pk_category primary key (id))
 ;
@@ -17,26 +17,26 @@ create table comment (
   id                        bigint,
   content                   TEXT,
   author                    varchar(255),
-  submission_date           timestamp,
+  submission_date           datetime,
   parent_post_id            bigint)
 ;
 
 create table post (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   user_name                 varchar(255),
-  is_sticky                 boolean,
+  is_sticky                 tinyint(1) default 0,
   category_id               bigint,
   title                     varchar(255),
   content                   TEXT,
-  date_posted               timestamp,
-  latest_activity           timestamp,
+  date_posted               datetime,
+  latest_activity           datetime,
   comments                  bigint,
   votes                     bigint,
   constraint pk_post primary key (id))
 ;
 
 create table user (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   email                     varchar(255),
   name                      varchar(255),
   status                    varchar(255),
@@ -44,12 +44,6 @@ create table user (
   posts                     integer,
   constraint pk_user primary key (id))
 ;
-
-create sequence category_seq;
-
-create sequence post_seq;
-
-create sequence user_seq;
 
 alter table comment add constraint fk_comment_parent_post_1 foreign key (parent_post_id) references post (id) on delete restrict on update restrict;
 create index ix_comment_parent_post_1 on comment (parent_post_id);
@@ -60,21 +54,15 @@ create index ix_post_category_2 on post (category_id);
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists category;
+drop table category;
 
-drop table if exists comment;
+drop table comment;
 
-drop table if exists post;
+drop table post;
 
-drop table if exists user;
+drop table user;
 
-SET REFERENTIAL_INTEGRITY TRUE;
-
-drop sequence if exists category_seq;
-
-drop sequence if exists post_seq;
-
-drop sequence if exists user_seq;
+SET FOREIGN_KEY_CHECKS=1;
 

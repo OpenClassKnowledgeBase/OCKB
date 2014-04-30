@@ -105,7 +105,7 @@
 
 - !!models.Comment
   parent_post: !!models.Post
-        id: 66
+        id: 62
   content: "Greetings Frank, <br>
              While there are a lot of sorting methods in use today, we will mainly focus on the following sorting methods for this class: <br>
              - selection sort <br>
@@ -120,14 +120,14 @@
 
 - !!models.Comment
   parent_post: !!models.Post
-        id: 67
+        id: 63
   content: 'Thanks Carl! Great stuff, will definitely be helpful for the Midterm coming up.'
   author: Eric
   submission_date: 2013-09-15
 
 - !!models.Comment
   parent_post: !!models.Post
-        id: 70
+        id: 66
   content: "Hi Will, here are a few reasons- <br>
           - Computer Programs - Bottom of stack fixed spot in memory, stack pointer stored in register <br
           - Call stack - Keep track of which methods are called, and locations to return <br>
@@ -148,7 +148,7 @@
 
 - !!models.Comment
   parent_post: !!models.Post
-        id: 71
+        id: 67
   content: "Hey May, after doing a quick Google search I found these- <br>
             push - O(1) (unless we have to create a larger array and copy everything down, then O(n))<br>
             pop - O(1)<br>
@@ -158,7 +158,7 @@
 
 - !!models.Comment
   parent_post: !!models.Post
-        id: 74
+        id: 70
   content: 
             "Here are some of the algorithms discussed in class. You can also find these in the Basics of Tree Traversals Sticky post. <br><br>
             Pre-order <br>
