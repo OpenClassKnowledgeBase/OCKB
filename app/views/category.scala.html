@@ -157,9 +157,13 @@
                 </div>
                 @if(user == post.userName){
                    <div class = "col-xs-2 dangerButton">
-                      <button type = "button" class = "btn btn-danger center">
+                        <form id = "deleteForm" action = "@routes.Application.deletePost(post.id, currentCategory.id)" method="POST">
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                      </form>
+<!--                       <a href = "@routes.Application.deletePost(post.id, currentCategory.id )" class = "btn btn-danger">Delete</a> -->
+<!--                       <button type = "button" class = "btn btn-danger center">
                           Delete
-                      </button>
+                      </button> -->
                     </div>
                 }
             </div> <!--row  -->
