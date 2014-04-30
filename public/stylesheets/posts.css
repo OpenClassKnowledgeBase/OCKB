@@ -88,6 +88,13 @@ body {
     border-color: white;
 }
 
+.col-xs-11{
+  padding-left: 0px;
+}
+.danger{
+    padding-top: 5px;
+    text-align: right
+}
 /* change color for twitter blue panels*/
 /*.panel-info > div:nth-child(1) > div:nth-child(5) > span:nth-child(1){
     background-color: #DF691A;

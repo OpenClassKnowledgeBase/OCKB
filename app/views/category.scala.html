@@ -110,21 +110,25 @@
       <!-- Content -->
       @for((post,index) <- currentPage.getList.zipWithIndex) {
       	<section>
-          @if(index % 2 == 0){
-            <div class="panel panel-default">
-          }else{
-            <div class="panel panel-info">
-          }
-            <div class="panel-heading">
-              <span class="label label-info">#@post.id</span><a href = "@routes.Application.post(post.id)" class = "postLink"> @post.title</a>
-              <span class = "pull-right stats">@post.votes Votes</span>
-              <span class = "pull-right stats">@post.comments Answers</span>
-              @if(user != null){
-                <div class = "author">
-                    Submitted by <span class = "badge">@post.userName</span> on @post.datePosted.format("MMMM dd, yyyy h:mm:ss a")
+            @if(index % 2 == 0){
+                <div class="panel panel-default">
+            }else{
+                <div class="panel panel-info">
+            }
+                    <div class = "panel-heading">
+                          <span class="label label-info">#@post.id</span><a href = "@routes.Application.post(post.id)" class = "postLink"> @post.title</a>
+                          <span class = "pull-right stats">@post.votes Votes</span>
+                          <span class = "pull-right stats">@post.comments Answers</span>
+                          @if(user != null){
+                            <div class = "author">
+                                Submitted by <span class = "badge">@post.userName</span> on @post.datePosted.format("MMMM dd, yyyy h:mm:ss a")
+                            </div>
+                          }
+                        <div class = "danger">
+                        <a href = "#" class = "btn btn-danger">Delete</a> 
+                        </div>
+                    </div>
                 </div>
-              }
-            </div>
         </section>
       }
 		
