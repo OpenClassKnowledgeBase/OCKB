@@ -110,7 +110,21 @@
       <!-- Content -->
       @for((post,index) <- currentPage.getList.zipWithIndex) {
       	<section>
-            @if(index % 2 == 0){
+            <div class = "row">
+                <div class = "col-xs-10 postEntry">
+                  <div class = "panel panel-info">
+                      <div class = "panel-heading">
+                        Rawr
+                      </div>
+                  </div>
+                </div>
+                    <div class = "col-xs-2 dangerButton">
+                    <button type = "button" class = "btn btn-danger center">
+                        Delete
+                    </button>
+                    </div>
+            </div> 
+            <!-- @if(index % 2 == 0){
                 <div class="panel panel-default">
             }else{
                 <div class="panel panel-info">
@@ -128,7 +142,7 @@
                         <a href = "#" class = "btn btn-danger">Delete</a> 
                         </div>
                     </div>
-                </div>
+                </div> -->
         </section>
       }
 		
