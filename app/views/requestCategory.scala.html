@@ -20,13 +20,13 @@
 	<form action = "@routes.Application.requestCategorySubmit()" method="POST">
 		<div class="form-group">
 			<label for="requestedCategory"><h3>Requested Category</h3></label>      
-			<input name="requestedCategory" type="text" class="form-control" placeholder="Enter Category">
+			<input name="requestedCategory" type="text" class="form-control" placeholder="Requested Category">
 		</div>
 
 		<div class="form-group">
 		<label for="requestCategoryReason"><h3>Why should this Category be added?</h3></label>      
-			<textarea class="editor" name="requestCategoryReason" id="requestCategoryReason" rows="10" cols="80"></textarea>
-			<script>CKEDITOR.replace( 'requestCategoryReason' );</script>
+			<input name="requestCategoryReason" type="text" class="form-control" placeholder="Why should this Category be added?">
+
 		</div>
 
 		<input type="submit" value="Submit Request" class="btn btn-success btn-lg">

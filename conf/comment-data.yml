@@ -51,6 +51,93 @@
 
 - !!models.Comment
   parent_post: !!models.Post
+        id: 8
+  content: "A node is a structure which may contain a value or condition, or represent a separate data structure (which could be a tree of its own). 
+            Each node in a tree has zero or more child nodes, which are below it in the tree (by convention, trees are drawn growing downwards). 
+            A node that has a child is called the child's parent node (or ancestor node, or superior). A node has at most one parent. <br><br>
+            An internal node (also known as an inner node, inode for short, or branch node) is any node of a tree that has child nodes. 
+            Similarly, an external node (also known as an outer node, leaf node, or terminal node) is any node that does not have child nodes. <br><br>
+            The topmost node in a tree is called the root node. Depending on definition, a tree may be required to have a root node (in which case all trees are non-empty), 
+            or may be allowed to be empty, in which case it does not necessarily have a root node. Being the topmost node, the root node will not have a parent. 
+            It is the node at which algorithms on the tree begin, since as a data structure, one can only pass from parents to children. Note that some algorithms 
+            (such as post-order depth-first search) begin at the root, but first visit leaf nodes (access the value of leaf nodes), only visit the root last (i.e., 
+            they first access the children of the root, but only access the value of the root last). All other nodes can be reached from it by following edges or links. 
+            (In the formal definition, each such path is also unique.) In diagrams, the root node is conventionally drawn at the top. In some trees, such as heaps, 
+            the root node has special properties. Every node in a tree can be seen as the root node of the subtree rooted at that node. <br><br>
+            The height of a node is the length of the longest downward path to a leaf from that node. The height of the root is the height of the tree. 
+            The depth of a node is the length of the path to its root (i.e., its root path). This is commonly needed in the manipulation of the various self-balancing trees, 
+            AVL Trees in particular. The root node has depth zero, leaf nodes have height zero, and a tree with only a single node (hence both a root and leaf) has depth and height zero. 
+            Conventionally, an empty tree (tree with no nodes, if such are allowed) has depth and height −1. <br><br>
+            A subtree of a tree T is a tree consisting of a node in T and all of its descendants in T.  Nodes thus correspond to subtrees 
+            (each node corresponds to the subtree of itself and all its descendants) – the subtree corresponding to the root node is the entire tree, 
+            and each node is the root node of the subtree it determines; the subtree corresponding to any other node is called a proper subtree (by analogy to a proper subset).<br><br>"
+  author: Bob
+  submission_date: 2013-09-13
+
+- !!models.Comment
+  parent_post: !!models.Post
+        id: 9
+  content: "Searching a binary search tree for a specific key can be a recursive or an iterative process.
+            We begin by examining the root node. If the tree is null, the key we are searching for does not exist in the tree. 
+            Otherwise, if the key equals that of the root, the search is successful and we return the node. If the key is less than that of the root, 
+            we search the left subtree. Similarly, if the key is greater than that of the root, we search the right subtree. This process is repeated 
+            until the key is found or the remaining subtree is null. If the searched key is not found before a null subtree is reached, then the item must 
+            not be present in the tree. This is easily expressed as a recursive algorithm: <br><br>
+            <pre>
+            function Find-recursive(key, node):  // call initially with node = root <br>
+                if node = Null or node.key = key then <br>
+                    return node <br>
+                else if key < node.key then <br>
+                    return Find-recursive(key, node.left) <br>
+                else <br>
+                    return Find-recursive(key, node.right) 
+            </pre>
+            The same algorithm can be implemented iteratively:
+            <pre>
+            function Find(key, root): <br>
+                current-node := root <br>
+                while current-node is not Null do <br>
+                    if current-node.key = key then <br> 
+                        return current-node <br>
+                    else if key < current-node.key then <br>
+                        current-node := current-node.left <br>
+                    else <br>
+                        current-node := current-node.right <br>
+                return Null </pre><br><br>"
+  author: Bob
+  submission_date: 2013-09-13
+
+- !!models.Comment
+  parent_post: !!models.Post
+        id: 12
+  content: "Here are two ways you could do it, hope it helps! <br><br>
+            <pre>public int compare(MyModelClass o1, MyModelClass o2) { <br>
+                    Integer id1= o1.getId(); <br>
+                    Integer id2= o2.getId(); <br>
+                    if (id1 == null) { <br>
+                      return id2 == null ? 0 : 1; <br>
+                    } <br>
+                    if (id2 == null) { <br>
+                        return -1; <br>
+                    } <br>
+                    return id1.compareTo(id2); <br>
+                } </pre><br>
+
+            or even: <br><br>
+            <pre>
+            public int compare(MyModelClass o1, MyModelClass o2) {  <br>
+                Integer id1= o1.getId(); <br>
+                Integer id2= o2.getId(); <br>
+                if (id1 == null) { <br>
+                    return id2 == null ? 0 : 1; <br>
+                } <br>
+                return id2 == null ? -1 : id1.compareTo(id2); <br>
+            }</pre><br><br>"
+  author: Bob
+  submission_date: 2013-09-13
+  
+- !!models.Comment
+  parent_post: !!models.Post
         id: 19
   content: 'I found theses <a href="https://github.com/anthonyjchriste/ics211f13/wiki/ArrayLists-and-Generics#wiki-generics">notes from Anthony Christe,</a> a prior TA for ICS211, to be very helpful for Generics. Cheers'
   author: Bob
