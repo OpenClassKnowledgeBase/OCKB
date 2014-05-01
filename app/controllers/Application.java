@@ -125,7 +125,6 @@ public class Application extends Controller {
 	 */
 	public static Result category(Long cid, int page, String sortBy, String order, String filter) {
 		String user = session("username");
-		user = "Fred";
 		//List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
 		List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
 

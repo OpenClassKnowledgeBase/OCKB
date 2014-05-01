@@ -184,6 +184,17 @@
 - !!models.Post
     category:  !!models.Category
                id: 2
+    title:     Missed lecture the other day, does anyone have a list of terminologies for BST? [2]
+    content:   Unfortunately couldn't make it to class and the slides are not posted online. I really appreciate the help guys!
+    userName:  Fred
+    isSticky:  false
+    datePosted: 2000-11-10 11:46:09
+    comments: 5
+    votes: 5
+
+- !!models.Post
+    category:  !!models.Category
+               id: 2
     title:     How do you search through a Binary Search Tree for a certain value?
     content:   I have no idea how to find a certain value in a Binary Search Tree. Could someone explain how exactly to search through a BST?
     userName:  Drew
