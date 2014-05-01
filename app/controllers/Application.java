@@ -125,7 +125,6 @@ public class Application extends Controller {
 	 */
 	public static Result category(Long cid, int page, String sortBy, String order, String filter) {
 		String user = session("username");
-
 		//List<Post> postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).findList();
 		List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
 
@@ -134,7 +133,6 @@ public class Application extends Controller {
 
 		return ok(views.html.category.render(stickyList, currentPage, sortBy, order, filter, currentCategory, user));
 	}
-
 	/**
 	 * Renders the requested category page view.
 	 * 
@@ -262,7 +260,10 @@ public class Application extends Controller {
 
 		return redirect(routes.Application.category(currentCategory.id, 0, "datePosted", "desc", ""));
 	}
-
+	public static Result deletePost(Long pid, Long cid) {
+		Post.delete(pid);
+		return redirect(routes.Application.category(cid, 0, "datePosted", "desc", ""));
+	}
 	public static Result submitPost(Long cid) {
 		Category currentCategory = Category.getCategory(cid);
 		String user = session("username");

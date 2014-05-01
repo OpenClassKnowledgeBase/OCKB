@@ -75,7 +75,7 @@ span.badge{
     padding-left: 5px;
 }
 .author{
-    font-size:10px;
+    font-size:12px;
     text-align: right;
 }
 section{
@@ -95,7 +95,17 @@ body {
     border-width:2px;
     border-color: white;
 }
-
+.postEntry{
+  padding-right: 0px;
+}
+.dangerButton{
+  padding-left: 0px;
+  text-align:center;
+}
+/* .danger{
+    padding-top: 5px;
+    text-align: right;
+} */
 /* change color for twitter blue panels*/
 /*.panel-info > div:nth-child(1) > div:nth-child(5) > span:nth-child(1){
     background-color: #DF691A;
