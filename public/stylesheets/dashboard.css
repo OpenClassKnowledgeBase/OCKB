@@ -15,3 +15,6 @@
 .btn-recent {
 	font-size: 18px;
 }
+.panel-default > .panel-heading{
+  background-color: #2B3E50;
+}
