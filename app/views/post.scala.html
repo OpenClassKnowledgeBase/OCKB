@@ -2,7 +2,21 @@
 
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/post.css")">
     <script src="@routes.Assets.at("javascripts/ckeditor/ckeditor.js")"></script>
+    <script>
+    	function vote(id, voteAmount) {
+    		$("#"+id).text( parseInt($("#"+id).text().trim()) + voteAmount);
+    		$("#upvote"+id).addClass("btn-disabled");
+    		$("#downvote"+id).addClass("btn-disabled");
+    		if (voteAmount > 0) {
+    			$("#glyphup"+id).addClass("voted-color");
+    		} else {
+    			$("#glyphdown"+id).addClass("voted-color");
+    		}
+    		$("#"+id).addClass("voted-color");
+    	}
+    </script>
  }
  
 @main(currentPost.title, scripts) {
@@ -19,12 +33,14 @@
           <a href="@routes.Application.post(currentPost.id)">@currentPost.title</a>
         </li>
       </ol>
+      <!--
       <form class="navbar-form navbar-right">
         <div class="form-group">
           <input class="form-control" placeholder="Search for ..." type="text">
         </div>
         <button type="submit" class="btn btn-default">Search</button>
       </form>
+      -->
       <h1>@currentPost.category.getTitle()</h1>
       <p>@currentPost.category.description</p>
       <section>
@@ -40,15 +56,15 @@
                 <div class = "hidden-xs col-sm-1 votes">
                   @if(user != null){
                     <div>
-                      <span class = "glyphicon glyphicon glyphicon-chevron-up"></span>
+                      <a id="upvote0" class="button btn-default" href="#" onclick="vote(0, 1); return false;"> <span id="glyphup0" class ="glyphicon glyphicon-chevron-up"></span></a>
                     </div>
                   }
-                  <div class = "votes">
+                  <div id="0" class = "votes">
                     10
                   </div>
                   @if(user != null){
                     <div>
-                      <span class = "glyphicon glyphicon glyphicon-chevron-down"></span>
+                      <a id="downvote0" class="button btn-default" href="#" onclick="vote(0, -1); return false;"><span id="glyphdown0" class = "glyphicon glyphicon-chevron-down"></span></a>
                     </div>
                  }
                 </div>
@@ -79,7 +95,7 @@
               <div class = "hidden-xs col-sm-1 votes">
                 @if(user!=null){
                   <div>
-                    <span class = "glyphicon glyphicon glyphicon-chevron-up"></span>
+                    <span class = "glyphicon glyphicon-chevron-up"></span>
                   </div>
                 }
                 <div class = "votes">
@@ -87,7 +103,7 @@
                 </div>
                 @if(user!=null){
                   <div>
-                    <span class = "glyphicon glyphicon glyphicon-chevron-down"></span>
+                    <span class = "glyphicon glyphicon-chevron-down"></span>
                   </div>
                 }
               </div>

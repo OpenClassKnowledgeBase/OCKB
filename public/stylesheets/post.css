@@ -1,0 +1,7 @@
+.btn-disabled {
+	pointer-events: none;
+}
+
+.voted-color {
+	color: orange;
+}

@@ -1,3 +1,11 @@
+.btn-disabled {
+	pointer-events: none;
+}
+
+.voted-color {
+	color: #5BC0DE;
+}
+
 .sticky{
     background-color: green;
     display:inline;
