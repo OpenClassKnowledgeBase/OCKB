@@ -14,15 +14,16 @@
       <div class="row">
         <div class="col-lg-6">
           <h2>My Recent Activity</h2>
-          <h4>Replies</h4>
+          <div class="well">
+            <h4>Replies</h4>
           
-          @if(recentUserReplyList.isEmpty) {
-          	<section class = "replyPlaceholder center">
-              <h2>You have no recent activity.</h2>
-              <a href="@routes.Application.random()" class="btn btn-primary btn-md btn-recent">Try a random category</a>
-            </section>
-          } else {
-           	@for(recentUserReply <- recentUserReplyList) {
+            @if(recentUserReplyList.isEmpty) {
+          	  <section class = "replyPlaceholder center">
+                <h2>You have no recent activity.</h2>
+                <a href="@routes.Application.random()" class="btn btn-primary btn-md btn-recent">Try a random category</a>
+              </section>
+            } else {
+           	  @for(recentUserReply <- recentUserReplyList) {
 	          	<section>
 	              <div class="panel panel-default">
 	                <div class="panel-heading">
@@ -30,75 +31,30 @@
 	                  <span class = "hidden-xs pull-right replies-author">Active 5 min ago</span>
 	                </div>
 	            </section>
-          	}
-          }
-		  <!--
-          <section>
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                <a href = "@routes.Application.post(19)" class = "postLink">Does anyone know of a good explanation for Generics?</a>
-                  <span class = "hidden-xs pull-right replies-author">Active 5 min ago</span>
-                </div>
-            </section>
-            <section>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                  <a href = "@routes.Application.post(33)" class = "postLink">Can I use Strings to represent Generics?</a>
-                    <span class = "hidden-xs pull-right replies-author">Active 5 hours ago</span>
-                  </div>
-              </section>
-            <section>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                  <a href = "@routes.Application.post(12)" class = "postLink">How do you implement a Comparator compare method?</a>
-                    <span class = "hidden-xs pull-right replies-author">Active 1 hour ago</span>
-                  </div>
-            </section> 
-            -->
-          <br>
-          <h4>Posts</h4>
+          	  }
+            }
+          </div>
           
-          @if(recentUserPostList.isEmpty) {
-          	<section class = "postPlaceholder center">
-              <h2>You have no recent activity.</h2>
-              <a href="@routes.Application.categories()" class="btn btn-primary btn-md btn-recent">Start posting today!</a>
-            </section>
-          } else {
-           	@for(recentUserPost <- recentUserPostList) {
-	          	<section>
-	              <div class="panel panel-default">
-	                <div class="panel-heading">
-	                <a href = "@routes.Application.post(recentUserPost.id)" class = "postLink">@recentUserPost.title</a>
-                  
-	                  <span class = "hidden-xs pull-right replies-author">Active 5 min ago</span>
+          <br>
+          <div class="well">
+          <h4>Posts</h4>
+            @if(recentUserPostList.isEmpty) {
+          	  <section class = "postPlaceholder center">
+                <h2>You have no recent activity.</h2>
+                <a href="@routes.Application.categories()" class="btn btn-primary btn-md btn-recent">Start posting today!</a>
+              </section>
+            } else {
+           	  @for(recentUserPost <- recentUserPostList) {
+	          	  <section>
+	                <div class="panel panel-default">
+	                  <div class="panel-heading">
+	                  <a href = "@routes.Application.post(recentUserPost.id)" class = "postLink">@recentUserPost.title</a>
+					  <span class = "hidden-xs pull-right replies-author">Active 5 min ago</span>
 	                </div>
 	            </section>
-          	}
-          }
-          
-          <!--
-          <section>
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                <a href = "@routes.Application.post(19)" class = "postLink">Does anyone know of a good explanation for Generics?</a>
-                  <span class = "hidden-xs pull-right replies-author">Posted 5 min ago</span>
-                </div>
-            </section>
-            <section>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                  <a href = "@routes.Application.post(4)" class = "postLink">What are some Big-O for ArrayList operations?</a>
-                    <span class = "hidden-xs pull-right replies-author">Posted 5 hours ago</span>
-                  </div>
-              </section>
-            <section>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                  <a href = "@routes.Application.post(20)" class = "postLink">I don't get what Generics do</a>
-                    <span class = "hidden-xs pull-right replies-author">Posted 1 hour ago</span>
-                  </div>
-            </section>
-            -->
+          	  }
+            }
+          </div>
             
             <br>
 
@@ -109,55 +65,73 @@
         </div>
         <div class="col-lg-6">
           <h2>Top Questions</h2>
-          <h4>By Votes</h4>
-          <section>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <a href = "@routes.Application.post(33)" class = "postLink">Can I use Strings to represent Generics?</a>
-                <span class = "pull-right stats">11 Votes</span>
-            </div>
-        </section>
-        <section>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <a href = "@routes.Application.post(15)" class = "postLink">What does the node class for DCLL look like?</a>
-              <span class = "pull-right stats">10 Votes</span>
+          <div class="well">
+            <h4>By Votes</h4>
+            <section>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <a href = "@routes.Application.post(33)" class = "postLink">Can I use Strings to represent Generics?</a>
+                  <span class = "pull-right stats">11 Votes</span>
+                </div>
+              </div>
+            </section>
+            
+            <section>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <a href = "@routes.Application.post(15)" class = "postLink">What does the node class for DCLL look like?</a>
+                  <span class = "pull-right stats">10 Votes</span>
+                </div>
+              </div>
+            </section>
+            
+            <section>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <a href = "@routes.Application.post(12)" class = "postLink">How do you implement a Comparator compare method?</a>
+                  <span class = "pull-right stats">10 Votes</span>
+                </div>
+              </div>
+            </section>
+
           </div>
-        </section>
-        <section>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <a href = "@routes.Application.post(12)" class = "postLink">How do you implement a Comparator compare method?</a>
-              <span class = "pull-right stats">10 Votes</span>
-          </div>
-        </section>
+          <br>
+          <div class="well">
+            <h4>By Answers</h4>
+            <section>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <a href = "@routes.Application.post(20)" class = "postLink">I don't get what Generics do</a>
+                  <span class = "pull-right stats">5 Answers</span>
+                </div>
+              </div>
+            </section>
+            
+            <section>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <a href = "@routes.Application.post(19)" class = "postLink">Does anyone know of a good explanation for Generics?</a>
+                  <span class = "pull-right stats">4 Answers</span>
+                </div>
+              </div>
+            </section>
+            
+            <section>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <a href = "@routes.Application.post(4)" class = "postLink">What are some Big-O for ArrayList operations?</a>
+                  <span class = "pull-right stats">4 Answers</span>
+                </div>
+              </div>
+            </section>
+		  </div>
+		  
         <br>
-          <h4>By Answers</h4>
-          <section>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <a href = "@routes.Application.post(20)" class = "postLink">I don't get what Generics do</a>
-              <span class = "pull-right stats">5 Answers</span>
-          </div>
-        </section>
-        <section>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <a href = "@routes.Application.post(19)" class = "postLink">Does anyone know of a good explanation for Generics?</a>
-              <span class = "pull-right stats">4 Answers</span>
-          </div>
-        </section>
-        <section>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <a href = "@routes.Application.post(4)" class = "postLink">What are some Big-O for ArrayList operations?</a>
-              <span class = "pull-right stats">4 Answers</span>
-          </div>
-        </section>
-        <br>
+        
         <section class="center">
          	  <a class="btn btn-default" href="#">See All Top Questions &raquo;</a>
         </section>
+        
       </div>
       </div>
       <div class = "row">

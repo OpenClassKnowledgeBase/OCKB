@@ -1,20 +1,37 @@
+body {
+	width: 100%;
+	margine: none;
+	padding: none;
+}
+
 .ind-title {
 	padding-top: 35px;
 	font-size: 46px;
 }
 
 .ind-paragraph {
-	font-size: 20px;
+	font-size: 24px;
 	line-height: 1.8;
 }
 
-.content-img {
-	
+.row-banner {
+	background-image: url('../images/blurred-cabinet.jpg');
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	margin-left: -15px;
+  	margin-top: -20px;
+  	margin-right: -15px;
 }
 
-.row-top {
-	//padding: 225px;
+.row-top-txt {
+	margin: 10px;
+	padding-top: 350px;
+	padding-bottom: 10px;
 }
+
 
 .row-even {
 	padding: 15px;
@@ -27,6 +44,14 @@
 .odd-pic {
 	width: 470px;
 	padding-left: 80px;
+}
+
+.text-center {
+    text-shadow:
+    -1px -1px 0  #B0B0B0   ,
+    1px -1px 0   #B0B0B0   ,
+    -1px 1px 0   #B0B0B0   ,
+    1px 1px 0  	 #B0B0B0   ;  
 }
 
 .carousel {
