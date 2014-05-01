@@ -7,21 +7,11 @@ body {
 .ind-title {
 	padding-top: 35px;
 	font-size: 46px;
-	text-shadow:
-    -1px -1px 0  #B0B0B0   ,
-    1px -1px 0   #B0B0B0   ,
-    -1px 1px 0   #B0B0B0   ,
-    1px 1px 0  	 #B0B0B0   ;
 }
 
 .ind-paragraph {
 	font-size: 24px;
 	line-height: 1.8;
-	text-shadow:
-    -1px -1px 0  #B0B0B0   ,
-    1px -1px 0   #B0B0B0   ,
-    -1px 1px 0   #B0B0B0   ,
-    1px 1px 0  	 #B0B0B0   ;
 }
 
 .row-banner {
@@ -54,6 +44,14 @@ body {
 .odd-pic {
 	width: 470px;
 	padding-left: 80px;
+}
+
+.text-shadow {
+     text-shadow:
+    -1px -1px 0  #B0B0B0   ,
+    1px -1px 0   #B0B0B0   ,
+    -1px 1px 0   #B0B0B0   ,
+    1px 1px 0  	 #B0B0B0   ;
 }
 
 .carousel {
