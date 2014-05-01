@@ -48,8 +48,8 @@
 
 - !!models.User
   id: 7
-  email: renzeer@hawaii.edu
-  name: renzeer
+  email: renzee@hawaii.edu
+  name: renzee
   status: inactive
   role: admin
   posts: 0
