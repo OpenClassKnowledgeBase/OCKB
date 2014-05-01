@@ -233,8 +233,9 @@ public class Application extends Controller {
 
 	public static Result post(Long pid) {
 		String user = session("username");
+	    String userRole = User.getUser(user).role;
 		List<Comment> cmntList = Comment.find.where().eq("parent_post_id", pid).findList();
-		return ok(views.html.post.render(cmntList, Post.find.byId(pid), user));
+		return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole));
 	}
 
 	public static Result createPost(Long cid) {
@@ -260,10 +261,12 @@ public class Application extends Controller {
 
 		return redirect(routes.Application.category(currentCategory.id, 0, "datePosted", "desc", ""));
 	}
+	
 	public static Result deletePost(Long pid, Long cid) {
 		Post.delete(pid);
 		return redirect(routes.Application.category(cid, 0, "datePosted", "desc", ""));
 	}
+	
 	public static Result submitPost(Long cid) {
 		Category currentCategory = Category.getCategory(cid);
 		String user = session("username");
@@ -285,6 +288,21 @@ public class Application extends Controller {
 
 		return redirect(routes.Application.post(pid));
 	}    
+	
+	public static Result makePostSticky(Long cid, Long pid) {
+	    Post currentPost = Post.getPost(pid);
+	    currentPost.isSticky = true;
+	    currentPost.save();
+	    return redirect(routes.Application.category(cid, 0, "datePosted", "desc", ""));
+	}
+	
+	public static Result unStickyPost(Long cid, Long pid) {
+        Post currentPost = Post.getPost(pid);
+        currentPost.isSticky = false;
+        currentPost.save();
+        System.out.println(currentPost.isSticky);
+        return redirect(routes.Application.category(cid, 0, "datePosted", "desc", ""));	    
+	}
 
 	/**********************
 	 *                    *

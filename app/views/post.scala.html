@@ -1,4 +1,4 @@
-@(commentList: List[Comment], currentPost: Post, user:String)
+@(commentList: List[Comment], currentPost: Post, user:String, userRole: String)
 
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
@@ -43,6 +43,20 @@
       -->
       <h1>@currentPost.category.getTitle()</h1>
       <p>@currentPost.category.description</p>
+          
+
+      @if(userRole== "admin" && currentPost.isSticky == false) {
+        <form action = "@routes.Application.makePostSticky(currentPost.category.id, currentPost.id)" method="POST">
+        <input type="submit" value="Sticky this Post" class="btn btn-success btn-lg">
+        <br><br>
+      } 
+
+      @if(userRole== "admin" && currentPost.isSticky == true) {
+        <form action = "@routes.Application.unStickyPost(currentPost.category.id, currentPost.id)" method="POST">
+        <input type="submit" value="UnSticky this Post" class="btn btn-success btn-lg">
+        <br><br>
+      }
+
       <section>
           <div class="panel panel-default">
             <div class="panel-heading">
