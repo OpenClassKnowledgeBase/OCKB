@@ -300,9 +300,15 @@ public class Application extends Controller {
         Post currentPost = Post.getPost(pid);
         currentPost.isSticky = false;
         currentPost.save();
-        System.out.println(currentPost.isSticky);
         return redirect(routes.Application.category(cid, 0, "datePosted", "desc", ""));	    
 	}
+	
+	/*
+	public static void postVote(Long cid, Long pid, Long vote) {
+	    Post currentPost = Post.getPost(pid);
+	    currentPost.votes = currentPost.votes + vote;
+	    currentPost.save();
+	}*/
 
 	/**********************
 	 *                    *
