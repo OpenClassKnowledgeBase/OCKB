@@ -232,11 +232,17 @@ public class Application extends Controller {
 	 *                    *
 	 **********************/
 
-	public static Result post(Long pid) {
-		String user = session("username");
-	    String userRole = User.getUser(user).role;
-		List<Comment> cmntList = Comment.find.where().eq("parent_post_id", pid).findList();
-		return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole));
+	public static Result post(Long pid) {	    
+        String user = session("username");
+        List<Comment> cmntList = Comment.find.where().eq("parent_post_id", pid).findList();
+        if (user==null) { 
+            user = "";
+            String userRole = "";
+            return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole));
+        } else { 
+            String userRole = User.getUser(user).role;
+            return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole));
+        }	
 	}
 
 	public static Result createPost(Long cid) {
