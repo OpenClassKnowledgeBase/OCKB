@@ -23,6 +23,9 @@ public class Post extends Model{
 	@JoinColumn(name="category_id")
 	public Category category;
 
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="parent_post")
+    public List<Comment> commentList;
+	
 	@Required
 	public String title;
 
