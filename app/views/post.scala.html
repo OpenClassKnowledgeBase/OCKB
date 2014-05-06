@@ -46,14 +46,17 @@
           
 
       @if(userRole== "admin" && currentPost.isSticky == false) {
-        <form action = "@routes.Application.makePostSticky(currentPost.category.id, currentPost.id)" method="POST">
-        <input type="submit" value="Sticky this Post" class="btn btn-success btn-lg">
+      	<a class="btn btn-success btn-md" href="@routes.Application.makePostSticky(currentPost.category.id, currentPost.id)">Sticky this Post</a>
+        
+        <!--<form action = "@routes.Application.makePostSticky(currentPost.category.id, currentPost.id)" method="POST">
+        <input type="submit" value="Sticky this Post" class="btn btn-success btn-lg">-->
         <br><br>
       } 
 
       @if(userRole== "admin" && currentPost.isSticky == true) {
-        <form action = "@routes.Application.unStickyPost(currentPost.category.id, currentPost.id)" method="POST">
-        <input type="submit" value="UnSticky this Post" class="btn btn-success btn-lg">
+        <a class="btn btn-success btn-md" href="@routes.Application.unStickyPost(currentPost.category.id, currentPost.id)">Unsticky this Post</a>
+        <!--<form action = "@routes.Application.unStickyPost(currentPost.category.id, currentPost.id)" method="POST">
+        <input type="submit" value="UnSticky this Post" class="btn btn-success btn-lg">-->
         <br><br>
       }
 
