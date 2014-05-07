@@ -76,7 +76,9 @@ public class Application extends Controller {
 		else {
 			List<Post> recentUserReplyList = Post.find.where().eq("userName", user).orderBy("latestActivity").findList();
 			List<Post> recentUserPostList = Post.find.where().eq("userName", user).orderBy("latestActivity").findList();
-			return ok(views.html.dashboard.render(recentUserReplyList, recentUserPostList, userRole));
+			List<Post> topPosts = Post.getSortedByComments();
+			
+			return ok(views.html.dashboard.render(recentUserReplyList, recentUserPostList, userRole, topPosts));
 		}
 	}   
 

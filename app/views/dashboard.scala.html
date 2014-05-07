@@ -1,4 +1,4 @@
-@(recentUserReplyList: List[Post], recentUserPostList: List[Post], userRole: String)
+@(recentUserReplyList: List[Post], recentUserPostList: List[Post], userRole: String, topPosts: List[Post])
 
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
@@ -8,7 +8,7 @@
 @main("Dashboard",scripts) {
     <div class="container">
       <!-- Example row of columns -->
-      <div class = "row">
+      <div class = "row header">
         <h1>Dashboard</h1>
       </div>
       <div class="row">
@@ -65,7 +65,19 @@
         </div>
         <div class="col-lg-6">
           <h2>Top Questions</h2>
-          <div class="well">
+          @topPosts.length
+          <div class = "well">
+           @for(post <- topPosts) {
+                  <section>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                      <a href = "@routes.Application.post(post.id)" class = "postLink">@post.title</a>
+                      <span class = "pull-right stats">@post.commentList.length</span>
+                    </div>
+                </section>
+              }
+          </div>
+          <!-- <div class="well">
             <h4>By Votes</h4>
             <section>
               <div class="panel panel-default">
@@ -95,10 +107,10 @@
             </section>
 
           </div>
-          <br>
+          <br> -->
           <div class="well">
-            <h4>By Answers</h4>
-            <section>
+            <!-- <h4>By Answers</h4> -->
+            <!-- <section>
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <a href = "@routes.Application.post(20)" class = "postLink">I don't get what Generics do</a>
@@ -123,7 +135,7 @@
                   <span class = "pull-right stats">4 Answers</span>
                 </div>
               </div>
-            </section>
+            </section> -->
 		  </div>
 		  
         <br>

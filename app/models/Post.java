@@ -13,7 +13,7 @@ import play.data.validation.Constraints.*;
 
 @SuppressWarnings("serial")
 @Entity /*THIS IS IMPORTANT*/
-public class Post extends Model{
+public class Post extends Model implements Comparable<Post>{
 
 	public String userName;
 	
@@ -59,7 +59,7 @@ public class Post extends Model{
 	public static List<Post> all(){
 		return find.all();
 	}
-
+	
 	public static void create(Category category, String title, String content, String username, Boolean isSticky){
 		Post post = new Post(category, title, content);
 		post.userName = username;
@@ -98,5 +98,26 @@ public class Post extends Model{
                 .orderBy(sortBy + " " + order)
                 .findPagingList(pageSize)
                 .getPage(page);
+    }
+    
+    //use to compare commentLists
+    @Override
+    public int compareTo(Post post) {
+        //needs to be reversed to be in descending order
+        if (this.commentList.size() < post.commentList.size()) {
+            return 1;
+        }
+        if (this.commentList.size() > post.commentList.size()) {
+            return -1;
+        }
+        else {
+            return 0; 
+        }
+    }
+    
+    public static List<Post> getSortedByComments(){
+        List<Post> allComments = Post.all();
+        Collections.sort(allComments);
+        return allComments;
     }
 }

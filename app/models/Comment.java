@@ -39,6 +39,7 @@ public class Comment extends Model {
 		this.parent_post = parentPost;
 		this.content = content;
 		this.author = author;
+		parentPost.comments++;
 	}
 	/*Implement the CRUD operations*/
 	public static List<Comment> all(){
@@ -47,6 +48,7 @@ public class Comment extends Model {
 	
 	public static void create(Post parentPost, String author, String content){
 		Comment comment = new Comment(parentPost, content, author);
+		parentPost.comments++;
 		comment.save();
 	}
 	
