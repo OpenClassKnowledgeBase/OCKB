@@ -93,15 +93,22 @@
       </div>
       <!-- Stickies -->
       @for(sticky <- stickyList) {
-          
 	      <section>
 	          <div class="panel panel-warning">
 	            <div class="panel-heading">
-	              <span class="label label-warning">STICKY</span><a href = "@routes.Application.post(sticky.id)" class = "postLink"> @sticky.title</a>
-                 @if(user != null){
-                    <span class = "pull-right">Submitted by @sticky.userName</span>
-                 } 
+                  <div class = "row">
+                    <div class = "col-xs-1">
+                        <span class="label label-warning">STICKY</span>
+                    </div>
+                    <div class = "col-xs-11">
+                        <a href = "@routes.Application.post(sticky.id)" class = "postLink"> @sticky.title</a>
+                        @if(user != null){
+                            <span class = "pull-right">Submitted by @sticky.userName</span>
+                        }
+                    </div>
+                  </div> 
 	            </div>
+            </div>
 	      </section>
       }
 
@@ -123,27 +130,34 @@
                     }
                     <div class = "panel-heading">
                       <div class = "row">
+                          <div class = "col-xs-2 col-xs-offset-10">
+                            <div class = "pull-right">
+                              @post.commentList.length Answers
+                            </div>
+                          </div>
+                      
+                      </div>
+                      <div class = "row">
+                        @if(user != null){
                           <div class = "col-xs-1">
-                              <div class = "label label-info">
+                            <div class = "label label-info">
                                   #@post.id
                               </div>
                           </div>
                           <div class = "col-xs-9">
                               <a href = "@routes.Application.post(post.id)" class = "postLink"> @post.title</a>
                           </div>
-                          <div class = "col-xs-2">
-                              @post.commentList.length Answers
-                          </div>
-                      
-                      </div>
-                      <div class = "row">
-                          <div class = "col-xs-12 pull-right">
-                              @if(user != null){
-                                <div class = "author">
-                                    Submitted by <span class = "badge">@post.userName</span> on @post.datePosted.format("MMMM dd, yyyy h:mm:ss a")
-                                </div>
-                              }
-                          </div>
+                          <div class = "col-xs-2 pull-right">
+                            <div class = "author">
+                                Submitted by <span class = "badge">@post.userName</span> 
+                            </div>
+                           </div>
+                           <div class = "col-xs-12 pull-right">
+                            <div class = "author">
+                                Posted on @post.datePosted.format("MM/dd/yyyy h:mm:ss a")
+                            </div>
+                           </div>
+                        }
                       </div>
 <!--                         <span class="label label-info">#@post.id</span><a href = "@routes.Application.post(post.id)" class = "postLink"> @post.title</a>
                           <span class = "pull-right stats">@post.comments Answers</span>
