@@ -2,47 +2,29 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Main
-GET     /login        				controllers.Application.login()
-GET     /logout        				controllers.Application.logout()
-
 # Home page
 GET     /                           controllers.Application.index()
-
-# List of Categories page
 GET     /categories                 controllers.Application.categories()
 GET		/requestCategory			controllers.Application.requestCategory()
-
-# Dashboard page
+GET		/viewRequestedCategories	controllers.Application.viewRequestedCategories()
+GET		/approveRequestedCategory	controllers.Application.approveRequestedCategory(cid: Long)
+GET		/post/:pid	                controllers.Application.post(pid: Long)
+GET     /category/:cid        		controllers.Application.category(cid: Long, p:Int ?= 0, s ?= "datePosted", o ?= "desc", f ?= "")
+GET     /login        				controllers.Application.login()
+GET     /logout        				controllers.Application.logout()
 GET     /dashboard                  controllers.Application.dashboard()
 GET     /userpriv                   controllers.Application.userPriv()
 GET		/notifications				controllers.Application.notifications()
 GET     /randomPost                 controllers.Application.random()
-
-# Request a Category page
-POST	/categories					controllers.Application.requestCategorySubmit()
-
-# Requested Categories page
-GET		/viewRequestedCategories	    controllers.Application.viewRequestedCategories()
-GET		/approveRequestedCategory	    controllers.Application.approveRequestedCategory(cid: Long)
-GET	    /viewRequestedCategories/:cid	controllers.Application.denyRequestedCategory(cid: Long)
-
-# Approve Requested Category page
-POST	/approveCategory			    controllers.Application.approveRequestedCategorySubmit(cid: Long)
-
-# Post page
-GET		/post/:pid	            controllers.Application.post(pid: Long)
-GET     /unsticky				controllers.Application.unStickyPost(cid: Long, pid: Long)
-GET     /sticky					controllers.Application.makePostSticky(cid: Long, pid: Long)
-POST    /makeComment            controllers.Application.createComment(cid: Long, pid:Long)
-
-# Category page
-GET     /category/:cid        		controllers.Application.category(cid: Long, p:Int ?= 0, s ?= "datePosted", o ?= "desc", f ?= "")
-POST    /deletePost                 controllers.Application.deletePost(pid: Long, cid: Long)
-
-# Submit Post
 GET 	/submitPost/:cid			controllers.Application.submitPost(cid: Long)
-POST	/createPost				    controllers.Application.createPost(cid: Long)
+GET	/viewRequestedCategories/:cid	controllers.Application.denyRequestedCategory(cid: Long)
+POST	/category/:cid				controllers.Application.createPost(cid: Long)
+POST    /category/:cid/:pid					controllers.Application.unStickyPost(cid: Long, pid: Long)
+POST    /post/:pid					controllers.Application.makePostSticky(cid: Long, pid: Long)
+POST    /post/:pid                  controllers.Application.createComment(cid: Long, pid:Long)
+POST	/categories					controllers.Application.requestCategorySubmit()
+POST	/categories/:cid			controllers.Application.approveRequestedCategorySubmit(cid: Long)
+POST    /deletePost                 controllers.Application.deletePost(pid: Long, cid: Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
