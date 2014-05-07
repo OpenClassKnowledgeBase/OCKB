@@ -42,7 +42,7 @@ public class Application extends Controller {
 
 	/**********************
 	 *                    *
-	 * NAVIGATION METHODS *
+	 * MAIN PAGE METHODS *
 	 *                    *
 	 **********************/
 
@@ -64,16 +64,12 @@ public class Application extends Controller {
 	 */
 	public static Result dashboard() {
 		String user = session("username");
-		
-		// User tables not setup yet, will default userRole to 'admin' for now
-		// String userRole = User.getUser(user).role;
-		
-		String userRole = "admin";
 
 		if (user == null) {
 			return redirect(routes.Application.index());
 		}
 		else {
+		    String userRole = User.getUser(user).role;
 			List<Post> recentUserReplyList = Post.find.where().eq("userName", user).orderBy("latestActivity").findList();
 			List<Post> recentUserPostList = Post.find.where().eq("userName", user).orderBy("latestActivity").findList();
 			List<Post> topPosts = Post.getSortedByComments().subList(0, 3);
@@ -246,6 +242,15 @@ public class Application extends Controller {
             return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole));
         }	
 	}
+	
+	public static Result submitPost(Long cid) {
+        Category currentCategory = Category.getCategory(cid);
+        String user = session("username");
+        String userRole = User.getUser(user).role;
+
+
+        return ok(views.html.submitPost.render(currentCategory, userRole));
+    } 
 
 	public static Result createPost(Long cid) {
 		String user = session("username");
@@ -275,15 +280,6 @@ public class Application extends Controller {
 		Post.delete(pid);
 		return redirect(routes.Application.category(cid, 0, "datePosted", "desc", ""));
 	}
-	
-	public static Result submitPost(Long cid) {
-		Category currentCategory = Category.getCategory(cid);
-		String user = session("username");
-		String userRole = User.getUser(user).role;
-
-
-		return ok(views.html.submitPost.render(currentCategory, userRole));
-	} 
 
 	public static Result createComment(Long cid, Long pid) {
 		//To pull information from the two forms (temporary).
@@ -311,13 +307,6 @@ public class Application extends Controller {
         currentPost.save();
         return redirect(routes.Application.category(cid, 0, "datePosted", "desc", ""));	    
 	}
-	
-	/*
-	public static void postVote(Long cid, Long pid, Long vote) {
-	    Post currentPost = Post.getPost(pid);
-	    currentPost.votes = currentPost.votes + vote;
-	    currentPost.save();
-	}*/
 
 	/**********************
 	 *                    *
@@ -355,39 +344,6 @@ public class Application extends Controller {
 	public static Result notifications() {
 		return ok(views.html.notifications.render());
 	}
-
-	/**
-    public static Result sort(Long cid, int sort) {
-    	String user = session("username");
-    	List<Post> postList = new ArrayList<Post>();
-    	Page<Post> postPage = Post.getPosts(cid, 1, 10, "datePosted", "desc");;
-    	String currentSort = "datePosted";
-    	String currentOrder = "desc";
-     	switch (sort) {
-    		case NEWEST:
-    			 postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).orderBy("datePosted desc").findList();
-    			 postPage = Post.getPosts(cid, 1, 10, "datePosted", "desc");
-    			 currentSort = "datePosted";
-    			 currentOrder = "desc";
-    			break;
-    		case VOTES:
-    			postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).orderBy("votes desc").findList();
-    			postPage = Post.getPosts(cid, 1, 10, "votes", "desc");
-    			currentSort = "votes";
-    			currentOrder = "desc";
-    			break;
-    		case COMMENTS:
-    			postList = Post.find.where().eq("category_id", cid).eq("isSticky", false).orderBy("comments desc").findList();
-    			postPage = Post.getPosts(cid, 1, 10, "comments", "desc");
-    			currentSort = "comments";
-    			currentOrder = "desc";
-    			break;
-    	}
-    	List<Post> stickyList = Post.find.where().eq("category_id", cid).eq("isSticky", true).findList();
-    	Category currentCategory = Category.getCategory(cid);
-
-    	return ok(views.html.category.render(stickyList, postPage, currentSort, currentOrder, currentCategory, user));
-    }**/
 
 	/***********************
 	 *                     *
