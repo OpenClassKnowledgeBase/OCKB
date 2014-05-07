@@ -53,7 +53,7 @@ public class Application extends Controller {
 	 * @return A rendered view of our index page.
 	 */
 	public static Result index() {
-		return ok(views.html.index.render("Welcome to the home page."));
+		return ok(views.html.index.render());
 	}
 
 	/**
