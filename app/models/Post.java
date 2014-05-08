@@ -46,15 +46,15 @@ public class Post extends Model implements Comparable<Post>{
 	@Id 
 	public Long id;
 
+	public Post (Category category, String title, String content) {
+        this.category = category;
+        this.title = title;
+        this.content = content;
+    }
 
 	//help initiate queries
 	public static Finder<Long,Post> find = new Finder<Long,Post>(Long.class, Post.class);
 	
-	public Post (Category category, String title, String content) {
-		this.category = category;
-		this.title = title;
-		this.content = content;
-	}
 	/*Implement the CRUD operations*/
 	public static List<Post> all(){
 		return find.all();

@@ -29,15 +29,16 @@ public class Category extends Model{
 	
 	public String user;
 
+	public Category (String title, String description, String url, Boolean requested) {
+        this.title = title;
+        this.url = url;
+        this.description = description;
+        this.requested = requested;
+    }
+	
 	//help initiate queries
 	public static Finder<Long,Category> find = new Finder<Long,Category>(Long.class, Category.class);
 	
-	public Category (String title, String description, String url, Boolean requested) {
-		this.title = title;
-		this.url = url;
-		this.description = description;
-		this.requested = requested;
-	}
 	/*Implement the CRUD operations*/
 
 	public static void create(String title, String description, String url, Boolean requested, String user){

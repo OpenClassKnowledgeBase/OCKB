@@ -34,8 +34,6 @@ public class User extends Model {
     @Required
     public int posts;
     
-    public User() {}
-    
     public User(String email, String name, String status, String role, int posts) {
       this.email = email + "@hawaii.edu";
       this.name = name;

@@ -32,15 +32,16 @@ public class Comment extends Model {
 	@JoinColumn(name = "parent_post_id")
 	public Post parent_post;
 	
+	public Comment(Post parentPost, String content, String author) {
+        this.parent_post = parentPost;
+        this.content = content;
+        this.author = author;
+        parentPost.comments++;
+    }
+	
 	//help initiate queries
 	public static Finder<Long,Comment> find = new Finder<Long,Comment>(Long.class, Comment.class);
 	
-	public Comment(Post parentPost, String content, String author) {
-		this.parent_post = parentPost;
-		this.content = content;
-		this.author = author;
-		parentPost.comments++;
-	}
 	/*Implement the CRUD operations*/
 	public static List<Comment> all(){
 		return find.all();
