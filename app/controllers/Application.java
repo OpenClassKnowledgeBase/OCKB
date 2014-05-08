@@ -9,6 +9,8 @@ import play.data.*;
 import play.mvc.*;
 import views.html.*;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 //CAS imports
 import java.net.*;
 import java.util.*;
@@ -16,6 +18,7 @@ import java.util.*;
 import javax.xml.parsers.*;
 
 import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 /**
  * This class is a controller that helps users navigate through our web application.
@@ -27,12 +30,9 @@ import org.w3c.dom.Document;
  */
 public class Application extends Controller {	 
 	// CAS Variables 
-	
 	private static final String CAS_LOGIN = "https://authn.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://authn.hawaii.edu/cas/serviceValidate";
 	private static final String CAS_LOGOUT = "https://authn.hawaii.edu/cas/logout";
-	
-
 	
 	// TEST CAS Variables for local testing
 /*	private static final String CAS_LOGIN = "https://cas-test.its.hawaii.edu/cas/login";
@@ -115,12 +115,12 @@ public class Application extends Controller {
 	/**
 	 * Renders a specific category page view.
 	 * 
-	 * @param cid 
-	 * @param page 
-	 * @param sortBy
-	 * @param order
-	 * @param filter
-	 * @return
+	 * @param cid Category id
+	 * @param page Page number
+	 * @param sortBy String representing column to be sorted by
+	 * @param order Descending (desc) or ascending (asc) order
+	 * @param filter String used for keyword filter 
+	 * @return Renders the category page view.
 	 */
 	public static Result category(Long cid, int page, String sortBy, String order, String filter) {
 		String user = session("username");
@@ -229,7 +229,13 @@ public class Application extends Controller {
 	 *   POSTING METHODS  *
 	 *                    *
 	 **********************/
-
+	
+	/**
+	 * View containing a single post and its comments
+	 * 
+	 * @param pid Id of shown post
+	 * @return Renders the post page view
+	 */
 	public static Result post(Long pid) {	    
         String user = session("username");
         List<Comment> cmntList = Comment.find.where().eq("parent_post_id", pid).findList();
@@ -243,6 +249,12 @@ public class Application extends Controller {
         }	
 	}
 	
+	/**
+	 * View containing submission form for a new post
+	 * 
+	 * @param cid Id of corresponding category
+	 * @return Renders the submit post page view
+	 */
 	public static Result submitPost(Long cid) {
         Category currentCategory = Category.getCategory(cid);
         String user = session("username");
@@ -252,6 +264,12 @@ public class Application extends Controller {
         return ok(views.html.submitPost.render(currentCategory, userRole));
     } 
 
+	/**
+	 * Creates and saves newly submitted post from submit post page view
+	 * 
+	 * @param cid Id of corresponding category
+	 * @return Redirect to category page view of current category
+	 */
 	public static Result createPost(Long cid) {
 		String user = session("username");
 		Category currentCategory = Category.getCategory(cid);
@@ -276,11 +294,25 @@ public class Application extends Controller {
 		return redirect(routes.Application.category(currentCategory.id, 0, "datePosted", "desc", ""));
 	}
 	
+	/**
+	 * Deletes a post from the application database
+	 * 
+	 * @param pid Id of post to be deleted
+	 * @param cid Id of the category of the post to be deleted
+	 * @return Redirect to category page view of deleted post
+	 */
 	public static Result deletePost(Long pid, Long cid) {
 		Post.delete(pid);
 		return redirect(routes.Application.category(cid, 0, "datePosted", "desc", ""));
 	}
 
+	/**
+	 * Creates a comment for a specified post
+	 * 
+	 * @param cid Id of the category of the current post
+	 * @param pid Id of the current post to be replied to
+	 * @return Redirect to the post page view of the current post
+	 */
 	public static Result createComment(Long cid, Long pid) {
 		//To pull information from the two forms (temporary).
 		final Map<String, String[]> values = request().body().asFormUrlEncoded();  	
@@ -294,6 +326,13 @@ public class Application extends Controller {
 		return redirect(routes.Application.post(pid));
 	}    
 	
+	/**
+	 * Makes a specified post sticky. This action is only available to privileged users.
+	 * 
+	 * @param cid Id of the category for the specified post
+	 * @param pid Id of the specified post to be stickied
+	 * @return Redirect to the category page view for specified post
+	 */
 	public static Result makePostSticky(Long cid, Long pid) {
 	    Post currentPost = Post.getPost(pid);
 	    currentPost.isSticky = true;
@@ -301,6 +340,13 @@ public class Application extends Controller {
 	    return redirect(routes.Application.category(cid, 0, "datePosted", "desc", ""));
 	}
 	
+	/**
+	 * Makes a specified post unsticky. This action is only available to privileged users.
+	 * 
+	 * @param cid Id of the category for the specified post
+	 * @param pid Id of the specified post to be unstickied
+	 * @return Redirect to the category page view for specified post
+	 */
 	public static Result unStickyPost(Long cid, Long pid) {
         Post currentPost = Post.getPost(pid);
         currentPost.isSticky = false;
@@ -314,7 +360,11 @@ public class Application extends Controller {
 	 *                    *
 	 **********************/    
 
-
+	/**
+	 * Redirects to a random category page view. Used within the dashboard
+	 * 
+	 * @return Redirect to a random category page view.
+	 */
 	public static Result random() {
 		String user = session("username");
 		if (user == null) {
@@ -327,7 +377,14 @@ public class Application extends Controller {
 			return redirect(routes.Application.category(randomLong, 0, "datePosted", "desc", ""));
 		}
 	}
-
+	
+	/**
+	 * Generates a random integer for the random() controller method.
+	 * 
+	 * @param min Minimum range for generated integer
+	 * @param max Maximum range for generated integer
+	 * @return Randomly generated integer with the range of min and max
+	 */
 	public static int randInt(int min, int max) {
 		Random rand = new Random();
 
@@ -335,12 +392,22 @@ public class Application extends Controller {
 
 		return randomNum;
 	}    
-
+	
+	/**
+	 * View containing table of Users and their privileges. Table is only viewable for privileged users
+	 * 
+	 * @return Renders user privileges page view
+	 */
 	public static Result userPriv() {
 		List<User> userList = User.findAll();
 		return ok(views.html.userPriv.render(userList));
 	}
-
+	
+	/**
+	 * View contained notification of user
+	 * 
+	 * @return Renders notifications page view
+	 */
 	public static Result notifications() {
 		return ok(views.html.notifications.render());
 	}
@@ -351,7 +418,16 @@ public class Application extends Controller {
 	 *                     *
 	 ***********************/    
 
-	public static Result login() throws Exception {
+	/**
+	 * Controller method that handles request and validation of CAS authentication
+	 * 
+	 * @return Redirect to appropriate page depending on authentication success or failure
+	 * @throws ParserConfigurationException 
+	 * @throws IOException 
+	 * @throws SAXException 
+	 * @throws MalformedURLException 
+	 */
+	public static Result login() throws ParserConfigurationException, MalformedURLException, SAXException, IOException {
 		Map<String, String[]> query = request().queryString();
 		// service url is where you will handle validation after login
 		// or getting the user attributes after validation
@@ -392,8 +468,14 @@ public class Application extends Controller {
 			return redirect(routes.Application.index());
 		}
 	}
-
-	public static Result logout() throws Exception {
+	
+	/**
+	 * Logs the current user out of their CAS session
+	 * 
+	 * @return Redirect to the CAS logout service URL
+	 * @throws UnsupportedEncodingException 
+	 */
+	public static Result logout() throws UnsupportedEncodingException {
 		// clear your session
 		session().clear();
 		String serviceURL = routes.Application.index().absoluteURL(request());

@@ -1,3 +1,5 @@
-
 controllers
+global
 models
+tests
+views

@@ -1,3 +1,5 @@
+package tests;
+
 import org.junit.*;
 
 import play.mvc.*;
