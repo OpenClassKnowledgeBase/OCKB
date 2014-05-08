@@ -79,26 +79,6 @@ public class Post extends Model implements Comparable<Post>{
 	public static Post getPost (Long id) {
 		return Post.find.byId(id);
 	}
-	/**
-	* Return a page of posts
-	*
-	* @param page Page to display
-	* @param pageSize Number of posts per page
-	* @param sortBy Posts property used for sorting
-	* @param order Sort order (either or asc or desc)
-	* @param filter Filter applied on the name column
-	*/
-    public static Page<Post> getPosts(Long cid, int page, int pageSize, String sortBy, String order, String filter) {
-        return
-            find.where()
-            	.eq("category_id", cid)
-            	.eq("isSticky", false)
-            	.ilike("title", "%" + filter + "%")
-            	.ilike("content", "%" + filter + "%")
-                .orderBy(sortBy + " " + order)
-                .findPagingList(pageSize)
-                .getPage(page);
-    }
     
     //use to compare commentLists
     @Override
@@ -119,5 +99,26 @@ public class Post extends Model implements Comparable<Post>{
         List<Post> allComments = Post.all();
         Collections.sort(allComments);
         return allComments;
+    }
+    
+    /**
+    * Return a page of posts
+    *
+    * @param page Page to display
+    * @param pageSize Number of posts per page
+    * @param sortBy Posts property used for sorting
+    * @param order Sort order (either or asc or desc)
+    * @param filter Filter applied on the name column
+    */
+    public static Page<Post> getPosts(Long cid, int page, int pageSize, String sortBy, String order, String filter) {
+        return
+            find.where()
+                .eq("category_id", cid)
+                .eq("isSticky", false)
+                .ilike("title", "%" + filter + "%")
+                .ilike("content", "%" + filter + "%")
+                .orderBy(sortBy + " " + order)
+                .findPagingList(pageSize)
+                .getPage(page);
     }
 }
