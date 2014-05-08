@@ -11,7 +11,12 @@ import com.avaje.ebean.Ebean;
 
 
 public class Global extends GlobalSettings {
-	/*
+	
+    /**
+     * On start of application, seed sample data into database
+     * 
+     * @param app - OCKB Application
+     */
     @SuppressWarnings("unchecked")
 	@Override
 	public void onStart(Application app) {
@@ -32,5 +37,5 @@ public class Global extends GlobalSettings {
 		if (User.find.findRowCount() == 0) {
             Ebean.save((List<User>) Yaml.load("user-data.yml"));
         }
-	}*/
+	}
 }
