@@ -58,3 +58,4 @@ OCKB
 
 * [User Evaluations] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/User-Evaluation)
 
+* [Meeting Log](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Team-Meetings)
