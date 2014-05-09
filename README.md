@@ -38,13 +38,23 @@ OCKB
 * [Deployed Application] (http://two.ockb.cloudbees.net/)
 
 
-<h4> Milestone 3 deliverables </h4>
+<h4> Milestone 3 Deliverables </h4>
 
-* [YouTube screencast for users] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/YouTube-screencast-for-users)
+* [Version 1.0 of OCKB](http://two.ockb.cloudbees.net/)
 
-* [YouTube screencast for developers] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/YouTube-screencast-for-developers)
+* [YouTube Screencast for Users] (https://www.youtube.com/watch?v=JlouyvVAMbs&feature=youtu.be)
 
-* [GitHub pages "home page" for project] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/GitHub-Pages-%E2%80%9Chome-page%E2%80%9D-for-project)
+* [YouTube Screencast for Developers] (http://youtu.be/us8srSnt1KE)
+
+* [Final Developer Guide](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Final-Developer-Guide)
+
+* [Final User Guide](https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Final-User-Guide)
+
+* [GitHub Home Page] (http://openclassknowledgebase.github.io/OCKB/)
+
+* [Milestone 3 Issues](https://github.com/OpenClassKnowledgeBase/OCKB/issues?direction=desc&milestone=2&page=1&sort=updated&state=closed)
+
+* [Use Cases 3.0] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/Use-Cases-3.0)
 
 * [User Evaluations] (https://github.com/OpenClassKnowledgeBase/OCKB/wiki/User-Evaluation)
 
