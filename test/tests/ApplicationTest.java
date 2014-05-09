@@ -73,7 +73,7 @@ public class ApplicationTest {
     
     @Test
     public void renderDashboardTemplates() {
-        Content dash = views.html.dashboard.render(new ArrayList(), new ArrayList(), "admin");
+        Content dash = views.html.dashboard.render(new ArrayList(), new ArrayList(), "admin", new ArrayList());
         assertThat(contentType(dash)).isEqualTo("text/html");
         assertThat(contentAsString(dash)).contains("My Recent Activity");
         assertThat(contentAsString(dash)).contains("Account Settings");
