@@ -5,14 +5,20 @@ import com.avaje.ebean.Page;
 import com.avaje.ebean.Query;
 
 import models.*;
+import play.Logger;
 import play.data.*;
 import play.mvc.*;
 import views.html.*;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 //CAS imports
 import java.net.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 import javax.xml.parsers.*;
@@ -483,6 +489,50 @@ public class Application extends Controller {
 		// redirect to CAS logout
 		return redirect(CAS_LOGOUT + "?service=" + serviceURL);
 	}
+
+	public static Result editor(String output) {
+	    return ok(views.html.editor.render(output));
+	}
+	
+	public static Result submitCode() throws Exception {
+	    final Map<String, String[]> values = request().body().asFormUrlEncoded();
+        String javaCode = values.get("javaSource")[0];
+        String path = System.getProperty("java.io.tempDir");
+        if (path == null) {
+            path = System.getProperty("user.home") + "/Desktop";
+        }
+        Logger.debug("Result=" + javaCode + "\nPath=" + path);
+        
+        Files.write(Paths.get(path + "/test.java"), javaCode.getBytes());
+        
+        String output1 = runProcess("javac " + path + "/test.java");
+        String output2 = runProcess("java -cp " + path + " test");
+        
+        
+	    return redirect(routes.Application.editor(output2));
+	    
+	}
+	
+	private static String printLines(String name, InputStream ins) throws Exception {
+	    String line = null;
+	    StringBuilder sb = new StringBuilder();
+	    BufferedReader in = new BufferedReader(
+	        new InputStreamReader(ins));
+	    while ((line = in.readLine()) != null) {
+	        sb.append(line + "\n");
+	    }
+	    return sb.toString();
+	  }
+
+	  private static String runProcess(String command) throws Exception {
+	    Process pro = Runtime.getRuntime().exec(command);
+	    String output = "";
+	    output+= printLines(command + " stdout:", pro.getInputStream());
+	    output+= printLines(command + " stderr:", pro.getErrorStream());
+	    pro.waitFor();
+	   // System.out.println(command + " exitValue() " + pro.exitValue());
+	    return output;
+	  }
 
 
 }
