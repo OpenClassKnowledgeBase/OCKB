@@ -509,7 +509,7 @@ public class Application extends Controller {
         String output2 = runProcess("java -cp " + path + " test");
         
         
-	    return redirect(routes.Application.editor(output2));
+	    return redirect(routes.Application.editor(output1 + "\n" + output2));
 	    
 	}
 	
