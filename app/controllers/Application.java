@@ -35,15 +35,15 @@ import org.xml.sax.SAXException;
  * @author Alan Ho
  */
 public class Application extends Controller {	 
-	// CAS Variables 
-	private static final String CAS_LOGIN = "https://authn.hawaii.edu/cas/login";
+	// CAS Variables
+	/*private static final String CAS_LOGIN = "https://authn.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://authn.hawaii.edu/cas/serviceValidate";
-	private static final String CAS_LOGOUT = "https://authn.hawaii.edu/cas/logout";
+	private static final String CAS_LOGOUT = "https://authn.hawaii.edu/cas/logout";*/
 	
 	// TEST CAS Variables for local testing
-/*	private static final String CAS_LOGIN = "https://cas-test.its.hawaii.edu/cas/login";
+	private static final String CAS_LOGIN = "https://cas-test.its.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://cas-test.its.hawaii.edu/cas/serviceValidate";
-	private static final String CAS_LOGOUT = "https://cas-test.its.hawaii.edu/cas/logout";*/
+	private static final String CAS_LOGOUT = "https://cas-test.its.hawaii.edu/cas/logout";
 	
 
 	/**********************
@@ -519,7 +519,7 @@ public class Application extends Controller {
 	    BufferedReader in = new BufferedReader(
 	        new InputStreamReader(ins));
 	    while ((line = in.readLine()) != null) {
-	        sb.append(line + "\n");
+	        sb.append(line + "<br>");
 	    }
 	    return sb.toString();
 	  }
