@@ -15,8 +15,11 @@
             <h1>Pick a Category to Explore</h1>
           </div>
         </div>
-        <div class = "row">
-            <br>
+        <div class = "row row-title">
+            <div class = "col-xs-12" ID = "addCategory">
+        		<span class="glyphicon glyphicon-plus"></span>
+            	<a class = "postLink" href = "@routes.Application.addCategory()">Request a Category</a>
+        	</div>     
         </div>
         
         @for(index <- 0 until categories.size){
@@ -45,9 +48,6 @@
                 </div>
             }
         }
-        <div class="col-xs-6 col-sm-4">
-            <a href="@routes.Application.requestCategory" class="btn btn-primary btn-lg">Request new category</a>
-        </div>
     </div>
 
 }

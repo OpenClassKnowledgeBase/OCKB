@@ -26,3 +26,18 @@ h3 {
 #addCategory {
 	text-align: center;
 }
+
+.catTitle {
+	font-size:36px;
+}
+.postLink {
+	font-size: 24px;
+}
+
+.glyph {
+	font-size: 14px;
+}
+
+.row-title {
+	padding-bottom: 15px;
+}
