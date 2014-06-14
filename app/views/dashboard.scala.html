@@ -5,7 +5,7 @@
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/dashboard.css")">
 }
  
-@main("Dashboard",scripts) {
+@main("Dashboard", scripts) {
     <div class="container">
       <!-- Example row of columns -->
       <div class = "row header">
@@ -114,6 +114,10 @@
           <span class = "col-lg-4">
             <span class="glyphicon glyphicon-plus"></span>
             <a class = "postLink" href = "@routes.Application.viewRequestedCategories">View Requested Categories</a>
+          </span>
+          <span class = "col-lg-4">
+            <span class="glyphicon glyphicon-wrench"></span>
+            <a class = "postLink" href = "@routes.Application.editCategories">Edit Categories</a>
           </span>
           } else {}
         </div>

@@ -1,0 +1,43 @@
+@(currentCategory: Category) 
+
+@scripts = {
+
+<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+	
+} 
+
+@main(currentCategory.title, scripts) {
+
+<div class="container">
+	<ol class="breadcrumb">
+		<li><a href="@routes.Application.dashboard()">Dashboard</a></li>
+		<li><a href="@routes.Application.editCategories()">Edit
+				Category</a></li>
+		<li><a href="#">Editing @currentCategory.title</a>
+	</ol>
+
+	<hr>
+	
+      <h1>Editing @currentCategory.title</h1>
+      <p>@currentCategory.description</p>
+
+	<form action="@routes.Application.updateCategory(currentCategory.id)" method="POST">
+		<div class="form-group">
+			<label for="categoryName">
+				<h3>Category Name</h3>
+			</label> 
+			<input name="categoryName" type="text" class="form-control" placeholder="@currentCategory.title">
+		</div>
+
+		<div class="form-group">
+			<label for="categoryDescription">
+				<h3>Category Description</h3>
+			</label> 
+			<input name="categoryDescription" type="text" class="form-control" placeholder="@currentCategory.description">
+		</div>
+
+		<input type="submit" value="Update" class="btn btn-success btn-md"> 
+		<a href="@routes.Application.editCategories()" class="btn btn-danger btn-md">Cancel</a>
+	</form>
+
+	}

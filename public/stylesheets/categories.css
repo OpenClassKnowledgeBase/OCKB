@@ -9,6 +9,20 @@ a:hover{
 p{
     font-size: 14px;
 }
+
+body {
+    padding-bottom: 2cm;
+}
+
 h1{
     text-align: center;
+}
+h3 {
+	margin-bottom: 0;
+}
+#deleteButton {
+	margin-left: 17.5px;	
+}
+#addCategory {
+	text-align: center;
 }

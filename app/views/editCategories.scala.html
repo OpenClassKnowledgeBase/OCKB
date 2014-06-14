@@ -1,0 +1,83 @@
+@(categories: List[Category])
+
+ @scripts = {
+    <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/categories.css")">
+ }
+ 
+ @import helper._
+
+ @main("Edit Categories", scripts) {
+    <!-- <h1>count:  @categories.size()</h1> -->
+    <div class = "container">
+        <div class = "row">
+          <div class = "col-xs-11">
+            <h1>Edit Categories</h1>
+          </div>    
+        </div>
+        <div class = "col-xs-11" ID = "addCategory">
+        	<span class="glyphicon glyphicon-plus"></span>
+            <a class = "postLink" href = "@routes.Application.addCategory()">Add a new Category</a>
+        </div>        
+        
+        <div class = "row">
+            <br>
+        </div>
+        
+        <body>
+        @for(index <- 0 until categories.size){
+            @if(index % 3 == 0){
+                <div class = "row">
+                    <div class="col-xs-6 col-sm-4">
+                        <h3>@categories(index).title</h3>
+                        <p>@categories(index).description</p>						
+          				<span class = "col-sm-4">
+            				<span class="glyphicon glyphicon-edit"></span>
+            				<a class = "postLink" href = "@routes.Application.editCategory(categories(index).id)">Edit</a>
+          				</span>						
+						<span class = "col-sm-4">
+           					<span class="glyphicon glyphicon-trash"></span>
+            				<a class = "postLink" href = "@routes.Application.deleteCategory(categories(index).id)" 
+            				onclick="return confirm('This will delete all posts in this category.  Are you sure?');">Delete</a>
+          				</span>                   
+					</div> 
+            }
+            @if(index % 3 == 1){
+                    <div class="col-xs-6 col-sm-4">
+                        <h3>@categories(index).title</h3>
+                        <p>@categories(index).description</p>
+          				<span class = "col-sm-4">
+            				<span class="glyphicon glyphicon-edit"></span>
+            				<a class = "postLink" href = "@routes.Application.editCategory(categories(index).id)">Edit</a>
+          				</span>						
+						<span class = "col-sm-4">
+           					<span class="glyphicon glyphicon-trash"></span>
+            				<a class = "postLink" href = "@routes.Application.deleteCategory(categories(index).id)" 
+            				onclick="return confirm('This will delete all posts in this category.  Are you sure?');">Delete</a>
+          				</span>                    
+                    </div>  
+            }      
+            @if(index % 3 == 2){
+                <div class="clearfix visible-xs"></div>
+                  <div class="hidden-xs col-xs-6 col-sm-4 category">
+                        <h3>@categories(index).title</h3>
+                        <p>@categories(index).description</p>
+          				<span class = "col-sm-4">
+            				<span class="glyphicon glyphicon-edit"></span>
+            				<a class = "postLink" href = "@routes.Application.editCategory(categories(index).id)">Edit</a>
+          				</span>						
+						<span class = "col-sm-4">
+           					<span class="glyphicon glyphicon-trash"></span>
+            				<a class = "postLink" href = "@routes.Application.deleteCategory(categories(index).id)" 
+            				onclick="return confirm('This will delete all posts in this category.  Are you sure?');">Delete</a>
+          				</span>                     
+                  </div>
+                </div>
+
+            }
+        }
+</body>
+
+    </div>
+
+}

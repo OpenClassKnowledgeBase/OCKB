@@ -195,7 +195,7 @@ public class Application extends Controller {
 		Category requestedCategory = Category.getCategory(cid);
 
 		return ok(views.html.approveRequestedCategory.render(requestedCategory));
-	}
+	}	
 
 	/**
 	 * A Professor/TA/admin user may click this approve button to make changes to the web application
@@ -229,7 +229,118 @@ public class Application extends Controller {
 
 		return redirect(routes.Application.viewRequestedCategories());
 	}
+	
+	/**
+	 * Allows an admin user to edit Categories.  They can edit the Category name/description
+	 * or delete the Category.
+	 * 
+	 * @return Redirects user to a view of the categories to edit.
+	 */
+	public static Result editCategories() {
+	    
+        List<Category> categoryList = Category.findAll();
 
+        //Removes categories with 'requested' boolean set to true
+        for(int i = categoryList.size() - 1; i >= 0; i--) {
+            if(categoryList.get(i).requested == true) {
+                categoryList.remove(i);
+            }
+        }
+
+        //Sorts the categories based on their Title
+        Collections.sort(categoryList, new Comparator<Category>() {
+            @Override
+            public int compare(final Category object1, final Category object2) {
+                return object1.getTitle().compareTo(object2.getTitle());
+            }
+        } );
+	    
+	    return ok(views.html.editCategories.render(categoryList));
+	}
+
+	/**
+	 * Allows an admin user to edit the Category name/description.
+	 * 
+	 * @param cid Category id
+	 * @return Redirects user to a view of that particular Category to edit.
+	 */
+	public static Result editCategory(Long cid) {
+	    
+        Category currentCategory = Category.getCategory(cid);
+        
+        return ok(views.html.editCategory.render(currentCategory));
+	}
+	
+	/**
+	 * Updates a Category name/description if anything was changed.
+	 * 
+	 * @param cid Category id
+     * @return Redirects user to a view of the categories to edit.
+	 */
+	public static Result updateCategory(Long cid) {
+	    
+        Category currentCategory = Category.getCategory(cid);
+
+        final Map<String, String[]> values = request().body().asFormUrlEncoded();   
+        String categoryName = values.get("categoryName")[0];
+        String categoryDescription = values.get("categoryDescription")[0];
+
+        currentCategory.title = categoryName;
+        currentCategory.description = categoryDescription;
+        currentCategory.save();
+        
+        return redirect(routes.Application.editCategories());	    	    
+	}
+
+    /**
+     * Allows an admin user to add a new category from the edit category page. 
+     * 
+     * @return Redirects user to a view of the edit categories page.
+     */
+    public static Result addCategory() {       
+
+        return ok(views.html.addCategory.render());
+    }
+    
+	/**
+	 * Allows an admin user to delete a category from the edit category page.
+	 * 
+	 * @param cid Category id
+     * @return Redirects user to a view of the categories to edit.
+	 */
+	public static Result deleteCategory(Long cid) {
+	    Category currentCategory = Category.getCategory(cid);
+	    
+	    List<Post> temp = Post.findAll();
+	    for(Post p : temp) {
+	        if(p.category.equals(currentCategory)) {
+	            p.delete(p.id);
+	        }
+	    }
+	    
+        Category.delete(cid);
+
+        return redirect(routes.Application.editCategories());	        
+	}
+	
+	/**
+     * An admin user can click this button to add the new Category to the list of categories.
+	 * 
+	 * @return Redirects the user to a view of the edit categories page with the newly made Category.
+	 */
+	public static Result addCategorySubmit() {
+        final Map<String, String[]> values = request().body().asFormUrlEncoded();   
+        String categoryName = values.get("categoryName")[0];
+        String categoryDescription = values.get("categoryDescription")[0];
+        String user = session("username");
+
+        //A new category information is created.
+        Category.create(categoryName, categoryDescription, "", false, user);	
+        
+        return redirect(routes.Application.editCategories());
+	}
+	
+	
 	/**********************
 	 *                    *
 	 *   POSTING METHODS  *
