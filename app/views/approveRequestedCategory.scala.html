@@ -28,7 +28,10 @@
   <form action = "@routes.Application.approveRequestedCategorySubmit(requestedCategory.id)" method="POST">
     <div class="form-group">
       <label for="categoryName"><h3>Adjust Category Name as needed</h3></label>      
-      <input name="categoryName" type="text" class="form-control" placeholder="Adjust Category Name as needed">
+      <input id="categoryName" name="categoryName" type="text" class="form-control" placeholder="Adjust Category Name as needed">
+      <script>
+	  	$('#categoryName').val('@requestedCategory.title');
+	  </script>
     </div>
 
     <div class="form-group">
