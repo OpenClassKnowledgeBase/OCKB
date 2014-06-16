@@ -341,6 +341,19 @@ public class Application extends Controller {
 	}
 	
 	
+	public static Result sortByCourseOrder() {
+        List<Category> categoryList = Category.findAll();
+
+        //Removes categories with 'requested' boolean set to true
+        for(int i = categoryList.size() - 1; i >= 0; i--) {
+            if(categoryList.get(i).requested == true) {
+                categoryList.remove(i);
+            }
+        }	    
+	    return ok(views.html.sortByCourseOrder.render(categoryList));
+	}
+	
+	
 	/**********************
 	 *                    *
 	 *   POSTING METHODS  *

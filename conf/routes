@@ -23,6 +23,7 @@ GET     /editor                     controllers.Application.editor(output: Strin
 GET		/editCategories				controllers.Application.editCategories()
 GET 	/editCategory/:cid			controllers.Application.editCategory(cid: Long)
 GET		/editCategories/:cid		controllers.Application.deleteCategory(cid: Long)
+GET 	/sortByCourseOrder			controllers.Application.sortByCourseOrder()
 POST	/editCategories/:cid		controllers.Application.updateCategory(cid: Long)
 POST    /submitCode                 controllers.Application.submitCode()
 POST	/createPost					controllers.Application.createPost(cid: Long)

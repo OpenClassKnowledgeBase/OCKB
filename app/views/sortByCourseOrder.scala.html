@@ -1,0 +1,60 @@
+@(categories: List[Category]) 
+
+@scripts = {
+	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/sortable.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/categories.css")">
+	<script src="@routes.Assets.at("javascripts/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js")"></script>
+	<script>
+		$(function() {
+			$( "#sortable" ).sortable();
+			$( ".selector" ).sortable({ grid: [ 20, 10 ] });
+			$( "#sortable" ).disableSelection();
+		});
+	</script>
+} 
+
+@main("Sort by Course Order", scripts) {
+    <div class = "container">
+        <div class = "row">
+          <div class = "col-xs-11">
+            <h1>Sort Categories by Course Order</h1>
+          </div>    
+        </div>
+        <div class = "col-xs-11" ID = "addCategory">
+        	<span class="glyphicon glyphicon-plus"></span>
+            <a class = "postLink" href = "@routes.Application.addCategory()">Add a new Category</a>
+        </div>        
+        
+        <div class = "row">
+            <br>
+        </div>
+        
+        <body>
+        <ul id="sortable">
+        @for(index <- 0 until categories.size){
+            @if(index % 3 == 0){
+<div class="col-xs-6 col-sm-4">
+<li class="ui-state-default">@categories(index).title</li>
+</div>
+            }
+            @if(index % 3 == 1){
+<div class="col-xs-6 col-sm-4">
+<li class="ui-state-default">@categories(index).title</li>
+</div>
+            }      
+            @if(index % 3 == 2){
+<div class="col-xs-6 col-sm-4">
+<li class="ui-state-default">@categories(index).title</li>
+</div>
+
+            }
+        }
+        </ul>
+</body>
+
+    </div>
+
+
+
+}
