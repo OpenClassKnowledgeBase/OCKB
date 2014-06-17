@@ -614,26 +614,35 @@ public class Application extends Controller {
 		return redirect(CAS_LOGOUT + "?service=" + serviceURL);
 	}
 
-	public static Result editor(String output) {
-	    return ok(views.html.editor.render(output));
+	public static Result editor(String input, String output) {
+	    return ok(views.html.editor.render(input, output));
 	}
 	
 	public static Result submitCode() throws Exception {
 	    final Map<String, String[]> values = request().body().asFormUrlEncoded();
         String javaCode = values.get("javaSource")[0];
+        String[] tokens = javaCode.split("\\s+");
+        String className = "";
+        for (int i = 0; i < tokens.length; i++) {
+            Logger.debug(tokens[i]);
+            if (tokens[i].equals("class")) {
+                className = tokens[i+1];
+                break;
+            }
+        }
         String path = System.getProperty("java.io.tempDir");
         if (path == null) {
             path = System.getProperty("user.home") + "/Desktop";
         }
         Logger.debug("Result=" + javaCode + "\nPath=" + path);
         
-        Files.write(Paths.get(path + "/test.java"), javaCode.getBytes());
+        Files.write(Paths.get(path + "/" + className + ".java"), javaCode.getBytes());
         
-        String output1 = runProcess("javac " + path + "/test.java");
-        String output2 = runProcess("java -cp " + path + " test");
+        String output1 = runProcess("javac " + path + "/" + className + ".java");
+        String output2 = runProcess("java -cp " + path + " " + className);
         
         
-	    return redirect(routes.Application.editor(output1 + "\n" + output2));
+	    return redirect(routes.Application.editor(javaCode, output1 + "\n" + output2));
 	    
 	}
 	
