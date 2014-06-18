@@ -361,8 +361,19 @@ public class Application extends Controller {
 	
 	public static Result saveSortByCourseOrder() {
 	    List<Category> categoryList = Category.findAll();
-	   	    
-        return ok(views.html.sortByCourseOrder.render(categoryList));
+	    
+        final Map<String, String[]> values = request().body().asFormUrlEncoded();   
+        String sortCourseOrder = values.get("sortCourseOrder")[0];
+        
+        List<Category> sortByCourseOrder = new ArrayList<Category>();
+        
+	   	String[] formSplit = sortCourseOrder.split(",");
+	   	
+	   	for(int i = 0; i < formSplit.length; i++) {
+	   	    sortByCourseOrder.add(Category.getCategory(Long.parseLong(formSplit[i])));
+	   	}
+        
+        return ok(views.html.sortByCourseOrder.render(sortByCourseOrder));
 	}	
 	
 	/**********************

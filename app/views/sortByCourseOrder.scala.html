@@ -5,12 +5,12 @@
 	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/sortable.css")">
 	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/categories.css")">
 	<script src="@routes.Assets.at("javascripts/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js")"></script>
-
 	<script>
       $(function() {
          $('#sortable').sortable({
             update: function(event, ui) {
                var productOrder = $(this).sortable('toArray').toString();
+               document.getElementById("sortCourseOrder").value = productOrder;
                $("#sortable-9").text (productOrder);
             }
          });
@@ -31,34 +31,31 @@
 	</div>
 	
 	<br>
-
-	<div class="col-xs-11" ID="addCategory">
-		<span class="glyphicon glyphicon-save"></span> 
-		<a class="postLink" id = "test" href="#)" >Save new Course Order</a>
-	</div>
+   
+	<form action="@routes.Application.saveSortByCourseOrder()" method="POST">
+		<div class="form-group">
+			<input id="sortCourseOrder" name="sortCourseOrder" type="hidden" class="form-control">
+		</div>
+		
+		<div class="col-xs-11" ID="addCategory">
+			<span class="glyphicon glyphicon-save"></span> 
+			<a href="#" onclick="$(this).closest('form').submit(); return false;">Save New Course Order</a>	
+		</div>
+	</form>
+		
 	<div class="row">
 		<br>
 	</div>
-
 
 	<ul id="sortable">
 		@for(index <- 0 until categories.size){ @if(index % 3 == 0){
-			<li id="@categories(index).title" class="default">@categories(index).title</li>
+			<li id="@categories(index).id" class="default">@categories(index).title</li>
 		} @if(index % 3 == 1){
-			<li id="@categories(index).title" class="default">@categories(index).title</li>
+			<li id="@categories(index).id" class="default">@categories(index).title</li>
 		} @if(index % 3 == 2){		
-			<li id="@categories(index).title" class="default">@categories(index).title</li>
+			<li id="@categories(index).id" class="default">@categories(index).title</li>
 		} }
 	</ul>
-
-	<div class="row">
-		<br>
-	</div>
-	
-	<h3>
-		<span id="sortable-9"></span>
-	</h3>
-
 
 </div>
 
