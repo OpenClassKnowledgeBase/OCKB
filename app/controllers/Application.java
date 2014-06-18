@@ -9,6 +9,7 @@ import play.Logger;
 import play.data.*;
 import play.mvc.*;
 import views.html.*;
+import play.Routes;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -340,7 +341,11 @@ public class Application extends Controller {
         return redirect(routes.Application.editCategories());
 	}
 	
-	
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
 	public static Result sortByCourseOrder() {
         List<Category> categoryList = Category.findAll();
 
@@ -353,6 +358,12 @@ public class Application extends Controller {
 	    return ok(views.html.sortByCourseOrder.render(categoryList));
 	}
 	
+	
+	public static Result saveSortByCourseOrder() {
+	    List<Category> categoryList = Category.findAll();
+	   	    
+        return ok(views.html.sortByCourseOrder.render(categoryList));
+	}	
 	
 	/**********************
 	 *                    *
