@@ -636,11 +636,12 @@ public class Application extends Controller {
 		return redirect(CAS_LOGOUT + "?service=" + serviceURL);
 	}
 
-	public static Result editor(String input, String output) {
-	    return ok(views.html.editor.render(input, output));
+	public static Result editor(Long chid, String input, String output) {
+	    CodeChallenge challenge = CodeChallenge.getChallenge(chid);
+	    return ok(views.html.editor.render(challenge, input, output));
 	}
 	
-	public static Result submitCode() throws Exception {
+	public static Result submitCode(Long chid) throws Exception {
 	    final Map<String, String[]> values = request().body().asFormUrlEncoded();
         String javaCode = values.get("javaSource")[0];
         String[] tokens = javaCode.split("\\s+");
@@ -662,9 +663,15 @@ public class Application extends Controller {
         
         String output1 = runProcess("javac " + path + "/" + className + ".java");
         String output2 = runProcess("java -cp " + path + " " + className);
+        String finalOutput = "";
+        if (output1.equals("")) {
+            finalOutput = output2;
+        } else {
+            finalOutput = output1 + "\n" + output2;
+        }
         
         
-	    return redirect(routes.Application.editor(javaCode, output1 + "\n" + output2));
+	    return redirect(routes.Application.editor(chid, javaCode, finalOutput));
 	    
 	}
 	
@@ -674,7 +681,7 @@ public class Application extends Controller {
 	    BufferedReader in = new BufferedReader(
 	        new InputStreamReader(ins));
 	    while ((line = in.readLine()) != null) {
-	        sb.append(line + "<br>");
+	        sb.append(line + "\n");
 	    }
 	    return sb.toString();
 	  }
