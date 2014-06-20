@@ -49,11 +49,21 @@
 
 	<ul id="sortable">
 		@for(index <- 0 until categories.size){ @if(index % 3 == 0){
-			<li id="@categories(index).id" class="default">@categories(index).title</li>
+			<li id="@categories(index).id" class="default">@categories(index).title
+				<br>
+				<p>@categories(index).description</p>
+			</li>
+			
 		} @if(index % 3 == 1){
-			<li id="@categories(index).id" class="default">@categories(index).title</li>
+			<li id="@categories(index).id" class="default">@categories(index).title
+				<br>
+				<p>@categories(index).description</p>
+			</li>		
 		} @if(index % 3 == 2){		
-			<li id="@categories(index).id" class="default">@categories(index).title</li>
+			<li id="@categories(index).id" class="default">@categories(index).title
+				<br>
+				<p>@categories(index).description</p>
+			</li>	
 		} }
 	</ul>
 

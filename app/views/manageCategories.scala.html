@@ -1,0 +1,39 @@
+@(currentSortOrder: String) 
+
+@scripts = {
+	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/categories.css")">
+} 
+
+@main("Manage Categories", scripts) {
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-11">
+			<h1>Manage Categories</h1>
+		</div>
+	</div>
+
+	<span class="col-lg-4"> 
+		<span class="glyphicon glyphicon-wrench"></span> 
+			<a class="postLink" href="@routes.Application.editCategories()">Add/Edit/Delete Categories</a>
+	</span> 
+	
+	<div class="row">
+		<br>
+	</div>
+	
+	<h3>Set Categories View Order</h3>
+	<div class="btn-group">
+	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+	    Current Order - @currentSortOrder <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" role="menu">
+	    <li><a href="@routes.Application.sortAlphabetically()">Alphabetically</a></li>
+	    <li><a href="@routes.Application.sortByCourseOrder()">By Course Order</a></li>
+	  </ul>
+	</div>	
+		
+	
+</div>
+}

@@ -46,7 +46,9 @@ public class Application extends Controller {
 	private static final String CAS_VALIDATE = "https://cas-test.its.hawaii.edu/cas/serviceValidate";
 	private static final String CAS_LOGOUT = "https://cas-test.its.hawaii.edu/cas/logout";
 	
-
+    private static List<Category> currentSortOrderList;
+    private static String currentSortOrderString;
+    
 	/**********************
 	 *                    *
 	 * MAIN PAGE METHODS *
@@ -60,6 +62,7 @@ public class Application extends Controller {
 	 * @return A rendered view of our index page.
 	 */
 	public static Result index() {
+		sortAlphabetically();
 		return ok(views.html.index.render());
 	}
 
@@ -98,25 +101,8 @@ public class Application extends Controller {
 	 * @return A rendered view of all the categories in the web application.
 	 */
 	public static Result categories() {
-		//figure out how to put this in global
-		List<Category> categoryList = Category.findAll();
 
-		//Removes categories with 'requested' boolean set to true
-		for(int i = categoryList.size() - 1; i >= 0; i--) {
-			if(categoryList.get(i).requested == true) {
-				categoryList.remove(i);
-			}
-		}
-
-		//Sorts the categories based on their Title
-		Collections.sort(categoryList, new Comparator<Category>() {
-			@Override
-			public int compare(final Category object1, final Category object2) {
-				return object1.getTitle().compareTo(object2.getTitle());
-			}
-		} );
-
-		return ok(views.html.categories.render(categoryList));
+        return ok(views.html.categories.render(getCurrentSortOrderList()));
 	}    
 
 	/**
@@ -342,11 +328,57 @@ public class Application extends Controller {
 	}
 	
 	/**
-	 * 
-	 * 
-	 * @return
-	 */
-	public static Result sortByCourseOrder() {
+     * 
+     * 
+     * @return
+     */
+    public static Result sortByCourseOrder() {
+        	    
+        return ok(views.html.sortByCourseOrder.render(getCurrentSortOrderList()));
+    }
+
+    /**
+     * 
+     * 
+     * @return
+     */
+    public static Result saveSortByCourseOrder() {
+
+        final Map<String, String[]> values = request().body().asFormUrlEncoded();   
+        String sortCourseOrder = values.get("sortCourseOrder")[0];
+
+        List<Category> sortByCourseOrder = new ArrayList<Category>();
+
+        String[] formSplit = sortCourseOrder.split(",");
+
+        for(int i = 0; i < formSplit.length; i++) {
+            sortByCourseOrder.add(Category.getCategory(Long.parseLong(formSplit[i])));
+        }
+        
+        setCurrentSortOrderList(sortByCourseOrder);
+        setCurrentSortOrderString("Sort by Course Order");
+
+        return ok(views.html.manageCategories.render(getCurrentSortOrderString()));
+    }	
+
+
+    /**
+     * 
+     * 
+     * @return
+     */
+    public static Result manageCategories() {
+        String currentSortOrder = getCurrentSortOrderString();
+        
+        return ok(views.html.manageCategories.render(currentSortOrder));	    
+    }
+
+    /**
+     * 
+     * 
+     * @return
+     */
+    public static Result sortAlphabetically() {
         List<Category> categoryList = Category.findAll();
 
         //Removes categories with 'requested' boolean set to true
@@ -354,27 +386,21 @@ public class Application extends Controller {
             if(categoryList.get(i).requested == true) {
                 categoryList.remove(i);
             }
-        }	    
-	    return ok(views.html.sortByCourseOrder.render(categoryList));
-	}
-	
-	
-	public static Result saveSortByCourseOrder() {
-	    List<Category> categoryList = Category.findAll();
-	    
-        final Map<String, String[]> values = request().body().asFormUrlEncoded();   
-        String sortCourseOrder = values.get("sortCourseOrder")[0];
+        }
+
+        //Sorts the categories based on their Title
+        Collections.sort(categoryList, new Comparator<Category>() {
+            @Override
+            public int compare(final Category object1, final Category object2) {
+                return object1.getTitle().compareTo(object2.getTitle());
+            }
+        } );
         
-        List<Category> sortByCourseOrder = new ArrayList<Category>();
-        
-	   	String[] formSplit = sortCourseOrder.split(",");
-	   	
-	   	for(int i = 0; i < formSplit.length; i++) {
-	   	    sortByCourseOrder.add(Category.getCategory(Long.parseLong(formSplit[i])));
-	   	}
-        
-        return ok(views.html.sortByCourseOrder.render(sortByCourseOrder));
-	}	
+        setCurrentSortOrderList(categoryList);
+        setCurrentSortOrderString("Alphabetically");
+
+        return ok(views.html.manageCategories.render(currentSortOrder));	    
+    }
 	
 	/**********************
 	 *                    *
@@ -563,6 +589,42 @@ public class Application extends Controller {
 	public static Result notifications() {
 		return ok(views.html.notifications.render());
 	}
+	
+    /**
+     * 
+     * 
+     * @return
+     */
+    public static List<Category> getCurrentSortOrderList() {
+        return currentSortOrderList;
+    }
+    
+    /**
+     * 
+     * 
+     * @param newSortOrder
+     */
+    public static void setCurrentSortOrderList(List<Category> newSortOrderList) {
+        currentSortOrderList = newSortOrderList;
+    }
+    
+    /**
+     * 
+     * 
+     * @return
+     */
+    public static String getCurrentSortOrderString() {
+        return currentSortOrderString;
+    }
+    
+    /**
+     * 
+     * 
+     * @param newSortOrder
+     */
+    public static void setCurrentSortOrderString(String newSortOrderString) {
+        currentSortOrderString = newSortOrderString;
+    }
 
 	/***********************
 	 *                     *
