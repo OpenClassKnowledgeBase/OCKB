@@ -399,7 +399,7 @@ public class Application extends Controller {
         setCurrentSortOrderList(categoryList);
         setCurrentSortOrderString("Alphabetically");
 
-        return ok(views.html.manageCategories.render(currentSortOrder));	    
+        return ok(views.html.manageCategories.render(getCurrentSortOrderString()));	    
     }
 	
 	/**********************

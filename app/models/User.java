@@ -34,6 +34,10 @@ public class User extends Model {
     @Required
     public int posts;
     
+    @ManyToOne
+    @JoinColumn(name="course_id")
+    public Course course;
+    
     public User(String email, String name, String status, String role, int posts) {
       this.email = email + "@hawaii.edu";
       this.name = name;
