@@ -225,24 +225,7 @@ public class Application extends Controller {
 	 */
 	public static Result editCategories() {
 	    
-        List<Category> categoryList = Category.findAll();
-
-        //Removes categories with 'requested' boolean set to true
-        for(int i = categoryList.size() - 1; i >= 0; i--) {
-            if(categoryList.get(i).requested == true) {
-                categoryList.remove(i);
-            }
-        }
-
-        //Sorts the categories based on their Title
-        Collections.sort(categoryList, new Comparator<Category>() {
-            @Override
-            public int compare(final Category object1, final Category object2) {
-                return object1.getTitle().compareTo(object2.getTitle());
-            }
-        } );
-	    
-	    return ok(views.html.editCategories.render(categoryList));
+	    return ok(views.html.editCategories.render(getCurrentSortOrderList()));
 	}
 
 	/**
@@ -355,8 +338,18 @@ public class Application extends Controller {
             sortByCourseOrder.add(Category.getCategory(Long.parseLong(formSplit[i])));
         }
         
-        setCurrentSortOrderList(sortByCourseOrder);
-        setCurrentSortOrderString("Sort by Course Order");
+        //setCurrentSortOrderList(sortByCourseOrder);
+        //setCurrentSortOrderString("Sort by Course Order");
+        
+        Course course = Course.getCourse(1L);
+        
+        course.categoryOrder = "Sort by Course Order";
+        course.currentSortOrder = sortByCourseOrder;
+        course.save();
+        
+        for(Category s : course.currentSortOrder) {
+            System.out.println(s.title);
+        }
 
         return ok(views.html.manageCategories.render(getCurrentSortOrderString()));
     }	
@@ -396,9 +389,19 @@ public class Application extends Controller {
             }
         } );
         
-        setCurrentSortOrderList(categoryList);
-        setCurrentSortOrderString("Alphabetically");
+        //setCurrentSortOrderList(categoryList);
+        //setCurrentSortOrderString("Alphabetically");
+        
+        Course course = Course.getCourse(1L);
+        
+        course.categoryOrder = "Alphabetically";
+        course.currentSortOrder = categoryList;
+        course.save();
 
+        for(Category s : course.currentSortOrder) {
+            System.out.println(s.title);
+        }
+        
         return ok(views.html.manageCategories.render(getCurrentSortOrderString()));	    
     }
 	
@@ -531,6 +534,24 @@ public class Application extends Controller {
         currentPost.save();
         return redirect(routes.Application.category(cid, 0, "datePosted", "desc", ""));	    
 	}
+	
+    /******************************
+     *                            *
+     *   CODE CHALLENGE METHODS   *
+     *                            *
+     ******************************/ 
+	
+	public static Result codeChallengeSettings() {
+        
+	    return ok(views.html.codeChallengeSettings.render());
+	}
+	
+	public static Result codeChallengeUpdate() {
+        final Map<String, String[]> values = request().body().asFormUrlEncoded();   
+        String codeChallengeTime = values.get("codeChallengeTime")[0];
+        
+        return ok(views.html.codeChallengeSettings.render());
+	}
 
 	/**********************
 	 *                    *
@@ -595,8 +616,10 @@ public class Application extends Controller {
      * 
      * @return
      */
-    public static List<Category> getCurrentSortOrderList() {
-        return currentSortOrderList;
+    public static List<Category> getCurrentSortOrderList() {    
+        Course course = Course.getCourse(1L);
+        List<Category> here = course.currentSortOrder;
+        return here;
     }
     
     /**
@@ -614,7 +637,9 @@ public class Application extends Controller {
      * @return
      */
     public static String getCurrentSortOrderString() {
-        return currentSortOrderString;
+        Course course = Course.getCourse(1L);
+        String here = course.categoryOrder;
+        return here;
     }
     
     /**

@@ -3,6 +3,9 @@
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/posts.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.countdown.css")">
+    <script src="@routes.Assets.at("javascripts/jquery.plugin.js")"></script>
+    <script src="@routes.Assets.at("javascripts/jquery.countdown.js")"></script>
     <script src="@routes.Assets.at("javascripts/ckeditor/ckeditor.js")"></script>
     <script>
     	function vote(id, voteAmount) {
@@ -16,6 +19,11 @@
     		}
     		$("#"+id).addClass("voted-color");
     	}
+    </script>
+    <script>
+    	$(function () {
+    		$('#defaultCountdown').countdown({until: 600, format: 'MS', compact: true});
+    	});
     </script>
  }
  
@@ -44,6 +52,7 @@
       <h1>@currentPost.category.getTitle()</h1>
       <p>@currentPost.category.description</p>
           
+<div id="defaultCountdown"></div>
 
       @if(userRole== "admin" && currentPost.isSticky == false) {
         <a class="btn btn-success btn-md" href="@routes.Application.makePostSticky(currentPost.category.id, currentPost.id)">Sticky this Post</a>

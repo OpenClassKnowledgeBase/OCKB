@@ -23,6 +23,16 @@ public class Course extends Model{
 	
 	@Required
 	public String categoryOrder;
+	
+	public List<Category> currentSortOrder;
+	
+	public List<Category> getSortOrder() {
+	    return currentSortOrder;
+	}
+	
+	public void setOrder(List<Category> help) {
+	    this.currentSortOrder = help;
+	}
 
 	public Course (String title, String description, String categoryOrder) {
         this.title = title;
