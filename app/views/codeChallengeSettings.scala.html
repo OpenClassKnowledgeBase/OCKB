@@ -1,3 +1,5 @@
+@(currentCourse: Course)
+
 @scripts = {
 	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
 } 
@@ -15,7 +17,7 @@
 		<div class="form-group"> 
 			<div class="col-xs-6 col-sm-4">
 				<label for="codeChallengeTime">
-					<h3>Current Code Challenge Time</h3>
+					<h3>Current Code Challenge Time: @currentCourse.codeChallengeTime </h3>
 				</label>
 				<input id="codeChallengeTime" name="codeChallengeTime" type="text" class="form-control">
 

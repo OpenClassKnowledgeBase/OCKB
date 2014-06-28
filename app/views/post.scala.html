@@ -1,4 +1,4 @@
-@(commentList: List[Comment], currentPost: Post, user:String, userRole: String)
+@(commentList: List[Comment], currentPost: Post, user:String, userRole: String, currentCourse: Course)
 
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
     </script>
     <script>
     	$(function () {
-    		$('#defaultCountdown').countdown({until: 600, format: 'MS', compact: true});
+    		$('#defaultCountdown').countdown({until: @currentCourse.codeChallengeTime, format: 'MS', compact: true});
     	});
     </script>
  }

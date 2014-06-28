@@ -62,7 +62,7 @@ public class Application extends Controller {
 	 * @return A rendered view of our index page.
 	 */
 	public static Result index() {
-		sortAlphabetically();
+	    
 		return ok(views.html.index.render());
 	}
 
@@ -337,19 +337,17 @@ public class Application extends Controller {
         for(int i = 0; i < formSplit.length; i++) {
             sortByCourseOrder.add(Category.getCategory(Long.parseLong(formSplit[i])));
         }
-        
-        //setCurrentSortOrderList(sortByCourseOrder);
-        //setCurrentSortOrderString("Sort by Course Order");
-        
+                             
         Course course = Course.getCourse(1L);
+        course.currentSortOrder = new ArrayList<Category>();
         
-        course.categoryOrder = "Sort by Course Order";
-        course.currentSortOrder = sortByCourseOrder;
-        course.save();
-        
-        for(Category s : course.currentSortOrder) {
-            System.out.println(s.title);
+        for(Category s : sortByCourseOrder) {
+            course.currentSortOrder.add(s);
+            s.course = course;
         }
+             
+        course.categoryOrder = "Sort by Course Order";
+        course.save();
 
         return ok(views.html.manageCategories.render(getCurrentSortOrderString()));
     }	
@@ -389,19 +387,16 @@ public class Application extends Controller {
             }
         } );
         
-        //setCurrentSortOrderList(categoryList);
-        //setCurrentSortOrderString("Alphabetically");
-        
         Course course = Course.getCourse(1L);
         
+        for(Category c : categoryList) {
+            course.currentSortOrder.add(c);
+            c.course = course;
+        }
+           
         course.categoryOrder = "Alphabetically";
-        course.currentSortOrder = categoryList;
         course.save();
 
-        for(Category s : course.currentSortOrder) {
-            System.out.println(s.title);
-        }
-        
         return ok(views.html.manageCategories.render(getCurrentSortOrderString()));	    
     }
 	
@@ -420,13 +415,14 @@ public class Application extends Controller {
 	public static Result post(Long pid) {	    
         String user = session("username");
         List<Comment> cmntList = Comment.find.where().eq("parent_post_id", pid).findList();
+        Course course = Course.getCourse(1L);
         if (user==null) { 
             user = "";
             String userRole = "";
-            return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole));
+            return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole, course));
         } else { 
             String userRole = User.getUser(user).role;
-            return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole));
+            return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole, course));
         }	
 	}
 	
@@ -542,15 +538,20 @@ public class Application extends Controller {
      ******************************/ 
 	
 	public static Result codeChallengeSettings() {
+	    Course course = Course.getCourse(1L);
         
-	    return ok(views.html.codeChallengeSettings.render());
+	    return ok(views.html.codeChallengeSettings.render(course));
 	}
 	
 	public static Result codeChallengeUpdate() {
         final Map<String, String[]> values = request().body().asFormUrlEncoded();   
         String codeChallengeTime = values.get("codeChallengeTime")[0];
         
-        return ok(views.html.codeChallengeSettings.render());
+        Course course = Course.getCourse(1L);
+        course.codeChallengeTime = Integer.parseInt(codeChallengeTime);
+        course.save();
+        
+        return ok(views.html.codeChallengeSettings.render(course));
 	}
 
 	/**********************
@@ -616,19 +617,19 @@ public class Application extends Controller {
      * 
      * @return
      */
-    public static List<Category> getCurrentSortOrderList() {    
+    public static List<Category> getCurrentSortOrderList() {   
         Course course = Course.getCourse(1L);
-        List<Category> here = course.currentSortOrder;
-        return here;
-    }
-    
-    /**
-     * 
-     * 
-     * @param newSortOrder
-     */
-    public static void setCurrentSortOrderList(List<Category> newSortOrderList) {
-        currentSortOrderList = newSortOrderList;
+/*
+        List<Category> sortByCourseOrder = new ArrayList<Category>();
+
+        String[] formSplit = course.sortOrder.split(",");
+
+        for(int i = 0; i < formSplit.length; i++) {
+            sortByCourseOrder.add(Category.getCategory(Long.parseLong(formSplit[i])));
+        }
+        */
+        
+        return course.getSortOrder();
     }
     
     /**
@@ -640,15 +641,6 @@ public class Application extends Controller {
         Course course = Course.getCourse(1L);
         String here = course.categoryOrder;
         return here;
-    }
-    
-    /**
-     * 
-     * 
-     * @param newSortOrder
-     */
-    public static void setCurrentSortOrderString(String newSortOrderString) {
-        currentSortOrderString = newSortOrderString;
     }
 
 	/***********************

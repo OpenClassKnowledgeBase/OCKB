@@ -24,14 +24,17 @@ public class Course extends Model{
 	@Required
 	public String categoryOrder;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "course")
 	public List<Category> currentSortOrder;
-	
+		
+	public Integer codeChallengeTime;
+		
 	public List<Category> getSortOrder() {
 	    return currentSortOrder;
 	}
 	
-	public void setOrder(List<Category> help) {
-	    this.currentSortOrder = help;
+	public void setOrder(List<Category> newOrder) {
+	    this.currentSortOrder = newOrder;
 	}
 
 	public Course (String title, String description, String categoryOrder) {
