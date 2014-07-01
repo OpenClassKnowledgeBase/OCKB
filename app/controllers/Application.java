@@ -1,6 +1,12 @@
 package controllers;
 
 import com.avaje.ebean.Ebean;
+
+//EXCEL IMPORTS
+import org.apache.poi.xssf.usermodel.*;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+
 import com.avaje.ebean.Page;
 import com.avaje.ebean.Query;
 
@@ -12,6 +18,10 @@ import views.html.*;
 import play.Routes;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -330,6 +340,7 @@ public class Application extends Controller {
         final Map<String, String[]> values = request().body().asFormUrlEncoded();   
         String sortCourseOrder = values.get("sortCourseOrder")[0];
 
+        /**
         List<Category> sortByCourseOrder = new ArrayList<Category>();
 
         String[] formSplit = sortCourseOrder.split(",");
@@ -337,15 +348,18 @@ public class Application extends Controller {
         for(int i = 0; i < formSplit.length; i++) {
             sortByCourseOrder.add(Category.getCategory(Long.parseLong(formSplit[i])));
         }
-                             
-        Course course = Course.getCourse(1L);
+                                 
         course.currentSortOrder = new ArrayList<Category>();
         
         for(Category s : sortByCourseOrder) {
             course.currentSortOrder.add(s);
-            s.course = course;
+            //s.course = course;
         }
-             
+        */
+        
+        Course course = Course.getCourse(1L);
+        
+        course.currentSortOrder = sortCourseOrder;  
         course.categoryOrder = "Sort by Course Order";
         course.save();
 
@@ -389,13 +403,87 @@ public class Application extends Controller {
         
         Course course = Course.getCourse(1L);
         
+        /*
         for(Category c : categoryList) {
             course.currentSortOrder.add(c);
-            c.course = course;
+            //c.course = course;
+        }*/
+        
+        String concatIdOrder = "";
+        for(Category c : categoryList) {
+            concatIdOrder += c.id + ",";
         }
            
+        course.currentSortOrder = concatIdOrder;
         course.categoryOrder = "Alphabetically";
         course.save();
+        
+        /** IGNORE FOR NOW, EXCEL STUFF
+        try {
+            
+            FileInputStream file = new FileInputStream(new File("C:\\Users\\Alaan\\Desktop\\test.xlsx"));
+             
+            //Get the workbook instance for XLS file
+            XSSFWorkbook workbook = new XSSFWorkbook (file);
+             
+            //Get first sheet from the workbook
+            XSSFSheet sheet = workbook.getSheetAt(0);
+             
+            ArrayList<ArrayList<String>> rows = new ArrayList<>();
+            ArrayList<String> columns = new ArrayList<>();
+            //Iterate through each rows from first sheet
+            Iterator<Row> rowIterator = sheet.iterator();
+            while(rowIterator.hasNext()) {
+                Row row = rowIterator.next();
+                 
+                columns = new ArrayList<String> ();                     
+
+                //For each row, iterate through each columns
+                Iterator<Cell> cellIterator = row.cellIterator();
+                while(cellIterator.hasNext()) {
+                    
+
+                    Cell cell = cellIterator.next();
+                     
+                    switch(cell.getCellType()) {
+                        case Cell.CELL_TYPE_BOOLEAN:
+                            //System.out.print(cell.getBooleanCellValue() + "\t");
+                            columns.add(cell.getBooleanCellValue() + "\t");
+                            break;
+                        case Cell.CELL_TYPE_NUMERIC:
+                            //System.out.print(cell.getNumericCellValue() + "\t");
+                            columns.add(cell.getNumericCellValue() + "\t");
+                            break;
+                        case Cell.CELL_TYPE_STRING:
+                            //System.out.print(cell.getStringCellValue() + "\t");
+                            columns.add(cell.getStringCellValue() + "\t");
+                            break;
+                    }
+                }
+                rows.add(columns);
+
+                //System.out.println("");
+            }
+            file.close();
+            FileOutputStream out =
+                new FileOutputStream(new File("C:\\Users\\Alaan\\Desktop\\test1.xlsx"));
+            workbook.write(out);
+            out.close();
+            
+            for(int i = 0; i < rows.size(); i++) {
+                for(int j = 0; j < rows.get(i).size(); j++) {
+                    System.out.print(rows.get(i).get(j) + "\t");
+                }
+                System.out.println();
+            }
+            
+             
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } 
+        */
 
         return ok(views.html.manageCategories.render(getCurrentSortOrderString()));	    
     }
@@ -619,17 +707,16 @@ public class Application extends Controller {
      */
     public static List<Category> getCurrentSortOrderList() {   
         Course course = Course.getCourse(1L);
-/*
-        List<Category> sortByCourseOrder = new ArrayList<Category>();
+        
+        List<Category> sortCourseOrder = new ArrayList<Category>();
 
-        String[] formSplit = course.sortOrder.split(",");
+        String[] formSplit = course.currentSortOrder.split(",");
 
         for(int i = 0; i < formSplit.length; i++) {
-            sortByCourseOrder.add(Category.getCategory(Long.parseLong(formSplit[i])));
+            sortCourseOrder.add(Category.getCategory(Long.parseLong(formSplit[i])));
         }
-        */
         
-        return course.getSortOrder();
+        return sortCourseOrder;
     }
     
     /**

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.apache.poi:poi-ooxml-schemas:3.9">
+    <CLASSES>
+      <root url="jar://C:\play-2.2.1\repository\cache\org.apache.poi\poi-ooxml-schemas\jars\poi-ooxml-schemas-3.9.jar!/"/>
+    </CLASSES>
+    <JAVADOC> </JAVADOC>
+    <SOURCES> </SOURCES>
+  </library>
+</component>

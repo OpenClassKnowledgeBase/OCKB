@@ -28,10 +28,6 @@ public class Category extends Model{
 	public Long id;
 	
 	public String user;
-	
-	@ManyToOne
-	@JoinColumn(name = "course_id")
-	public Course course;
 
 	public Category (String title, String description, String url, Boolean requested) {
         this.title = title;

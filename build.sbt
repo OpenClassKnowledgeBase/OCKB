@@ -18,7 +18,9 @@ libraryDependencies ++= Seq(
   "org.seleniumhq.selenium" % "selenium-chrome-driver" % "2.41.0",
   "org.seleniumhq.selenium" % "selenium-android-driver" % "2.39.0",
   "org.seleniumhq.selenium" % "selenium-remote-driver" % "2.41.0",
-  "org.seleniumhq.selenium" % "selenium-api" % "2.41.0"
+  "org.seleniumhq.selenium" % "selenium-api" % "2.41.0",
+  "org.apache.poi" % "poi" % "3.8",
+  "org.apache.poi" % "poi-ooxml" % "3.9"
 )     
 
 play.Project.playJavaSettings

@@ -1,0 +1,8 @@
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea_modules/play-ockb-build.iml" filepath="$PROJECT_DIR$/.idea_modules/play-ockb-build.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/.idea_modules/play-ockb.iml" filepath="$PROJECT_DIR$/.idea_modules/play-ockb.iml"/>
+    </modules>
+  </component>
+</project>

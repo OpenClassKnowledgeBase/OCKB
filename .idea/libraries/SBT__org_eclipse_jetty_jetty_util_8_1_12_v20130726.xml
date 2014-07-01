@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.eclipse.jetty:jetty-util:8.1.12.v20130726">
+    <CLASSES>
+      <root url="jar://C:\play-2.2.1\repository\cache\org.eclipse.jetty\jetty-util\jars\jetty-util-8.1.12.v20130726.jar!/"/>
+    </CLASSES>
+    <JAVADOC> </JAVADOC>
+    <SOURCES> </SOURCES>
+  </library>
+</component>
