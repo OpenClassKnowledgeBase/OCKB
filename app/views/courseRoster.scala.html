@@ -1,12 +1,25 @@
-
+@(studentRoster : java.util.List[java.util.List[String]])
 
 @scripts = {
 	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/roster.css")">
 } 
 
 @main("Course Roster and User Settings", scripts) {
 
 <div class="container">
+  <ol class="breadcrumb">
+    <li>
+      <a href="@routes.Application.dashboard()">Dashboard</a>
+    </li>
+    <li>
+      <a href="@routes.Application.courseSettings()">Course Settings</a>
+    </li>
+    <li>
+      <a href="#">Manage Course Roster and User Settings</a>
+    </li>
+  </ol>
+  
 	<div class="row">
 		<div class="col-xs-11">
 			<h1>Course Roster and User Settings</h1>
@@ -16,9 +29,8 @@
 	Select an Excel file to upload:	
 	<form enctype="multipart/form-data" onsubmit="return checkSize(2097152)" action="@routes.Application.uploadExcelRoster()" method="post">    
 		<input type="file" id="courseRosterExcel" name="courseRosterExcel" accept="MIME_type">
-		<input type="submit" value="Submit">
+		<input type="submit" class="button" value="Submit">
 	</form>
-
 	<script type="text/javascript">
 	function checkSize(max_img_size) {
     	var input = document.getElementById("upload");
@@ -33,6 +45,29 @@
     	return true;
 	}
 	</script>
+	
+	<div class="row">
+		<br>
+	</div>
+	
+	<body>
+	<table>
+		<thead>
+			@for(head <- 0 until studentRoster(0).size) {
+				<th>@studentRoster(0).get(head)</th>
+			}
+		</thead>
+		<tbody>
+			@for(index <- 1 until studentRoster.size) {
+				<tr>
+					@for(cell <- 0 until studentRoster(index).size) {
+						<td>@studentRoster(index).get(cell)</td>
+					}
+				</tr>
+			}
+		</tbody>
+	</table>
+	</body>
 	
 
             

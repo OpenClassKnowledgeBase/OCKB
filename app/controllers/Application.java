@@ -3,10 +3,12 @@ package controllers;
 import com.avaje.ebean.Ebean;
 
 
+
 //EXCEL IMPORTS
 import org.apache.poi.xssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+
 import play.mvc.Http.MultipartFormData;
 
 import com.avaje.ebean.Page;
@@ -594,23 +596,39 @@ public class Application extends Controller {
 	}
 	
 	/**
+	 * 
+	 * 
+	 * @return
+	 */
+	public static List<List<String>> getStudentRoster() {
+        
+        Course course = Course.getCourse(1L);
+        
+        List<List<String>> table = new ArrayList<>();
+        String[] rows = course.studentRoster.split("\\|");
+        
+        for(String s : rows) {
+            table.add(Arrays.asList(s.split(",")));
+        }
+        
+        System.out.println(course.studentRoster);
+        
+        return table;
+	}
+	
+	/**
      * 
      * 
      * @return
      */
     public static Result courseRoster() {
-        
-        Course course = Course.getCourse(1L);
-        
-        //int size = course.getRowRoster().size();
                  
-        return ok(views.html.courseRoster.render());
+        return ok(views.html.courseRoster.render(getStudentRoster()));
     }
     
     /**
      * 
      * 
-     * @param file
      * @return
      */
     @BodyParser.Of(BodyParser.MultipartFormData.class)
@@ -623,6 +641,9 @@ public class Application extends Controller {
         System.out.println(temp.getFilename());
         System.out.println(temp.getContentType());
         
+        Course course = Course.getCourse(1L);
+        course.studentRoster = "";
+        
         try {
             
             FileInputStream file = new FileInputStream(uploadedFile);
@@ -632,18 +653,12 @@ public class Application extends Controller {
              
             //Get first sheet from the workbook
             XSSFSheet sheet = workbook.getSheetAt(0);
-            
-            Course course = Course.getCourse(1L);
-            course.rowRoster = new ArrayList<>();
-            ArrayList<String> columns = new ArrayList<String>();
-            
+           
             //Iterate through each rows from first sheet
             Iterator<Row> rowIterator = sheet.iterator();
             while(rowIterator.hasNext()) {
                 Row row = rowIterator.next();
-                 
-                columns = new ArrayList<String>();
-                
+                                 
                 //For each row, iterate through each columns
                 Iterator<Cell> cellIterator = row.cellIterator();
                 while(cellIterator.hasNext()) {
@@ -653,39 +668,36 @@ public class Application extends Controller {
                     switch(cell.getCellType()) {
                         case Cell.CELL_TYPE_BOOLEAN:
                             //System.out.print(cell.getBooleanCellValue() + "\t");
-                            columns.add(cell.getBooleanCellValue() + "\t");
+                            course.studentRoster += cell.getBooleanCellValue() + "";
                             break;
                         case Cell.CELL_TYPE_NUMERIC:
                             //System.out.print(cell.getNumericCellValue() + "\t");
-                            columns.add(cell.getNumericCellValue() + "\t");
+                            course.studentRoster += cell.getNumericCellValue() + "";
                             break;
                         case Cell.CELL_TYPE_STRING:
                             //System.out.print(cell.getStringCellValue() + "\t");
-                            columns.add(cell.getStringCellValue() + "\t");
+                            course.studentRoster += cell.getStringCellValue();
                             break;
                     }
+                    
+                    if(cellIterator.hasNext()) {
+                        course.studentRoster += ",";
+                    }
                 }
-                course.rowRoster.add(columns);
-                course.save(); //This should be saving the newly added row.
                 
-                //System.out.println("");
+                if(rowIterator.hasNext()) {
+                    course.studentRoster += "|";
+                }
+
             }
-            course.rowRoster.size();
             course.save();
+            
             file.close();
             FileOutputStream out =          //RENZEE Might need to change to your Desktop path when testing.
                 new FileOutputStream(new File("C:\\Users\\Alaan\\Desktop\\test1.xlsx"));
             //Uncomment below to write a file to your Desktop
             //workbook.write(out);
-            out.close();
-            
-            for(int i = 0; i < course.rowRoster.size(); i++) {
-                for(int j = 0; j < course.rowRoster.get(i).size(); j++) {
-                    System.out.print(course.rowRoster.get(i).get(j) + "\t");
-                }
-                System.out.println();
-            }
-            
+            out.close();           
              
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -693,7 +705,7 @@ public class Application extends Controller {
             e.printStackTrace();
         } 
         
-        return ok(views.html.courseRoster.render());        
+        return ok(views.html.courseRoster.render(getStudentRoster()));        
     }
 	
 	/**
