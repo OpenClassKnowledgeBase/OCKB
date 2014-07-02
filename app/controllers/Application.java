@@ -707,14 +707,30 @@ public class Application extends Controller {
      */
     public static List<Category> getCurrentSortOrderList() {   
         Course course = Course.getCourse(1L);
-        
+
         List<Category> sortCourseOrder = new ArrayList<Category>();
-
         String[] formSplit = course.currentSortOrder.split(",");
-
+        
+        List<Category> categoryList = Category.findAll();
+        
+        long startTime = System.nanoTime();
+        for(int i = 0; i < formSplit.length; i++) {
+            sortCourseOrder.add(categoryList.get(Integer.parseInt(formSplit[i])-1));
+        }
+        long endTime1 = System.nanoTime();
+        long duration1 = endTime1 - startTime;
+        Logger.debug("Ending full load implementation: " + duration1);
+        
+        /*
+        startTime = System.nanoTime();
         for(int i = 0; i < formSplit.length; i++) {
             sortCourseOrder.add(Category.getCategory(Long.parseLong(formSplit[i])));
         }
+        long endTime2 = System.nanoTime();
+        long duration2 = endTime2 - startTime;
+        Logger.debug("Ending 1by1 load implementation: " + duration2);
+        */
+        
         
         return sortCourseOrder;
     }
