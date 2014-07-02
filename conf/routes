@@ -5,6 +5,7 @@
 # Home page
 GET     /                           controllers.Application.index()
 GET     /categories                 controllers.Application.categories()
+
 GET		/requestCategory			controllers.Application.requestCategory()
 GET		/viewRequestedCategories	controllers.Application.viewRequestedCategories()
 GET		/approveRequestedCategory	controllers.Application.approveRequestedCategory(cid: Long)
@@ -27,6 +28,9 @@ GET 	/sortByCourseOrder			controllers.Application.sortByCourseOrder()
 GET 	/manageCategories			controllers.Application.manageCategories()
 GET	 /manageCategories/Alphabetically	controllers.Application.sortAlphabetically()
 GET		/codeChallengeSettings		controllers.Application.codeChallengeSettings()
+GET		/courseSettings				controllers.Application.courseSettings()
+GET 	/courseRoster				controllers.Application.courseRoster()
+POST	/courseRoster				controllers.Application.uploadExcelRoster()
 POST	/codeChallengeSettings		controllers.Application.codeChallengeUpdate()
 POST	/manageCategories			controllers.Application.saveSortByCourseOrder()
 POST	/editCategories/:cid		controllers.Application.updateCategory(cid: Long)

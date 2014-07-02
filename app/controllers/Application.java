@@ -2,10 +2,12 @@ package controllers;
 
 import com.avaje.ebean.Ebean;
 
+
 //EXCEL IMPORTS
 import org.apache.poi.xssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import play.mvc.Http.MultipartFormData;
 
 import com.avaje.ebean.Page;
 import com.avaje.ebean.Query;
@@ -417,73 +419,6 @@ public class Application extends Controller {
         course.currentSortOrder = concatIdOrder;
         course.categoryOrder = "Alphabetically";
         course.save();
-        
-        /** IGNORE FOR NOW, EXCEL STUFF
-        try {
-            
-            FileInputStream file = new FileInputStream(new File("C:\\Users\\Alaan\\Desktop\\test.xlsx"));
-             
-            //Get the workbook instance for XLS file
-            XSSFWorkbook workbook = new XSSFWorkbook (file);
-             
-            //Get first sheet from the workbook
-            XSSFSheet sheet = workbook.getSheetAt(0);
-             
-            ArrayList<ArrayList<String>> rows = new ArrayList<>();
-            ArrayList<String> columns = new ArrayList<>();
-            //Iterate through each rows from first sheet
-            Iterator<Row> rowIterator = sheet.iterator();
-            while(rowIterator.hasNext()) {
-                Row row = rowIterator.next();
-                 
-                columns = new ArrayList<String> ();                     
-
-                //For each row, iterate through each columns
-                Iterator<Cell> cellIterator = row.cellIterator();
-                while(cellIterator.hasNext()) {
-                    
-
-                    Cell cell = cellIterator.next();
-                     
-                    switch(cell.getCellType()) {
-                        case Cell.CELL_TYPE_BOOLEAN:
-                            //System.out.print(cell.getBooleanCellValue() + "\t");
-                            columns.add(cell.getBooleanCellValue() + "\t");
-                            break;
-                        case Cell.CELL_TYPE_NUMERIC:
-                            //System.out.print(cell.getNumericCellValue() + "\t");
-                            columns.add(cell.getNumericCellValue() + "\t");
-                            break;
-                        case Cell.CELL_TYPE_STRING:
-                            //System.out.print(cell.getStringCellValue() + "\t");
-                            columns.add(cell.getStringCellValue() + "\t");
-                            break;
-                    }
-                }
-                rows.add(columns);
-
-                //System.out.println("");
-            }
-            file.close();
-            FileOutputStream out =
-                new FileOutputStream(new File("C:\\Users\\Alaan\\Desktop\\test1.xlsx"));
-            workbook.write(out);
-            out.close();
-            
-            for(int i = 0; i < rows.size(); i++) {
-                for(int j = 0; j < rows.get(i).size(); j++) {
-                    System.out.print(rows.get(i).get(j) + "\t");
-                }
-                System.out.println();
-            }
-            
-             
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } 
-        */
 
         return ok(views.html.manageCategories.render(getCurrentSortOrderString()));	    
     }
@@ -648,6 +583,119 @@ public class Application extends Controller {
 	 *                    *
 	 **********************/    
 
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
+	public static Result courseSettings() {
+	     
+	    return ok(views.html.courseSettings.render());
+	}
+	
+	/**
+     * 
+     * 
+     * @return
+     */
+    public static Result courseRoster() {
+        
+        Course course = Course.getCourse(1L);
+        
+        //int size = course.getRowRoster().size();
+                 
+        return ok(views.html.courseRoster.render());
+    }
+    
+    /**
+     * 
+     * 
+     * @param file
+     * @return
+     */
+    @BodyParser.Of(BodyParser.MultipartFormData.class)
+    public static Result uploadExcelRoster() {
+        Http.MultipartFormData body = request().body().asMultipartFormData();
+        
+        Http.MultipartFormData.FilePart temp = body.getFile("courseRosterExcel");
+        
+        File uploadedFile = temp.getFile();
+        System.out.println(temp.getFilename());
+        System.out.println(temp.getContentType());
+        
+        try {
+            
+            FileInputStream file = new FileInputStream(uploadedFile);
+             
+            //Get the workbook instance for XLS file
+            XSSFWorkbook workbook = new XSSFWorkbook (file);
+             
+            //Get first sheet from the workbook
+            XSSFSheet sheet = workbook.getSheetAt(0);
+            
+            Course course = Course.getCourse(1L);
+            course.rowRoster = new ArrayList<>();
+            ArrayList<String> columns = new ArrayList<String>();
+            
+            //Iterate through each rows from first sheet
+            Iterator<Row> rowIterator = sheet.iterator();
+            while(rowIterator.hasNext()) {
+                Row row = rowIterator.next();
+                 
+                columns = new ArrayList<String>();
+                
+                //For each row, iterate through each columns
+                Iterator<Cell> cellIterator = row.cellIterator();
+                while(cellIterator.hasNext()) {
+                    
+                    Cell cell = cellIterator.next();
+                     
+                    switch(cell.getCellType()) {
+                        case Cell.CELL_TYPE_BOOLEAN:
+                            //System.out.print(cell.getBooleanCellValue() + "\t");
+                            columns.add(cell.getBooleanCellValue() + "\t");
+                            break;
+                        case Cell.CELL_TYPE_NUMERIC:
+                            //System.out.print(cell.getNumericCellValue() + "\t");
+                            columns.add(cell.getNumericCellValue() + "\t");
+                            break;
+                        case Cell.CELL_TYPE_STRING:
+                            //System.out.print(cell.getStringCellValue() + "\t");
+                            columns.add(cell.getStringCellValue() + "\t");
+                            break;
+                    }
+                }
+                course.rowRoster.add(columns);
+                course.save(); //This should be saving the newly added row.
+                
+                //System.out.println("");
+            }
+            course.rowRoster.size();
+            course.save();
+            file.close();
+            FileOutputStream out =          //RENZEE Might need to change to your Desktop path when testing.
+                new FileOutputStream(new File("C:\\Users\\Alaan\\Desktop\\test1.xlsx"));
+            //Uncomment below to write a file to your Desktop
+            //workbook.write(out);
+            out.close();
+            
+            for(int i = 0; i < course.rowRoster.size(); i++) {
+                for(int j = 0; j < course.rowRoster.get(i).size(); j++) {
+                    System.out.print(course.rowRoster.get(i).get(j) + "\t");
+                }
+                System.out.println();
+            }
+            
+             
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } 
+        
+        return ok(views.html.courseRoster.render());        
+    }
+	
 	/**
 	 * Redirects to a random category page view. Used within the dashboard
 	 * 

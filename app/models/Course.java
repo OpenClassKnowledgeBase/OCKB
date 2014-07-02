@@ -27,11 +27,14 @@ public class Course extends Model{
 	public String currentSortOrder;
 		
 	public Integer codeChallengeTime;
-
-	public Course (String title, String description, String categoryOrder) {
+	
+    public ArrayList<ArrayList<String>> rowRoster;
+	
+	public Course (String title, String description, String categoryOrder, ArrayList<ArrayList<String>> roster) {
         this.title = title;
         this.description = description;
         this.categoryOrder = categoryOrder;
+        this.rowRoster = roster;
     }
 	
 	//help initiate queries
@@ -40,7 +43,7 @@ public class Course extends Model{
 	/*Implement the CRUD operations*/
 
 	public static void create(String title, String description, String categoryOrder){
-		Course course = new Course(title, description, categoryOrder);
+		Course course = new Course(title, description, categoryOrder, null);
 		course.save();
 	}
 	
