@@ -2,7 +2,20 @@
 
 @scripts = {
 	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/roster.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.dataTables.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/dataTables.tableTools.min.css")">
+    <script src="@routes.Assets.at("javascripts/jquery.dataTables.js")"></script>
+    <script src="@routes.Assets.at("javascripts/dataTables.tableTools.min.js")"></script>
+    <script>
+    $(document).ready( function () {
+        $('#roster').dataTable( {
+            "dom": '<"clear">l<"centered"T>frtip',
+            "tableTools": {
+                "sSwfPath": "/assets/swf/copy_csv_xls_pdf.swf"
+            }
+        } );
+    } );
+    </script>
 } 
 
 @main("Course Roster and User Settings", scripts) {
@@ -28,8 +41,8 @@
 	
 	Select an Excel file to upload:	
 	<form enctype="multipart/form-data" onsubmit="return checkSize(2097152)" action="@routes.Application.uploadExcelRoster()" method="post">    
-		<input type="file" id="courseRosterExcel" name="courseRosterExcel" accept="MIME_type">
-		<input type="submit" class="button" value="Submit">
+		<input type="file" id="courseRosterExcel" class="fileUpload" name="courseRosterExcel" accept="MIME_type">
+		<input type="submit" class="button" value="Upload">
 	</form>
 	<script type="text/javascript">
 	function checkSize(max_img_size) {
@@ -45,13 +58,13 @@
     	return true;
 	}
 	</script>
-	
+		
 	<div class="row">
 		<br>
+		<div class="toolbar"></div>
 	</div>
-	
-	<body>
-	<table>
+
+	<table cellpadding="0" cellspacing="0" border="0" class="table-bordered" id="roster">
 		<thead>
 			@for(head <- 0 until studentRoster(0).size) {
 				<th>@studentRoster(0).get(head)</th>
@@ -67,7 +80,6 @@
 			}
 		</tbody>
 	</table>
-	</body>
 	
 
             

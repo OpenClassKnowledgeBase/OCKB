@@ -4,3 +4,5 @@
 /project/target
 /bin
 /logs
+.classpath
+.settings/

@@ -1,34 +1,169 @@
+@(studentRoster : java.util.List[java.util.List[String]]) 
+
 @scripts = {
-	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.dataTables.css")">
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/dataTables.tableTools.min.css")">
+<script src="@routes.Assets.at("javascripts/jquery.dataTables.js")"></script>
+<script src="@routes.Assets.at("javascripts/dataTables.tableTools.min.js")"></script>
+<script>
+	$(document).ready(function() {
+		$('#roster').dataTable({
+			"dom" : '<"clear">l<"centered"T>frtip',
+			"tableTools" : {
+				"sSwfPath" : "/assets/swf/copy_csv_xls_pdf.swf"
+			}
+		});
+	});
+</script>
 } 
 
 @main("Course Settings", scripts) {
 
 <div class="container">
-  <ol class="breadcrumb">
-    <li>
-      <a href="@routes.Application.dashboard()">Dashboard</a>
-    </li>
-    <li>
-      <a href="#">Course Settings</a>
-    </li>
-
-  </ol>
+	<ol class="breadcrumb">
+		<li><a href="@routes.Application.dashboard()">Dashboard</a></li>
+		<li><a href="#">Course Settings</a></li>
+	</ol>
+	
 	<div class="row">
 		<div class="col-xs-11">
 			<h1>Course Settings</h1>
 		</div>
 	</div>
 	
-	<span class="col-lg-4"> 
-		<span class="glyphicon glyphicon-user"></span> 
-			<a class="postLink" href="@routes.Application.courseRoster()">Manage Course Roster and User Settings</a>
-	</span> 
-	
+	<div class="panel-group" id="accordion">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#addCourse"> Create a New Course </a>
+				</h4>
+			</div>
+			<div id="addCourse" class="panel-collapse collapse in">
+				<div class="panel-body">
+					<form class="form-horizontal" action="@routes.Application.createCourse()" method="POST">
+						<fieldset>
+							<legend>Create a New Course</legend>
+							<div class="form-group">
+								<label for="inputSemester" class="col-lg-2 control-label">Semester</label>
+								<div class="col-lg-10">
+									<input id="inputSemester" name="inputSemester" class="form-control" 
+										placeholder="e.g., Fall 2014" type="text" style="width: 75%">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="select" class="col-lg-2 control-label">Course</label>
+								<div class="col-lg-10">
+									<select class="form-control" id="courseSelect" name="courseSelect" style="width: 75%">
+										<option>ICS 111</option>
+										<option>ICS 211</option>
+								   <!-- <option>3</option>
+							            <option>4</option>
+							            <option>5</option> -->
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="select" class="col-lg-2 control-label">Section</label>
+								<div class="col-lg-10">
+									<select class="form-control" id="courseSection" name="courseSection" style="width: 75%">
+										<option>001</option>
+										<option>002</option>
+										<option>003</option>
+								   <!-- <option>4</option>
+          							    <option>5</option> -->
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="select" class="col-lg-2 control-label">Title</label>
+								<div class="col-lg-10">
+									<select class="form-control" id="courseTitle" name="courseTitle" style="width: 75%">
+										<option>Intro to Computer Science I</option>
+										<option>Intro to Computer Science II</option>
+								   <!-- <option>3</option>
+							            <option>4</option>
+							            <option>5</option> -->
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-lg-10 col-lg-offset-2">
+									<br>
+									<button type="submit" class="btn btn-success">Submit</button>
+									<button class="btn btn-danger">Cancel</button>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#courseRoster"> Manage Course Roster and User Settings </a>
+				</h4>
+			</div>
+			<div id="courseRoster" class="panel-collapse collapse">
+				<div class="row">
+					<br>
+				</div>
+				Select an Excel file to upload:
+				<form enctype="multipart/form-data" onsubmit="return checkSize(2097152)" action="@routes.Application.uploadExcelRoster()" method="post">
+					<input type="file" id="courseRosterExcel" class="fileUpload" name="courseRosterExcel" accept="MIME_type"> 
+					<input type="submit" class="button" value="Upload">
+				</form>
+				<script type="text/javascript">
+					function checkSize(max_img_size) {
+						var input = document.getElementById("upload");
+
+						// check for browser support (may need to be modified)
+						if (input.files && input.files.length == 1) {
+							if (input.files[0].size > max_img_size) {
+								alert("The file must be less than "
+										+ (max_img_size / 1024 / 1024) + "MB");
+								return false;
+							}
+						}
+						return true;
+					}
+				</script>
+				<div class="panel-body">
+					<div class="row">
+						<br>
+						<div class="toolbar"></div>
+					</div>
+
+					<body>
+						<table cellpadding="0" cellspacing="0" border="0"
+							class="table-bordered" id="roster">
+							<thead>
+								@for(head <- 0 until studentRoster(0).size) {
+								<th>@studentRoster(0).get(head)</th> }
+							</thead>
+							<tbody>
+								@for(index <- 1 until studentRoster.size) {
+								<tr>
+									@for(cell <- 0 until studentRoster(index).size) {
+									<td>@studentRoster(index).get(cell)</td> }
+								</tr>
+								}
+							</tbody>
+						</table>
+					</body>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<span class="col-lg-4"> <span class="glyphicon glyphicon-user"></span>
+		<a class="postLink" href="@routes.Application.courseRoster()">Manage Course Roster and User Settings</a>
+	</span>
+
 	<div class="row">
 		<br>
 	</div>
-		
-	
+
 </div>
 }

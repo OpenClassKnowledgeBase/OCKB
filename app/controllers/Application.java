@@ -590,9 +590,26 @@ public class Application extends Controller {
 	 * 
 	 * @return
 	 */
+	public static Result createCourse() {
+        final Map<String, String[]> values = request().body().asFormUrlEncoded();   
+        String inputSemester = values.get("inputSemester")[0];
+        String courseSelect = values.get("courseSelect")[0];
+        String courseSection = values.get("courseSection")[0];
+        String courseTitle = values.get("courseTitle")[0];
+        
+        //Create course call goes here.
+        
+        return ok(views.html.courseSettings.render(getStudentRoster()));
+	}
+	
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
 	public static Result courseSettings() {
 	     
-	    return ok(views.html.courseSettings.render());
+	    return ok(views.html.courseSettings.render(getStudentRoster()));
 	}
 	
 	/**
@@ -610,9 +627,7 @@ public class Application extends Controller {
         for(String s : rows) {
             table.add(Arrays.asList(s.split(",")));
         }
-        
-        System.out.println(course.studentRoster);
-        
+                
         return table;
 	}
 	
@@ -622,6 +637,11 @@ public class Application extends Controller {
      * @return
      */
     public static Result courseRoster() {
+        
+        List<User> blah = User.findAll();
+        for(User s : blah) {
+            System.out.println(s.name);
+        }
                  
         return ok(views.html.courseRoster.render(getStudentRoster()));
     }
@@ -705,7 +725,7 @@ public class Application extends Controller {
             e.printStackTrace();
         } 
         
-        return ok(views.html.courseRoster.render(getStudentRoster()));        
+        return ok(views.html.courseSettings.render(getStudentRoster()));        
     }
 	
 	/**
