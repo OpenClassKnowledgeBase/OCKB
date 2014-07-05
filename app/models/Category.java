@@ -28,6 +28,8 @@ public class Category extends Model{
 	public Long id;
 	
 	public String user;
+	
+	public boolean hidden;
 
 	public Category (String title, String description, String url, Boolean requested) {
         this.title = title;

@@ -4,6 +4,9 @@ import com.avaje.ebean.Ebean;
 
 
 
+
+
+
 //EXCEL IMPORTS
 import org.apache.poi.xssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
@@ -116,7 +119,7 @@ public class Application extends Controller {
 	 */
 	public static Result categories() {
 
-        return ok(views.html.categories.render(getCurrentSortOrderList()));
+        return ok(views.html.categories.render(getCategoriesView()));
 	}    
 
 	/**
@@ -424,6 +427,38 @@ public class Application extends Controller {
 
         return ok(views.html.manageCategories.render(getCurrentSortOrderString()));	    
     }
+    
+    /**
+     * 
+     * 
+     * @return
+     */
+    public static Result hideOrShowCategories() {
+                
+        return ok(views.html.hideCategories.render(getCurrentSortOrderList()));
+    }
+    
+    /**
+     * 
+     * 
+     * @return
+     */
+    public static Result updateHideCategories() {
+        final Map<String, String[]> values = request().body().asFormUrlEncoded();   
+        
+        List<Category> categoryList = getCurrentSortOrderList();
+        
+        for(Category c : categoryList) {
+           if(values.get(c.id + "")[0].equals("1")) {
+               c.hidden = true;
+           } else {
+               c.hidden = false;
+           }
+           c.save();
+        }
+        
+        return ok(views.html.hideCategories.render(getCurrentSortOrderList()));
+    }
 	
 	/**********************
 	 *                    *
@@ -597,9 +632,11 @@ public class Application extends Controller {
         String courseSection = values.get("courseSection")[0];
         String courseTitle = values.get("courseTitle")[0];
         
-        //Create course call goes here.
+        List<Course> courses = Course.findAll();
         
-        return ok(views.html.courseSettings.render(getStudentRoster()));
+        //create(String title, String description, String categoryOrder, Integer courseSection, String semester, String icsCourse)
+        
+        return ok(views.html.courseSettings.render(getStudentRoster(), courses));
 	}
 	
 	/**
@@ -608,8 +645,10 @@ public class Application extends Controller {
 	 * @return
 	 */
 	public static Result courseSettings() {
+	    
+	    List<Course> courses = Course.findAll();
 	     
-	    return ok(views.html.courseSettings.render(getStudentRoster()));
+	    return ok(views.html.courseSettings.render(getStudentRoster(), courses));
 	}
 	
 	/**
@@ -724,8 +763,9 @@ public class Application extends Controller {
         } catch (IOException e) {
             e.printStackTrace();
         } 
+        List<Course> courses = Course.findAll();
         
-        return ok(views.html.courseSettings.render(getStudentRoster()));        
+        return ok(views.html.courseSettings.render(getStudentRoster(), courses));        
     }
 	
 	/**
@@ -780,6 +820,35 @@ public class Application extends Controller {
 		return ok(views.html.notifications.render());
 	}
 	
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
+	public static List<Category> getCategoriesView() {
+        Course course = Course.getCourse(1L);
+
+        List<Category> sortCourseOrder = new ArrayList<Category>();
+        String[] formSplit = course.currentSortOrder.split(",");
+        
+        List<Category> categoryList = Category.findAll();
+
+        long startTime = System.nanoTime();
+        for(int i = 0; i < formSplit.length; i++) {
+            Category c = categoryList.get(Integer.parseInt(formSplit[i]) - 1);
+            if(c.hidden) {
+                //hide variable is true, so don't add to list.
+            } else {
+                sortCourseOrder.add(c);
+            }
+        }
+        long endTime1 = System.nanoTime();
+        long duration1 = endTime1 - startTime;
+        Logger.debug("Ending full load implementation: " + duration1);
+        
+        return sortCourseOrder;
+	}
+	
     /**
      * 
      * 
@@ -793,25 +862,10 @@ public class Application extends Controller {
         
         List<Category> categoryList = Category.findAll();
         
-        long startTime = System.nanoTime();
         for(int i = 0; i < formSplit.length; i++) {
             sortCourseOrder.add(categoryList.get(Integer.parseInt(formSplit[i])-1));
         }
-        long endTime1 = System.nanoTime();
-        long duration1 = endTime1 - startTime;
-        Logger.debug("Ending full load implementation: " + duration1);
-        
-        /*
-        startTime = System.nanoTime();
-        for(int i = 0; i < formSplit.length; i++) {
-            sortCourseOrder.add(Category.getCategory(Long.parseLong(formSplit[i])));
-        }
-        long endTime2 = System.nanoTime();
-        long duration2 = endTime2 - startTime;
-        Logger.debug("Ending 1by1 load implementation: " + duration2);
-        */
-        
-        
+     
         return sortCourseOrder;
     }
     

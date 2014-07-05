@@ -1,4 +1,4 @@
-@(studentRoster : java.util.List[java.util.List[String]]) 
+@(studentRoster : java.util.List[java.util.List[String]], course : List[Course]) 
 
 @scripts = {
 <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
@@ -36,10 +36,10 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a data-toggle="collapse" data-parent="#accordion" href="#addCourse"> Create a New Course </a>
+					<a data-toggle="collapse" data-parent="#accordion" href="#addCourse">Create a New Course </a>
 				</h4>
 			</div>
-			<div id="addCourse" class="panel-collapse collapse in">
+			<div id="addCourse" class="panel-collapse collapse">
 				<div class="panel-body">
 					<form class="form-horizontal" action="@routes.Application.createCourse()" method="POST">
 						<fieldset>
@@ -102,7 +102,89 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a data-toggle="collapse" data-parent="#accordion" href="#courseRoster"> Manage Course Roster and User Settings </a>
+					<a data-toggle="collapse" data-parent="#accordion" href="#editCourse">Edit Course Information</a>
+				</h4>
+			</div>
+			<div id="editCourse" class="panel-collapse collapse">
+				<div class="panel-body">
+					<select id="editSemester">
+						@for(index <- 0 until course.size) {
+							<option value="@course(index)">@course(index).semester</option>
+						}
+					</select>		
+					<button id="editSemesterRetrieve" class="editSemesterRetrieveBtn">Retrieve</button>	
+					<script>
+						$(document).ready(function() {						    
+						    $("#editSemesterRetrieve").click(function() {
+								$("#editSemesterAccordion").slideDown();
+						  });						    						    
+						});					
+					</script>
+					<div class="collapse" id="editSemesterAccordion"> 
+					<form class="form-horizontal" action="#" method="POST">
+						<fieldset>
+							<legend>Edit Course Information</legend>
+							<br>
+							<div class="form-group">
+								<label for="inputSemester" class="col-lg-2 control-label">Semester</label>
+								<div class="col-lg-10">
+									<input id="inputSemester" name="inputSemester" class="form-control" 
+										placeholder="e.g., Fall 2014" type="text" style="width: 75%">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="select" class="col-lg-2 control-label">Course</label>
+								<div class="col-lg-10">
+									<select class="form-control" id="courseSelect" name="courseSelect" style="width: 75%">
+										<option>ICS 111</option>
+										<option>ICS 211</option>
+								   <!-- <option>3</option>
+							            <option>4</option>
+							            <option>5</option> -->
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="select" class="col-lg-2 control-label">Section</label>
+								<div class="col-lg-10">
+									<select class="form-control" id="courseSection" name="courseSection" style="width: 75%">
+										<option>001</option>
+										<option>002</option>
+										<option>003</option>
+								   <!-- <option>4</option>
+          							    <option>5</option> -->
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="select" class="col-lg-2 control-label">Title</label>
+								<div class="col-lg-10">
+									<select class="form-control" id="courseTitle" name="courseTitle" style="width: 75%">
+										<option>Intro to Computer Science I</option>
+										<option>Intro to Computer Science II</option>
+								   <!-- <option>3</option>
+							            <option>4</option>
+							            <option>5</option> -->
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-lg-10 col-lg-offset-2">
+									<br>
+									<button type="submit" class="btn btn-success">Update</button>
+									<button class="btn btn-danger">Cancel</button>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+    </div>
+				</div>
+			</div>
+		</div>		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#courseRoster">Manage Course Roster and User Settings </a>
 				</h4>
 			</div>
 			<div id="courseRoster" class="panel-collapse collapse">

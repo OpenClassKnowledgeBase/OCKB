@@ -1,0 +1,109 @@
+@(categories: List[Category])
+
+@scripts = {
+	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/categories.css")">
+} 
+
+@import helper._
+
+@main("Manage Categories", scripts) {
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-11">
+			<h1>Hide or Show Categories</h1>
+		</div>
+	</div>
+	
+  <form action = "@routes.Application.hideOrShowCategories()" method="POST">		
+    <div class = "col-xs-11" ID = "addCategory">
+    	<input type="submit" value="Update" class="btn btn-success">
+    </div> 
+        	
+	<div class="row">
+		<br>
+	</div>
+
+        @for(index <- 0 until categories.size){
+            @if(index % 3 == 0){
+                <div class = "row">
+                    <div class="col-xs-6 col-sm-4">
+                        <h3>@categories(index).title</h3>
+                        <p>@categories(index).description</p>
+                        	@if(categories(index).hidden) {   
+	            				<input type="radio" name="@categories(index).id" id="@categories(index).id Hide" value="1" checked>Hide
+	            				&nbsp&nbsp&nbsp&nbsp
+	            				<input type="radio" name="@categories(index).id" id="@categories(index).id Show" value="0">Show 
+                        	} else {
+	            				<input type="radio" name="@categories(index).id" id="@categories(index).id Hide" value="1">Hide
+	            				&nbsp&nbsp&nbsp&nbsp
+	            				<input type="radio" name="@categories(index).id" id="@categories(index).id Show" value="0" checked>Show  
+	            			}
+	            			 <script>
+								document.getElementById('@categories(index).id Hide').onclick = function() {
+									document.getElementById('@categories(index).id Show').checked = false;
+								}
+							
+								document.getElementById('@categories(index).id Show').onclick = function() {								    
+								    document.getElementById('@categories(index).id Hide').checked = false;
+								}	
+							</script>                      	                       	
+					</div> 
+            }
+            @if(index % 3 == 1){
+                    <div class="col-xs-6 col-sm-4">
+                        <h3>@categories(index).title</h3>
+                        <p>@categories(index).description</p>
+                        	@if(categories(index).hidden) {
+	            				<input type="radio" name="@categories(index).id" id="@categories(index).id Hide" value="1" checked>Hide
+	            				&nbsp&nbsp&nbsp&nbsp
+	            				<input type="radio" name="@categories(index).id" id="@categories(index).id Show" value="0">Show                   	                        	
+                        	} else {
+	            				<input type="radio" name="@categories(index).id" id="@categories(index).id Hide" value="1">Hide
+	            				&nbsp&nbsp&nbsp&nbsp
+	            				<input type="radio" name="@categories(index).id" id="@categories(index).id Show" value="0" checked>Show                       	                       	
+                        	}						
+           					<script>
+								document.getElementById('@categories(index).id Hide').onclick = function() {
+									document.getElementById('@categories(index).id Show').checked = false;
+								}
+							
+								document.getElementById('@categories(index).id Show').onclick = function() {								    
+								    document.getElementById('@categories(index).id Hide').checked = false;
+								}	
+							</script>                
+                    </div>  
+            }      
+            @if(index % 3 == 2){
+                <div class="clearfix visible-xs"></div>
+                  <div class="hidden-xs col-xs-6 col-sm-4 category">
+                        <h3>@categories(index).title</h3>
+                        <p>@categories(index).description</p>
+                        	@if(categories(index).hidden) {
+	            				<input type="radio" name="@categories(index).id" id="@categories(index).id Hide" value="1" checked>Hide
+	            				&nbsp&nbsp&nbsp&nbsp
+	            				<input type="radio" name="@categories(index).id" id="@categories(index).id Show" value="0">Show                   	                        	
+                        	} else {
+	            				<input type="radio" name="@categories(index).id" id="@categories(index).id Hide" value="1">Hide
+	            				&nbsp&nbsp&nbsp&nbsp
+	            				<input type="radio" name="@categories(index).id" id="@categories(index).id Show" value="0" checked>Show                       	                       	
+                        	}						
+           					<script>
+								document.getElementById('@categories(index).id Hide').onclick = function() {
+									document.getElementById('@categories(index).id Show').checked = false;
+								}
+							
+								document.getElementById('@categories(index).id Show').onclick = function() {								    
+								    document.getElementById('@categories(index).id Hide').checked = false;
+								}	
+							</script>                
+                  </div>
+                </div>                
+
+            }
+        }	
+        </form>
+	
+</div>
+}
