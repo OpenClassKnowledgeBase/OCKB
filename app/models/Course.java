@@ -25,9 +25,7 @@ public class Course extends Model{
 	public String categoryOrder; //Alphabetically or CurrentSortOrder
 	
 	public String currentSortOrder; //Contains the string that will form the categories list
-		
-	public Integer codeChallengeTime; //Time listed for posts 
-	    
+			    
     public String studentRoster; //Contains the string that will form the student roster
     
     public Integer courseSection; //Course section 001, 002, etc.

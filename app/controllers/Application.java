@@ -475,14 +475,14 @@ public class Application extends Controller {
 	public static Result post(Long pid) {	    
         String user = session("username");
         List<Comment> cmntList = Comment.find.where().eq("parent_post_id", pid).findList();
-        Course course = Course.getCourse(1L);
+        
         if (user==null) { 
             user = "";
             String userRole = "";
-            return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole, course));
+            return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole));
         } else { 
             String userRole = User.getUser(user).role;
-            return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole, course));
+            return ok(views.html.post.render(cmntList, Post.find.byId(pid), user, userRole));
         }	
 	}
 	
@@ -597,21 +597,66 @@ public class Application extends Controller {
      *                            *
      ******************************/ 
 	
-	public static Result codeChallengeSettings() {
-	    Course course = Course.getCourse(1L);
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
+	public static Result createCodeChallenge() {
+	    List<Category> categoryList = Category.findAll();
         
-	    return ok(views.html.codeChallengeSettings.render(course));
+	    return ok(views.html.createCodeChallenge.render(categoryList));
 	}
 	
-	public static Result codeChallengeUpdate() {
-        final Map<String, String[]> values = request().body().asFormUrlEncoded();   
-        String codeChallengeTime = values.get("codeChallengeTime")[0];
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
+	public static Result createCodeChallengePost() {
+	    List<Category> categoryList = Category.findAll();
+        final Map<String, String[]> values = request().body().asFormUrlEncoded(); 
         
-        Course course = Course.getCourse(1L);
-        course.codeChallengeTime = Integer.parseInt(codeChallengeTime);
-        course.save();
-        
-        return ok(views.html.codeChallengeSettings.render(course));
+        String codeChallengeTitle = values.get("codeChallengeTitle")[0];
+        String categorySelect = values.get("categorySelect")[0];
+        String description = values.get("question")[0];
+        String hours = values.get("hours")[0];
+        String minutes = values.get("minutes")[0];
+        String seconds = values.get("seconds")[0];
+                
+        try {           
+            int challengeHours;
+            int challengeMinutes;
+            int challengeSeconds;
+            
+            if(hours.equals("")) {
+                challengeHours = 0;
+            } else {
+                challengeHours = Integer.parseInt(hours);
+            }
+            
+            if(minutes.equals("")) {
+                challengeMinutes = 0;
+            } else {
+                challengeMinutes = Integer.parseInt(minutes);
+            }
+            
+            if(seconds.equals("")) {
+                challengeSeconds = 0;
+            } else {
+                challengeSeconds = Integer.parseInt(seconds);
+            }
+           
+            Integer timeLimit = (challengeHours * 3600) + (challengeMinutes * 60) + (challengeSeconds * 1);            
+            Integer categoryId = Integer.parseInt(categorySelect);
+            
+            CodeChallenge.create(codeChallengeTitle, description, "", timeLimit, categoryId);
+
+        } catch(NumberFormatException nfe) {
+            //nothing for now
+        }
+
+        return ok(views.html.createCodeChallenge.render(categoryList));
 	}
 
 	/**********************

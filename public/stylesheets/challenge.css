@@ -1,0 +1,11 @@
+h1 {
+    text-align: center;
+}
+
+label {
+	font-size: 16px;
+}
+
+textarea {
+    resize: none;
+}

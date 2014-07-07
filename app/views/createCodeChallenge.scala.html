@@ -1,0 +1,93 @@
+@(categories : List[Category])
+
+@scripts = {
+	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/challenge.css")">
+} 
+
+@main("Code Challenge Settings", scripts) {
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-11">
+			<h1>Create a Code Challenge Post</h1>
+		</div>
+	</div>
+	
+	<div class="row">
+		<br>
+	</div>
+
+	<form action="@routes.Application.createCodeChallengePost()" method="POST">
+		
+		<div class="row">
+			<div class="form-group col-xs-9">
+		    	<label class="control-label" for="codeChallengeTitle">Title</label>
+		    	<input class="form-control" id="codeChallengeTitle" name="codeChallengeTitle" placeholder="e.g., Code Challenge 1" type="text">
+		    </div>
+		</div>
+	    
+	    <div class="row">
+			<div class="form-group col-xs-9">
+				<label class="control-label" for="categorySelect" >Category</label>
+					<select class="form-control" id="categorySelect" name="categorySelect">
+						@for(index <- 0 until categories.size) {
+							<option value="@categories(index).id">@categories(index).title</option>
+						}
+					</select>
+			</div>	    
+		</div>
+		
+		<div class="form-group">
+	    	<label class="control-label" for="codeChallengeTime">Time Limit</label>		
+	       	<div class="row">
+	            <div class="form-group col-xs-1">
+	                <input class="form-control" id="hours" name="hours" type="text" size="2" maxlength="2">
+	                <label class="control-label" for="hour">Hours</label>                
+	            </div>
+	
+	            <div class="form-group col-xs-1">
+	                <input class="form-control" id="minutes" name="minutes" type="text" size="2" maxlength="2">
+	                <label class="control-label" for="minutes">Minutes</label>                
+	            </div>
+	            
+	            <div class="form-group col-xs-1">
+	                <input class="form-control" id="seconds" name="seconds" type="text" size="2" maxlength="2">
+	                <label class="control-label" for="seconds">Seconds</label>
+	            </div>	                
+		    </div>
+	    </div>		
+	    
+    	<label class="control-label" for="challengeQuestion">Challenge Question/Description</label>
+		<textarea class="form-control" rows="10" name="question"></textarea>
+		
+		<div class="row">
+			<br>
+		</div>	    	
+	    
+		<input type="submit" value="Create Challenge" class="btn btn-success btn-md"> 
+
+	</form>		
+	
+   	<label class="control-label" for="JUnitFile">Select a JUnit Java file to upload (THIS ISNT WORKING YET)</label>
+	<form enctype="multipart/form-data" onsubmit="return checkSize(2097152)" action="#" method="post">
+		<input type="file" id="JUnitFile" class="fileUpload" name="JUnitFile" accept="MIME_type"> 
+	</form>
+	<script type="text/javascript">
+		function checkSize(max_img_size) {
+			var input = document.getElementById("upload");
+
+			// check for browser support (may need to be modified)
+			if (input.files && input.files.length == 1) {
+				if (input.files[0].size > max_img_size) {
+					alert("The file must be less than "
+							+ (max_img_size / 1024 / 1024) + "MB");
+					return false;
+				}
+			}
+			return true;
+		}
+	</script>
+	
+</div>
+}

@@ -23,11 +23,17 @@ public class CodeChallenge extends Model{
 	
 	@Required
 	public String requiredOutput;
+	
+	public Integer codeChallengeTime;
+	
+	public Integer categoryId;
 
-	public CodeChallenge (String title, String description, String requiredOutput) {
+	public CodeChallenge (String title, String description, String requiredOutput, Integer codeChallengeTime, Integer categoryId) {
         this.title = title;
         this.description = description;
         this.requiredOutput = requiredOutput;
+        this.codeChallengeTime = codeChallengeTime;
+        this.categoryId = categoryId;
     }
 	
 	//help initiate queries
@@ -35,8 +41,8 @@ public class CodeChallenge extends Model{
 	
 	/*Implement the CRUD operations*/
 
-	public static void create(String title, String description, String requiredOutput){
-		CodeChallenge challenge = new CodeChallenge(title, description, requiredOutput);
+	public static void create(String title, String description, String requiredOutput, Integer codeChallengeTime, Integer categoryId) {
+		CodeChallenge challenge = new CodeChallenge(title, description, requiredOutput, codeChallengeTime, categoryId);
 		challenge.save();
 	}
 	
@@ -53,7 +59,7 @@ public class CodeChallenge extends Model{
 	}
 	
 	public String getTitle() {
-		return title;
+		return this.title;
 	}
 	
 }

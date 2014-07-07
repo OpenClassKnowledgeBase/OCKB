@@ -1,4 +1,4 @@
-@(commentList: List[Comment], currentPost: Post, user:String, userRole: String, currentCourse: Course)
+@(commentList: List[Comment], currentPost: Post, user:String, userRole: String)
 
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
@@ -20,11 +20,12 @@
     		$("#"+id).addClass("voted-color");
     	}
     </script>
+    <!--  
     <script>
     	$(function () {
-    		$('#defaultCountdown').countdown({until: @currentCourse.codeChallengeTime, format: 'MS', compact: true});
+    		$('#defaultCountdown').countdown({until: codeChallenge.codeChallengeTime, format: 'MS', compact: true});
     	});
-    </script>
+    </script> -->
  }
  
 @main(currentPost.title, scripts) {
