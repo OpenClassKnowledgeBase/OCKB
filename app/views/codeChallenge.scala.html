@@ -1,0 +1,55 @@
+@(categoryList: List[Category], challenge: CodeChallenge) 
+
+@scripts = {
+	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.countdown.css")">
+	<script src="@routes.Assets.at("javascripts/jquery.plugin.js")"></script>
+	<script src="@routes.Assets.at("javascripts/jquery.countdown.js")"></script>
+	<script src="@routes.Assets.at("javascripts/ckeditor/ckeditor.js")"></script>
+	<script>
+    	$(function () {
+    		$('#defaultCountdown').countdown({until: @challenge.codeChallengeTime, format: 'HMS', compact: true});
+    	});
+    </script>
+} 
+
+@main(challenge.title, scripts) {
+
+<div class="container">
+
+	<ol class="breadcrumb">
+	  <li>
+	    <a href="@routes.Application.categories()">Categories</a>
+	  </li>
+	  <li>
+	    <a href="@routes.Application.category(challenge.categoryId)">@challenge.getCategoryTitle</a>
+	  </li>
+	  <li>
+	    <a href="#">@challenge.title</a>
+	  </li>
+	</ol>
+      
+	<section>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				@challenge.title
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-sm-11 content">@Html(challenge.description)</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	Start/Begin button here to start/begin challenge ?
+	
+	<div class="row">
+		<hr>
+		Time Remaining
+		<div id="defaultCountdown"></div>		
+		<hr>
+	</div>
+
+</div>
+}

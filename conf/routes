@@ -29,6 +29,7 @@ GET	 /manageCategories/Alphabetically	controllers.Application.sortAlphabetically
 GET		/createCodeChallenge		controllers.Application.createCodeChallenge()
 GET		/hideCategories				controllers.Application.hideOrShowCategories()
 POST	/hideCategories				controllers.Application.updateHideCategories()
+GET		/codeChallenge/:cid			controllers.Application.codeChallenge(cid: Long)
 POST	/courseSettings				controllers.Application.createCourse()
 GET		/courseSettings				controllers.Application.courseSettings()
 GET 	/courseRoster				controllers.Application.courseRoster()

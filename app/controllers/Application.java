@@ -139,8 +139,10 @@ public class Application extends Controller {
 
 		Category currentCategory = Category.getCategory(cid);
 		Page<Post> currentPage = Post.getPosts(cid, page, 10, sortBy, order, filter);
+		
+		List<CodeChallenge> challengeList= CodeChallenge.find.where().eq("categoryId", cid).findList();
 
-		return ok(views.html.category.render(stickyList, currentPage, sortBy, order, filter, currentCategory, user));
+		return ok(views.html.category.render(stickyList, currentPage, sortBy, order, filter, currentCategory, user, challengeList));
 	}
 	/**
 	 * Renders the requested category page view.
@@ -648,7 +650,7 @@ public class Application extends Controller {
             }
            
             Integer timeLimit = (challengeHours * 3600) + (challengeMinutes * 60) + (challengeSeconds * 1);            
-            Integer categoryId = Integer.parseInt(categorySelect);
+            Long categoryId = Long.parseLong(categorySelect);
             
             CodeChallenge.create(codeChallengeTitle, description, "", timeLimit, categoryId);
 
@@ -658,6 +660,15 @@ public class Application extends Controller {
 
         return ok(views.html.createCodeChallenge.render(categoryList));
 	}
+	
+
+    public static Result codeChallenge(Long cid) {       
+        List<Category> categoryList = Category.findAll();
+        CodeChallenge challenge = CodeChallenge.getChallenge(cid);
+        
+        return ok(views.html.codeChallenge.render(categoryList, challenge));
+           
+    }	
 
 	/**********************
 	 *                    *
