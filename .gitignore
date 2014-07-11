@@ -6,3 +6,4 @@
 /logs
 .classpath
 .settings/
+/conf/application.conf

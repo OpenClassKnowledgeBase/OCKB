@@ -5,19 +5,7 @@
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/posts.css")">
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.countdown.css")">
     <script src="@routes.Assets.at("javascripts/ckeditor/ckeditor.js")"></script>
-    <script>
-    	function vote(id, voteAmount) {
-    		$("#"+id).text( parseInt($("#"+id).text().trim()) + voteAmount);
-    		$("#upvote"+id).addClass("btn-disabled");
-    		$("#downvote"+id).addClass("btn-disabled");
-    		if (voteAmount > 0) {
-    			$("#glyphup"+id).addClass("voted-color");
-    		} else {
-    			$("#glyphdown"+id).addClass("voted-color");
-    		}
-    		$("#"+id).addClass("voted-color");
-    	}
-    </script>
+
  }
  
 @main(currentPost.title, scripts) {
@@ -64,31 +52,71 @@
       <section>
           <div class="panel panel-default">
             <div class="panel-heading">
-              <span class="label label-info">#@currentPost.id</span><a href = "" class = "postLink">@currentPost.title</a>
-               
-            </div>
+              <span class="label label-info">#@currentPost.id</span><a href = "" class = "postLink">@currentPost.title</a>               
+            </div>           
             <div class="panel-body">
               <div class = "row">
                 <div class = "col-sm-11 content">
                   @Html(currentPost.content)
                 </div>
-                <!-- <div class = "hidden-xs col-sm-1 votes">
-                  @if(user != null){
-                    <div>
-                      <a id="upvote0" class="button btn-default" href="#" onclick="vote(0, 1); return false;"> <span id="glyphup0" class ="glyphicon glyphicon-chevron-up"></span></a>
-                    </div>
-                  }
-                  <div id="0" class = "votes">
-                    10
-                  </div>
-                  @if(user != null){
-                    <div>
-                      <a id="downvote0" class="button btn-default" href="#" onclick="vote(0, -1); return false;"><span id="glyphdown0" class = "glyphicon glyphicon-chevron-down"></span></a>
-                    </div>
-                 }
-                </div> -->
-              </div>
-            </div>
+
+
+					<div class="hidden-xs col-sm-1 votes">
+						@if(currentPost.usersVoted.contains(user)) {
+							<div>
+								<a id="voted" class="button btn-default" href="#" disabled> 
+									<span id="votedGlyph" class="glyphicon glyphicon-chevron-up"></span>
+								</a>
+							</div>	
+							<div id="voteAmount2">@currentPost.votes</div>
+							<script>
+								$("#voted").addClass("btn-disabled");
+								$("#votedGlyph").addClass("voted-color");
+								$("#voteAmount2").addClass("voted-color");							
+							</script>						
+						} else {
+							@if(user != null){
+							<div>
+								<a id="upvote0" class="button btn-default" href="#" > 
+									<span id="glyphup0" class="glyphicon glyphicon-chevron-up"></span>
+								</a>
+							</div>
+							}
+							<div id="voteAmount">@currentPost.votes</div>
+							
+							<script>
+							$(function(){ //called when DOM is ready
+								$("#upvote0").click(function(){ // called on click
+									myJsRoutes.controllers.Application.vote(@currentPost.id).ajax({
+									    success : function(data) { 
+	
+									    }
+									});
+									$("#voteAmount").text("" + (@currentPost.votes + 1));
+									$("#upvote0").addClass("btn-disabled");
+									$("#glyphup0").addClass("voted-color");
+									$("#voteAmount").addClass("voted-color");
+	
+								})
+							})
+							</script>
+						}
+						<!--  
+						@if(user != null){
+						<div>
+							<a id="downvote0" class="button btn-default" href="#" onclick="vote(0, -1); return false;"> 
+								<span id="glyphdown0" class="glyphicon glyphicon-chevron-down"></span>
+							</a>
+						</div>
+						}
+						-->
+					</div>
+
+
+
+
+				</div>
+            </div>          
             <div class="panel-footer">
               @if(user != null){
                 Submitted by <span class="badge">@currentPost.userName</span>

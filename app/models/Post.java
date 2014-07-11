@@ -42,6 +42,8 @@ public class Post extends Model implements Comparable<Post>{
 	public Long comments;
 	
 	public Long votes;
+	
+	public String usersVoted;
 
 	@Id 
 	public Long id;
@@ -121,4 +123,24 @@ public class Post extends Model implements Comparable<Post>{
                 .findPagingList(pageSize)
                 .getPage(page);
     }
+    
+    /**
+    <script>
+        function vote(id, voteAmount) {
+            $("#"+id).text( parseInt($("#"+id).text().trim()) + voteAmount);
+            $("#upvote"+id).addClass("btn-disabled");
+            $("#downvote"+id).addClass("btn-disabled");
+            if (voteAmount > 0) {
+                $("#glyphup"+id).addClass("voted-color");
+            } else {
+                $("#glyphdown"+id).addClass("voted-color");
+            }
+            $("#"+id).addClass("voted-color");
+        }
+    </script>
+     */
+    // var listAction = #{jsAction @Post.upvote(currentPost.id, -1) /}
+
+    
+    
 }

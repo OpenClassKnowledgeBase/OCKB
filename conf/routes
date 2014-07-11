@@ -46,6 +46,8 @@ POST	/submitReqCategory			controllers.Application.requestCategorySubmit()
 POST	/approveReqCategory			controllers.Application.approveRequestedCategorySubmit(cid: Long)
 POST	/editCategories				controllers.Application.addCategorySubmit()
 POST    /deletePost                 controllers.Application.deletePost(pid: Long, cid: Long)
+PUT		/post/:pid					controllers.Application.vote(pid: Long)
+GET     /javascriptRoutes    		controllers.Application.javascriptRoutes
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

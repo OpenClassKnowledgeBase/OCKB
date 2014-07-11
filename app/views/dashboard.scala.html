@@ -1,136 +1,57 @@
-@(recentUserReplyList: List[Post], recentUserPostList: List[Post], userRole: String, topPosts: List[Post])
+@(userRole: String) 
 
 @scripts = {
-    <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/dashboard.css")">
-}
- 
-@main("Dashboard", scripts) {
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class = "row header">
-        <h1>Dashboard</h1>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <h2>My Recent Activity</h2>
-          <div class="well">
-            <h4>Replies</h4>
-          
-            @if(recentUserReplyList.isEmpty) {
-          	  <section class = "replyPlaceholder center">
-                <h2>You have no recent activity.</h2>
-                <a href="@routes.Application.random()" class="btn btn-primary btn-md btn-recent">Try a random category</a>
-              </section>
-            } else {
-           	  @for(recentUserReply <- recentUserReplyList) {
-	          	<section>
-	              <div class="panel panel-default">
-	                <div class="panel-heading">
-	                <a href = "@routes.Application.post(recentUserReply.id)" class = "postLink">@recentUserReply.title</a>
-	                  <span class = "hidden-xs pull-right replies-author">Active 5 min ago</span>
-	                </div>
-                  </div>
-	            </section>
-          	  }
-            }
-          </div> <!-- well -->
-        </div> <!-- col-lg-6 -->
-          
-        <div class="col-lg-6">
-          <h2>Top Questions</h2>
-          <div class = "well">
-           @for(post <- topPosts) {
-                  <section>
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <a href = "@routes.Application.post(post.id)" class = "postLink">@post.title</a>
-                        <span class = "pull-right stats">@post.commentList.length
-                        @if(post.commentList.length == 1){
-                           Answer
-                        }else{
-                           Answers
-                        }
-                        </span>
-                      </div>
-                    </div>
-                </section>
-              }
-              </div> <!-- well  -->
-          <br>
-          <section class="center">
-                <a class="btn btn-default" href="#">See All Top Questions &raquo;</a>
-          </section>
-	    </div> <!-- col-lg-6  -->
-      </div> <!-- row  -->
-		  
-      <div class = "row">
-        <div class="col-lg-6">       
-          <h2>Trending Categories</h2>          
-          <div class="well">
-          <section>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <a href = "@routes.Application.category(15)" class = "postLink">Recursion</a>
-          </div>
-        </section>
-        <section>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <a href = "@routes.Application.category(1)" class = "postLink">ArrayLists</a>
-          </div>
-        </section>
-        <section>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <a href = "@routes.Application.category(5)" class = "postLink">Generics</a>
-          </div>
-        </section>
-        <section>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <a href = "@routes.Application.category(11)" class = "postLink">LinkedList</a>
-          </div>
-        </section>
-        </div>
-        </div>
-        <div class="col-lg-6">
-          <h2>Account Settings</h2>
-          <br>
-          <span class = "col-lg-4">
-            <span class="glyphicon glyphicon-user"></span>
-            <a class = "postLink" href = "@routes.Application.userPriv()">User Privileges</a>
-          </span>
-          <span class = "col-lg-4">
-            <span class="glyphicon glyphicon-envelope"></span>
-            <a class = "postLink" href = "@routes.Application.notifications()">Notifications</a>
-          </span>
-          <span class = "col-lg-4">
-            <span class="glyphicon glyphicon-cog"></span>
-            <a class = "postLink" href = "#">Account Settings</a>
-          </span>
-          <br><br>
-          @if(userRole=="admin") {
-          <span class = "col-lg-4">
-            <span class="glyphicon glyphicon-plus"></span>
-            <a class = "postLink" href = "@routes.Application.viewRequestedCategories">View Requested Categories</a>
-          </span>
-          <span class = "col-lg-4">
-            <span class="glyphicon glyphicon-wrench"></span>
-            <a class = "postLink" href = "@routes.Application.manageCategories()">Manage Categories</a>
-          </span>
-          <span class = "col-lg-4">
-            <span class="glyphicon glyphicon-list-alt"></span>
-            <a class = "postLink" href = "@routes.Application.courseSettings()">Course Settings</a>
-          </span>
-          <br><br><br>
-		  <span class = "col-lg-4">
-            <span class="glyphicon glyphicon-fire"></span>
-            <a class = "postLink" href = "@routes.Application.createCodeChallenge()">Create a Code Challenge Post</a>
-          </span>
-          } else {}
-        </div>
-      </div>
-    </div> <!-- container  -->
+<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/dashboard.css")">
+} 
 
+@main("Dashboard", scripts) {
+<div class="container">
+
+	<div class="row header">
+		<h1>Dashboard</h1>
+	</div>
+
+	<div class="col-lg-6">
+		<h2>Account Settings</h2>
+		
+		<br> 
+		
+		<span class="col-lg-4"> 		
+			<span class="glyphicon glyphicon-user"></span> 
+			<a class="postLink" href="@routes.Application.userPriv()">User Privileges</a>
+		</span> 
+		<span class="col-lg-4"> 
+			<span class="glyphicon glyphicon-envelope"></span> 
+			<a class="postLink" href="@routes.Application.notifications()">Notifications</a>
+		</span> 
+		<span class="col-lg-4"> 
+			<span class="glyphicon glyphicon-cog"></span> 
+			<a class="postLink" href="#">Account Settings</a>
+		</span> 
+		<br> <br> 
+		@if(userRole=="admin") {
+		 <span class="col-lg-4">
+			<span class="glyphicon glyphicon-plus"></span> 
+			<a class="postLink" href="@routes.Application.viewRequestedCategories">View Requested Categories</a>
+		</span> 
+		<span class="col-lg-4"> 
+			<span class="glyphicon glyphicon-wrench"></span> 
+			<a class="postLink" href="@routes.Application.manageCategories()">Manage Categories</a>
+		</span> 
+		<span class="col-lg-4"> 
+			<span class="glyphicon glyphicon-list-alt"></span>
+			<a class="postLink" href="@routes.Application.courseSettings()">Course Settings</a>
+		</span> 
+		<br> <br> <br> 
+		<span class="col-lg-4"> 
+			<span class="glyphicon glyphicon-fire"></span> 
+			<a class="postLink" href="@routes.Application.createCodeChallenge()">Create a Code Challenge Post</a>
+		</span> 
+		} else {
+		
+		}
+	</div>
+	
+</div>
 }
