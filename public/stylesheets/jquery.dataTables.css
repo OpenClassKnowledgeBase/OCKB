@@ -432,3 +432,8 @@ h1 {
 .editSemesterRetrieveBtn {
 	color:black;	
 }
+#chevron {
+	float: right;
+	padding-right: 1em;
+	padding-top: .2em;
+}

@@ -15,6 +15,7 @@
 			}
 		});
 	});
+
 </script>
 } 
 
@@ -34,11 +35,19 @@
 	
 	<div class="panel-group" id="accordion">
 		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h4 class="panel-title">
-					<a data-toggle="collapse" data-parent="#accordion" href="#addCourse">Create a New Course </a>
-				</h4>
-			</div>
+			<div class="panel-heading" id="chevronToggle" data-toggle="collapse" data-target="#addCourse">
+				<div class="row">
+					<div class="col-md-11">
+						Create a New Course			      										
+	      			</div>
+	      			<span class="chevron_toggleable glyphicon glyphicon-chevron-down" id="chevron"></span>
+	      		</div>
+	    	</div>
+	    	<script>
+				$('#chevronToggle').on('click', function() {
+				    $('.chevron_toggleable').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+				});
+			</script>
 			<div id="addCourse" class="panel-collapse collapse">
 				<div class="panel-body">
 					<form class="form-horizontal" action="@routes.Application.createCourse()" method="POST">
@@ -100,11 +109,19 @@
 			</div>
 		</div>
 		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h4 class="panel-title">
-					<a data-toggle="collapse" data-parent="#accordion" href="#editCourse">Edit Course Information</a>
-				</h4>
-			</div>
+			<div class="panel-heading" id="chevronToggle2" data-toggle="collapse" data-target="#editCourse">
+				<div class="row">
+					<div class="col-md-11">
+						Edit Course Information		      										
+	      			</div>
+	      			<span class="chevron_toggleable2 glyphicon glyphicon-chevron-down" id="chevron"></span>
+	      		</div>
+	    	</div>
+	    	<script>
+				$('#chevronToggle2').on('click', function() {
+				    $('.chevron_toggleable2').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+				});
+			</script>
 			<div id="editCourse" class="panel-collapse collapse">
 				<div class="panel-body">
 					<select id="editSemester">
@@ -182,11 +199,19 @@
 			</div>
 		</div>		
 		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h4 class="panel-title">
-					<a data-toggle="collapse" data-parent="#accordion" href="#courseRoster">Manage Course Roster and User Settings </a>
-				</h4>
-			</div>
+			<div class="panel-heading" id="chevronToggle3" data-toggle="collapse" data-target="#courseRoster">
+				<div class="row">
+					<div class="col-md-11">
+						Manage Course Roster and User Settings		      										
+	      			</div>
+	      			<span class="chevron_toggleable3 glyphicon glyphicon-chevron-down" id="chevron"></span>
+	      		</div>
+	    	</div>
+	    	<script>
+				$('#chevronToggle3').on('click', function() {
+				    $('.chevron_toggleable3').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+				});
+			</script>
 			<div id="courseRoster" class="panel-collapse collapse">
 				<div class="row">
 					<br>

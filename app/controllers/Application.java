@@ -2,11 +2,6 @@ package controllers;
 
 import com.avaje.ebean.Ebean;
 
-
-
-
-
-
 //EXCEL IMPORTS
 import org.apache.poi.xssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
@@ -62,9 +57,6 @@ public class Application extends Controller {
 	private static final String CAS_LOGIN = "https://cas-test.its.hawaii.edu/cas/login";
 	private static final String CAS_VALIDATE = "https://cas-test.its.hawaii.edu/cas/serviceValidate";
 	private static final String CAS_LOGOUT = "https://cas-test.its.hawaii.edu/cas/logout";
-	
-    private static List<Category> currentSortOrderList;
-    private static String currentSortOrderString;
     
 	/**********************
 	 *                    *
@@ -97,11 +89,8 @@ public class Application extends Controller {
 		}
 		else {
 		    String userRole = User.getUser(user).role;
-			List<Post> recentUserReplyList = Post.find.where().eq("userName", user).orderBy("latestActivity").findList();
-			List<Post> recentUserPostList = Post.find.where().eq("userName", user).orderBy("latestActivity").findList();
-			List<Post> topPosts = Post.getSortedByComments().subList(0, 3);
 			
-			return ok(views.html.dashboard.render(recentUserReplyList, recentUserPostList, userRole, topPosts));
+			return ok(views.html.dashboard.render(userRole));
 		}
 	}   
 
@@ -139,9 +128,12 @@ public class Application extends Controller {
 
 		Category currentCategory = Category.getCategory(cid);
 		Page<Post> currentPage = Post.getPosts(cid, page, 10, sortBy, order, filter);
+		
+		List<CodeChallenge> challengeList= CodeChallenge.find.where().eq("categoryId", cid).findList();
 
-		return ok(views.html.category.render(stickyList, currentPage, sortBy, order, filter, currentCategory, user));
+		return ok(views.html.category.render(stickyList, currentPage, sortBy, order, filter, currentCategory, user, challengeList));
 	}
+	
 	/**
 	 * Renders the requested category page view.
 	 * 
@@ -346,33 +338,14 @@ public class Application extends Controller {
 
         final Map<String, String[]> values = request().body().asFormUrlEncoded();   
         String sortCourseOrder = values.get("sortCourseOrder")[0];
-
-        /**
-        List<Category> sortByCourseOrder = new ArrayList<Category>();
-
-        String[] formSplit = sortCourseOrder.split(",");
-
-        for(int i = 0; i < formSplit.length; i++) {
-            sortByCourseOrder.add(Category.getCategory(Long.parseLong(formSplit[i])));
-        }
-                                 
-        course.currentSortOrder = new ArrayList<Category>();
         
-        for(Category s : sortByCourseOrder) {
-            course.currentSortOrder.add(s);
-            //s.course = course;
-        }
-        */
-        
-        Course course = Course.getCourse(1L);
-        
+        Course course = Course.getCourse(1L);     
         course.currentSortOrder = sortCourseOrder;  
         course.categoryOrder = "Sort by Course Order";
         course.save();
 
         return ok(views.html.manageCategories.render(getCurrentSortOrderString()));
     }	
-
 
     /**
      * 
@@ -409,12 +382,6 @@ public class Application extends Controller {
         } );
         
         Course course = Course.getCourse(1L);
-        
-        /*
-        for(Category c : categoryList) {
-            course.currentSortOrder.add(c);
-            //c.course = course;
-        }*/
         
         String concatIdOrder = "";
         for(Category c : categoryList) {
@@ -648,7 +615,7 @@ public class Application extends Controller {
             }
            
             Integer timeLimit = (challengeHours * 3600) + (challengeMinutes * 60) + (challengeSeconds * 1);            
-            Integer categoryId = Integer.parseInt(categorySelect);
+            Long categoryId = Long.parseLong(categorySelect);
             
             CodeChallenge.create(codeChallengeTitle, description, "", timeLimit, categoryId);
 
@@ -658,6 +625,13 @@ public class Application extends Controller {
 
         return ok(views.html.createCodeChallenge.render(categoryList));
 	}
+
+    public static Result codeChallenge(Long cid) {       
+        List<Category> categoryList = Category.findAll();
+        CodeChallenge challenge = CodeChallenge.getChallenge(cid);
+        
+        return ok(views.html.codeChallenge.render(categoryList, challenge));        
+    }	
 
 	/**********************
 	 *                    *
@@ -874,22 +848,17 @@ public class Application extends Controller {
         Course course = Course.getCourse(1L);
 
         List<Category> sortCourseOrder = new ArrayList<Category>();
-        String[] formSplit = course.currentSortOrder.split(",");
-        
+        String[] formSplit = course.currentSortOrder.split(",");      
         List<Category> categoryList = Category.findAll();
 
-        long startTime = System.nanoTime();
         for(int i = 0; i < formSplit.length; i++) {
             Category c = categoryList.get(Integer.parseInt(formSplit[i]) - 1);
             if(c.hidden) {
-                //hide variable is true, so don't add to list.
+                //hidden variable is true, so don't add to list.
             } else {
                 sortCourseOrder.add(c);
             }
         }
-        long endTime1 = System.nanoTime();
-        long duration1 = endTime1 - startTime;
-        Logger.debug("Ending full load implementation: " + duration1);
         
         return sortCourseOrder;
 	}
@@ -921,8 +890,9 @@ public class Application extends Controller {
      */
     public static String getCurrentSortOrderString() {
         Course course = Course.getCourse(1L);
-        String here = course.categoryOrder;
-        return here;
+        String sortOrder = course.categoryOrder;
+        
+        return sortOrder;
     }
 
 	/***********************
@@ -1037,26 +1007,47 @@ public class Application extends Controller {
 	    
 	}
 	
-	private static String printLines(String name, InputStream ins) throws Exception {
-	    String line = null;
-	    StringBuilder sb = new StringBuilder();
-	    BufferedReader in = new BufferedReader(
-	        new InputStreamReader(ins));
-	    while ((line = in.readLine()) != null) {
-	        sb.append(line + "\n");
-	    }
-	    return sb.toString();
+    private static String printLines(String name, InputStream ins) throws Exception {
+        String line = null;
+        StringBuilder sb = new StringBuilder();
+        BufferedReader in = new BufferedReader(
+            new InputStreamReader(ins));
+        while ((line = in.readLine()) != null) {
+            sb.append(line + "\n");
+        }
+        return sb.toString();
+    }
+
+      private static String runProcess(String command) throws Exception {
+          Process pro = Runtime.getRuntime().exec(command);
+          String output = "";
+          output+= printLines(command + " stdout:", pro.getInputStream());
+          output+= printLines(command + " stderr:", pro.getErrorStream());
+          pro.waitFor();
+          // System.out.println(command + " exitValue() " + pro.exitValue());
+          
+          return output;
+      }
+	  
+      public static Result vote(Long pid) {      
+          String user = session("username");       
+          Post post = Post.getPost(pid);
+          post.votes += 1;
+          if(!post.usersVoted.contains(user)) {
+              post.usersVoted += user + " ";
+          }         
+          post.save();
+        	        
+          return ok();
+    }
+	    
+	  public static Result javascriptRoutes() {
+	      response().setContentType("text/javascript");
+	      return ok(
+	          Routes.javascriptRouter("myJsRoutes",
+	              routes.javascript.Application.vote()
+	          )
+	      );
 	  }
-
-	  private static String runProcess(String command) throws Exception {
-	    Process pro = Runtime.getRuntime().exec(command);
-	    String output = "";
-	    output+= printLines(command + " stdout:", pro.getInputStream());
-	    output+= printLines(command + " stderr:", pro.getErrorStream());
-	    pro.waitFor();
-	   // System.out.println(command + " exitValue() " + pro.exitValue());
-	    return output;
-	  }
-
-
+	  
 }

@@ -25,10 +25,10 @@ public class CodeChallenge extends Model{
 	public String requiredOutput;
 	
 	public Integer codeChallengeTime;
-	
-	public Integer categoryId;
+		
+	public Long categoryId;
 
-	public CodeChallenge (String title, String description, String requiredOutput, Integer codeChallengeTime, Integer categoryId) {
+	public CodeChallenge (String title, String description, String requiredOutput, Integer codeChallengeTime, Long categoryId) {
         this.title = title;
         this.description = description;
         this.requiredOutput = requiredOutput;
@@ -41,7 +41,7 @@ public class CodeChallenge extends Model{
 	
 	/*Implement the CRUD operations*/
 
-	public static void create(String title, String description, String requiredOutput, Integer codeChallengeTime, Integer categoryId) {
+	public static void create(String title, String description, String requiredOutput, Integer codeChallengeTime, Long categoryId) {
 		CodeChallenge challenge = new CodeChallenge(title, description, requiredOutput, codeChallengeTime, categoryId);
 		challenge.save();
 	}
@@ -60,6 +60,10 @@ public class CodeChallenge extends Model{
 	
 	public String getTitle() {
 		return this.title;
+	}
+	
+	public String getCategoryTitle() {
+	    return Category.getCategory(this.categoryId).getTitle();
 	}
 	
 }

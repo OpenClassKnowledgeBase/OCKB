@@ -6,4 +6,8 @@
 /logs
 .classpath
 .settings/
+<<<<<<< HEAD
 conf/application.conf
+=======
+/conf/application.conf
+>>>>>>> FETCH_HEAD

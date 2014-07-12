@@ -1,4 +1,5 @@
-@(stickyList: List[Post], currentPage: com.avaje.ebean.Page[Post], currentSortBy: String, currentOrder: String, currentFilter: String, currentCategory: Category, user: String)
+@(stickyList: List[Post], currentPage: com.avaje.ebean.Page[Post], currentSortBy: String, currentOrder: String, 
+				currentFilter: String, currentCategory: Category, user: String, codeChallengeList: List[CodeChallenge])
 
 @link(newPage:Int, newSortBy:String) = @{
     var sortBy = currentSortBy
@@ -111,7 +112,27 @@
             </div>
 	      </section>
       }
-
+      
+      <hr>
+      
+      <!-- Code Challenge -->
+      @for(challenge <- codeChallengeList) {
+	      <section>
+	          <div class="panel panel-danger">
+	            <div class="panel-heading">
+                  <div class = "row">   
+                    <div class = "col-xs-1">
+                        <span class="label label-danger">CHALLENGE</span>
+                    </div> 
+                    <div class = "col-xs-11">
+                        <a href = "@routes.Application.codeChallenge(challenge.id)" class = "postLink"> @challenge.title</a>
+                    </div>
+                  </div> 
+	            </div>
+            </div>
+	      </section>
+      }
+      
       <hr>
       
       <!-- Content -->
