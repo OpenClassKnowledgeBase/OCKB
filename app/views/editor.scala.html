@@ -1,4 +1,4 @@
-@(challenge: CodeChallenge, input: String, output: String, gradingResults: List[String])
+@(challenge: CodeChallenge, input: String, output: String, gradingResults: String)
 
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
@@ -61,6 +61,19 @@
 					
 					<div class="well">
 						<pre>@Html(output)</pre>
+					</div>
+				</div>
+			</div>
+		}
+		
+		@if(gradingResults != "") {
+			<hr>
+			<div class="row">
+				<div class="col-lg-12">
+					<h3>Grading Results</h3>
+					
+					<div class="well">
+						<pre>@Html(gradingResults)</pre>
 					</div>
 				</div>
 			</div>

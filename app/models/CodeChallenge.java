@@ -24,6 +24,8 @@ public class CodeChallenge extends Model{
 	@Required
 	public String requiredOutput;
 	
+	public String requiredSource;
+	
 	public Integer codeChallengeTime;
 		
 	public Long categoryId;

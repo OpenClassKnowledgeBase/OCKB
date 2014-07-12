@@ -2,6 +2,8 @@ package controllers;
 
 import com.avaje.ebean.Ebean;
 
+
+
 //EXCEL IMPORTS
 import org.apache.poi.xssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
@@ -33,6 +35,8 @@ import java.net.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.xml.parsers.*;
 
@@ -1000,8 +1004,23 @@ public class Application extends Controller {
             finalOutput = output2;
         } else {
             finalOutput = output1 + "\n" + output2;
+            gradingResults += "Failed to compile\n";
         }
         
+        Pattern pattern = Pattern.compile("");
+        Matcher matcher = pattern.matcher(javaCode);
+        String[] requiredSource = CodeChallenge.getChallenge(chid).requiredSource.split(",");
+        for (int i = 0; i < requiredSource.length; i++) {
+            pattern = Pattern.compile(requiredSource[i]);
+            matcher = pattern.matcher(javaCode);
+            
+            gradingResults += "Test " + (i+1);
+            if (matcher.find()) {
+                gradingResults += ": Passed\n";
+            } else {
+                gradingResults += ": Failed\n";
+            }
+        }
         
 	    return redirect(routes.Application.editor(chid, javaCode, finalOutput, gradingResults));
 	    
