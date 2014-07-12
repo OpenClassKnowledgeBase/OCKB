@@ -997,9 +997,9 @@ public class Application extends Controller {
 		return redirect(CAS_LOGOUT + "?service=" + serviceURL);
 	}
 
-	public static Result editor(Long chid, String input, String output) {
+	public static Result editor(Long chid, String input, String output, String gradingResults) {
 	    CodeChallenge challenge = CodeChallenge.getChallenge(chid);
-	    return ok(views.html.editor.render(challenge, input, output));
+	    return ok(views.html.editor.render(challenge, input, output, gradingResults));
 	}
 	
 	public static Result submitCode(Long chid) throws Exception {
@@ -1025,6 +1025,7 @@ public class Application extends Controller {
         String output1 = runProcess("javac " + path + "/" + className + ".java");
         String output2 = runProcess("java -cp " + path + " " + className);
         String finalOutput = "";
+        String gradingResults = "";
         if (output1.equals("")) {
             finalOutput = output2;
         } else {
@@ -1032,7 +1033,7 @@ public class Application extends Controller {
         }
         
         
-	    return redirect(routes.Application.editor(chid, javaCode, finalOutput));
+	    return redirect(routes.Application.editor(chid, javaCode, finalOutput, gradingResults));
 	    
 	}
 	
