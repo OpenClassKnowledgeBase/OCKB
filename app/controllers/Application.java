@@ -4,6 +4,7 @@ import com.avaje.ebean.Ebean;
 
 
 
+
 //EXCEL IMPORTS
 import org.apache.poi.xssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
@@ -650,14 +651,15 @@ public class Application extends Controller {
 	 */
 	public static Result createCourse() {
         final Map<String, String[]> values = request().body().asFormUrlEncoded();   
-        String inputSemester = values.get("inputSemester")[0];
-        String courseSelect = values.get("courseSelect")[0];
-        String courseSection = values.get("courseSection")[0];
-        String courseTitle = values.get("courseTitle")[0];
+        String inputSemester = values.get("inputSemester")[0]; //e.g. Fall 2014
+        String courseSelect = values.get("courseSelect")[0]; //ICS 111
+        Integer courseSection = Integer.parseInt(values.get("courseSection")[0]); //001
+        String courseTitle = values.get("courseTitle")[0]; //Intro to Computer Science I
         
-        List<Course> courses = Course.findAll();
+        //For Edit Course Information - needs list of all Courses for selection.
+        List<Course> courses = Course.findAll(); 
         
-        //create(String title, String description, String categoryOrder, Integer courseSection, String semester, String icsCourse)
+        Course.create(courseTitle, "", "", courseSection, inputSemester, courseSelect);
         
         return ok(views.html.courseSettings.render(getStudentRoster(), courses));
 	}
@@ -699,11 +701,6 @@ public class Application extends Controller {
      * @return
      */
     public static Result courseRoster() {
-        
-        List<User> blah = User.findAll();
-        for(User s : blah) {
-            System.out.println(s.name);
-        }
                  
         return ok(views.html.courseRoster.render(getStudentRoster()));
     }
@@ -715,15 +712,18 @@ public class Application extends Controller {
      */
     @BodyParser.Of(BodyParser.MultipartFormData.class)
     public static Result uploadExcelRoster() {
-        Http.MultipartFormData body = request().body().asMultipartFormData();
         
+        Http.MultipartFormData body = request().body().asMultipartFormData();        
         Http.MultipartFormData.FilePart temp = body.getFile("courseRosterExcel");
+        final Map<String, String[]> values = body.asFormUrlEncoded();    
+        
+        Long courseID = Long.parseLong(values.get("courseId")[0]);
         
         File uploadedFile = temp.getFile();
         System.out.println(temp.getFilename());
         System.out.println(temp.getContentType());
         
-        Course course = Course.getCourse(1L);
+        Course course = Course.getCourse(courseID);
         course.studentRoster = "";
         
         try {

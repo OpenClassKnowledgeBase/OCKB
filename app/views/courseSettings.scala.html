@@ -24,7 +24,7 @@
 <div class="container">
 	<ol class="breadcrumb">
 		<li><a href="@routes.Application.dashboard()">Dashboard</a></li>
-		<li><a href="#">Course Settings</a></li>
+		<li><a href="@routes.Application.courseSettings()">Course Settings</a></li>
 	</ol>
 	
 	<div class="row">
@@ -57,7 +57,7 @@
 								<label for="inputSemester" class="col-lg-2 control-label">Semester</label>
 								<div class="col-lg-10">
 									<input id="inputSemester" name="inputSemester" class="form-control" 
-										placeholder="e.g., Fall 2014" type="text" style="width: 75%">
+										placeholder="e.g., Fall 2014" type="text" style="width: 75%" required>
 								</div>
 							</div>
 							<div class="form-group">
@@ -98,9 +98,10 @@
 							</div>
 							<div class="form-group">
 								<div class="col-lg-10 col-lg-offset-2">
-									<br>
-									<button type="submit" class="btn btn-success">Submit</button>
-									<button class="btn btn-danger">Cancel</button>
+									<button type="submit" class="btn btn-success">Create</button>
+									<!-- Not sure if cancel button is needed.
+									<button class="btn btn-danger">Cancel</button> 
+									-->
 								</div>
 							</div>
 						</fieldset>
@@ -108,6 +109,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- 
 		<div class="panel panel-default">
 			<div class="panel-heading" id="chevronToggle2" data-toggle="collapse" data-target="#editCourse">
 				<div class="row">
@@ -124,85 +126,93 @@
 			</script>
 			<div id="editCourse" class="panel-collapse collapse">
 				<div class="panel-body">
-					<select id="editSemester">
+					<select class="form-control" id="editSemester" style="width: 75%"> 
 						@for(index <- 0 until course.size) {
-							<option value="@course(index)">@course(index).semester</option>
+							<option value="@course(index).id">
+								@course(index).semester - @course(index).icsCourse - 00@course(index).courseSection
+							</option> 
 						}
-					</select>		
-					<button id="editSemesterRetrieve" class="editSemesterRetrieveBtn">Retrieve</button>	
+					</select>
+					<br>
+					<button id="editSemesterRetrieve" class="editSemesterRetrieveBtn">Retrieve</button>
 					<script>
 						$(document).ready(function() {						    
 						    $("#editSemesterRetrieve").click(function() {
 								$("#editSemesterAccordion").slideDown();
-						  });						    						    
+						  	});						    						    
 						});					
 					</script>
-					<div class="collapse" id="editSemesterAccordion"> 
-					<form class="form-horizontal" action="#" method="POST">
-						<fieldset>
-							<legend>Edit Course Information</legend>
-							<br>
-							<div class="form-group">
-								<label for="inputSemester" class="col-lg-2 control-label">Semester</label>
-								<div class="col-lg-10">
-									<input id="inputSemester" name="inputSemester" class="form-control" 
-										placeholder="e.g., Fall 2014" type="text" style="width: 75%">
+					<div class="collapse" id="editSemesterAccordion">
+						<form class="form-horizontal" action="#" method="POST">
+							<fieldset>
+								<legend>Edit Course Information</legend>
+								<br>
+								<div class="form-group">
+									<label for="inputSemester" class="col-lg-2 control-label">Semester</label>
+									<div class="col-lg-10">
+										<input id="inputSemester" name="inputSemester"
+											class="form-control" placeholder="e.g., Fall 2014"
+											type="text" style="width: 75%" required>
+									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<label for="select" class="col-lg-2 control-label">Course</label>
-								<div class="col-lg-10">
-									<select class="form-control" id="courseSelect" name="courseSelect" style="width: 75%">
-										<option>ICS 111</option>
-										<option>ICS 211</option>
-								   <!-- <option>3</option>
+								<div class="form-group">
+									<label for="select" class="col-lg-2 control-label">Course</label>
+									<div class="col-lg-10">
+										<select class="form-control" id="courseSelect"
+											name="courseSelect" style="width: 75%">
+											<option>ICS 111</option>
+											<option>ICS 211</option>
+											<!-- <option>3</option>
 							            <option>4</option>
-							            <option>5</option> -->
-									</select>
+							            <option>5</option> 
+										</select>
+									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<label for="select" class="col-lg-2 control-label">Section</label>
-								<div class="col-lg-10">
-									<select class="form-control" id="courseSection" name="courseSection" style="width: 75%">
-										<option>001</option>
-										<option>002</option>
-										<option>003</option>
-								   <!-- <option>4</option>
-          							    <option>5</option> -->
-									</select>
+								<div class="form-group">
+									<label for="select" class="col-lg-2 control-label">Section</label>
+									<div class="col-lg-10">
+										<select class="form-control" id="courseSection"
+											name="courseSection" style="width: 75%">
+											<option>001</option>
+											<option>002</option>
+											<option>003</option>
+											<!-- <option>4</option>
+          							    <option>5</option> 
+										</select>
+									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<label for="select" class="col-lg-2 control-label">Title</label>
-								<div class="col-lg-10">
-									<select class="form-control" id="courseTitle" name="courseTitle" style="width: 75%">
-										<option>Intro to Computer Science I</option>
-										<option>Intro to Computer Science II</option>
-								   <!-- <option>3</option>
+								<div class="form-group">
+									<label for="select" class="col-lg-2 control-label">Title</label>
+									<div class="col-lg-10">
+										<select class="form-control" id="courseTitle"
+											name="courseTitle" style="width: 75%">
+											<option>Intro to Computer Science I</option>
+											<option>Intro to Computer Science II</option>
+											<!-- <option>3</option>
 							            <option>4</option>
-							            <option>5</option> -->
-									</select>
+							            <option>5</option> 
+										</select>
+									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-lg-10 col-lg-offset-2">
-									<br>
-									<button type="submit" class="btn btn-success">Update</button>
-									<button class="btn btn-danger">Cancel</button>
+								<div class="form-group">
+									<div class="col-lg-10 col-lg-offset-2">
+										<br>
+										<button type="submit" class="btn btn-success">Update</button>
+										<button class="btn btn-danger">Cancel</button>
+									</div>
 								</div>
-							</div>
-						</fieldset>
-					</form>
-    </div>
+							</fieldset>
+						</form>
+					</div>
 				</div>
 			</div>
-		</div>		
+		</div>
+		-->
 		<div class="panel panel-default">
-			<div class="panel-heading" id="chevronToggle3" data-toggle="collapse" data-target="#courseRoster">
+			<div class="panel-heading" id="chevronToggle3" data-toggle="collapse" data-target="#uploadRoster">
 				<div class="row">
 					<div class="col-md-11">
-						Manage Course Roster and User Settings		      										
+						Upload Course Roster	      										
 	      			</div>
 	      			<span class="chevron_toggleable3 glyphicon glyphicon-chevron-down" id="chevron"></span>
 	      		</div>
@@ -212,30 +222,53 @@
 				    $('.chevron_toggleable3').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
 				});
 			</script>
-			<div id="courseRoster" class="panel-collapse collapse">
-				<div class="row">
-					<br>
+			<div id="uploadRoster" class="panel-collapse collapse">
+				<div class="panel-body">
+				
+					<form class="form-horizontal" enctype="multipart/form-data" action="@routes.Application.uploadExcelRoster()" method="post">
+						<fieldset>
+							<legend>Upload Course Roster</legend>
+							<div class="form-group">
+								<label for="select" class="col-lg-2 control-label">Select a Course</label>
+								<div class="col-lg-10">
+									<select class="form-control" id="courseId" name="courseId" style="width: 75%">
+										@for(index <- 0 until course.size) {
+											<option value="@course(index).id">
+												@course(index).semester - @course(index).icsCourse - Section 00@course(index).courseSection
+											</option> 
+										}
+									</select>
+									
+								</div>
+							</div>							
+							<div class="form-group">
+								<div class="col-lg-10 col-lg-offset-2">
+									<input type="file" id="courseRosterExcel" class="fileUpload" name="courseRosterExcel" accept="MIME_type" required> 
+									<button type="submit" class="btn btn-success" id="fileUploadButton">Upload</button>
+								</div>
+							</div>						
+						</fieldset>
+					</form>			
 				</div>
-				Select an Excel file to upload:
-				<form enctype="multipart/form-data" onsubmit="return checkSize(2097152)" action="@routes.Application.uploadExcelRoster()" method="post">
-					<input type="file" id="courseRosterExcel" class="fileUpload" name="courseRosterExcel" accept="MIME_type"> 
-					<input type="submit" class="button" value="Upload">
-				</form>
-				<script type="text/javascript">
-					function checkSize(max_img_size) {
-						var input = document.getElementById("upload");
+			</div>
+		</div>
+						
+		<div class="panel panel-default">
+			<div class="panel-heading" id="chevronToggle4" data-toggle="collapse" data-target="#courseRoster">
+				<div class="row">
+					<div class="col-md-11">
+						Manage Course Roster and User Settings		      										
+	      			</div>
+	      			<span class="chevron_toggleable4 glyphicon glyphicon-chevron-down" id="chevron"></span>
+	      		</div>
+	    	</div>
+	    	<script>
+				$('#chevronToggle4').on('click', function() {
+				    $('.chevron_toggleable4').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+				});
+			</script>
+			<div id="courseRoster" class="panel-collapse collapse">
 
-						// check for browser support (may need to be modified)
-						if (input.files && input.files.length == 1) {
-							if (input.files[0].size > max_img_size) {
-								alert("The file must be less than "
-										+ (max_img_size / 1024 / 1024) + "MB");
-								return false;
-							}
-						}
-						return true;
-					}
-				</script>
 				<div class="panel-body">
 					<div class="row">
 						<br>
@@ -264,10 +297,13 @@
 		</div>
 
 	</div>
+	
+	<!-- 
 	<span class="col-lg-4"> <span class="glyphicon glyphicon-user"></span>
 		<a class="postLink" href="@routes.Application.courseRoster()">Manage Course Roster and User Settings</a>
 	</span>
-
+	-->
+	
 	<div class="row">
 		<br>
 	</div>

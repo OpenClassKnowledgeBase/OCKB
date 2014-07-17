@@ -33,7 +33,7 @@ public class Course extends Model{
     public String semester; //Fall 2014, etc.
     
     public String icsCourse; //ICS111, ICS211, etc.
-	
+    	
 	public Course (String title, String description, String categoryOrder, Integer courseSection, String semester, String icsCourse) {
         this.title = title;
         this.description = description;
