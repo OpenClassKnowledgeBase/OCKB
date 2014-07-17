@@ -5,6 +5,7 @@ import com.avaje.ebean.Ebean;
 
 
 
+
 //EXCEL IMPORTS
 import org.apache.poi.xssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
@@ -1000,28 +1001,45 @@ public class Application extends Controller {
         String output2 = runProcess("java -cp " + path + " " + className);
         String finalOutput = "";
         String gradingResults = "";
+        int points = 0;
+        Pattern pattern = Pattern.compile("");
+        Matcher matcher = pattern.matcher(javaCode);
+        
         if (output1.equals("")) {
             finalOutput = output2;
+            CodeChallenge currentChallenge = CodeChallenge.getChallenge(chid);
+            
+            String[] requiredSource = currentChallenge.requiredSource.split(",");
+            for (int i = 0; i < requiredSource.length; i=i+3) {
+                pattern = Pattern.compile(requiredSource[i]);
+                matcher = pattern.matcher(javaCode);
+                
+                gradingResults += requiredSource[i+1];
+                if (matcher.find()) {
+                    gradingResults += " - PASSED\n    +" + requiredSource[i+2] + " Point(s)\n";
+                    points += Integer.parseInt(requiredSource[i+2]);
+                } else {
+                    gradingResults += " - FAILED\n";
+                }
+            }
+            
+            pattern = Pattern.compile(currentChallenge.requiredOutput);
+            matcher = pattern.matcher(finalOutput);
+            gradingResults += "Matched Output";
+            if (matcher.find()) {
+                gradingResults += " - PASSED\n    +1 Point(s)\n";
+                points += 1;
+            } else {
+                gradingResults += " - FAILED\n";
+            }
+            
         } else {
             finalOutput = output1 + "\n" + output2;
             gradingResults += "Failed to compile\n";
         }
         
-        Pattern pattern = Pattern.compile("");
-        Matcher matcher = pattern.matcher(javaCode);
-        String[] requiredSource = CodeChallenge.getChallenge(chid).requiredSource.split(",");
-        for (int i = 0; i < requiredSource.length; i++) {
-            pattern = Pattern.compile(requiredSource[i]);
-            matcher = pattern.matcher(javaCode);
-            
-            gradingResults += "Test " + (i+1);
-            if (matcher.find()) {
-                gradingResults += ": Passed\n";
-            } else {
-                gradingResults += ": Failed\n";
-            }
-        }
         
+        gradingResults += "===============\nTotal Points: " + points;
 	    return redirect(routes.Application.editor(chid, javaCode, finalOutput, gradingResults));
 	    
 	}
