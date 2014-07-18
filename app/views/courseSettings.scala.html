@@ -33,6 +33,60 @@
 		</div>
 	</div>
 	
+	<div class="row">
+		<div class="col-md-11">
+			<h3>Select a Course to view it's roster</h3>	      										
+		</div>	
+		<div class="col-lg-10">
+			<form class="form-horizontal" action="@routes.Application.changeCourse()" method="post">
+				<div class="form-group">
+					<div class="col-lg-12">
+						<select class="form-control" id="courseID" name="courseID" style="width: 75%">
+							@for(index <- 0 until course.size) {
+								<option value="@course(index).id">
+									@course(index).semester - @course(index).icsCourse - Section 00@course(index).courseSection
+								</option> 
+							}
+						</select>	
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-10">
+						<button type="submit" class="btn btn-success">Change Course</button>
+					</div>
+				</div>
+			</form>							
+		</div>
+	</div>
+	
+	
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<div class="toolbar"></div>
+			</div>
+
+			<body>
+				<table cellpadding="0" cellspacing="0" border="0" class="table-bordered" id="roster">
+					<thead>
+						@for(head <- 0 until studentRoster(0).size) {
+							<th>@studentRoster(0).get(head)</th> 
+						}
+					</thead>
+					<tbody>
+						@for(index <- 1 until studentRoster.size) {
+						<tr>@for(cell <- 0 until studentRoster(index).size) {
+								<td>@studentRoster(index).get(cell)</td> 
+							}</tr>
+						}
+					</tbody>
+				</table>
+			</body>
+			</div>
+	</div>
+	
+	<hr>
+	
 	<div class="panel-group" id="accordion">
 		<div class="panel panel-default">
 			<div class="panel-heading" id="chevronToggle" data-toggle="collapse" data-target="#addCourse">
@@ -224,7 +278,6 @@
 			</script>
 			<div id="uploadRoster" class="panel-collapse collapse">
 				<div class="panel-body">
-				
 					<form class="form-horizontal" enctype="multipart/form-data" action="@routes.Application.uploadExcelRoster()" method="post">
 						<fieldset>
 							<legend>Upload Course Roster</legend>
@@ -237,8 +290,7 @@
 												@course(index).semester - @course(index).icsCourse - Section 00@course(index).courseSection
 											</option> 
 										}
-									</select>
-									
+									</select>								
 								</div>
 							</div>							
 							<div class="form-group">
@@ -253,48 +305,7 @@
 			</div>
 		</div>
 						
-		<div class="panel panel-default">
-			<div class="panel-heading" id="chevronToggle4" data-toggle="collapse" data-target="#courseRoster">
-				<div class="row">
-					<div class="col-md-11">
-						Manage Course Roster and User Settings		      										
-	      			</div>
-	      			<span class="chevron_toggleable4 glyphicon glyphicon-chevron-down" id="chevron"></span>
-	      		</div>
-	    	</div>
-	    	<script>
-				$('#chevronToggle4').on('click', function() {
-				    $('.chevron_toggleable4').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
-				});
-			</script>
-			<div id="courseRoster" class="panel-collapse collapse">
-
-				<div class="panel-body">
-					<div class="row">
-						<br>
-						<div class="toolbar"></div>
-					</div>
-
-					<body>
-						<table cellpadding="0" cellspacing="0" border="0"
-							class="table-bordered" id="roster">
-							<thead>
-								@for(head <- 0 until studentRoster(0).size) {
-								<th>@studentRoster(0).get(head)</th> }
-							</thead>
-							<tbody>
-								@for(index <- 1 until studentRoster.size) {
-								<tr>
-									@for(cell <- 0 until studentRoster(index).size) {
-									<td>@studentRoster(index).get(cell)</td> }
-								</tr>
-								}
-							</tbody>
-						</table>
-					</body>
-				</div>
-			</div>
-		</div>
+		
 
 	</div>
 	
@@ -303,10 +314,7 @@
 		<a class="postLink" href="@routes.Application.courseRoster()">Manage Course Roster and User Settings</a>
 	</span>
 	-->
-	
-	<div class="row">
-		<br>
-	</div>
+
 
 </div>
 }

@@ -662,7 +662,7 @@ public class Application extends Controller {
         
         Course.create(courseTitle, "", "", courseSection, inputSemester, courseSelect);
         
-        return ok(views.html.courseSettings.render(getStudentRoster(), courses));
+        return ok(views.html.courseSettings.render(getStudentRoster(0L), courses));
 	}
 	
 	/**
@@ -674,26 +674,7 @@ public class Application extends Controller {
 	    
 	    List<Course> courses = Course.findAll();
 	     
-	    return ok(views.html.courseSettings.render(getStudentRoster(), courses));
-	}
-	
-	/**
-	 * 
-	 * 
-	 * @return
-	 */
-	public static List<List<String>> getStudentRoster() {
-        
-        Course course = Course.getCourse(1L);
-        
-        List<List<String>> table = new ArrayList<>();
-        String[] rows = course.studentRoster.split("\\|");
-        
-        for(String s : rows) {
-            table.add(Arrays.asList(s.split(",")));
-        }
-                
-        return table;
+	    return ok(views.html.courseSettings.render(getStudentRoster(0L), courses));
 	}
 	
 	/**
@@ -703,7 +684,7 @@ public class Application extends Controller {
      */
     public static Result courseRoster() {
                  
-        return ok(views.html.courseRoster.render(getStudentRoster()));
+        return ok(views.html.courseRoster.render(getStudentRoster(0L)));
     }
     
     /**
@@ -789,7 +770,7 @@ public class Application extends Controller {
         } 
         List<Course> courses = Course.findAll();
         
-        return ok(views.html.courseSettings.render(getStudentRoster(), courses));        
+        return ok(views.html.courseSettings.render(getStudentRoster(0L), courses));        
     }
 	
 	/**
@@ -1086,5 +1067,39 @@ public class Application extends Controller {
 	          )
 	      );
 	  }
+
+	  public static Result changeCourse() {
+	      final Map<String, String[]> values = request().body().asFormUrlEncoded();   
+	      Long courseID = Long.parseLong(values.get("courseID")[0]); 
+	      List<Course> courseList = Course.findAll();
+    
+	      return ok(views.html.courseSettings.render(getStudentRoster(courseID), courseList));
+	  }
+	  
+		  
+	    /**
+	     * 
+	     * 
+	     * @return
+	     */
+	    public static List<List<String>> getStudentRoster(Long cid) {
+	        
+	        Course course = null;
+	        
+	        if(cid == 0) {
+	            course = Course.getCourse(1L);
+	        } else {
+	            course = Course.getCourse(cid);
+	        }
+	        
+	        List<List<String>> table = new ArrayList<>();
+	        String[] rows = course.studentRoster.split("\\|");
+	        
+	        for(String s : rows) {
+	            table.add(Arrays.asList(s.split(",")));
+	        }
+	                
+	        return table;
+	    }
 	  
 }
