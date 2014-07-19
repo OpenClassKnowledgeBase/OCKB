@@ -14,29 +14,33 @@
 		</div>
 	</div>
 
-	<span class="col-lg-4"> 
-		<span class="glyphicon glyphicon-wrench"></span> 
-			<a class="postLink" href="@routes.Application.editCategories()">Add/Edit/Delete Categories</a>
-	</span> 
-	
 	<div class="row">
+		<span class="col-lg-4"> 
+			<span class="glyphicon glyphicon-wrench"></span> 
+				<a class="postLink" href="@routes.Application.editCategories()">Add/Edit/Delete Categories</a>
+		</span> 
+		
+		<span class="col-lg-4"> 
+			<a class="postLink" href="@routes.Application.hideOrShowCategories()">Hide/Show Categories</a>
+		</span>		
+		
+		<span class="col-lg-4">
+			<a class="postLink" href="@routes.Application.viewRequestedCategories">View Requested Categories</a>
+		</span>
 		<br>
 	</div>
-	
-	<h3>Set Categories View Order</h3>
-	<div class="btn-group">
-	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-	    Current Order - @currentSortOrder <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu" role="menu">
-	    <li><a href="@routes.Application.sortAlphabetically()">Alphabetically</a></li>
-	    <li><a href="@routes.Application.sortByCourseOrder()">By Course Order</a></li>
-	  </ul>
-	</div>	
-	
-	<span class="col-lg-4"> 
-		<a class="postLink" href="@routes.Application.hideOrShowCategories()">Hide/Show Categories</a>
-	</span>		
+
+	<div class="row">
+		<div class="btn-group">
+		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		    Current Order - @currentSortOrder <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu">
+		    <li><a href="@routes.Application.sortAlphabetically()">Alphabetically</a></li>
+		    <li><a href="@routes.Application.sortByCourseOrder()">By Course Order</a></li>
+		  </ul>
+		</div>
+	</div>
 	
 </div>
 }

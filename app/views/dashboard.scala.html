@@ -17,24 +17,8 @@
 		
 		<br> 
 		
-		<span class="col-lg-4"> 		
-			<span class="glyphicon glyphicon-user"></span> 
-			<a class="postLink" href="@routes.Application.userPriv()">User Privileges</a>
-		</span> 
-		<span class="col-lg-4"> 
-			<span class="glyphicon glyphicon-envelope"></span> 
-			<a class="postLink" href="@routes.Application.notifications()">Notifications</a>
-		</span> 
-		<span class="col-lg-4"> 
-			<span class="glyphicon glyphicon-cog"></span> 
-			<a class="postLink" href="#">Account Settings</a>
-		</span> 
 		<br> <br> 
-		@if(userRole=="admin") {
-		 <span class="col-lg-4">
-			<span class="glyphicon glyphicon-plus"></span> 
-			<a class="postLink" href="@routes.Application.viewRequestedCategories">View Requested Categories</a>
-		</span> 
+		@if(userRole=="admin") { 
 		<span class="col-lg-4"> 
 			<span class="glyphicon glyphicon-wrench"></span> 
 			<a class="postLink" href="@routes.Application.manageCategories()">Manage Categories</a>

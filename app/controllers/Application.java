@@ -2,10 +2,6 @@ package controllers;
 
 import com.avaje.ebean.Ebean;
 
-
-
-
-
 //EXCEL IMPORTS
 import org.apache.poi.xssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
@@ -772,58 +768,6 @@ public class Application extends Controller {
         
         return ok(views.html.courseSettings.render(getStudentRoster(0L), courses));        
     }
-	
-	/**
-	 * Redirects to a random category page view. Used within the dashboard
-	 * 
-	 * @return Redirect to a random category page view.
-	 */
-	public static Result random() {
-		String user = session("username");
-		if (user == null) {
-			return redirect(routes.Application.index());
-		}
-		else {
-			List<Category> categoryList = Category.findAll();
-			int random = randInt(1, categoryList.size());
-			Long randomLong = new Long(random);
-			return redirect(routes.Application.category(randomLong, 0, "datePosted", "desc", ""));
-		}
-	}
-	
-	/**
-	 * Generates a random integer for the random() controller method.
-	 * 
-	 * @param min Minimum range for generated integer
-	 * @param max Maximum range for generated integer
-	 * @return Randomly generated integer with the range of min and max
-	 */
-	public static int randInt(int min, int max) {
-		Random rand = new Random();
-
-		int randomNum = rand.nextInt((max - min) + 1) + min;
-
-		return randomNum;
-	}    
-	
-	/**
-	 * View containing table of Users and their privileges. Table is only viewable for privileged users
-	 * 
-	 * @return Renders user privileges page view
-	 */
-	public static Result userPriv() {
-		List<User> userList = User.findAll();
-		return ok(views.html.userPriv.render(userList));
-	}
-	
-	/**
-	 * View contained notification of user
-	 * 
-	 * @return Renders notifications page view
-	 */
-	public static Result notifications() {
-		return ok(views.html.notifications.render());
-	}
 	
 	/**
 	 * 
