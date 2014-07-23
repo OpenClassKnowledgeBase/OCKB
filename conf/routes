@@ -16,7 +16,7 @@ GET     /logout        				controllers.Application.logout()
 GET     /dashboard                  controllers.Application.dashboard()
 GET 	/submitPost/:cid			controllers.Application.submitPost(cid: Long)
 GET	/viewRequestedCategories/:cid	controllers.Application.denyRequestedCategory(cid: Long)
-GET     /editor/:chid               controllers.Application.editor(chid: Long, input: String ?="", output: String ?="", gradingResults: String ?="")
+GET     /editor/:chid               controllers.Application.editor(chid: Long, input: String ?="", output: String ?="", gradingResults: String ?="", points: Long?=0)
 GET		/editCategories				controllers.Application.editCategories()
 GET 	/editCategory/:cid			controllers.Application.editCategory(cid: Long)
 GET		/editCategories/:cid		controllers.Application.deleteCategory(cid: Long)
@@ -45,6 +45,8 @@ POST	/editCategories				controllers.Application.addCategorySubmit()
 POST    /deletePost                 controllers.Application.deletePost(pid: Long, cid: Long)
 PUT		/post/:pid					controllers.Application.vote(pid: Long)
 POST	/courseSettings/roster		controllers.Application.changeCourse()
+GET    /submitChallengeScore       controllers.Application.submitChallengeScore(cid: Long, points: Long)
+
 GET     /javascriptRoutes    		controllers.Application.javascriptRoutes
 
 # Map static resources from the /public folder to the /assets URL path

@@ -2,6 +2,7 @@ package controllers;
 
 import com.avaje.ebean.Ebean;
 
+
 //EXCEL IMPORTS
 import org.apache.poi.xssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
@@ -897,9 +898,17 @@ public class Application extends Controller {
 		return redirect(CAS_LOGOUT + "?service=" + serviceURL);
 	}
 
-	public static Result editor(Long chid, String input, String output, String gradingResults) {
+	
+    /***********************
+     *                     *
+     *  EDITOR METHODS  *
+     *                     *
+     ***********************/
+	
+	
+	public static Result editor(Long chid, String input, String output, String gradingResults, Long points) {
 	    CodeChallenge challenge = CodeChallenge.getChallenge(chid);
-	    return ok(views.html.editor.render(challenge, input, output, gradingResults));
+	    return ok(views.html.editor.render(challenge, input, output, gradingResults, points));
 	}
 	
 	public static Result submitCode(Long chid) throws Exception {
@@ -926,7 +935,7 @@ public class Application extends Controller {
         String output2 = runProcess("java -cp " + path + " " + className);
         String finalOutput = "";
         String gradingResults = "";
-        int points = 0;
+        long points = 0;
         Pattern pattern = Pattern.compile("");
         Matcher matcher = pattern.matcher(javaCode);
         
@@ -944,7 +953,7 @@ public class Application extends Controller {
                     gradingResults += " - PASSED\n    +" + requiredSource[i+2] + " Point(s)\n";
                     points += Integer.parseInt(requiredSource[i+2]);
                 } else {
-                    gradingResults += " - FAILED\n";
+                    gradingResults += " - FAILED\n    +0 Point(s)\n";
                 }
             }
             
@@ -955,7 +964,7 @@ public class Application extends Controller {
                 gradingResults += " - PASSED\n    +1 Point(s)\n";
                 points += 1;
             } else {
-                gradingResults += " - FAILED\n";
+                gradingResults += " - FAILED\n    +0 Point(s)\n";
             }
             
         } else {
@@ -965,20 +974,20 @@ public class Application extends Controller {
         
         
         gradingResults += "===============\nTotal Points: " + points;
-	    return redirect(routes.Application.editor(chid, javaCode, finalOutput, gradingResults));
+	    return redirect(routes.Application.editor(chid, javaCode, finalOutput, gradingResults, points));
 	    
 	}
 	
-    private static String printLines(String name, InputStream ins) throws Exception {
-        String line = null;
-        StringBuilder sb = new StringBuilder();
-        BufferedReader in = new BufferedReader(
-            new InputStreamReader(ins));
-        while ((line = in.readLine()) != null) {
-            sb.append(line + "\n");
-        }
-        return sb.toString();
-    }
+      private static String printLines(String name, InputStream ins) throws Exception {
+          String line = null;
+          StringBuilder sb = new StringBuilder();
+          BufferedReader in = new BufferedReader(
+              new InputStreamReader(ins));
+          while ((line = in.readLine()) != null) {
+              sb.append(line + "\n");
+          }
+          return sb.toString();
+      }
 
       private static String runProcess(String command) throws Exception {
           Process pro = Runtime.getRuntime().exec(command);
@@ -987,8 +996,30 @@ public class Application extends Controller {
           output+= printLines(command + " stderr:", pro.getErrorStream());
           pro.waitFor();
           // System.out.println(command + " exitValue() " + pro.exitValue());
-          
           return output;
+      }
+      
+      public static Result submitChallengeScore(Long chid, Long points) {
+          CodeChallenge currentChallenge = CodeChallenge.getChallenge(chid);
+          User currentUser = User.getUser(session("username"));
+          Logger.debug("" + currentUser.id);
+          List<CodeChallengeScores> userScoreList = CodeChallengeScores.getScoresForUser(currentUser.id);
+          CodeChallengeScores existingScore = null;
+          
+          for (CodeChallengeScores score : userScoreList) {
+              if (score.challenge.id == chid && points >= score.score) {
+                  existingScore = score;
+                  break;
+              }
+          }
+          if (existingScore == null) {
+              CodeChallengeScores.create(currentChallenge, currentUser, points);
+          } else if (points > existingScore.score){
+              existingScore.setScore(points);
+          }
+
+          return redirect(routes.Application.codeChallenge(chid));
+          
       }
 	  
       public static Result vote(Long pid) {      

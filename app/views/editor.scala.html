@@ -1,4 +1,4 @@
-@(challenge: CodeChallenge, input: String, output: String, gradingResults: String)
+@(challenge: CodeChallenge, input: String, output: String, gradingResults: String, points: Long)
 
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
 					  		});
 					    </script>
 					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
+					<button type="submit" class="btn btn-default">Submit Code</button>
 				</form>
 			</div>
 		</div>
@@ -75,6 +75,11 @@
 					<div class="well">
 						<pre>@Html(gradingResults)</pre>
 					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<a class="btn btn-success" href="@routes.Application.submitChallengeScore(challenge.id, points)">Submit Score</a>
 				</div>
 			</div>
 		}
