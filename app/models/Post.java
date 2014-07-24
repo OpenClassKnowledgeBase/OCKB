@@ -52,6 +52,7 @@ public class Post extends Model implements Comparable<Post>{
         this.category = category;
         this.title = title;
         this.content = content;
+        this.usersVoted = "";
     }
 
 	//help initiate queries
@@ -62,12 +63,13 @@ public class Post extends Model implements Comparable<Post>{
 		return find.all();
 	}
 	
-	public static void create(Category category, String title, String content, String username, Boolean isSticky){
+	public static void create(Category category, String title, String content, String username, Boolean isSticky, String usersVoted){
 		Post post = new Post(category, title, content);
 		post.userName = username;
 		post.comments = (long) 0;
 		post.votes = (long) 0;
 		post.isSticky = isSticky;
+		post.usersVoted = usersVoted;
 		post.save();
 	}
 	

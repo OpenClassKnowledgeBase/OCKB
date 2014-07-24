@@ -11,3 +11,7 @@ conf/application.conf
 =======
 /conf/application.conf
 >>>>>>> FETCH_HEAD
+
+*.prefs
+
+.classpath

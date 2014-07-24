@@ -1,4 +1,4 @@
-@(userRole: String) 
+@(userRole: String, codeChallengeList: List[CodeChallengeScores], user: User) 
 
 @scripts = {
 <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
@@ -12,30 +12,53 @@
 		<h1>Dashboard</h1>
 	</div>
 
-	<div class="col-lg-6">
-		<h2>Account Settings</h2>
+	<div class="row header">
+		<h3>Code Challenge Results</h3>
+	</div>
+	
+	<div class="row" id="challengeHeader">
+		<div class="col-md-4" >
+			<b>Code Challenge</b>
+		</div>
+		<div class="col-md-4">
+			<b>Score</b>
+		</div>		
+	</div>
+
+	@for(challenge <- codeChallengeList.filter(_.user == user)) {
+		<div class="well well-sm">
+			<div class="row">
+				<div class="col-md-4">
+					@challenge.challenge.title
+				</div>
+				<div class="col-md-4">
+					@challenge.score
+				</div>
+			</div>
+		</div>
+	}
+
+
+	@if(userRole=="admin") { 
+		<div class="row header">
+			<h3>Admin Settings</h3>
+		</div>
 		
-		<br> 
-		
-		<br> <br> 
-		@if(userRole=="admin") { 
-		<span class="col-lg-4"> 
+		<span class="col-lg-3"> 
 			<span class="glyphicon glyphicon-wrench"></span> 
 			<a class="postLink" href="@routes.Application.manageCategories()">Manage Categories</a>
 		</span> 
-		<span class="col-lg-4"> 
+		<span class="col-lg-3"> 
 			<span class="glyphicon glyphicon-list-alt"></span>
 			<a class="postLink" href="@routes.Application.courseSettings()">Course Settings</a>
 		</span> 
-		<br> <br> <br> 
-		<span class="col-lg-4"> 
+		<span class="col-lg-3"> 
 			<span class="glyphicon glyphicon-fire"></span> 
 			<a class="postLink" href="@routes.Application.createCodeChallenge()">Create a Code Challenge Post</a>
 		</span> 
-		} else {
-		
-		}
-	</div>
+	} else {
+	
+	}
 	
 </div>
 }
