@@ -629,11 +629,26 @@ public class Application extends Controller {
         return ok(views.html.createCodeChallenge.render(categoryList));
 	}
 
-    public static Result codeChallenge(Long cid) {       
+    public static Result codeChallenge(Long cid) {  
+        /*
+        Long st1 = System.nanoTime();
+        Logger.debug("Testing runtime of findAll()...");
         List<Category> categoryList = Category.findAll();
+        Long tt1 = System.nanoTime() - st1;
+        Logger.debug("Total runtime: " + tt1);
+        
+        
+        Long st2 = System.nanoTime();
+        Logger.debug("Testing runtime of getCategory()...");
+        Category currentCategory = Category.getCategory(1L);
+        Long tt2 = System.nanoTime() - st2;
+        Logger.debug("Total runtime: " + tt2);
+        */
+        
+        
         CodeChallenge challenge = CodeChallenge.getChallenge(cid);
         
-        return ok(views.html.codeChallenge.render(categoryList, challenge));        
+        return ok(views.html.codeChallenge.render(challenge));        
     }	
 
 	/**********************
@@ -917,7 +932,7 @@ public class Application extends Controller {
         String[] tokens = javaCode.split("\\s+");
         String className = "";
         for (int i = 0; i < tokens.length; i++) {
-            Logger.debug(tokens[i]);
+            //Logger.debug(tokens[i]);
             if (tokens[i].equals("class")) {
                 className = tokens[i+1];
                 break;
@@ -927,7 +942,7 @@ public class Application extends Controller {
         if (path == null) {
             path = System.getProperty("user.home") + "/Desktop";
         }
-        Logger.debug("Result=" + javaCode + "\nPath=" + path);
+        //Logger.debug("Result=" + javaCode + "\nPath=" + path);
         
         Files.write(Paths.get(path + "/" + className + ".java"), javaCode.getBytes());
         
@@ -1002,7 +1017,7 @@ public class Application extends Controller {
       public static Result submitChallengeScore(Long chid, Long points) {
           CodeChallenge currentChallenge = CodeChallenge.getChallenge(chid);
           User currentUser = User.getUser(session("username"));
-          Logger.debug("" + currentUser.id);
+          //Logger.debug("" + currentUser.id);
           List<CodeChallengeScores> userScoreList = CodeChallengeScores.getScoresForUser(currentUser.id);
           CodeChallengeScores existingScore = null;
           

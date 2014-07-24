@@ -3,9 +3,21 @@
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="@routes.Assets.at("javascripts/codemirror-4.2/lib/codemirror.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.countdown.css")">
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/editor.css")">
+    <script src="@routes.Assets.at("javascripts/jquery.plugin.js")"></script>
     <script src="@routes.Assets.at("javascripts/codemirror-4.2/lib/codemirror.js")"></script>
+    <script src="@routes.Assets.at("javascripts/jquery.countdown.js")"></script>
     <script src="@routes.Assets.at("javascripts/codemirror-4.2/mode/clike/clike.js")"></script>
+    <script>
+    	$(function () {
+    		$('#defaultCountdown').countdown({until: @challenge.codeChallengeTime, onExpiry: submitCode, format: 'HMS', compact: true});
+    	});
+    	
+    	function submitCode() {
+    		$('#codeForm').submit();
+    	}
+    </script>
  }
 
 @main("Java Web IDE", scripts) {
@@ -15,15 +27,26 @@
 			<div class="col-lg-12">
 				<h3>@challenge.title</h3>
 				<p>@challenge.description</p>
-				<p>The required output for this challenge is:<pre>@challenge.requiredOutput</pre></p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<p>The required output for this challenge is:
+				<pre>@challenge.requiredOutput</pre></p>
 			</div>
 		</div>
     
     	<div class="row">
     		<div class="col-lg-12">
-				<form role="form" action ="@routes.Application.submitCode(challenge.id)" method="POST">
+				<form id="codeForm" role="form" action ="@routes.Application.submitCode(challenge.id)" method="POST">
 					<div class="form-group">
-						<label for="javaSource"><h3>Java Code</h3></label> 
+						<label for="javaSource">
+							<h3>Java Code</h3>
+							@if(gradingResults == "") {
+								<div id="defaultCountdown"></div>
+							}
+						</label>
 						<textarea id="javaSource" name="javaSource" class="form-control" rows="3">@input</textarea>
 						<script>
 						    var editor = CodeMirror.fromTextArea(document.getElementById('javaSource'), {
@@ -38,7 +61,7 @@
 			</div>
 		</div>
 		
-		@if(output != "") {
+		@if(gradingResults != "") {
 			<hr>
 			<div class="row">
 				<div class="col-lg-12">
