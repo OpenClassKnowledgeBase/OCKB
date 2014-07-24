@@ -649,13 +649,9 @@ public class Application extends Controller {
         
         
         CodeChallenge challenge = CodeChallenge.getChallenge(cid);
-<<<<<<< HEAD
         
         return ok(views.html.codeChallenge.render(challenge));        
-=======
 
-        return ok(views.html.codeChallenge.render(categoryList, challenge));        
->>>>>>> FETCH_HEAD
     }	
 
     /**********************
@@ -949,13 +945,8 @@ public class Application extends Controller {
         if (path == null) {
             path = System.getProperty("user.home") + "/Desktop";
         }
-<<<<<<< HEAD
         //Logger.debug("Result=" + javaCode + "\nPath=" + path);
-        
-=======
-        Logger.debug("Result=" + javaCode + "\nPath=" + path);
 
->>>>>>> FETCH_HEAD
         Files.write(Paths.get(path + "/" + className + ".java"), javaCode.getBytes());
 
         String output1 = runProcess("javac " + path + "/" + className + ".java");
@@ -1001,66 +992,7 @@ public class Application extends Controller {
 
 
         gradingResults += "===============\nTotal Points: " + points;
-<<<<<<< HEAD
-	    return redirect(routes.Application.editor(chid, javaCode, finalOutput, gradingResults, points));
-	    
-	}
-	
-      private static String printLines(String name, InputStream ins) throws Exception {
-          String line = null;
-          StringBuilder sb = new StringBuilder();
-          BufferedReader in = new BufferedReader(
-              new InputStreamReader(ins));
-          while ((line = in.readLine()) != null) {
-              sb.append(line + "\n");
-          }
-          return sb.toString();
-      }
 
-      private static String runProcess(String command) throws Exception {
-          Process pro = Runtime.getRuntime().exec(command);
-          String output = "";
-          output+= printLines(command + " stdout:", pro.getInputStream());
-          output+= printLines(command + " stderr:", pro.getErrorStream());
-          pro.waitFor();
-          // System.out.println(command + " exitValue() " + pro.exitValue());
-          return output;
-      }
-      
-      public static Result submitChallengeScore(Long chid, Long points) {
-          CodeChallenge currentChallenge = CodeChallenge.getChallenge(chid);
-          User currentUser = User.getUser(session("username"));
-          //Logger.debug("" + currentUser.id);
-          List<CodeChallengeScores> userScoreList = CodeChallengeScores.getScoresForUser(currentUser.id);
-          CodeChallengeScores existingScore = null;
-          
-          for (CodeChallengeScores score : userScoreList) {
-              if (score.challenge.id == chid && points >= score.score) {
-                  existingScore = score;
-                  break;
-              }
-          }
-          if (existingScore == null) {
-              CodeChallengeScores.create(currentChallenge, currentUser, points);
-          } else if (points > existingScore.score){
-              existingScore.setScore(points);
-          }
-
-          return redirect(routes.Application.codeChallenge(chid));
-          
-      }
-	  
-      public static Result vote(Long pid) {      
-          String user = session("username");       
-          Post post = Post.getPost(pid);
-          post.votes += 1;
-          if(!post.usersVoted.contains(user)) {
-              post.usersVoted += user + " ";
-          }         
-          post.save();
-        	        
-          return ok();
-=======
         return redirect(routes.Application.editor(chid, javaCode, finalOutput, gradingResults, points));
 
     }
@@ -1128,7 +1060,6 @@ public class Application extends Controller {
                         routes.javascript.Application.vote()
                         )
                 );
->>>>>>> FETCH_HEAD
     }
 
     public static Result changeCourse() {
