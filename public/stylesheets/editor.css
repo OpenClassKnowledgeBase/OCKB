@@ -9,3 +9,7 @@
 .is-countdown {
 	width: 100%;
 }
+
+body {
+	padding-bottom: 15px;
+}

@@ -49,6 +49,10 @@ public class CodeChallengeScores extends Model {
         return find.where().eq("user_id", id).findList();
     }
 	
+	public static CodeChallengeScores getScore(Long chid, Long uid) {
+	    return find.where().eq("user_id", uid).eq("challenge_id", chid).findUnique();
+	}
+	
 	public static void create(CodeChallenge challenge, User user, Long score){
 		CodeChallengeScores scores = new CodeChallengeScores(challenge, user, score);
 		scores.save();

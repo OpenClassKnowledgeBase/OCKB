@@ -631,26 +631,16 @@ public class Application extends Controller {
         return ok(views.html.createCodeChallenge.render(categoryList));
     }
 
-    public static Result codeChallenge(Long cid) {  
-        /*
-        Long st1 = System.nanoTime();
-        Logger.debug("Testing runtime of findAll()...");
-        List<Category> categoryList = Category.findAll();
-        Long tt1 = System.nanoTime() - st1;
-        Logger.debug("Total runtime: " + tt1);
+    public static Result codeChallenge(Long chid) {  
+        User currentUser = User.getUser(session("username")); 
+        CodeChallenge challenge = CodeChallenge.getChallenge(chid);
         
+        CodeChallengeScores challengeScore = CodeChallengeScores.getScore(chid, currentUser.id);
+        if (challengeScore == null) {
+            return ok(views.html.codeChallenge.render(challenge, -1L));
+        }
         
-        Long st2 = System.nanoTime();
-        Logger.debug("Testing runtime of getCategory()...");
-        Category currentCategory = Category.getCategory(1L);
-        Long tt2 = System.nanoTime() - st2;
-        Logger.debug("Total runtime: " + tt2);
-        */
-        
-        
-        CodeChallenge challenge = CodeChallenge.getChallenge(cid);
-        
-        return ok(views.html.codeChallenge.render(challenge));        
+        return ok(views.html.codeChallenge.render(challenge, challengeScore.score));        
 
     }	
 
