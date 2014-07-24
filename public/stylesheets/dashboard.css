@@ -21,3 +21,7 @@
 .header{
   padding-left: 15px;
 }
+#challengeHeader {
+	font-size: 15px;
+	padding-bottom: 0.5em;
+}
