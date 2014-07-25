@@ -72,17 +72,21 @@
 						@for(head <- 0 until studentRoster(0).size) {
 							<th>@studentRoster(0).get(head)</th> 
 						}
+						<th>Code Challenge</th>
 					</thead>
 					<tbody>
 						@for(index <- 1 until studentRoster.size) {
-						<tr>@for(cell <- 0 until studentRoster(index).size) {
-								<td>@studentRoster(index).get(cell)</td> 
-							}</tr>
+							<tr>@for(cell <- 0 until studentRoster(index).size) {
+									<td>@studentRoster(index).get(cell)</td> 
+								}							
+								<td><a class="postLink" id="userViewLink" 
+									href="@routes.Application.viewUser(User.getUser(studentRoster(index).get(0)).id)">Click here</a></td>
+							</tr>
 						}
 					</tbody>
 				</table>
 			</body>
-			</div>
+		</div>
 	</div>
 	
 	<hr>

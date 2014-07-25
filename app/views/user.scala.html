@@ -1,0 +1,44 @@
+@(user : User, codeChallengeList : List[CodeChallengeScores])
+
+@scripts = {
+	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/user.css")">
+} 
+
+@main("User View", scripts) {
+<div class="container">
+
+	<div class = "row">
+		<div class = "col-xs-12">
+			<h1>User View for @user.name</h1>
+		</div>
+	</div>
+	
+	<div class="row header">
+		<h3>Code Challenge Results</h3>
+	</div>
+	
+	<div class="row" id="challengeHeader">
+		<div class="col-md-4" >
+			<b>Code Challenge</b>
+		</div>
+		<div class="col-md-4">
+			<b>Score</b>
+		</div>		
+	</div>
+	
+	@for(challenge <- codeChallengeList) {
+		<div class="well well-sm">
+			<div class="row">
+				<div class="col-md-4">
+					@challenge.challenge.getTitle
+				</div>
+				<div class="col-md-4">
+					@challenge.score
+				</div>
+			</div>
+		</div>
+	}
+	
+</div>
+}

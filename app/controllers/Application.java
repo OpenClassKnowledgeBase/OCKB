@@ -676,7 +676,6 @@ public class Application extends Controller {
      * @return
      */
     public static Result courseSettings() {
-
         List<Course> courses = Course.findAll();
 
         return ok(views.html.courseSettings.render(getStudentRoster(0L), courses));
@@ -775,7 +774,7 @@ public class Application extends Controller {
         } 
         List<Course> courses = Course.findAll();
 
-        return ok(views.html.courseSettings.render(getStudentRoster(0L), courses));        
+        return ok(views.html.courseSettings.render(getStudentRoster(0L), courses));    
     }
 
     /**
@@ -1030,19 +1029,12 @@ public class Application extends Controller {
         return redirect(routes.Application.codeChallenge(chid));
 
     }
-
-    public static Result vote(Long pid) {      
-        String user = session("username");       
-        Post post = Post.getPost(pid);
-        post.votes += 1;
-        if(!post.usersVoted.contains(user)) {
-            post.usersVoted += user + " ";
-        }         
-        post.save();
-
-        return ok();
-    }
-
+    
+    /**
+     * 
+     * 
+     * @return
+     */
     public static Result javascriptRoutes() {
         response().setContentType("text/javascript");
         return ok(
@@ -1051,7 +1043,38 @@ public class Application extends Controller {
                         )
                 );
     }
+    
+    /**
+     * Allows a user to vote on a post.
+     * 
+     * A User can only vote on a post once. Downvoting is disabled in order to promote
+     * a positive learning environment. Since this method is only called through JavascriptRouting,
+     * a simple ok is returned.
+     * 
+     * @param pid Post id
+     * @return ok
+     */
+    public static Result vote(Long pid) {      
+        String user = session("username");       
+        Post post = Post.getPost(pid);
+        post.votes += 1;
+        
+        if(!post.usersVoted.contains(user)) {
+            post.usersVoted += user + " ";
+        }         
+        post.save();
 
+        return ok();
+    }
+
+    /**
+     * Allows a professor to view different course rosters.
+     * 
+     * A professor can select a new course and click 'Change Course' to view
+     * it's Course Roster.
+     * 
+     * @return A view of the selected courses' roster.
+     */
     public static Result changeCourse() {
         final Map<String, String[]> values = request().body().asFormUrlEncoded();   
         Long courseID = Long.parseLong(values.get("courseID")[0]); 
@@ -1062,12 +1085,14 @@ public class Application extends Controller {
 
 
     /**
+     * Creates a List of a List of student information.
      * 
+     * The list is created from information gathered from the uploaded
+     * Excel file. Needs updating to reflect future courses.
      * 
-     * @return
+     * @return A list of a list containing student information.
      */
     public static List<List<String>> getStudentRoster(Long cid) {
-
         Course course = null;
 
         if(cid == 0) {
@@ -1084,6 +1109,23 @@ public class Application extends Controller {
         }
 
         return table;
+    }
+    
+    /**
+     * View a user's code challenge results.
+     * 
+     * Allows a professor to view a user's code challenge results.
+     * Might need to change method name later if it's only for code challenge.
+     * e.g., userCodeChallengeResults
+     * 
+     * @param uid User id
+     * @return A view of the user's code challenge results.
+     */
+    public static Result viewUser(Long uid) {
+        User user = User.findUser(uid);
+        List<CodeChallengeScores> codeChallengeList = CodeChallengeScores.find.where().eq("user_id", uid).findList();
+        
+        return ok(views.html.user.render(user, codeChallengeList));
     }
 
 }

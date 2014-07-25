@@ -67,4 +67,8 @@ public class User extends Model {
         return find.where().eq("name", username).findUnique();
     }
     
+    public static User findUser(Long uid) {
+        return find.where().eq("id", uid).findUnique(); 
+    }
+    
 }
