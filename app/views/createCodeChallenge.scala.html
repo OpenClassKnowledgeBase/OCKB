@@ -58,8 +58,15 @@
 		    </div>
 	    </div>		
 	    
-    	<label class="control-label" for="challengeQuestion">Challenge Question/Description</label>
-		<textarea class="form-control" rows="10" name="question"></textarea>
+	    <div class="row">
+			<div class="form-group col-xs-9">
+		    	<label class="control-label" for="challengeQuestion">Challenge Question/Description</label>
+				<textarea class="form-control" id="question" rows="5" name="question" placeholder="Describe the challenge here"></textarea>
+		
+				<label class="control-label" for="requiredOutput">Required Output</label>
+				<textarea class="form-control" rows="5" name="output" placeholder="Required output for challenge"></textarea>		
+			</div>
+		</div>
 		
 		<div class="row">
 			<br>
@@ -68,26 +75,6 @@
 		<input type="submit" value="Create Challenge" class="btn btn-success btn-md"> 
 
 	</form>		
-	
-   	<label class="control-label" for="JUnitFile">Select a JUnit Java file to upload (THIS ISNT WORKING YET)</label>
-	<form enctype="multipart/form-data" onsubmit="return checkSize(2097152)" action="#" method="post">
-		<input type="file" id="JUnitFile" class="fileUpload" name="JUnitFile" accept="MIME_type"> 
-	</form>
-	<script type="text/javascript">
-		function checkSize(max_img_size) {
-			var input = document.getElementById("upload");
-
-			// check for browser support (may need to be modified)
-			if (input.files && input.files.length == 1) {
-				if (input.files[0].size > max_img_size) {
-					alert("The file must be less than "
-							+ (max_img_size / 1024 / 1024) + "MB");
-					return false;
-				}
-			}
-			return true;
-		}
-	</script>
 	
 </div>
 }

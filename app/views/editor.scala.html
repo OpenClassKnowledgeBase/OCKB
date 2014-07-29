@@ -42,10 +42,10 @@
 				<form id="codeForm" role="form" action ="@routes.Application.submitCode(challenge.id)" method="POST">
 					<div class="form-group">
 						<label for="javaSource">
-							<h3>Java Code</h3>
 							@if(gradingResults == "") {
 								<div id="defaultCountdown"></div>
 							}
+							<h3>Java Code</h3>
 						</label>
 						<textarea id="javaSource" name="javaSource" class="form-control" rows="3">@input</textarea>
 						<script>

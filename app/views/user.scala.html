@@ -7,6 +7,11 @@
 
 @main("User View", scripts) {
 <div class="container">
+	<ol class="breadcrumb">
+		<li><a href="@routes.Application.dashboard()">Dashboard</a></li>
+		<li><a href="@routes.Application.courseSettings()">Course Settings</a></li>
+		<li><a href="#">@user.name user view</a></li>
+	</ol>
 
 	<div class = "row">
 		<div class = "col-xs-12">

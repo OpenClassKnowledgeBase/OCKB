@@ -91,9 +91,9 @@ public class Application extends Controller {
             return redirect(routes.Application.index());
         }
         else {
-            List<CodeChallengeScores> codeChallengeList = CodeChallengeScores.all();
             String userRole = User.getUser(user).role;
             User user1 = User.getUser(user);
+            List<CodeChallengeScores> codeChallengeList = CodeChallengeScores.find.where().eq("user_id", user1.id).findList();
                 
             return ok(views.html.dashboard.render(userRole, codeChallengeList, user1));
         }
@@ -592,6 +592,7 @@ public class Application extends Controller {
         String codeChallengeTitle = values.get("codeChallengeTitle")[0];
         String categorySelect = values.get("categorySelect")[0];
         String description = values.get("question")[0];
+        String output = values.get("output")[0]; 
         String hours = values.get("hours")[0];
         String minutes = values.get("minutes")[0];
         String seconds = values.get("seconds")[0];
@@ -622,7 +623,7 @@ public class Application extends Controller {
             Integer timeLimit = (challengeHours * 3600) + (challengeMinutes * 60) + (challengeSeconds * 1);            
             Long categoryId = Long.parseLong(categorySelect);
 
-            CodeChallenge.create(codeChallengeTitle, description, "", timeLimit, categoryId);
+            CodeChallenge.create(codeChallengeTitle, description, output, timeLimit, categoryId);
 
         } catch(NumberFormatException nfe) {
             //nothing for now
@@ -1121,9 +1122,9 @@ public class Application extends Controller {
      * @param uid User id
      * @return A view of the user's code challenge results.
      */
-    public static Result viewUser(Long uid) {
-        User user = User.findUser(uid);
-        List<CodeChallengeScores> codeChallengeList = CodeChallengeScores.find.where().eq("user_id", uid).findList();
+    public static Result viewUser(String uid) {
+        User user = User.getUser(uid);
+        List<CodeChallengeScores> codeChallengeList = CodeChallengeScores.find.where().eq("user_id", user.id).findList();
         
         return ok(views.html.user.render(user, codeChallengeList));
     }

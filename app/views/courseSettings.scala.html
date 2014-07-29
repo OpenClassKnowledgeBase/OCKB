@@ -80,7 +80,7 @@
 									<td>@studentRoster(index).get(cell)</td> 
 								}							
 								<td><a class="postLink" id="userViewLink" 
-									href="@routes.Application.viewUser(User.getUser(studentRoster(index).get(0)).id)">Click here</a></td>
+									href="@routes.Application.viewUser(studentRoster(index).get(0))">Click here</a></td>
 							</tr>
 						}
 					</tbody>
