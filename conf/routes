@@ -49,6 +49,7 @@ GET     /submitChallengeScore       controllers.Application.submitChallengeScore
 GET		/user/:username				controllers.Application.viewUser(username: String)
 GET		/codeChallengeResults		controllers.Application.codeChallengeResults()
 POST 	/codeChallengeResults		controllers.Application.codeChallengeResults()
+GET     /calendar                   controllers.Application.calendar()
 GET     /javascriptRoutes    		controllers.Application.javascriptRoutes
 
 # Map static resources from the /public folder to the /assets URL path

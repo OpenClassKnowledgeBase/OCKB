@@ -833,6 +833,10 @@ public class Application extends Controller {
 
         return sortOrder;
     }
+    
+    public static Result calendar() {
+        return ok(views.html.calendar.render());
+    }
 
     /***********************
      *                     *
