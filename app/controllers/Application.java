@@ -1128,5 +1128,30 @@ public class Application extends Controller {
         
         return ok(views.html.user.render(user, codeChallengeList));
     }
+    
+    /**
+     * View a code challenges' results.
+     * 
+     * Allows a professor to view all of the students who have participated in
+     * a selected code challenge.
+     * 
+     * @return A view of a code challenges' results.
+     */
+    public static Result codeChallengeResults() {
+        String title = "";
+        List<CodeChallenge> codeChallengeList = CodeChallenge.findAll();
+        List<CodeChallengeScores> codeChallengeScoresList = new ArrayList<CodeChallengeScores>(); 
+        final Map<String, String[]> values = request().body().asFormUrlEncoded();   
+        
+        try {
+            Long challengeID = Long.parseLong(values.get("challengeId")[0]); 
+            codeChallengeScoresList = CodeChallengeScores.find.where().eq("challenge_id", challengeID).findList();
+            title = CodeChallenge.getChallenge(challengeID).getTitle();
+        } catch(NullPointerException npe) {
+            //Do nothing.
+        }
+        
+        return ok(views.html.codeChallengeResults.render(codeChallengeList, codeChallengeScoresList, title));
+    }
 
 }

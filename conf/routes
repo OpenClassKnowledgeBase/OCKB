@@ -46,7 +46,9 @@ POST    /deletePost                 controllers.Application.deletePost(pid: Long
 PUT		/post/:pid					controllers.Application.vote(pid: Long)
 POST	/courseSettings/roster		controllers.Application.changeCourse()
 GET     /submitChallengeScore       controllers.Application.submitChallengeScore(cid: Long, points: Long)
-GET		/user/:username					controllers.Application.viewUser(username: String)
+GET		/user/:username				controllers.Application.viewUser(username: String)
+GET		/codeChallengeResults		controllers.Application.codeChallengeResults()
+POST 	/codeChallengeResults		controllers.Application.codeChallengeResults()
 GET     /javascriptRoutes    		controllers.Application.javascriptRoutes
 
 # Map static resources from the /public folder to the /assets URL path

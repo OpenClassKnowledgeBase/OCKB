@@ -1,0 +1,80 @@
+@(codeChallengeList : List[CodeChallenge], codeChallengeScoresList : List[CodeChallengeScores], challengeTitle : String)
+
+@scripts = {
+	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/challenge.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.dataTables.css")">
+	<script src="@routes.Assets.at("javascripts/jquery.dataTables.js")"></script>
+	<script>
+		$(document).ready(function() {
+			$('#results').dataTable({
+				"dom" : '<"clear">l<"centered"T>frtip',
+				"tableTools" : {
+					"sSwfPath" : "/assets/swf/copy_csv_xls_pdf.swf"
+				}
+			});
+		});
+	</script>
+} 
+
+@main("Course Settings", scripts) {
+<div class="container">
+	<ol class="breadcrumb">
+		<li><a href="@routes.Application.dashboard()">Dashboard</a></li>
+		<li><a href="@routes.Application.codeChallengeResults()">Code Challenge Results</a></li>
+	</ol>
+	
+	<div class="row">
+		<div class="col-md-11">
+			<h3>Select a Challenge</h3>	      										
+		</div>	
+		<div class="col-lg-12">
+			<form class="form-horizontal" action="@routes.Application.codeChallengeResults()" method="post">
+				<div class="form-group">
+					<div class="col-lg-12">
+						<select class="form-control" id="challengeId" name="challengeId" style="width: 75%">
+							<option selected="selected" disabled>Please select a Challenge</option>
+							@for(index <- 0 until codeChallengeList.size) {
+								<option value="@codeChallengeList(index).id">
+									@codeChallengeList(index).getTitle()
+								</option> 
+							}
+						</select>	
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-10">
+						<button type="submit" class="btn btn-success">Change Course</button>
+					</div>
+				</div>
+			</form>							
+		</div>
+	</div>
+	
+	@if(challengeTitle.equals("")) {
+	
+	} else {
+	<div class="row col-lg-12">
+		<h2>Results for @challengeTitle</h2>
+		<table class="table-bordered" id="results">
+			<thead>
+				<tr>
+					<th>Username</th> 
+					<th>Score</th>
+				</tr>
+			</thead>
+
+			<tbody>				
+				@for(challenge <- codeChallengeScoresList) {
+					<tr>
+						<td>@challenge.user.name</td>
+						<td>@challenge.score</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+	}
+
+</div>
+}
