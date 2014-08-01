@@ -1,4 +1,4 @@
-@(codeChallengeList : List[CodeChallenge], codeChallengeScoresList : List[CodeChallengeScores], challengeTitle : String)
+@(codeChallengeList : List[CodeChallenge], codeChallengeScoreList : List[CodeChallengeScore], challengeTitle : String)
 
 @scripts = {
 	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
@@ -65,7 +65,7 @@
 			</thead>
 
 			<tbody>				
-				@for(challenge <- codeChallengeScoresList) {
+				@for(challenge <- codeChallengeScoreList) {
 					<tr>
 						<td>@challenge.user.name</td>
 						<td>@challenge.score</td>

@@ -1,0 +1,19 @@
+.completed {
+	color: #76EE00;
+}
+
+.incomplete {
+	color: red;
+}
+
+p {
+	font-size: 18px;
+}
+
+td {
+	font-size: 18px;
+}
+
+body {
+	padding-bottom: 15px;
+}

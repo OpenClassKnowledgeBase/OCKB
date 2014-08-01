@@ -93,7 +93,7 @@ public class Application extends Controller {
         else {
             String userRole = User.getUser(user).role;
             User user1 = User.getUser(user);
-            List<CodeChallengeScores> codeChallengeList = CodeChallengeScores.find.where().eq("user_id", user1.id).findList();
+            List<CodeChallengeScore> codeChallengeList = CodeChallengeScore.find.where().eq("user_id", user1.id).findList();
                 
             return ok(views.html.dashboard.render(userRole, codeChallengeList, user1));
         }
@@ -636,12 +636,9 @@ public class Application extends Controller {
         User currentUser = User.getUser(session("username")); 
         CodeChallenge challenge = CodeChallenge.getChallenge(chid);
         
-        CodeChallengeScores challengeScore = CodeChallengeScores.getScore(chid, currentUser.id);
-        if (challengeScore == null) {
-            return ok(views.html.codeChallenge.render(challenge, -1L));
-        }
+        CodeChallengeScore challengeScore = CodeChallengeScore.getScore(chid, currentUser.id);
         
-        return ok(views.html.codeChallenge.render(challenge, challengeScore.score));        
+        return ok(views.html.codeChallenge.render(challenge, challengeScore));        
 
     }	
 
@@ -1016,17 +1013,17 @@ public class Application extends Controller {
         CodeChallenge currentChallenge = CodeChallenge.getChallenge(chid);
         User currentUser = User.getUser(session("username"));
         Logger.debug("" + currentUser.id);
-        List<CodeChallengeScores> userScoreList = CodeChallengeScores.getScoresForUser(currentUser.id);
-        CodeChallengeScores existingScore = null;
+        List<CodeChallengeScore> userScoreList = CodeChallengeScore.getScoresForUser(currentUser.id);
+        CodeChallengeScore existingScore = null;
 
-        for (CodeChallengeScores score : userScoreList) {
+        for (CodeChallengeScore score : userScoreList) {
             if (score.challenge.id == chid && points >= score.score) {
                 existingScore = score;
                 break;
             }
         }
         if (existingScore == null) {
-            CodeChallengeScores.create(currentChallenge, currentUser, points);
+            CodeChallengeScore.create(currentChallenge, currentUser, points);
         } else if (points > existingScore.score){
             existingScore.setScore(points);
         }
@@ -1128,7 +1125,7 @@ public class Application extends Controller {
      */
     public static Result viewUser(String uid) {
         User user = User.getUser(uid);
-        List<CodeChallengeScores> codeChallengeList = CodeChallengeScores.find.where().eq("user_id", user.id).findList();
+        List<CodeChallengeScore> codeChallengeList = CodeChallengeScore.find.where().eq("user_id", user.id).findList();
         
         return ok(views.html.user.render(user, codeChallengeList));
     }
@@ -1144,12 +1141,12 @@ public class Application extends Controller {
     public static Result codeChallengeResults() {
         String title = "";
         List<CodeChallenge> codeChallengeList = CodeChallenge.findAll();
-        List<CodeChallengeScores> codeChallengeScoresList = new ArrayList<CodeChallengeScores>(); 
+        List<CodeChallengeScore> codeChallengeScoresList = new ArrayList<CodeChallengeScore>(); 
         final Map<String, String[]> values = request().body().asFormUrlEncoded();   
         
         try {
             Long challengeID = Long.parseLong(values.get("challengeId")[0]); 
-            codeChallengeScoresList = CodeChallengeScores.find.where().eq("challenge_id", challengeID).findList();
+            codeChallengeScoresList = CodeChallengeScore.find.where().eq("challenge_id", challengeID).findList();
             title = CodeChallenge.getChallenge(challengeID).getTitle();
         } catch(NullPointerException npe) {
             //Do nothing.

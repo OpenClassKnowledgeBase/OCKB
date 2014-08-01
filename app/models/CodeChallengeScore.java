@@ -11,7 +11,7 @@ import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
 
 @Entity 
-public class CodeChallengeScores extends Model {
+public class CodeChallengeScore extends Model {
 
 	@Required
 	public Long id;
@@ -31,30 +31,30 @@ public class CodeChallengeScores extends Model {
 	@Required
 	public Long score;
 	
-	public CodeChallengeScores(CodeChallenge challenge, User user, Long score) {
+	public CodeChallengeScore(CodeChallenge challenge, User user, Long score) {
         this.challenge = challenge;
         this.user = user;
         this.score = score;
     }
 	
 	//help initiate queries
-	public static Finder<Long,CodeChallengeScores> find = new Finder<Long,CodeChallengeScores>(Long.class, CodeChallengeScores.class);
+	public static Finder<Long,CodeChallengeScore> find = new Finder<Long,CodeChallengeScore>(Long.class, CodeChallengeScore.class);
 	
 	/*Implement the CRUD operations*/
-	public static List<CodeChallengeScores> all(){
+	public static List<CodeChallengeScore> all(){
 		return find.all();
 	}
 	
-	public static List<CodeChallengeScores> getScoresForUser (Long id) {
+	public static List<CodeChallengeScore> getScoresForUser (Long id) {
         return find.where().eq("user_id", id).findList();
     }
 	
-	public static CodeChallengeScores getScore(Long chid, Long uid) {
+	public static CodeChallengeScore getScore(Long chid, Long uid) {
 	    return find.where().eq("user_id", uid).eq("challenge_id", chid).findUnique();
 	}
 	
 	public static void create(CodeChallenge challenge, User user, Long score){
-		CodeChallengeScores scores = new CodeChallengeScores(challenge, user, score);
+		CodeChallengeScore scores = new CodeChallengeScore(challenge, user, score);
 		scores.save();
 	}
 	

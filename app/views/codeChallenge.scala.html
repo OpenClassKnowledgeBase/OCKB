@@ -1,16 +1,8 @@
-@(challenge: CodeChallenge, score: Long) 
+@(challenge: CodeChallenge, score: CodeChallengeScore) 
 
 @scripts = {
 	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.countdown.css")">
-	<script src="@routes.Assets.at("javascripts/jquery.plugin.js")"></script>
-	<script src="@routes.Assets.at("javascripts/jquery.countdown.js")"></script>
-	<script src="@routes.Assets.at("javascripts/ckeditor/ckeditor.js")"></script>
-	<script>
-    	$(function () {
-    		$('#defaultCountdown').countdown({until: @challenge.codeChallengeTime, format: 'HMS', compact: true});
-    	});
-    </script>
+	<link rel="stylesheet" href="@routes.Assets.at("stylesheets/codeChallenge.css")">
 } 
 
 @main(challenge.title, scripts) {
@@ -25,25 +17,57 @@
 	    <a href="@routes.Application.category(challenge.categoryId)">@challenge.getCategoryTitle</a>
 	  </li>
 	  <li>
-	    <a href="#">@challenge.title</a>
+	    @challenge.title
 	  </li>
 	</ol>
       
 	<section>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				@challenge.title
+				<h3>
+					@challenge.title
+				</h3>
 			</div>
 			<div class="panel-body">
 				<div class="row">
-					<div class="col-sm-11 content">@Html(challenge.description)</div>
+					<div class="col-sm-11 content">
+						<p>
+							@Html(challenge.description)
+							<hr>
+							<p>The required output for this challenge is:</p>
+							<pre>@challenge.requiredOutput</pre>
+							<hr>
+							<h4>Status -
+							@if(score != null) {
+								<span class="completed">
+									<i class="fa fa-check fa-lg outputSuccess"></i>
+									Completed!
+								</span>
+							} else {
+								<span class="incomplete">
+									<i class="fa fa-check fa-lg outputSuccess"></i>
+									Incomplete!
+								</span>
+							}</h4>
+							<div class="row">
+								<div class="col-sm-5">
+									<table class="table table-bordered">
+										<tr>
+											<td>Score</td>
+											<td>@score.score</td>
+										</tr>
+										<tr>
+											<td>Date Submitted</td>
+											<td>@score.submission_date</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</p>
+					</div>
 				</div>
 			</div>
-			@if(score != -1) {
-				<div class="panel-heading">
-					Completed with a score of @score
-				</div>
-			}
+			
 		</div>
 	</section>
 	
