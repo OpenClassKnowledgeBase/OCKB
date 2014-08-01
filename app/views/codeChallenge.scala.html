@@ -54,11 +54,23 @@
 									<table class="table table-bordered">
 										<tr>
 											<td>Score</td>
-											<td>@score.score</td>
+											<td>
+												@if(score != null) {
+													score.score
+												} else {
+													N/A
+												}
+											</td>
 										</tr>
 										<tr>
 											<td>Date Submitted</td>
-											<td>@score.submission_date</td>
+											<td>
+												@if(score != null) {
+													score.submission_date
+												} else {
+													N/A
+												}
+											</td>
 										</tr>
 									</table>
 								</div>

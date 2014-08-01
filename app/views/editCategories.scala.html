@@ -10,6 +10,11 @@
  @main("Edit Categories", scripts) {
     <!-- <h1>count:  @categories.size()</h1> -->
     <div class = "container">
+    	<ol class="breadcrumb">
+			<li><a href="@routes.Application.dashboard()">Dashboard</a></li>
+			<li><a href="@routes.Application.manageCategories()">Manage Categories</a></li>
+			<li><a href="@routes.Application.editCategories()">Edit Categories</a></li>
+		</ol>
         <div class = "row">
           <div class = "col-xs-11">
             <h1>Edit Categories</h1>
