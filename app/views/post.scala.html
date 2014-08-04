@@ -5,6 +5,12 @@
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/posts.css")">
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.countdown.css")">
     <script src="@routes.Assets.at("javascripts/ckeditor/ckeditor.js")"></script>
+    <script src="@routes.Assets.at("javascripts/jquery.timeago.js")"></script>
+    <script>
+	jQuery(document).ready(function() {
+		jQuery("span.timeago").timeago();
+	});
+	</script>
 
  }
  
@@ -122,7 +128,9 @@
                 Submitted by <span class="badge">@currentPost.userName</span>
               }
               <div class = "date">
-                Asked on @currentPost.datePosted
+                Asked <span class="timeago" title="@currentPost.datePosted.format("yyyy-MM-dd'T'hh:mm:ss-22:00")"
+                            	data-toggle="tooltip" data-placement="top">@currentPost.datePosted.format("MMMM dd yyyy hh:mm:ss a")</span>
+
               </div>
             </div>
           </div>
@@ -159,7 +167,9 @@
                 @if(user!=null){
                     Submitted by <span class = "badge">@comment.author</span><br>
                 }
-              Answered @comment.submission_date
+              Answered <span class="timeago" title="@comment.submission_date.format("yyyy-MM-dd'T'hh:mm:ss-22:00")"
+                            	data-toggle="tooltip" data-placement="top">@comment.submission_date.format("MMMM dd yyyy hh:mm:ss a")</span>
+
             </div>
           </div>
           <hr>
