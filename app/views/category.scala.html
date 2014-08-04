@@ -25,6 +25,13 @@
 @scripts = {
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/posts.css")">
+    <script src="@routes.Assets.at("javascripts/jquery.timeago.js")"></script>
+    
+    <script>
+	jQuery(document).ready(function() {
+		jQuery("span.timeago").timeago();
+	});
+	</script>
  }
 @import java.lang.String; 
 @{val newest = "newest"}
@@ -175,9 +182,11 @@
                         @if(user != null){
                           <div class = "col-xs-3 col-xs-offset-10 pull-right">
                             <div class = "author">
-                                Submitted by <span class = "badge">@post.userName</span> <span>@post.datePosted.format("MM/dd/yy h:mm a")</span>
+                                Submitted by <span class = "badge">@post.userName</span> 
+                                <span class="timeago" title="@post.datePosted.format("yyyy-MM-dd'T'hh:mm:ss-22:00")"
+                            	data-toggle="tooltip" data-placement="top">@post.datePosted.format("MMMM dd yyyy hh:mm:ss a")</span>
                             </div>
-                           </div>
+                          </div>
                         }
                       </div>
 <!--                         <span class="label label-info">#@post.id</span><a href = "@routes.Application.post(post.id)" class = "postLink"> @post.title</a>
