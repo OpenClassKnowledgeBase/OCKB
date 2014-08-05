@@ -910,7 +910,7 @@ public class Application extends Controller {
 
     /***********************
      *                     *
-     *  EDITOR METHODS  *
+     *  EDITOR METHODS     *
      *                     *
      ***********************/
 
@@ -1155,4 +1155,14 @@ public class Application extends Controller {
         return ok(views.html.codeChallengeResults.render(codeChallengeList, codeChallengeScoresList, title));
     }
 
+    /****************************
+     *                          *
+     *  CODE REVIEW METHODS     *
+     *                          *
+     ****************************/
+    
+    public static Result codeReview() {
+        
+        return ok(views.html.codeReview.render());
+    }
 }
