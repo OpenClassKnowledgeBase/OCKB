@@ -2,6 +2,7 @@ package controllers;
 
 import com.avaje.ebean.Ebean;
 
+
 //EXCEL IMPORTS
 import org.apache.poi.xssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
@@ -24,6 +25,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -1161,8 +1163,58 @@ public class Application extends Controller {
      *                          *
      ****************************/
     
+    /**
+     * 
+     * 
+     * @return
+     */
     public static Result codeReview() {
         
         return ok(views.html.codeReview.render());
+    }
+    
+    /**
+     * 
+     * 
+     * 
+     * @return
+     */
+    @BodyParser.Of(BodyParser.MultipartFormData.class)
+    public static Result uploadJavaFile() {
+             
+        Http.MultipartFormData body = request().body().asMultipartFormData();  
+        Http.MultipartFormData.FilePart temp = body.getFile("reviewFile");
+
+        String userCode = "";
+        String readLine = "";
+
+        File uploadedFile = temp.getFile();
+        try {
+            InputStream is = new FileInputStream(uploadedFile);
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            
+            while((readLine = br.readLine()) != null) {
+                userCode += readLine + "\n";
+            }
+            
+            is.close();
+            br.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        //System.out.println(temp.getFilename());
+        //System.out.println(temp.getContentType());
+   
+        final Map<String, String[]> values = body.asFormUrlEncoded();    
+        String title = values.get("title")[0];
+        String userComment = values.get("userComment")[0];
+        User user = User.getUser(session("username"));
+
+        CodeReview.create(title, userCode, userComment, user);
+
+        return redirect(routes.Application.codeReview());
     }
 }

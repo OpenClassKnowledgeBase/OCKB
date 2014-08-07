@@ -52,6 +52,7 @@ POST 	/codeChallengeResults		controllers.Application.codeChallengeResults()
 GET     /calendar                   controllers.Application.calendar()
 GET     /javascriptRoutes    		controllers.Application.javascriptRoutes
 GET		/codeReview					controllers.Application.codeReview()
+POST	/codeReview				controllers.Application.uploadJavaFile()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

@@ -3,3 +3,18 @@
 .nav-tabs > li.active > a:focus {
     background-color: #5BC0DE;
 }
+
+#fileSubmit {
+	padding-left: 15px;
+}
+
+textarea {
+	resize: none;
+	color: black;
+	height: 150px;
+	width: 1170px;
+}
+
+#codeSubmissionBtn {
+	padding-top: 5px;
+}

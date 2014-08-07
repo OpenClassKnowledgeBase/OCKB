@@ -1,25 +1,73 @@
 @scripts = {
 	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/review.css")">
-}
+} 
 
 @main("Code Review", scripts) {
 
-	<div class="container">
+<div class="container">
 
-		<ul id="myTab" class="nav nav-tabs nav-justified" data-role="tablist">
-		  <li class="active"><a href="#review" data-role="tab" data-toggle="tab">Review code submissions</a></li>
-		  <li><a href="#submit" data-role="tab" data-toggle="tab">Submit your code for review</a></li>
-		</ul>
-				
-		<div id="myTabContent" class="tab-content">
-		  <div class="tab-pane fade in active" id="review">
-		    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-		  </div>
-		  <div class="tab-pane fade" id="submit">
-		    <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-		  </div>
+	<ul id="myTab" class="nav nav-tabs nav-justified" data-role="tablist">
+		<li class="active"><a href="#instructions" data-role="tab" data-toggle="tab">Instructions</a></li>
+		<li><a href="#review" data-role="tab" data-toggle="tab">Review code submissions</a></li>
+		<li><a href="#submit" data-role="tab" data-toggle="tab">Submit your code for review</a></li>
+	</ul>
+
+	<div id="myTabContent" class="tab-content">
+
+		<div class="tab-pane fade in active" id="instructions">
+			<p>Raw denim you probably haven't heard of them jean shorts
+				Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
+				Mustache cliche tempor, williamsburg carles vegan helvetica.
+				Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby
+				sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
+				placeat salvia cillum iphone. Seitan aliquip quis cardigan american
+				apparel, butcher voluptate nisi qui.</p>
 		</div>
-  
+		
+		<div class="tab-pane fade in active" id="review">
+			<p>Raw denim you probably haven't heard of them jean shorts
+				Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
+				Mustache cliche tempor, williamsburg carles vegan helvetica.
+				Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby
+				sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
+				placeat salvia cillum iphone. Seitan aliquip quis cardigan american
+				apparel, butcher voluptate nisi qui.</p>
+		</div>
+
+		<div class="tab-pane fade" id="submit">
+			<div class="row col-lg-12">
+				<h3>Upload source code file</h3>
+			</div>
+		
+			<div id="uploadFile" class="row col-lg-12">
+				<div class="panel-body">
+					<form class="form-horizontal" enctype="multipart/form-data" action="@routes.Application.uploadJavaFile()" method="post">
+						<div class="form-group">						
+							<div class="row" id="fileSubmit">
+								<input type="file" id="reviewFile" class="fileUpload" name="reviewFile" accept="MIME_type" required>
+							</div>
+							
+							<hr>
+							
+							<h3>Title of submission</h3>
+							<input name="title" type="text" class="form-control" placeholder="e.g., [ArrayList] Submission" required>
+							
+							<h3>Any comments for reviewers?</h3>								
+							<textarea name="userComment" class="form-control" rows="6" cols="100" 
+								placeholder="e.g., Any help would be appreciated, thanks in advance!" required></textarea>
+						</div>
+						
+						<div class="row" id="codeSubmissionBtn">
+							<button type="submit" class="btn btn-success">Submit</button>
+						</div>							
+					</form>
+				</div>
+			</div>
+				
+		</div>
+
 	</div>
+
+</div>
 }

@@ -29,17 +29,16 @@ public class CodeReview extends Model{
     @Formats.DateTime(pattern="yyyy-MM-dd'T'hh:mm:ss-22:00")
     public Date datePosted = new Date();
 
-    public CodeReview(String title, String userCode, String userComment, User user, Date datePosted) {
+    public CodeReview(String title, String userCode, String userComment, User user) {
         super();
         this.title = title;
         this.userCode = userCode;
-        this.userCode = userComment;
+        this.userComment = userComment;
         this.user = user;
-        this.datePosted = datePosted;
     }
 
-    public static void create(String title, String userCode, String userComment, User user, Date datePosted) {
-        CodeReview cr = new CodeReview(title, userCode, userComment, user, datePosted);
+    public static void create(String title, String userCode, String userComment, User user) {
+        CodeReview cr = new CodeReview(title, userCode, userComment, user);
         cr.save();
     }
     
@@ -55,13 +54,6 @@ public class CodeReview extends Model{
     
     public static CodeReview getCodeReview(Long id) {
         return CodeReview.find.byId(id);
-    }
-
-    /**
-     * @return the title
-     */
-    public String getTitle() {
-        return title;
     }
 
     /**
