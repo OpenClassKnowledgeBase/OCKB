@@ -1,7 +1,7 @@
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-    background-color: #5BC0DE;
+    background-color: #56799c;
 }
 
 #fileSubmit {
@@ -17,4 +17,53 @@ textarea {
 
 #codeSubmissionBtn {
 	padding-top: 5px;
+}
+
+#selectable {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 114%
+}
+
+#selectable li {
+	margin: 20px 80px 5px 0;
+	padding: 0.3em;
+	float: left;
+	width: 25%;
+	height: 100px;
+	font-size: 16px;
+	text-align: left;
+}
+
+.ui-state-default {
+	border: 1px solid #DDDDDD;
+	color: #ffffff
+}
+
+#reviewh2 {
+	text-align: center;
+}
+
+#feedback { 
+	font-size: 1.4em; 
+}
+
+#selectable .ui-selecting { 
+	background: #56799c; 
+}
+#selectable .ui-selected { 
+	background: #5f83a7; 
+	color: white; 
+}
+
+#submitReview {
+	width: 1140px;
+	height: 150px;	
+}
+
+#reviewSubmissionBtn {
+	padding-left: 15px;
+	padding-top: 10px;
+	padding-bottom: 20px;
 }

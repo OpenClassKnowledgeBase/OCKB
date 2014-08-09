@@ -1,7 +1,9 @@
 package models;
 
 import java.util.*;
+
 import javax.persistence.*;
+
 import play.data.format.*;
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
@@ -28,16 +30,15 @@ public class CodeReviewFeedback extends Model {
     @Formats.DateTime(pattern="yyyy-MM-dd'T'hh:mm:ss-22:00")
     public Date datePosted = new Date();
     
-    public CodeReviewFeedback(User user, CodeReview codeReview, String userFeedback, Date datePosted) {
+    public CodeReviewFeedback(User user, CodeReview codeReview, String userFeedback) {
         super();
         this.user = user;
         this.codeReview = codeReview;
         this.userFeedback = userFeedback;
-        this.datePosted = datePosted;
     }
 
-    public void create(User user, CodeReview codeReview, String userFeedback, Date datePosted) {
-        CodeReviewFeedback crf = new CodeReviewFeedback(user, codeReview, userFeedback, datePosted);
+    public static void create(User user, CodeReview codeReview, String userFeedback) {
+        CodeReviewFeedback crf = new CodeReviewFeedback(user, codeReview, userFeedback);
         crf.save();
     }
 

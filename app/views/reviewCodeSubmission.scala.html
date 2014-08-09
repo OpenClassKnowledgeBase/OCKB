@@ -1,0 +1,54 @@
+@(codeReview : CodeReview)
+
+@scripts = {
+	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/review.css")">
+	<link rel="stylesheet" href="@routes.Assets.at("javascripts/codemirror-4.2/lib/codemirror.css")">
+	<script src="@routes.Assets.at("javascripts/codemirror-4.2/lib/codemirror.js")"></script>
+	<script src="@routes.Assets.at("javascripts/codemirror-4.2/mode/clike/clike.js")"></script>
+	<script src="@routes.Assets.at("javascripts/jquery.timeago.js")"></script>
+	<script>
+		jQuery(document).ready(function() {
+			jQuery("span.timeago").timeago();
+		});
+	</script>
+} 
+
+@main("Review Code Submission", scripts) {
+	<div class="container">
+    	<ol class="breadcrumb">
+			<li><a href="@routes.Application.codeReview()">Code Review</a></li>
+			<li><a href="#">@codeReview.title</a></li>
+		</ol>
+
+		
+			<h2 id="reviewh2">@codeReview.title</h2>
+			<h3>User comment</h3>
+			<p>@codeReview.userComment</p>
+		
+		
+		<textarea id="javaSource">@codeReview.userCode</textarea>
+		<script>
+		    var editor = CodeMirror.fromTextArea(document.getElementById('javaSource'), {
+		    	matchBrackets: true,
+		    	lineNumbers: true,
+		    	lineWrapping: true,
+		    	readOnly: true,	    	
+		    	mode: "text/x-java"
+	  		});
+		    editor.setSize(1140, 395);
+	    </script>
+	    
+	    <div class="row col-lg-12">
+	    	<h3>Enter your review</h3>
+			<form class="form-horizontal" action="@routes.Application.submitReview(codeReview.id)" method="post">
+				<textarea name="user_review_textarea" id="submitReview" class="form-control" placeholder="e.g., Found a type on line 77."></textarea>					
+				
+				<div class="row" id="reviewSubmissionBtn">
+					<button type="submit" class="btn btn-success">Submit</button>
+				</div>	
+			</form>
+	    </div>
+					    
+	</div> <!-- container -->
+}

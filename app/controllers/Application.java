@@ -1170,7 +1170,9 @@ public class Application extends Controller {
      */
     public static Result codeReview() {
         
-        return ok(views.html.codeReview.render());
+        List<CodeReview> codeReviewList = CodeReview.findAll();
+        
+        return ok(views.html.codeReview.render(codeReviewList));
     }
     
     /**
@@ -1214,7 +1216,42 @@ public class Application extends Controller {
         User user = User.getUser(session("username"));
 
         CodeReview.create(title, userCode, userComment, user);
+        
+        List<CodeReview> codeReviewList = CodeReview.findAll();
 
-        return redirect(routes.Application.codeReview());
+        return ok(views.html.codeReview.render(codeReviewList));
+    }
+    
+    /**
+     * 
+     * 
+     * @return
+     */
+    public static Result reviewCodeSubmission() {
+        final Map<String, String[]> values = request().body().asFormUrlEncoded();   
+        Long id = Long.parseLong(values.get("select_id")[0]);
+        
+        CodeReview cr = CodeReview.getCodeReview(id);
+        
+        return ok(views.html.reviewCodeSubmission.render(cr));
+    }
+    
+    /**
+     * 
+     * 
+     * @param id
+     * @return
+     */
+    public static Result submitReview(Long id) {
+        final Map<String, String[]> values = request().body().asFormUrlEncoded();   
+        
+        User user = User.getUser(session("username"));
+        String userReview = values.get("user_review_textarea")[0];
+        CodeReview cr = CodeReview.getCodeReview(id);
+
+        CodeReviewFeedback.create(user, cr, userReview);
+        List<CodeReview> codeReviewList = CodeReview.findAll();
+
+        return ok(views.html.codeReview.render(codeReviewList));
     }
 }

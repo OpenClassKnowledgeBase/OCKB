@@ -1,73 +1,100 @@
+@(codeReviewList : List[CodeReview])
+
 @scripts = {
 	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/review.css")">
+	<script src="@routes.Assets.at("javascripts/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js")"></script>
+	<script src="@routes.Assets.at("javascripts/jquery.timeago.js")"></script>
+	<script>
+	 	$(function() {
+	 		var selected_id;
+	 		$('#selectable').selectable({
+	 		    selecting: function (event, ui) {
+	 		    	selected_id = ui.selecting.id;
+	 		        $(event.target).children('.ui-selecting').not(':first').removeClass('ui-selecting');
+	 		    },
+	 		    stop: function() {
+	 				var result = $("#select_result").empty();
+	 				document.getElementById("select_result").value = selected_id;
+	 			}
+	 		});
+		});
+		
+		jQuery(document).ready(function() {
+			jQuery("span.timeago").timeago();
+		});
+	</script>
 } 
 
 @main("Code Review", scripts) {
-
-<div class="container">
-
-	<ul id="myTab" class="nav nav-tabs nav-justified" data-role="tablist">
-		<li class="active"><a href="#instructions" data-role="tab" data-toggle="tab">Instructions</a></li>
-		<li><a href="#review" data-role="tab" data-toggle="tab">Review code submissions</a></li>
-		<li><a href="#submit" data-role="tab" data-toggle="tab">Submit your code for review</a></li>
-	</ul>
-
-	<div id="myTabContent" class="tab-content">
-
-		<div class="tab-pane fade in active" id="instructions">
-			<p>Raw denim you probably haven't heard of them jean shorts
-				Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
-				Mustache cliche tempor, williamsburg carles vegan helvetica.
-				Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby
-				sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-				placeat salvia cillum iphone. Seitan aliquip quis cardigan american
-				apparel, butcher voluptate nisi qui.</p>
-		</div>
-		
-		<div class="tab-pane fade in active" id="review">
-			<p>Raw denim you probably haven't heard of them jean shorts
-				Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
-				Mustache cliche tempor, williamsburg carles vegan helvetica.
-				Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby
-				sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-				placeat salvia cillum iphone. Seitan aliquip quis cardigan american
-				apparel, butcher voluptate nisi qui.</p>
-		</div>
-
-		<div class="tab-pane fade" id="submit">
-			<div class="row col-lg-12">
-				<h3>Upload source code file</h3>
+	<div class="container">
+	
+		<ul id="myTab" class="nav nav-tabs nav-justified" data-role="tablist">
+			<li class="active"><a href="#instructions" data-role="tab" data-toggle="tab">Instructions</a></li>
+			<li><a href="#review" data-role="tab" data-toggle="tab">Review code submissions</a></li>
+			<li><a href="#submit" data-role="tab" data-toggle="tab">Submit your code for review</a></li>
+		</ul>
+	
+		<div id="myTabContent" class="tab-content">
+	
+			<div class="tab-pane fade in active" id="instructions">
+				<p>Raw denim you probably haven't heard of them jean shorts
+					Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
+					Mustache cliche tempor, williamsburg carles vegan helvetica.
+					Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby
+					sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
+					placeat salvia cillum iphone. Seitan aliquip quis cardigan american
+					apparel, butcher voluptate nisi qui.</p>
 			</div>
-		
-			<div id="uploadFile" class="row col-lg-12">
-				<div class="panel-body">
-					<form class="form-horizontal" enctype="multipart/form-data" action="@routes.Application.uploadJavaFile()" method="post">
-						<div class="form-group">						
-							<div class="row" id="fileSubmit">
-								<input type="file" id="reviewFile" class="fileUpload" name="reviewFile" accept="MIME_type" required>
+			
+			<div class="tab-pane fade" id="review">
+				<div class="row col-lg-12">
+					<h3>Select a submission to review</h3>
+				</div>
+				<form class="form-horizontal" action="@routes.Application.reviewCodeSubmission()" method="post">
+					<ol id="selectable">
+						@for(index <- 0 until codeReviewList.size) {										
+							<li class="ui-state-default" id="@codeReviewList(index).id" onclick="$(this).closest('form').submit(); return false;">
+								@codeReviewList(index).title
+								<br>
+								submitted <span class="timeago" title="@codeReviewList(index).datePosted.format("yyyy-MM-dd'T'hh:mm:ss-10:00")"></span>							
+							</li>				
+						}
+					</ol>
+					<input id="select_result" name="select_id" type="hidden" class="form-control">
+				</form>
+			</div>
+	
+			<div class="tab-pane fade" id="submit">
+				<div class="row col-lg-12">
+					<h3>Upload source code file</h3>
+				</div>
+			
+				<div id="uploadFile" class="row col-lg-12">
+					<div class="panel-body">
+						<form class="form-horizontal" enctype="multipart/form-data" action="@routes.Application.uploadJavaFile()" method="post">
+							<div class="form-group">						
+								<div class="row" id="fileSubmit">
+									<input type="file" id="reviewFile" class="fileUpload" name="reviewFile" accept="MIME_type" required>
+								</div>
+								
+								<hr>
+								
+								<h3>Title of submission</h3>
+								<input name="title" type="text" class="form-control" placeholder="e.g., [ArrayList] Submission" required>
+								
+								<h3>Any comments for reviewers?</h3>								
+								<textarea name="userComment" class="form-control" rows="6" cols="100" 
+									placeholder="e.g., Any help would be appreciated, thanks in advance!" required></textarea>
 							</div>
 							
-							<hr>
-							
-							<h3>Title of submission</h3>
-							<input name="title" type="text" class="form-control" placeholder="e.g., [ArrayList] Submission" required>
-							
-							<h3>Any comments for reviewers?</h3>								
-							<textarea name="userComment" class="form-control" rows="6" cols="100" 
-								placeholder="e.g., Any help would be appreciated, thanks in advance!" required></textarea>
-						</div>
-						
-						<div class="row" id="codeSubmissionBtn">
-							<button type="submit" class="btn btn-success">Submit</button>
-						</div>							
-					</form>
-				</div>
-			</div>
-				
-		</div>
-
-	</div>
-
-</div>
+							<div class="row" id="codeSubmissionBtn">
+								<button type="submit" class="btn btn-success">Submit</button>
+							</div>							
+						</form>
+					</div>
+				</div>			
+			</div> <!-- tab-pane id="submit" -->
+		</div> <!-- tab-pane id="myTabContent" Contains all tab-panes -->
+	</div> <!-- container -->
 }

@@ -26,7 +26,7 @@ public class CodeReview extends Model{
     
     public String userComment;
     
-    @Formats.DateTime(pattern="yyyy-MM-dd'T'hh:mm:ss-22:00")
+    @Formats.DateTime(pattern="yyyy-MM-dd hh:mm:ss")    
     public Date datePosted = new Date();
 
     public CodeReview(String title, String userCode, String userComment, User user) {
@@ -54,6 +54,13 @@ public class CodeReview extends Model{
     
     public static CodeReview getCodeReview(Long id) {
         return CodeReview.find.byId(id);
+    }
+
+    /**
+     * @return the title
+     */
+    public String getTitle() {
+        return title;
     }
 
     /**
