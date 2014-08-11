@@ -2,7 +2,6 @@ package controllers;
 
 import com.avaje.ebean.Ebean;
 
-
 //EXCEL IMPORTS
 import org.apache.poi.xssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
@@ -1164,22 +1163,22 @@ public class Application extends Controller {
      ****************************/
     
     /**
+     * View the main Code Review page.
      * 
-     * 
-     * @return
+     * @return A view of the Code Review page.
      */
     public static Result codeReview() {
         
-        List<CodeReview> codeReviewList = CodeReview.findAll();
+        User user = User.getUser(session("username"));
+        List<CodeReview> listWithoutUser = getCodeReviewList(user);
         
-        return ok(views.html.codeReview.render(codeReviewList));
+        return ok(views.html.codeReview.render(listWithoutUser));
     }
     
     /**
+     * Allows a user to upload a file.
      * 
-     * 
-     * 
-     * @return
+     * @return A view of the Code Review page.
      */
     @BodyParser.Of(BodyParser.MultipartFormData.class)
     public static Result uploadJavaFile() {
@@ -1216,16 +1215,16 @@ public class Application extends Controller {
         User user = User.getUser(session("username"));
 
         CodeReview.create(title, userCode, userComment, user);
+                
+        List<CodeReview> listWithoutUser = getCodeReviewList(user);
         
-        List<CodeReview> codeReviewList = CodeReview.findAll();
-
-        return ok(views.html.codeReview.render(codeReviewList));
+        return ok(views.html.codeReview.render(listWithoutUser));
     }
     
     /**
+     * Allows a user to view a specific Code Review
      * 
-     * 
-     * @return
+     * @return A view of a specific Code Review page.
      */
     public static Result reviewCodeSubmission() {
         final Map<String, String[]> values = request().body().asFormUrlEncoded();   
@@ -1237,10 +1236,10 @@ public class Application extends Controller {
     }
     
     /**
+     * Allows a user to submit a review.
      * 
-     * 
-     * @param id
-     * @return
+     * @param id ID of the submitted code.
+     * @return A view of the Code Review page.
      */
     public static Result submitReview(Long id) {
         final Map<String, String[]> values = request().body().asFormUrlEncoded();   
@@ -1250,8 +1249,35 @@ public class Application extends Controller {
         CodeReview cr = CodeReview.getCodeReview(id);
 
         CodeReviewFeedback.create(user, cr, userReview);
-        List<CodeReview> codeReviewList = CodeReview.findAll();
-
-        return ok(views.html.codeReview.render(codeReviewList));
+                
+        List<CodeReview> listWithoutUser = getCodeReviewList(user);
+        
+        return ok(views.html.codeReview.render(listWithoutUser));
     }
+    
+    /**
+     * Returns a list of CodeReviews where:
+     * 1) A user's own submitted code are not included
+     * 2) Any submitted code that they have already reviewed are not included
+     * 
+     * @param user User who is currently accessing the application
+     * @return a list of Code Reviews that have been modified
+     */
+    public static List<CodeReview> getCodeReviewList(User user) {
+        //A user's own submitted code are not included
+        List<CodeReview> listWithoutUser = CodeReview.find.where().ne("user_id", user.id).findList();
+        //A list of reviews that the user has previously given
+        List<CodeReviewFeedback> feedbackList = CodeReviewFeedback.find.where().eq("user_id", user.id).findList();      
+        List<CodeReview> userFeedbacks = new ArrayList<CodeReview>();
+        
+        for(CodeReviewFeedback crf : feedbackList) {
+            userFeedbacks.add(crf.codeReview);
+        }               
+        
+        //Get the difference of both lists
+        listWithoutUser.removeAll(userFeedbacks);
+        
+        return listWithoutUser;
+    }
+    
 }

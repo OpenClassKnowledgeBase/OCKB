@@ -42,7 +42,7 @@
 	    <div class="row col-lg-12">
 	    	<h3>Enter your review</h3>
 			<form class="form-horizontal" action="@routes.Application.submitReview(codeReview.id)" method="post">
-				<textarea name="user_review_textarea" id="submitReview" class="form-control" placeholder="e.g., Found a type on line 77."></textarea>					
+				<textarea name="user_review_textarea" id="submitReview" class="form-control" placeholder="e.g., Found a type on line 77." required></textarea>					
 				
 				<div class="row" id="reviewSubmissionBtn">
 					<button type="submit" class="btn btn-success">Submit</button>
